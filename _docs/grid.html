@@ -71,21 +71,17 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#introduction">Introduction</a></li>
-          <li><a href="#files">File structure</a></li>
-          <li><a href="#start">Simple start</a></li>
-          <li><a href="#colors">Color changing</a></li>
-          <li><a href="#snippets">Snippets</a></li>
-          <li><a href="#animations">Animations</a></li>
-          <li><a href="#parallax">Parallax</a></li>
-          <li><a href="#background">Background</a></li>
-          <li><a href="#icons">Icons</a></li>
-          <li><a href="#video">Video</a></li>
-          <li><a href="#forms">Forms</a></li>
-          <li><a href="#map">Google Map</a></li>
-          <li><a href="#less">LESS</a></li>
-          <li><a href="#grunt">GRUNT</a></li>
-          <li><a href="#credits">Third Party Plugins &amp; Credits</a></li>
+          <li><a href="#anchor_intro">Introduction</a></li>
+          <li><a href="#anchor_responsive">Responsive columns</a></li>
+          <li><a href="#anchor_nested">Nested columns</a></li>
+          <li><a href="#anchor_offset">Columns with offset</a></li>
+          <li><a href="#anchor_order">Columns order</a></li>
+          <li><a href="#anchor_collapse">Collapse row</a></li>
+          <li><a href="#anchor_gutters">Different gutters row</a></li>
+          <li><a href="#anchor_responsive-gutters">Responsive gutters</a></li>
+          <li><a href="#anchor_vertical-gutters">Vertical gutters</a></li>
+          <li><a href="#anchor_custom-class">Custom column class</a></li>
+          <li><a href="#anchor_config">Setting grid config</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -157,7 +153,7 @@
             <div class="col-6">.col-6</div>
             <div class="col-6">.col-6</div>
           </div>
-          <h2>Responsive columns</h2>
+          <h2 id="anchor_responsive">Responsive columns</h2>
           <p>The grid is responsive. You can control each column width with viewort prefixed classes. By default you have six viewport variants for the all grid features:</p>
           <ul>
             <li>'mc_' (initial),</li>
@@ -182,7 +178,7 @@
             <div class="sm_col-4">.sm_col-4</div>
             <div class="sm_col-4">.sm_col-4</div>
           </div>
-          <h2>Nested columns</h2>
+          <h2 id="anchor_nested">Nested columns</h2>
           <p>You can put rows inside columns and create complicated grid structure.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -207,7 +203,7 @@
             <div class="sm_col-3">.sm_col-3</div>
             <div class="sm_col-3">.sm_col-3</div>
           </div>
-          <h2>Columns with offset</h2>
+          <h2 id="anchor_offset">Columns with offset</h2>
           <p>A column can be moved to the right on necessary amount of columns with <strong>.col-offset-*</strong> classes.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -220,7 +216,7 @@
             <div class="sm_col-6">.sm_col-6</div>
             <div class="sm_col-3 sm_col-offset-3">.sm_col-3.sm_col-offset-3</div>
           </div>
-          <h2>Change columns order</h2>
+          <h2 id="anchor_order">Change columns order</h2>
           <p>Columns order can be changed with <strong>.col-right-*</strong> and <strong>.col-left-*</strong> classes. In order to swap columns you need to move them toward each other by the width of one another. Also with this feature you can mix columns the way you like. <br>Class <strong>.col-reset-order</strong> will reset order to default.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -254,7 +250,7 @@
             <div class="sm_col-3 md_col-left-9">.sm_col-3.md_col-left-9</div>
           </div>
           <div class="docs_note">This feature in not compatible with Different gutters and Responsive gutters</div>
-          <h2>Collapse row</h2>
+          <h2 id="anchor_collapse">Collapse row</h2>
           <p>To remove gutter beetwen columns you can use <strong>.row-collapse</strong> class.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -275,7 +271,7 @@
             <div class="col-6"><div class="docs_block">Block in column in collapsed row</div></div>
             <div class="col-6"><div class="docs_block">Block in column in collapsed row</div></div>
           </div>
-          <h2>Different gutter row</h2>
+          <h2 id="anchor_gutters">Different gutter row</h2>
           <p>To create smaller or biger gutter beetwen columns you can use <strong>row-gutter-*</strong> class. By default array of gutters consist of sizes calculated from base unit (4px).</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -341,7 +337,7 @@
             <div class="col-4"><div class="docs_block">Block in column with 18 units gutter (unit = 4px)</div></div>
           </div>
           <div class="docs_note">This feature in not compatible with Columns order feature</div>
-          <h2>Responsive gutters</h2>
+          <h2 id="anchor_responsive-gutters">Responsive gutters</h2>
           <p>You can apply different gutters for different viewports with viewport prefix adding to gutter changer class.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -371,7 +367,7 @@
             <div class="sm_col-4"><div class="docs_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
             <div class="sm_col-4"><div class="docs_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
           </div>
-          <h2>Vertical gutters for vertical columns mode</h2>
+          <h2 id="anchor_vertical-gutters">Vertical gutters for vertical columns mode</h2>
           <p>You can add vertical gutter beetwen columns when them are arranged vertically. By default array of gutters consist of sizes calculated from base unit (4px).</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
@@ -407,7 +403,7 @@
   &lt;div class="custom-class-1">.col-8.sm_col-right-4.lg_col-reset-order&lt;/div>
   &lt;div class="custom-class-2">.col-4.sm_col-left-8.lg_col-reset-order&lt;/div>
 &lt;/div></pre>
-        <h2 id="anchor_custom-class">Setting grid config</h2>
+        <h2 id="anchor_config">Setting grid config</h2>
         <p>The framework have grid config on global and local levels. Global settings are in <strong>_source/config.scss</strong> file. Local settings are in <strong>_source/core/grid/scss/config.scss</strong> file. Local settings can be used in standalone mode, when you like to use component without whole framework. Or them are useful in case of overriding global settings.</p>
         <p>You can set number of columns in grid, change gutters and grid size on different viewports.</p>
         <p>Config let you disable features that you don't need. It is a good practice to reduce css file size.</p>

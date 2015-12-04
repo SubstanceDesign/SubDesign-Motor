@@ -5,7 +5,10 @@
   $('#docs_page-nav').singlePageNav({
     filter: ':not(.external)',
     currentClass: 'active',
-    offset: 75
+    offset: 96,
+    beforeStart: function() {
+      $('.docs_wrapper').removeClass('docs_wrapper--nav-showed');
+    }
   });
 
   // show / hide menu

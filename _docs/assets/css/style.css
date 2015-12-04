@@ -237,13 +237,21 @@ body {
 
 /* Header */ 
 #docs_header {
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   height: 48px;
   left: 0;
   right: 0;
   padding-left: 72px;
   background: #2C6363;
   border-bottom: 5px solid #245151;
+  -webkit-transition: .3s;
+          transition: .3s;
+}
+
+
+.docs_wrapper--nav-showed #docs_header {
+  padding-left: 312px;
 }
 
 #docs_header h1 {
@@ -255,8 +263,8 @@ body {
 
 /* Nav */
 #docs_page-nav {
-  position: relative;
-  float: left;
+  position: fixed;
+  z-index: 1;
   top: 0;
   margin-left: -240px;
   width: 240px;
@@ -365,7 +373,6 @@ body {
 
 /* Content */
 .docs_content {
-  float: left;
   width: 100%;
   padding-top: 48px;
 }
