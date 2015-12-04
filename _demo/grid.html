@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>needsectionscroll demo</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../css/framework.css">
+
+	  <!-- Styles just for demo -->
+		<style>
+			body {
+				font: 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;
+				margin:0;
+				padding:0;
+				background: #00a8da;
+			}
+
+			h2 {
+				font-size: 36px;
+				color: #fff;
+				margin: 72px 0 48px;
+			}
+
+			.demo_block {
+				padding: 16px 24px;
+				min-height: 100px;
+				background: #F5BC00;
+			}
+
+			.content,
+			.content-fluid {
+			  margin-right: auto;
+			  margin-left: auto;
+			  -webkit-box-sizing: border-box;
+			          box-sizing: border-box;
+			}
+
+			.content-fluid {
+			  max-width: 1280px;
+			}
+
+			@media (min-width: 768px) {
+			  .content {
+			    width: 750px;
+			  }
+			}
+			@media (min-width: 992px) {
+			  .content {
+			    width: 970px;
+			  }
+			}
+			@media (min-width: 1200px) {
+			  .content {
+			    width: 1120px;
+			  }
+			}
+			@media (min-width: 1440px) {
+			  .content {
+			    width: 1280px;
+			  }
+			}
+			.content:before,
+			.content:after,
+			.content-fluid:before,
+			.content-fluid:after {
+			  content: '';
+			  display: table;
+			}
+
+			.content:after,
+			.content-fluid:after {
+			  clear: both;
+			}
+
+			.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1, .xs_col-12, .xs_col-11, .xs_col-10, .xs_col-9, .xs_col-8, .xs_col-7, .xs_col-6, .xs_col-5, .xs_col-4, .xs_col-3, .xs_col-2, .xs_col-1, .sm_col-12, .sm_col-11, .sm_col-10, .sm_col-9, .sm_col-8, .sm_col-7, .sm_col-6, .sm_col-5, .sm_col-4, .sm_col-3, .sm_col-2, .sm_col-1, .md_col-12, .md_col-11, .md_col-10, .md_col-9, .md_col-8, .md_col-7, .md_col-6, .md_col-5, .md_col-4, .md_col-3, .md_col-2, .md_col-1, .lg_col-12, .lg_col-11, .lg_col-10, .lg_col-9, .lg_col-8, .lg_col-7, .lg_col-6, .lg_col-5, .lg_col-4, .lg_col-3, .lg_col-2, .lg_col-1, .xl_col-12, .xl_col-11, .xl_col-10, .xl_col-9, .xl_col-8, .xl_col-7, .xl_col-6, .xl_col-5, .xl_col-4, .xl_col-3, .xl_col-2, .xl_col-1 {
+				background: #bada55;
+				padding-top: 12px;
+				padding-bottom: 12px;
+				border: 1px solid #00a8da;
+				overflow: hidden;
+			}
+
+			.demo_just-text .col-12, .demo_just-text .col-11, .demo_just-text .col-10, .demo_just-text .col-9, .demo_just-text .col-8, .demo_just-text .col-7, .demo_just-text .col-6, .demo_just-text .col-5, .demo_just-text .col-4, .demo_just-text .col-3, .demo_just-text .col-2, .demo_just-text .col-1, .demo_just-text .xs_col-12, .demo_just-text .xs_col-11, .demo_just-text .xs_col-10, .demo_just-text .xs_col-9, .demo_just-text .xs_col-8, .demo_just-text .xs_col-7, .demo_just-text .xs_col-6, .demo_just-text .xs_col-5, .demo_just-text .xs_col-4, .demo_just-text .xs_col-3, .demo_just-text .xs_col-2, .demo_just-text .xs_col-1, .demo_just-text .sm_col-12, .demo_just-text .sm_col-11, .demo_just-text .sm_col-10, .demo_just-text .sm_col-9, .demo_just-text .sm_col-8, .demo_just-text .sm_col-7, .demo_just-text .sm_col-6, .demo_just-text .sm_col-5, .demo_just-text .sm_col-4, .demo_just-text .sm_col-3, .demo_just-text .sm_col-2, .demo_just-text .sm_col-1, .demo_just-text .md_col-12, .demo_just-text .md_col-11, .demo_just-text .md_col-10, .demo_just-text .md_col-9, .demo_just-text .md_col-8, .demo_just-text .md_col-7, .demo_just-text .md_col-6, .demo_just-text .md_col-5, .demo_just-text .md_col-4, .demo_just-text .md_col-3, .demo_just-text .md_col-2, .demo_just-text .md_col-1, .demo_just-text .lg_col-12, .demo_just-text .lg_col-11, .demo_just-text .lg_col-10, .demo_just-text .lg_col-9, .demo_just-text .lg_col-8, .demo_just-text .lg_col-7, .demo_just-text .lg_col-6, .demo_just-text .lg_col-5, .demo_just-text .lg_col-4, .demo_just-text .lg_col-3, .demo_just-text .lg_col-2, .demo_just-text .lg_col-1, .demo_just-text .xl_col-12, .demo_just-text .xl_col-11, .demo_just-text .xl_col-10, .demo_just-text .xl_col-9, .demo_just-text .xl_col-8, .demo_just-text .xl_col-7, .demo_just-text .xl_col-6, .demo_just-text .xl_col-5, .demo_just-text .xl_col-4, .demo_just-text .xl_col-3, .demo_just-text .xl_col-2, .demo_just-text .xl_col-1 {
+				background: transparent;
+				color: #fff;
+			}
+
+			.demo_novertpad .col-12, .demo_novertpad .col-11, .demo_novertpad .col-10, .demo_novertpad .col-9, .demo_novertpad .col-8, .demo_novertpad .col-7, .demo_novertpad .col-6, .demo_novertpad .col-5, .demo_novertpad .col-4, .demo_novertpad .col-3, .demo_novertpad .col-2, .demo_novertpad .col-1, .demo_novertpad .xs_col-12, .demo_novertpad .xs_col-11, .demo_novertpad .xs_col-10, .demo_novertpad .xs_col-9, .demo_novertpad .xs_col-8, .demo_novertpad .xs_col-7, .demo_novertpad .xs_col-6, .demo_novertpad .xs_col-5, .demo_novertpad .xs_col-4, .demo_novertpad .xs_col-3, .demo_novertpad .xs_col-2, .demo_novertpad .xs_col-1, .demo_novertpad .sm_col-12, .demo_novertpad .sm_col-11, .demo_novertpad .sm_col-10, .demo_novertpad .sm_col-9, .demo_novertpad .sm_col-8, .demo_novertpad .sm_col-7, .demo_novertpad .sm_col-6, .demo_novertpad .sm_col-5, .demo_novertpad .sm_col-4, .demo_novertpad .sm_col-3, .demo_novertpad .sm_col-2, .demo_novertpad .sm_col-1, .demo_novertpad .md_col-12, .demo_novertpad .md_col-11, .demo_novertpad .md_col-10, .demo_novertpad .md_col-9, .demo_novertpad .md_col-8, .demo_novertpad .md_col-7, .demo_novertpad .md_col-6, .demo_novertpad .md_col-5, .demo_novertpad .md_col-4, .demo_novertpad .md_col-3, .demo_novertpad .md_col-2, .demo_novertpad .md_col-1, .demo_novertpad .lg_col-12, .demo_novertpad .lg_col-11, .demo_novertpad .lg_col-10, .demo_novertpad .lg_col-9, .demo_novertpad .lg_col-8, .demo_novertpad .lg_col-7, .demo_novertpad .lg_col-6, .demo_novertpad .lg_col-5, .demo_novertpad .lg_col-4, .demo_novertpad .lg_col-3, .demo_novertpad .lg_col-2, .demo_novertpad .lg_col-1, .demo_novertpad .xl_col-12, .demo_novertpad .xl_col-11, .demo_novertpad .xl_col-10, .demo_novertpad .xl_col-9, .demo_novertpad .xl_col-8, .demo_novertpad .xl_col-7, .demo_novertpad .xl_col-6, .demo_novertpad .xl_col-5, .demo_novertpad .xl_col-4, .demo_novertpad .xl_col-3, .demo_novertpad .xl_col-2, .demo_novertpad .xl_col-1 {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+
+		</style>
+
+	</head>
+	<body>
+
+		<div class="grid">
+			<h2>12 columns grid set</h2>
+			<div class="row">
+				<div class="col-12">.col-12</div>
+			</div>
+			<div class="row">
+				<div class="col-11">.col-11</div>
+				<div class="col-1">.col-1</div>
+			</div>
+			<div class="row">
+				<div class="col-10">.col-10</div>
+				<div class="col-2">.col-2</div>
+			</div>
+			<div class="row">
+				<div class="col-9">.col-9</div>
+				<div class="col-3">.col-3</div>
+			</div>
+			<div class="row">
+				<div class="col-8">.col-8</div>
+				<div class="col-4">.col-4</div>
+			</div>
+			<div class="row">
+				<div class="col-7">.col-7</div>
+				<div class="col-5">.col-5</div>
+			</div>
+			<div class="row">
+				<div class="col-6">.col-6</div>
+				<div class="col-6">.col-6</div>
+			</div>
+			<h2>Responsive columns</h2>
+			<div class="row">
+				<div class="sm_col-4">.sm_col-4</div>
+				<div class="sm_col-4">.sm_col-4</div>
+				<div class="sm_col-4">.sm_col-4</div>
+			</div>
+			<h2>Nested columns</h2>
+			<div class="row">
+				<div class="sm_col-6">
+					<div class="row">
+						<div class="sm_col-6">.sm_col-6</div>
+						<div class="sm_col-6">.sm_col-6</div>
+					</div>
+				</div>
+				<div class="sm_col-3">.sm_col-3</div>
+				<div class="sm_col-3">.sm_col-3</div>
+			</div>
+			<h2>Columns with offset</h2>
+			<div class="row">
+				<div class="sm_col-6">.sm_col-6</div>
+				<div class="sm_col-3 sm_col-offset-3">.sm_col-3.sm_col-offset-3</div>
+			</div>
+			<h2>Change columns order</h2>
+			<div class="row">
+				<div class="col-8 sm_col-right-4 lg_col-reset-order">.col-8.sm_col-right-4.lg_col-reset-order <br><br>Column will be moved to the right on screens from 768px <br>And it will returns to the left on screens from 1200px</div>
+				<div class="custom-class">.col-4.sm_col-left-8.lg_col-reset-order <br><br>Column will be moved to the left on screens from 768px <br>And it will returns to the right on screens from 1200px</div>
+			</div>
+			<div class="row">
+				<div class="sm_col-6 md_col-right-3">.sm_col-6.md_col-right-3</div>
+				<div class="sm_col-3 md_col-left-6">.sm_col-3.md_col-right-6</div>
+				<div class="sm_col-3">.sm_col-3</div>
+			</div>
+			<div class="row">
+				<div class="sm_col-6 md_col-right-6">.sm_col-6.md_col-right-6</div>
+				<div class="sm_col-3 md_col-left-3">.sm_col-3.md_col-left-3</div>
+				<div class="sm_col-3 md_col-left-9">.sm_col-3.md_col-left-9</div>
+			</div>
+			<div class="demo_note">This feature in not compatible with Different gutters and Responsive gutters</div>
+			<h2>Collapse row</h2>
+			<div class="row demo_just-text">
+				<div class="col-6"><div class="demo_block">Block in column in default row</div></div>
+				<div class="col-6"><div class="demo_block">Block in column in default row</div></div>
+			</div>
+			<div class="row row-collapse demo_just-text">
+				<div class="col-6"><div class="demo_block">Block in column in collapsed row</div></div>
+				<div class="col-6"><div class="demo_block">Block in column in collapsed row</div></div>
+			</div>
+			<h2>Different gutter row</h2>
+			<div class="row row-gutter-3u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="row row-gutter-6u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="row row-gutter-9u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="row row-gutter-12u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="row row-gutter-15u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="row row-gutter-18u demo_just-text">
+				<div class="col-4"><div class="demo_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+				<div class="col-4"><div class="demo_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+			</div>
+			<div class="demo_note">This feature in not compatible with Columns order feature</div>
+			<h2>Responsive gutters</h2>
+			<div class="row sm_row-gutter-9u md_row-gutter-15u demo_just-text">
+				<div class="sm_col-4"><div class="demo_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+				<div class="sm_col-4"><div class="demo_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+				<div class="sm_col-4"><div class="demo_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+			</div>
+			<div class="demo_note">This feature in not compatible with Columns order feature</div>
+			<h2>Reset gutters to defaul value</h2>
+			<div class="row sm_row-gutter-12u md_row-reset-gutter demo_just-text">
+				<div class="sm_col-4"><div class="demo_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+				<div class="sm_col-4"><div class="demo_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+				<div class="sm_col-4"><div class="demo_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+			</div>
+			<h2>Vertical gutters for vertical columns mode</h2>
+			<div class="row row-vertical-gutter-6u md_row-vertical-gutter-0 demo_just-text demo_novertpad">
+				<div class="md_col-4"><div class="demo_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+				<div class="md_col-4"><div class="demo_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+				<div class="md_col-4"><div class="demo_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+			</div>
+		</div>
+
+		<script src="../js/framework.js"></script>
+	</body>
+</html>
