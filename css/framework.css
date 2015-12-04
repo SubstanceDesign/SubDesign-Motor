@@ -1070,7 +1070,7 @@
 /* Grid cols
 ***********************************************/
 /* common cols settings */
-.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .custom-class, .col-3, .col-2, .col-1, .xs_col-12, .xs_col-11, .xs_col-10, .xs_col-9, .xs_col-8, .xs_col-7, .xs_col-6, .xs_col-5, .xs_col-4, .xs_col-3, .xs_col-2, .xs_col-1, .sm_col-12, .sm_col-11, .sm_col-10, .sm_col-9, .sm_col-8, .sm_col-7, .sm_col-6, .sm_col-5, .sm_col-4, .sm_col-3, .sm_col-2, .sm_col-1, .md_col-12, .md_col-11, .md_col-10, .md_col-9, .md_col-8, .md_col-7, .md_col-6, .md_col-5, .md_col-4, .md_col-3, .md_col-2, .md_col-1, .lg_col-12, .lg_col-11, .lg_col-10, .lg_col-9, .lg_col-8, .lg_col-7, .lg_col-6, .lg_col-5, .lg_col-4, .lg_col-3, .lg_col-2, .lg_col-1, .xl_col-12, .xl_col-11, .xl_col-10, .xl_col-9, .xl_col-8, .xl_col-7, .xl_col-6, .xl_col-5, .xl_col-4, .xl_col-3, .xl_col-2, .xl_col-1 {
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1, .xs_col-12, .xs_col-11, .xs_col-10, .xs_col-9, .xs_col-8, .xs_col-7, .xs_col-6, .xs_col-5, .xs_col-4, .xs_col-3, .xs_col-2, .xs_col-1, .sm_col-12, .sm_col-11, .sm_col-10, .sm_col-9, .sm_col-8, .sm_col-7, .sm_col-6, .sm_col-5, .sm_col-4, .sm_col-3, .sm_col-2, .sm_col-1, .md_col-12, .md_col-11, .md_col-10, .md_col-9, .md_col-8, .md_col-7, .md_col-6, .md_col-5, .md_col-4, .md_col-3, .md_col-2, .md_col-1, .lg_col-12, .lg_col-11, .lg_col-10, .lg_col-9, .lg_col-8, .lg_col-7, .lg_col-6, .lg_col-5, .lg_col-4, .lg_col-3, .lg_col-2, .lg_col-1, .xl_col-12, .xl_col-11, .xl_col-10, .xl_col-9, .xl_col-8, .xl_col-7, .xl_col-6, .xl_col-5, .xl_col-4, .xl_col-3, .xl_col-2, .xl_col-1 {
   position: relative;
   padding-right: 12px;
   padding-left: 12px;
@@ -1079,7 +1079,7 @@
 }
 
 /* cols' width for all screen sizes */
-.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .custom-class, .col-3, .col-2, .col-1 {
+.col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
   float: left;
 }
 
@@ -1211,7 +1211,7 @@
   right: 41.66667%;
 }
 
-.col-4, .custom-class {
+.col-4 {
   width: 33.33333%;
 }
 
@@ -1563,7 +1563,7 @@
     left: 66.66667%;
   }
 
-  .sm_col-left-8, .custom-class {
+  .sm_col-left-8 {
     right: 66.66667%;
   }
 
@@ -2083,7 +2083,7 @@
     right: 8.33333%;
   }
 
-  .lg_col-reset-order, .custom-class {
+  .lg_col-reset-order {
     right: auto;
     left: auto;
   }

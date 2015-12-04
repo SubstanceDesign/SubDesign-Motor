@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE DESCRIPTION AND TITLE 
+    *********************************************** -->
+    <title>Grid system | Framework</title>
+
+    <!-- STYLESHEETS
+    *********************************************** -->
+
+    <!-- Docs stylesheets -->
+    <link rel="stylesheet" href="assets/css/prettify.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Framework stylesheets -->
+    <link rel="stylesheet" href="../css/framework.css">
+
+    <!-- Styles just for this page -->
+    <style>
+
+      [class *= 'col-'] {
+        font-size: 14px;
+        line-height: 20px;
+        background: #CFF09E;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        border: 1px solid #A4E246;
+        overflow: hidden;
+      }
+
+      .docs_just-text [class *= 'col-'] {
+        background: transparent;
+        color: #fff;
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .docs_novertpad [class *= 'col-'] {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .row + .row {
+        margin-top: 12px;
+      }
+
+    </style>
+
+  </head>
+  <body>
+    <!-- WRAPPER
+    *********************************************** -->
+    <div class="docs_wrapper">      
+      <!-- HEADER
+      *********************************************** -->
+        <header id="docs_header">
+          <h1>Grid system</h1>
+        </header>
+      <!-- *********************************************** 
+      END HEADER -->
+
+      <!-- NAV
+      *********************************************** -->
+      <nav id="docs_page-nav">
+        <div class="docs_page-nav_button">
+          <span class="docs_page-nav_button_open"></span>
+          <span class="docs_page-nav_button_close">×</span>
+        </div>
+        <ul>
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#files">File structure</a></li>
+          <li><a href="#start">Simple start</a></li>
+          <li><a href="#colors">Color changing</a></li>
+          <li><a href="#snippets">Snippets</a></li>
+          <li><a href="#animations">Animations</a></li>
+          <li><a href="#parallax">Parallax</a></li>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#icons">Icons</a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#forms">Forms</a></li>
+          <li><a href="#map">Google Map</a></li>
+          <li><a href="#less">LESS</a></li>
+          <li><a href="#grunt">GRUNT</a></li>
+          <li><a href="#credits">Third Party Plugins &amp; Credits</a></li>
+        </ul>
+      </nav>
+      <!-- *********************************************** 
+      END NAV -->
+
+      <!-- CONTENT
+      *********************************************** -->
+      <div class="docs_content docs_typo">
+        
+        <!-- GRID
+        *********************************************** -->
+        <div class="grid">
+          <h2 id="anchor_intro">12 columns grid set</h2>
+          <p>First of all you should wrap your grid content into element with <strong>.grid</strong> class. <br>Then place element with class <strong>.row</strong> inside it. It will create horizontal row of our grid. <br>Last step is to fill the row with columns. Columns are created with <strong>.col-*</strong> class, where * - is ammount of columns it should be in width.
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="col-12">.col-12&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-11">.col-11&lt;/div>
+  &lt;div class="col-1">.col-1&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-10">.col-10&lt;/div>
+  &lt;div class="col-2">.col-2&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-9">.col-9&lt;/div>
+  &lt;div class="col-3">.col-3&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-8">.col-8&lt;/div>
+  &lt;div class="col-4">.col-4&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-7">.col-7&lt;/div>
+  &lt;div class="col-5">.col-5&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="col-6">.col-6&lt;/div>
+  &lt;div class="col-6">.col-6&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="col-12">.col-12</div>
+          </div>
+          <div class="row">
+            <div class="col-11">.col-11</div>
+            <div class="col-1">.col-1</div>
+          </div>
+          <div class="row">
+            <div class="col-10">.col-10</div>
+            <div class="col-2">.col-2</div>
+          </div>
+          <div class="row">
+            <div class="col-9">.col-9</div>
+            <div class="col-3">.col-3</div>
+          </div>
+          <div class="row">
+            <div class="col-8">.col-8</div>
+            <div class="col-4">.col-4</div>
+          </div>
+          <div class="row">
+            <div class="col-7">.col-7</div>
+            <div class="col-5">.col-5</div>
+          </div>
+          <div class="row">
+            <div class="col-6">.col-6</div>
+            <div class="col-6">.col-6</div>
+          </div>
+          <h2>Responsive columns</h2>
+          <p>The grid is responsive. You can control each column width with viewort prefixed classes. By default you have six viewport variants for the all grid features:</p>
+          <ul>
+            <li>'mc_' (initial),</li>
+            <li>'xs_' (from 480px),</li>
+            <li>'sm_' (from 750px),</li>
+            <li>'md_' (from 970px),</li>
+            <li>'lg_' (from 1120px),</li>
+            <li>'xl_' (from 1280px).</li>
+          </ul>
+          <p>That gives you possibility to apply column's or row's class for particular screen size.</p>
+          <div class="docs_note">The grid is mobile-first. This means that first of all styles for the smallest screens are applied. And styles for the bigger screens will inherit the properties and override them or assign unique.</div>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="sm_col-4">.sm_col-4&lt;/div>
+  &lt;div class="sm_col-4">.sm_col-4&lt;/div>
+  &lt;div class="sm_col-4">.sm_col-4&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="sm_col-4">.sm_col-4</div>
+            <div class="sm_col-4">.sm_col-4</div>
+            <div class="sm_col-4">.sm_col-4</div>
+          </div>
+          <h2>Nested columns</h2>
+          <p>You can put rows inside columns and create complicated grid structure.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="sm_col-6">
+    &lt;div class="row">
+      &lt;div class="sm_col-6">.sm_col-6&lt;/div>
+      &lt;div class="sm_col-6">.sm_col-6&lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="sm_col-3">.sm_col-3&lt;/div>
+  &lt;div class="sm_col-3">.sm_col-3&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="sm_col-6">
+              <div class="row">
+                <div class="sm_col-6">.sm_col-6</div>
+                <div class="sm_col-6">.sm_col-6</div>
+              </div>
+            </div>
+            <div class="sm_col-3">.sm_col-3</div>
+            <div class="sm_col-3">.sm_col-3</div>
+          </div>
+          <h2>Columns with offset</h2>
+          <p>A column can be moved to the right on necessary amount of columns with <strong>.col-offset-*</strong> classes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="sm_col-6">.sm_col-6&lt;/div>
+  &lt;div class="sm_col-3 sm_col-offset-3">.sm_col-3.sm_col-offset-3&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="sm_col-6">.sm_col-6</div>
+            <div class="sm_col-3 sm_col-offset-3">.sm_col-3.sm_col-offset-3</div>
+          </div>
+          <h2>Change columns order</h2>
+          <p>Columns order can be changed with <strong>.col-right-*</strong> and <strong>.col-left-*</strong> classes. In order to swap columns you need to move them toward each other by the width of one another. Also with this feature you can mix columns the way you like. <br>Class <strong>.col-reset-order</strong> will reset order to default.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="col-8 sm_col-right-4 lg_col-reset-order">.col-8.sm_col-right-4.lg_col-reset-order &lt;br>&lt;br>Column will be moved to the right on screens from 768px &lt;br>And it will returns to the left on screens from 1200px&lt;/div>
+  &lt;div class="col-4 sm_col-left-8 lg_col-reset-order">.col-4.sm_col-left-8.lg_col-reset-order &lt;br>&lt;br>Column will be moved to the left on screens from 768px &lt;br>And it will returns to the right on screens from 1200px&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="sm_col-6 md_col-right-3">.sm_col-6.md_col-right-3&lt;/div>
+  &lt;div class="sm_col-3 md_col-left-6">.sm_col-3.md_col-right-6&lt;/div>
+  &lt;div class="sm_col-3">.sm_col-3&lt;/div>
+&lt;/div>
+&lt;div class="row">
+  &lt;div class="sm_col-6 md_col-right-6">.sm_col-6.md_col-right-6&lt;/div>
+  &lt;div class="sm_col-3 md_col-left-3">.sm_col-3.md_col-left-3&lt;/div>
+  &lt;div class="sm_col-3 md_col-left-9">.sm_col-3.md_col-left-9&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="col-8 sm_col-right-4 lg_col-reset-order">.col-8.sm_col-right-4.lg_col-reset-order <br><br>Column will be moved to the right on screens from 768px <br>And it will returns to the left on screens from 1200px</div>
+            <div class="col-4 sm_col-left-8 lg_col-reset-order">.col-4.sm_col-left-8.lg_col-reset-order <br><br>Column will be moved to the left on screens from 768px <br>And it will returns to the right on screens from 1200px</div>
+          </div>
+          <div class="row">
+            <div class="sm_col-6 md_col-right-3">.sm_col-6.md_col-right-3</div>
+            <div class="sm_col-3 md_col-left-6">.sm_col-3.md_col-right-6</div>
+            <div class="sm_col-3">.sm_col-3</div>
+          </div>
+          <div class="row">
+            <div class="sm_col-6 md_col-right-6">.sm_col-6.md_col-right-6</div>
+            <div class="sm_col-3 md_col-left-3">.sm_col-3.md_col-left-3</div>
+            <div class="sm_col-3 md_col-left-9">.sm_col-3.md_col-left-9</div>
+          </div>
+          <div class="docs_note">This feature in not compatible with Different gutters and Responsive gutters</div>
+          <h2>Collapse row</h2>
+          <p>To remove gutter beetwen columns you can use <strong>.row-collapse</strong> class.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="col-6">&lt;div>Block in column in default row&lt;/div>&lt;/div>
+  &lt;div class="col-6">&lt;div>Block in column in default row&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-collapse">
+  &lt;div class="col-6">&lt;div>Block in column in collapsed row&lt;/div>&lt;/div>
+  &lt;div class="col-6">&lt;div>Block in column in collapsed row&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row docs_just-text">
+            <div class="col-6"><div class="docs_block">Block in column in default row</div></div>
+            <div class="col-6"><div class="docs_block">Block in column in default row</div></div>
+          </div>
+          <div class="row row-collapse docs_just-text">
+            <div class="col-6"><div class="docs_block">Block in column in collapsed row</div></div>
+            <div class="col-6"><div class="docs_block">Block in column in collapsed row</div></div>
+          </div>
+          <h2>Different gutter row</h2>
+          <p>To create smaller or biger gutter beetwen columns you can use <strong>row-gutter-*</strong> class. By default array of gutters consist of sizes calculated from base unit (4px).</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row row-gutter-3u">
+  &lt;div class="col-4">&lt;div>Block in column with 3 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 3 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 3 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-gutter-6u">
+  &lt;div class="col-4">&lt;div>Block in column with 6 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 6 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 6 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-gutter-9u">
+  &lt;div class="col-4">&lt;div>Block in column with 9 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 9 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 9 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-gutter-12u">
+  &lt;div class="col-4">&lt;div>Block in column with 12 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 12 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 12 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-gutter-15u">
+  &lt;div class="col-4">&lt;div>Block in column with 15 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 15 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 15 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-gutter-18u">
+  &lt;div class="col-4">&lt;div>Block in column with 18 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 18 units gutter (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="col-4">&lt;div>Block in column with 18 units gutter (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row row-gutter-3u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 3 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="row row-gutter-6u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 6 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="row row-gutter-9u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 9 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="row row-gutter-12u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 12 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="row row-gutter-15u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 15 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="row row-gutter-18u docs_just-text">
+            <div class="col-4"><div class="docs_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+            <div class="col-4"><div class="docs_block">Block in column with 18 units gutter (unit = 4px)</div></div>
+          </div>
+          <div class="docs_note">This feature in not compatible with Columns order feature</div>
+          <h2>Responsive gutters</h2>
+          <p>You can apply different gutters for different viewports with viewport prefix adding to gutter changer class.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row sm_row-gutter-9u md_row-gutter-15u">
+  &lt;div class="sm_col-4">&lt;div>Block in column with 9 units gutter on screens from 768px  (unit = 4px)&lt;br>And 15 units gutter on screens from 992px&lt;/div>&lt;/div>
+  &lt;div class="sm_col-4">&lt;div>Block in column with 9 units gutter on screens from 768px  (unit = 4px)&lt;br>And 15 units gutter on screens from 992px&lt;/div>&lt;/div>
+  &lt;div class="sm_col-4">&lt;div>Block in column with 9 units gutter on screens from 768px  (unit = 4px)&lt;br>And 15 units gutter on screens from 992px&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row sm_row-gutter-9u md_row-gutter-15u docs_just-text">
+            <div class="sm_col-4"><div class="docs_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+            <div class="sm_col-4"><div class="docs_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+            <div class="sm_col-4"><div class="docs_block">Block in column with 9 units gutter on screens from 768px  (unit = 4px)<br>And 15 units gutter on screens from 992px</div></div>
+          </div>
+          <div class="docs_note">This feature in not compatible with Columns order feature</div>
+          <p>Class <strong>row-reset-gutter</strong> will reset gutter to default value.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row sm_row-gutter-12u md_row-reset-gutter">
+  &lt;div class="sm_col-4">&lt;div>Block in column with 12 units gutter on screens from 768px  (unit = 4px)&lt;br>And reset to default from 992px&lt;/div>&lt;/div>
+  &lt;div class="sm_col-4">&lt;div>Block in column with 12 units gutter on screens from 768px  (unit = 4px)&lt;br>And reset to default from 992px&lt;/div>&lt;/div>
+  &lt;div class="sm_col-4">&lt;div>Block in column with 12 units gutter on screens from 768px  (unit = 4px)&lt;br>And reset to default from 992px&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row sm_row-gutter-12u md_row-reset-gutter docs_just-text">
+            <div class="sm_col-4"><div class="docs_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+            <div class="sm_col-4"><div class="docs_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+            <div class="sm_col-4"><div class="docs_block">Block in column with 12 units gutter on screens from 768px  (unit = 4px)<br>And reset to default from 992px</div></div>
+          </div>
+          <h2>Vertical gutters for vertical columns mode</h2>
+          <p>You can add vertical gutter beetwen columns when them are arranged vertically. By default array of gutters consist of sizes calculated from base unit (4px).</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row row-vertical-gutter-6u md_row-vertical-gutter-0">
+  &lt;div class="md_col-4">&lt;div>The columns indented from another in vertical mode with 6 units (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="md_col-4">&lt;div>The columns indented from another in vertical mode with 6 units (unit = 4px)&lt;/div>&lt;/div>
+  &lt;div class="md_col-4">&lt;div>The columns indented from another in vertical mode with 6 units (unit = 4px)&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row row-vertical-gutter-6u md_row-vertical-gutter-0 docs_just-text docs_novertpad">
+            <div class="md_col-4"><div class="docs_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+            <div class="md_col-4"><div class="docs_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+            <div class="md_col-4"><div class="docs_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
+          </div>
+          <h2 id="anchor_custom-class">Custom class for a column or a row</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure block. It can be reached simply with SASS directive <strong>@extend</strong>. Just extend the grid classes you need.</p>
+          <p class="docs_subheading"><strong>CSS</strong></p>
+          <pre class="prettyprint">
+.custom-class-1 {
+  @extend .col-8;
+  @extend .sm_col-right-4;
+  @extend .lg_col-reset-order;
+}
+
+.custom-class-2 {
+  @extend .col-4;
+  @extend .sm_col-left-8;
+  @extend .lg_col-reset-order;
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="custom-class-1">.col-8.sm_col-right-4.lg_col-reset-order&lt;/div>
+  &lt;div class="custom-class-2">.col-4.sm_col-left-8.lg_col-reset-order&lt;/div>
+&lt;/div></pre>
+        <h2 id="anchor_custom-class">Setting grid config</h2>
+        <p>The framework have grid config on global and local levels. Global settings are in <strong>_source/config.scss</strong> file. Local settings are in <strong>_source/core/grid/scss/config.scss</strong> file. Local settings can be used in standalone mode, when you like to use component without whole framework. Or them are useful in case of overriding global settings.</p>
+        <p>You can set number of columns in grid, change gutters and grid size on different viewports.</p>
+        <p>Config let you disable features that you don't need. It is a good practice to reduce css file size.</p>
+        <p class="docs_subheading"><strong>Settings list</strong></p>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Values</th>
+          </tr>
+          <tr>
+            <td>grid_feature_responsive</td>
+            <td>Enable responsive grid</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_feature_offset</td>
+            <td>Enable offset for columns</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_feature_columns-order</td>
+            <td>Enable columns order feature</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_feature_row-collapsed</td>
+            <td>Enable collapse row feature</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_feature_row-different-gutters</td>
+            <td>Enable different gutters row feature</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_feature_row-vertical-gutters</td>
+            <td>Enable vertical gutters feature</td>
+            <td>true / false</td>
+          </tr>
+          <tr>
+            <td>grid_cols</td>
+            <td>Set number of columns in grid</td>
+            <td>Any integer</td>
+          </tr>
+          <tr>
+            <td>grid_gutter</td>
+            <td>Set default gutter size</td>
+            <td>px</td>
+          </tr>
+          <tr>
+            <td>grid_gutters</td>
+            <td>Set different gutters array</td>
+            <td>Key - any string, value - px</td>
+          </tr>
+          <tr>
+            <td>viewport-grid-sizes</td>
+            <td>Set grid sizes for different viewports</td>
+            <td>Keys - reserved (do not change them), value - px or '100%'</td>
+          </tr>
+          <tr>
+            <td>grid-fluid-max-width</td>
+            <td>Set maximum with of fluid grid</td>
+            <td>px</td>
+          </tr>
+        </table>
+        </div>
+        <!-- *********************************************** 
+        END GRID -->
+
+      </div>
+      <!-- *********************************************** 
+      END CONTENT -->
+
+    </div>
+    <!-- *********************************************** 
+    END WRAPPER -->
+
+    <!-- SCRIPTS
+    *********************************************** -->
+
+    <!-- Docs scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.singlePageNav.js"></script>
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Framework scripts -->
+    <script src="../js/framework.js"></script>
+  </body>
+</html>
