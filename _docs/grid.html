@@ -382,6 +382,77 @@
             <div class="md_col-4"><div class="docs_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
             <div class="md_col-4"><div class="docs_block">The columns indented from another in vertical mode with 6 units (unit = 4px)</div></div>
           </div>
+          <h2 id="anchor_horizontal-alignment">Horizontal alignment</h2>
+          <p>Columns in row can be centered with class <strong>.row-centered</strong> and justified with class <strong>.row-justified</strong>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row row-centered">
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+&lt;/div>
+&lt;div class="row row-justified">
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+  &lt;div class="col-3">&lt;div class="docs_block">.col-3&lt;/div>&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row row-centered docs_just-text">
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+          </div>
+          <div class="row row-justified docs_just-text">
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+            <div class="col-3"><div class="docs_block">.col-3</div></div>
+          </div>
+          <h2 id="anchor_vertical-alignment">Vertical alignment</h2>
+          <p>Columns in row can be centered on a vertical with class <strong>.row-valign-middle</strong>, sticked to top and bottom with classes <strong>.row-valign-top</strong> and <strong>.row-valign-bottom</strong> and stretched to the bottom of row with class <strong>.row-valign-stretch</strong>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row row-valign-middle">
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+&lt;/div>
+&lt;div class="row row-valign-top">
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+&lt;/div>
+&lt;div class="row row-valign-bottom">
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+&lt;/div>
+&lt;div class="row row-valign-stretch">
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+  &lt;div class="col-4">...&lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row row-valign-middle">
+            <div class="col-4">Valign is really easy.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid.</div>
+          </div>
+          <div class="row row-valign-top">
+            <div class="col-4">Valign is really easy.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid.</div>
+          </div>
+          <div class="row row-valign-bottom">
+            <div class="col-4">Valign is really easy.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid.</div>
+          </div>
+          <div class="row row-valign-stretch">
+            <div class="col-4">Valign is really easy.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at. Valign is really easy, if use the grid you looking at.</div>
+            <div class="col-4">Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid. Valign is really easy, if use the grid you looking at. Try it in your projects and feel of the power of the grid.</div>
+          </div>
+          <div class="docs_note">Vertical stretching works only in modern browsers according to <a href="http://caniuse.com/#feat=flexbox" target="_blank">actual flexbox support.</a><br> Other alignment features are fallbacked with display: inline-block property.</div>
           <h2 id="anchor_custom-class">Custom class for a column or a row</h2>
           <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure block. It can be reached simply with SASS directive <strong>@extend</strong>. Just extend the grid classes you need.</p>
           <p class="docs_subheading"><strong>CSS</strong></p>

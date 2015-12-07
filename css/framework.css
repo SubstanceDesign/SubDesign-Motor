@@ -1067,6 +1067,112 @@
   clear: both;
 }
 
+/* Rows alignment */
+.row-valign-top,
+.row-valign-bottom,
+.row-valign-middle,
+.row-valign-stretch,
+.row-centered,
+.row-justified {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.row-valign-top > [class*='col-'],
+.row-valign-bottom > [class*='col-'],
+.row-valign-middle > [class*='col-'],
+.row-valign-stretch > [class*='col-'],
+.row-centered > [class*='col-'],
+.row-justified > [class*='col-'] {
+  display: inline-block;
+  vertical-align: top;
+  float: none;
+}
+.row-valign-top > [class*='col-'] + [class*='col-'],
+.row-valign-bottom > [class*='col-'] + [class*='col-'],
+.row-valign-middle > [class*='col-'] + [class*='col-'],
+.row-valign-stretch > [class*='col-'] + [class*='col-'],
+.row-centered > [class*='col-'] + [class*='col-'],
+.row-justified > [class*='col-'] + [class*='col-'] {
+  margin-left: -4px;
+}
+.row-valign-top:before, .row-valign-top:after,
+.row-valign-bottom:before,
+.row-valign-bottom:after,
+.row-valign-middle:before,
+.row-valign-middle:after,
+.row-valign-stretch:before,
+.row-valign-stretch:after,
+.row-centered:before,
+.row-centered:after,
+.row-justified:before,
+.row-justified:after {
+  display: none;
+}
+
+.row-valign-top {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+.row-valign-top > [class*='col-'] {
+  vertical-align: top;
+}
+
+.row-valign-bottom {
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+.row-valign-bottom > [class*='col-'] {
+  vertical-align: bottom;
+}
+
+.row-valign-middle {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.row-valign-middle > [class*='col-'] {
+  vertical-align: middle;
+}
+
+.row-valign-stretch {
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.row-centered {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.row-justified {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: justify;
+  line-height: 0;
+}
+.row-justified:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
 /* Grid cols
 ***********************************************/
 /* common cols settings */

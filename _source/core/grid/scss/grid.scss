@@ -281,6 +281,76 @@ $all-cols-selector: get-cols-selector();
   clear: both;
 }
 
+/* Rows alignment */
+.row-valign-top,
+.row-valign-bottom,
+.row-valign-middle,
+.row-valign-stretch,
+.row-centered,
+.row-justified {
+  display: flex;
+  flex-wrap: wrap;
+
+  > [class *= 'col-'] {
+    display: inline-block;
+    vertical-align: top;
+    float: none;
+  }
+
+  > [class *= 'col-'] + [class *= 'col-'] {
+    margin-left: -4px;
+  }
+
+  &:before, &:after {
+    display: none;
+  }
+}
+
+.row-valign-top {
+  align-items: flex-start;
+
+  > [class *= 'col-'] {
+    vertical-align: top;
+  }
+}
+
+.row-valign-bottom {
+  align-items: flex-end;
+
+  > [class *= 'col-'] {
+    vertical-align: bottom;
+  }
+}
+
+.row-valign-middle {
+  align-items: center;
+
+  > [class *= 'col-'] {
+    vertical-align: middle;
+  }
+}
+
+.row-valign-stretch {
+  align-items: stretch;
+}
+
+.row-centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.row-justified {
+  justify-content: space-between;
+  text-align: justify;
+  line-height: 0;
+
+  &:after {
+    content:'';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
 /* Grid cols
 ***********************************************/
 
