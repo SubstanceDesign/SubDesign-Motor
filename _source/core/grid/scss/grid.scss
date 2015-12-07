@@ -209,12 +209,12 @@ $all-cols-selector: get-cols-selector();
   }
 
   // different gutter rows
-  @if $grid_feature_row-different-gutters == true {
+  @if $grid_feature_different-gutters == true {
     @include create-guttered-row($breakpoint);
   }
 
   // vertical gutter rows
-  @if $grid_feature_row-vertical-gutters == true {
+  @if $grid_feature_vertical-gutters == true {
     @include create-vertical-guttered-row($breakpoint);
   }
 }
@@ -281,73 +281,98 @@ $all-cols-selector: get-cols-selector();
   clear: both;
 }
 
-/* Rows alignment */
-.row-valign-top,
-.row-valign-bottom,
-.row-valign-middle,
-.row-valign-stretch,
-.row-centered,
-.row-justified {
-  display: flex;
-  flex-wrap: wrap;
+/* Columns alignment in rows */
 
-  > [class *= 'col-'] {
-    display: inline-block;
-    vertical-align: top;
-    float: none;
+@if $grid_feature_horizontal-alignment == true {
+
+  .row-centered,
+  .row-justified {
+    display: flex;
+    flex-wrap: wrap;
+
+    > [class *= 'col-'] {
+      display: inline-block;
+      vertical-align: top;
+      float: none;
+    }
+
+    > [class *= 'col-'] + [class *= 'col-'] {
+      margin-left: -4px;
+    }
+
+    &:before, &:after {
+      display: none;
+    }
   }
 
-  > [class *= 'col-'] + [class *= 'col-'] {
-    margin-left: -4px;
+  .row-centered {
+    justify-content: center;
+    text-align: center;
   }
 
-  &:before, &:after {
-    display: none;
-  }
-}
+  .row-justified {
+    justify-content: space-between;
+    text-align: justify;
+    line-height: 0;
 
-.row-valign-top {
-  align-items: flex-start;
-
-  > [class *= 'col-'] {
-    vertical-align: top;
-  }
-}
-
-.row-valign-bottom {
-  align-items: flex-end;
-
-  > [class *= 'col-'] {
-    vertical-align: bottom;
-  }
-}
-
-.row-valign-middle {
-  align-items: center;
-
-  > [class *= 'col-'] {
-    vertical-align: middle;
+    &:after {
+      content:'';
+      display: inline-block;
+      width: 100%;
+    }
   }
 }
 
-.row-valign-stretch {
-  align-items: stretch;
-}
+@if $grid_feature_vertical-alignment == true {
+    
+  .row-valign-top,
+  .row-valign-bottom,
+  .row-valign-middle,
+  .row-valign-stretch {
+    display: flex;
+    flex-wrap: wrap;
 
-.row-centered {
-  justify-content: center;
-  text-align: center;
-}
+    > [class *= 'col-'] {
+      display: inline-block;
+      vertical-align: top;
+      float: none;
+    }
 
-.row-justified {
-  justify-content: space-between;
-  text-align: justify;
-  line-height: 0;
+    > [class *= 'col-'] + [class *= 'col-'] {
+      margin-left: -4px;
+    }
 
-  &:after {
-    content:'';
-    display: inline-block;
-    width: 100%;
+    &:before, &:after {
+      display: none;
+    }
+  }
+
+  .row-valign-top {
+    align-items: flex-start;
+
+    > [class *= 'col-'] {
+      vertical-align: top;
+    }
+  }
+
+  .row-valign-bottom {
+    align-items: flex-end;
+
+    > [class *= 'col-'] {
+      vertical-align: bottom;
+    }
+  }
+
+  .row-valign-middle {
+    align-items: center;
+
+    > [class *= 'col-'] {
+      vertical-align: middle;
+    }
+  }
+
+  .row-valign-stretch {
+    align-items: stretch;
   }
 }
 

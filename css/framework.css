@@ -1067,13 +1067,59 @@
   clear: both;
 }
 
-/* Rows alignment */
+/* Columns alignment in rows */
+.row-centered,
+.row-justified {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.row-centered > [class*='col-'],
+.row-justified > [class*='col-'] {
+  display: inline-block;
+  vertical-align: top;
+  float: none;
+}
+.row-centered > [class*='col-'] + [class*='col-'],
+.row-justified > [class*='col-'] + [class*='col-'] {
+  margin-left: -4px;
+}
+.row-centered:before, .row-centered:after,
+.row-justified:before,
+.row-justified:after {
+  display: none;
+}
+
+.row-centered {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.row-justified {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: justify;
+  line-height: 0;
+}
+.row-justified:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+
 .row-valign-top,
 .row-valign-bottom,
 .row-valign-middle,
-.row-valign-stretch,
-.row-centered,
-.row-justified {
+.row-valign-stretch {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1085,9 +1131,7 @@
 .row-valign-top > [class*='col-'],
 .row-valign-bottom > [class*='col-'],
 .row-valign-middle > [class*='col-'],
-.row-valign-stretch > [class*='col-'],
-.row-centered > [class*='col-'],
-.row-justified > [class*='col-'] {
+.row-valign-stretch > [class*='col-'] {
   display: inline-block;
   vertical-align: top;
   float: none;
@@ -1095,9 +1139,7 @@
 .row-valign-top > [class*='col-'] + [class*='col-'],
 .row-valign-bottom > [class*='col-'] + [class*='col-'],
 .row-valign-middle > [class*='col-'] + [class*='col-'],
-.row-valign-stretch > [class*='col-'] + [class*='col-'],
-.row-centered > [class*='col-'] + [class*='col-'],
-.row-justified > [class*='col-'] + [class*='col-'] {
+.row-valign-stretch > [class*='col-'] + [class*='col-'] {
   margin-left: -4px;
 }
 .row-valign-top:before, .row-valign-top:after,
@@ -1106,11 +1148,7 @@
 .row-valign-middle:before,
 .row-valign-middle:after,
 .row-valign-stretch:before,
-.row-valign-stretch:after,
-.row-centered:before,
-.row-centered:after,
-.row-justified:before,
-.row-justified:after {
+.row-valign-stretch:after {
   display: none;
 }
 
@@ -1149,28 +1187,6 @@
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-}
-
-.row-centered {
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
-
-.row-justified {
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: justify;
-  line-height: 0;
-}
-.row-justified:after {
-  content: '';
-  display: inline-block;
-  width: 100%;
 }
 
 /* Grid cols
