@@ -8,390 +8,179 @@
 
 //  Mixins
 /////////////////////////////////////////////////
+@import 'grid-mixins';
 
-// Cteate grid
-@mixin create-grid($breakpoint, $grid_width) {
+/* Grid wrapper
+***********************************************/
+.grid, 
+.grid-fluid {
+  @include create-grid();
+}
+
+@if $grid-fluid-max-width != 100% and $grid-fluid-max-width != '100%' {
+  /* Maximum width for fluid grid wrapper */
+  .grid-fluid {
+    max-width: $grid-fluid-max-width;
+  }
+}
+
+/* Responsive styles for grid wrapper */
+@each $breakpoint, $grid-width in $viewport-grid-sizes {
 
   @if $grid_width != '100%' {
-    @media (min-width: #{map-get($viewport-breakepoints, $breakpoint)}) {
-      .grid { 
+    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+      .grid {
         width: $grid_width; 
       }
     }
   }
 }
 
-// Get columns selector
-@function get-cols-selector($for-breakpoint: '') {
-
-  $all-cols-selector: '';
-
-  @if $for-breakpoint == '' {
-    @each $breakpoint, $width in $viewport-breakepoints {
-      $cols: $grid_cols;
-      @while $cols > 0 {
-        @if $breakpoint == 'mc' and $cols == 12 {
-          $all-cols-selector: $all-cols-selector + '.col-#{$cols}';
-        } @else if $breakpoint == 'mc' {
-          $all-cols-selector: $all-cols-selector + ', .col-#{$cols}';
-        } @else {
-          $all-cols-selector: $all-cols-selector + ', .#{$breakpoint}_col-#{$cols}';
-        }
-        $cols: $cols - 1;
-      }
-    }
-  } @else {
-    $cols: $grid_cols;
-    @while $cols > 0 {
-      @if $for-breakpoint == 'mc' and $cols == 12 {
-        $all-cols-selector: $all-cols-selector + '.col-#{$cols}';
-      } @else if $for-breakpoint == 'mc' {
-        $all-cols-selector: $all-cols-selector + ', .col-#{$cols}';
-      } @else if $cols == 12 {
-        $all-cols-selector: $all-cols-selector + '.#{$for-breakpoint}_col-#{$cols}';
-      } @else {
-        $all-cols-selector: $all-cols-selector + ', .#{$for-breakpoint}_col-#{$cols}';
-      }
-      $cols: $cols - 1;
-    }
-  }
-
-  @return $all-cols-selector;
+/* Grid rows
+***********************************************/
+.row {
+  @include create-row();
 }
 
-// Create all cols selector variable
-$all-cols-selector: get-cols-selector();
+/* Grid row features
+***********************************************/
 
-// Create col
-@mixin create-col($breakpoint) {
-  $breakpoint-prefix: '';
-  @if $breakpoint != 'mc' {
-    $breakpoint-prefix: $breakpoint + '_';
-  }
-
-  $breakpoint-cols-selector: get-cols-selector($breakpoint);
-  #{$breakpoint-cols-selector} {
-    float: left;
-  }
-  
-  // create column set
-  $cols: $grid_cols;
-  @while $cols > 0 {
-    // create size in cols
-    .#{$breakpoint-prefix}col-#{$cols} { 
-      width: percentage($cols / $grid_cols); 
-    }
-  
-    // create offset in cols
-    @if $grid_feature_offset == true {
-      .#{$breakpoint-prefix}col-offset-#{$cols} {
-        margin-left: percentage($cols / $grid_cols);
-      }
-    }
-
-    // push column to the left or to the right
-    @if $grid_feature_columns-order == true {
-      .#{$breakpoint-prefix}col-right-#{$cols} {
-        left: percentage($cols / $grid_cols);
-      }
-      .#{$breakpoint-prefix}col-left-#{$cols} {
-        right: percentage($cols / $grid_cols);
-      }
-    }
-
-    $cols: $cols - 1;
-  }
-
-  // reset order
-  @if $grid_feature_columns-order == true {
-    .#{$breakpoint-prefix}col-reset-order {
-      right: auto;
-      left: auto;
-    }
+// collapse row feature
+@if $grid_feature_row-collapsed == true {
+  /* Collapse row feature */
+  .row-collapse {
+    @include create-row-collapse();
   }
 }
 
-//  Create cols for breakpoint
-@mixin create-cols-for-breakpoint($breakpoint, $breakpoint_width) {
-
-  // no media for the smallest devices
-  @if $breakpoint == 'mc' {
-    @include create-col($breakpoint);
-  } @else {
-    @if $grid_feature_responsive == true {
-      @media (min-width: $breakpoint_width) {
-        @include create-col($breakpoint);
-      }
-    }
-  }
-}
-
-// Create different gutter rows for breakpoint
-@mixin create-guttered-row($breakpoint) {
-  $breakpoint-prefix: '';
-  @if $breakpoint != 'mc' {
-    $breakpoint-prefix: $breakpoint + '_';
-  }
-
+// different gutter row feature
+@if $grid_feature_different-gutters == true {
+  /* Different gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
-    .#{$breakpoint-prefix}row-gutter-#{$gutter} { 
-      margin-left: 0;
-      margin-right: 0;
-
-      > [class *= 'col-'] {
-        &:first-child {
-          padding-left: 0;
-          padding-right: $gutter-width * 2/3;
-        }
-
-        & + [class *= 'col-'] {
-          padding-left: $gutter-width * 1/3;
-          padding-right: $gutter-width * 1/3;
-        }
-
-        &:last-child {
-          padding-right: 0;
-          padding-left: $gutter-width * 2/3;
-        }
-      }
+    .row-gutter-#{$gutter} {
+      @include create-row-gutter($gutter-width);
     }
   }
 
   // reset gutter
-  .#{$breakpoint-prefix}row-reset-gutter {
-    margin-right: -$grid_gutter / 2; 
-    margin-left: -$grid_gutter / 2;
-
-    > [class *= 'col-']:first-child,
-    > [class *= 'col-'] + [class *= 'col-'],
-    > [class *= 'col-']:last-child {
-      padding-right: $grid_gutter / 2; 
-      padding-left: $grid_gutter / 2;
-    }
+  .row-gutter-reset {
+    @include create-row-gutter-reset();
   }
 }
 
-// Create vertical gutter rows for breakpoint
-@mixin create-vertical-guttered-row($breakpoint) {
-  $breakpoint-prefix: '';
-  @if $breakpoint != 'mc' {
-    $breakpoint-prefix: $breakpoint + '_';
-  }
-
+// vertical gutter row feature
+@if $grid_feature_vertical-gutters == true {
+  /* Vertical gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
-    .#{$breakpoint-prefix}row-vertical-gutter-#{$gutter} { 
-
-      > [class *= 'col-'] + [class *= 'col-'] {
-        margin-top: $gutter-width;
-      }
+    .row-vertical-gutter-#{$gutter} { 
+      @include create-row-vertical-gutter($gutter-width);
     }
   }
 }
 
-// Add row features
-@mixin add-row-features($breakpoint) {
-  $breakpoint-prefix: '';
-  @if $breakpoint != 'mc' {
-    $breakpoint-prefix: $breakpoint + '_';
-  }
-
-  // create collapse rows
-  @if $grid_feature_row-collapsed == true {
-    .#{$breakpoint-prefix}row-collapse {
-      margin-left: 0;
-      margin-right: 0;
-
-      > [class *= 'col-'] {
-        padding-left: 0;
-        padding-right: 0;
-      } 
-    }
-  }
-
-  // different gutter rows
-  @if $grid_feature_different-gutters == true {
-    @include create-guttered-row($breakpoint);
-  }
-
-  // vertical gutter rows
-  @if $grid_feature_vertical-gutters == true {
-    @include create-vertical-guttered-row($breakpoint);
-  }
-}
-
-/* Grid
-***********************************************/
-.grid, 
-.grid-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  box-sizing: border-box;
-  padding-right: $grid_gutter / 2; 
-  padding-left: $grid_gutter / 2;
-}
-
-@if $grid-fluid-max-width != 100% and $grid-fluid-max-width != '100%' {
-  .grid-fluid {
-    max-width: $grid-fluid-max-width;
-  }
-}
-
-@each $breakpoint, $grid-width in $viewport-grid-sizes {
-  @include create-grid($breakpoint, $grid-width);
-}
-
-/* Grid rows
-***********************************************/
-.row {
-  margin-right: -$grid_gutter / 2; 
-  margin-left: -$grid_gutter / 2;
-}
-
-@each $breakpoint, $width in $viewport-breakepoints {
-  // no media for the smallest devices
-  @if $breakpoint == 'mc' {
-
-    // add row features
-    @include add-row-features($breakpoint);
-
-  } @else {
-    @if $grid_feature_responsive == true {
-      @media (min-width: $width) {
-
-        // add row features
-        @include add-row-features($breakpoint);
-      }
-    }
-  }
-}
-
-.grid:before, 
-.grid:after, 
-.grid-fluid:before, 
-.grid-fluid:after, 
-.row:before, 
-.row:after {
-  content: '';
-  display: table;
-}
- 
-.grid:after, 
-.grid-fluid:after, 
-.row:after {
-  clear: both;
-}
-
-/* Columns alignment in rows */
-
+/* Horizontal columns alignment in rows */
 @if $grid_feature_horizontal-alignment == true {
 
   .row-centered,
   .row-justified {
-    display: flex;
-    flex-wrap: wrap;
-
-    > [class *= 'col-'] {
-      display: inline-block;
-      vertical-align: top;
-      float: none;
-    }
-
-    > [class *= 'col-'] + [class *= 'col-'] {
-      margin-left: -4px;
-    }
-
-    &:before, &:after {
-      display: none;
-    }
+    @include create-row-flexbox();
   }
 
   .row-centered {
-    justify-content: center;
-    text-align: center;
+    @include create-row-centered(false);
   }
 
   .row-justified {
-    justify-content: space-between;
-    text-align: justify;
-    line-height: 0;
-
-    &:after {
-      content:'';
-      display: inline-block;
-      width: 100%;
-    }
+    @include create-row-justified(false);
   }
 }
 
+/* Vertical columns alignment in rows */
 @if $grid_feature_vertical-alignment == true {
-    
   .row-valign-top,
   .row-valign-bottom,
   .row-valign-middle,
   .row-valign-stretch {
-    display: flex;
-    flex-wrap: wrap;
-
-    > [class *= 'col-'] {
-      display: inline-block;
-      vertical-align: top;
-      float: none;
-    }
-
-    > [class *= 'col-'] + [class *= 'col-'] {
-      margin-left: -4px;
-    }
-
-    &:before, &:after {
-      display: none;
-    }
+    @include create-row-flexbox();
   }
-
+   
   .row-valign-top {
-    align-items: flex-start;
-
-    > [class *= 'col-'] {
-      vertical-align: top;
-    }
+    @include create-row-valign-top(false);
   }
 
   .row-valign-bottom {
-    align-items: flex-end;
-
-    > [class *= 'col-'] {
-      vertical-align: bottom;
-    }
+    @include create-row-valign-bottom(false);
   }
 
   .row-valign-middle {
-    align-items: center;
-
-    > [class *= 'col-'] {
-      vertical-align: middle;
-    }
+    @include create-row-valign-middle(false);
   }
 
   .row-valign-stretch {
-    align-items: stretch;
+    @include create-row-valign-stretch(false);
   }
 }
 
-/* Grid cols
+/* Responsive grid row features
+***********************************************/
+@if $grid_feature_responsive == true {
+  @each $breakpoint, $breakpoint-width in $grid_viewport-breakpoints {
+    // exclude the smallest devices
+    @if $breakpoint != 'mc' {
+      $breakpoint-prefix: $breakpoint + '_';
+      @media (min-width: $breakpoint-width) {
+
+        // collapse row feature
+        @if $grid_feature_row-collapsed == true {
+          .#{$breakpoint-prefix}row-collapse {
+            @include create-row-collapse();
+          }
+        }
+
+        // different gutter row feature
+        @if $grid_feature_different-gutters == true {
+          @each $gutter, $gutter-width in $grid_gutters {
+            .#{$breakpoint-prefix}row-gutter-#{$gutter} {
+              @include create-row-gutter($gutter-width);
+            }
+          }
+
+          // reset gutter
+          .#{$breakpoint-prefix}row-gutter-reset {
+            @include create-row-gutter-reset();
+          }
+        }
+
+        // vertical gutter row feature
+        @if $grid_feature_vertical-gutters == true {
+          @each $gutter, $gutter-width in $grid_gutters {
+            .#{$breakpoint-prefix}row-vertical-gutter-#{$gutter} { 
+              @include create-row-vertical-gutter($gutter-width);
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+/* Grid columns
 ***********************************************/
 
-/* common cols settings */
+/* common column settings */
 #{$all-cols-selector} {
-  position: relative;
-  padding-right: $grid_gutter / 2; 
-  padding-left: $grid_gutter / 2;
-  box-sizing: border-box;
+  @include add-col-styles();
 }
+
+/* Grid column features
+***********************************************/
 
 /* cols' width for all screen sizes */
 @if $grid_feature_responsive == true {
-  @each $breakpoint, $width in $viewport-breakepoints {
-    @include create-cols-for-breakpoint($breakpoint, $width);
+  @each $breakpoint, $breakpoint-width in $grid_viewport-breakpoints {
+    @include create-cols-for-breakpoint($breakpoint, $breakpoint-width);
   }
 } @else {
-  @include create-cols-for-breakpoint('mc', map-get($viewport-breakepoints, 'mc'));
+  @include create-cols-for-breakpoint('mc', map-get($grid_viewport-breakpoints, 'mc'));
 }

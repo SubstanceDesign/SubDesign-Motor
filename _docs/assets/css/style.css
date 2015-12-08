@@ -423,6 +423,13 @@ pre.prettyprint {
   overflow: auto;
 }
 
+pre.prettyprint.prettyprint-plain {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
 /* Notes */
 .docs_note {
   padding: 14px 20px 14px;
