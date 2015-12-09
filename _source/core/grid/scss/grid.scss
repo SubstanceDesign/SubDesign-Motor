@@ -13,27 +13,10 @@
 /* Grid wrapper
 ***********************************************/
 .grid, 
-.grid-fluid {
+.grid-fluid,
+.content,
+.content-fluid {
   @include create-grid();
-}
-
-@if $grid-fluid-max-width != 100% and $grid-fluid-max-width != '100%' {
-  /* Maximum width for fluid grid wrapper */
-  .grid-fluid {
-    max-width: $grid-fluid-max-width;
-  }
-}
-
-/* Responsive styles for grid wrapper */
-@each $breakpoint, $grid-width in $viewport-grid-sizes {
-
-  @if $grid_width != '100%' {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
-      .grid {
-        width: $grid_width; 
-      }
-    }
-  }
 }
 
 /* Grid rows

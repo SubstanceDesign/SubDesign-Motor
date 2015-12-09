@@ -8,3 +8,31 @@
 
 //  Mixins
 /////////////////////////////////////////////////
+@import 'layout-mixins';
+
+/* Page content
+***********************************************/
+.content, 
+.content-fluid, {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@if $content-fluid-max-width != 100% and $content-fluid-max-width != '100%' {
+  /* Maximum width for fluid content */
+  .content-fluid {
+    max-width: $content-fluid-max-width;
+  }
+}
+
+/* Responsive styles for content */
+@each $breakpoint, $content-width in $viewport-content-sizes {
+
+  @if $content-width != '100%' {
+    @media (min-width: #{map-get($layout_viewport-breakpoints, $breakpoint)}) {
+      .content {
+        width: $content-width; 
+      }
+    }
+  }
+}

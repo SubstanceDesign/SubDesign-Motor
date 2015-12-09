@@ -1,12 +1,49 @@
 /*********************************************** 
+    Layout
+***********************************************/
+/* Page content
+***********************************************/
+.content,
+.content-fluid {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Maximum width for fluid content */
+.content-fluid {
+  max-width: 1280px;
+}
+
+/* Responsive styles for content */
+@media (min-width: 768px) {
+  .content {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .content {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .content {
+    width: 1120px;
+  }
+}
+@media (min-width: 1440px) {
+  .content {
+    width: 1280px;
+  }
+}
+/*********************************************** 
     Grid system
 ***********************************************/
 /* Grid wrapper
 ***********************************************/
 .grid,
-.grid-fluid {
-  margin-right: auto;
-  margin-left: auto;
+.grid-fluid,
+.content,
+.content-fluid {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding-right: 12px;
@@ -14,41 +51,21 @@
 }
 .grid:before, .grid:after,
 .grid-fluid:before,
-.grid-fluid:after {
+.grid-fluid:after,
+.content:before,
+.content:after,
+.content-fluid:before,
+.content-fluid:after {
   content: '';
   display: table;
 }
 .grid:after,
-.grid-fluid:after {
+.grid-fluid:after,
+.content:after,
+.content-fluid:after {
   clear: both;
 }
 
-/* Maximum width for fluid grid wrapper */
-.grid-fluid {
-  max-width: 1280px;
-}
-
-/* Responsive styles for grid wrapper */
-@media (min-width: 768px) {
-  .grid {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .grid {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .grid {
-    width: 1120px;
-  }
-}
-@media (min-width: 1440px) {
-  .grid {
-    width: 1280px;
-  }
-}
 /* Grid rows
 ***********************************************/
 .row {
