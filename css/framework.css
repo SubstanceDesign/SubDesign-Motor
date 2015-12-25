@@ -119,6 +119,32 @@ a {
   background-color: transparent;
 }
 
+/* Transition for user action elements */
+a,
+input,
+button,
+select,
+textarea {
+  -webkit-transition: .3s;
+          transition: .3s;
+}
+a:hover, a:active, a:focus,
+input:hover,
+input:active,
+input:focus,
+button:hover,
+button:active,
+button:focus,
+select:hover,
+select:active,
+select:focus,
+textarea:hover,
+textarea:active,
+textarea:focus {
+  -webkit-transition: .1s;
+          transition: .1s;
+}
+
 /**
  * - Prevent modern browsers from displaying 'audio' without controls
  * - Remove excess height in iOS 5 devices
@@ -189,7 +215,8 @@ q:after {
  * Remove ugly outline from focused elements, 
  * don't remember to add your own focus styles 
  */
-:focus {
+:active:focus,
+:hover:focus {
   outline: 0;
 }
 
@@ -250,7 +277,8 @@ select {
 
 /** 
  * - Correct inability to style clickable 'input' types in iOS
- * - Set pointer cursor appearance for buttons 
+ * - Set pointer cursor appearance for buttons
+ * - Disable user selection of text 
  */
 button,
 html input[type="button"],
@@ -258,6 +286,10 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 /* Default cursor for disabled elements */
@@ -2838,4 +2870,1461 @@ th {
     right: auto;
     left: auto;
   }
+}
+/*********************************************** 
+    Buttons
+***********************************************/
+/* Flat buttons
+***********************************************/
+/* Default flat buttons */
+.button {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #FF981A;
+  color: #fff;
+  border: 1px solid #e67f00;
+}
+.button:focus {
+  outline: 0;
+}
+.button.disabled, .button[disabled], fieldset[disabled] .button {
+  cursor: not-allowed;
+}
+.button:hover, .button:focus {
+  background-color: #ffb23e;
+  color: #fff;
+}
+.button:active, .button.active {
+  background-color: #e67f00;
+}
+.button.disabled, .button.disabled:hover, .button.disabled:active, .button.disabled:focus, .button[disabled], .button[disabled]:hover, .button[disabled]:active, .button[disabled]:focus {
+  background-color: #FF981A;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-neutral {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #fff;
+  color: #0d0d0d;
+  border: 1px solid #ccc;
+}
+.button-neutral:focus {
+  outline: 0;
+}
+.button-neutral.disabled, .button-neutral[disabled], fieldset[disabled] .button-neutral {
+  cursor: not-allowed;
+}
+.button-neutral:hover, .button-neutral:focus {
+  background-color: #f2f2f2;
+  color: #0d0d0d;
+}
+.button-neutral:active, .button-neutral.active {
+  background-color: #e6e6e6;
+}
+.button-neutral.disabled, .button-neutral.disabled:hover, .button-neutral.disabled:active, .button-neutral.disabled:focus, .button-neutral[disabled], .button-neutral[disabled]:hover, .button-neutral[disabled]:active, .button-neutral[disabled]:focus {
+  background-color: #fff;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-secondary {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #0d0d0d;
+  color: #fff;
+  border: 1px solid black;
+}
+.button-secondary:focus {
+  outline: 0;
+}
+.button-secondary.disabled, .button-secondary[disabled], fieldset[disabled] .button-secondary {
+  cursor: not-allowed;
+}
+.button-secondary:hover, .button-secondary:focus {
+  background-color: #404040;
+  color: #fff;
+}
+.button-secondary:active, .button-secondary.active {
+  background-color: black;
+}
+.button-secondary.disabled, .button-secondary.disabled:hover, .button-secondary.disabled:active, .button-secondary.disabled:focus, .button-secondary[disabled], .button-secondary[disabled]:hover, .button-secondary[disabled]:active, .button-secondary[disabled]:focus {
+  background-color: #0d0d0d;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-info {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #6EB7C2;
+  color: #fff;
+  border: 1px solid #4ba5b2;
+}
+.button-info:focus {
+  outline: 0;
+}
+.button-info.disabled, .button-info[disabled], fieldset[disabled] .button-info {
+  cursor: not-allowed;
+}
+.button-info:hover, .button-info:focus {
+  background-color: #87c0cd;
+  color: #fff;
+}
+.button-info:active, .button-info.active {
+  background-color: #4ba5b2;
+}
+.button-info.disabled, .button-info.disabled:hover, .button-info.disabled:active, .button-info.disabled:focus, .button-info[disabled], .button-info[disabled]:hover, .button-info[disabled]:active, .button-info[disabled]:focus {
+  background-color: #6EB7C2;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-success {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #3DCC80;
+  color: #fff;
+  border: 1px solid #2da967;
+}
+.button-success:focus {
+  outline: 0;
+}
+.button-success.disabled, .button-success[disabled], fieldset[disabled] .button-success {
+  cursor: not-allowed;
+}
+.button-success:hover, .button-success:focus {
+  background-color: #59d399;
+  color: #fff;
+}
+.button-success:active, .button-success.active {
+  background-color: #2da967;
+}
+.button-success.disabled, .button-success.disabled:hover, .button-success.disabled:active, .button-success.disabled:focus, .button-success[disabled], .button-success[disabled]:hover, .button-success[disabled]:active, .button-success[disabled]:focus {
+  background-color: #3DCC80;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-warning {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #F0D524;
+  color: #fff;
+  border: 1px solid #d3b90e;
+}
+.button-warning:focus {
+  outline: 0;
+}
+.button-warning.disabled, .button-warning[disabled], fieldset[disabled] .button-warning {
+  cursor: not-allowed;
+}
+.button-warning:hover, .button-warning:focus {
+  background-color: #f2e445;
+  color: #fff;
+}
+.button-warning:active, .button-warning.active {
+  background-color: #d3b90e;
+}
+.button-warning.disabled, .button-warning.disabled:hover, .button-warning.disabled:active, .button-warning.disabled:focus, .button-warning[disabled], .button-warning[disabled]:hover, .button-warning[disabled]:active, .button-warning[disabled]:focus {
+  background-color: #F0D524;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-danger {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  border-radius: 0;
+  background-color: #E21F1E;
+  color: #fff;
+  border: 1px solid #b61817;
+}
+.button-danger:focus {
+  outline: 0;
+}
+.button-danger.disabled, .button-danger[disabled], fieldset[disabled] .button-danger {
+  cursor: not-allowed;
+}
+.button-danger:hover, .button-danger:focus {
+  background-color: #e6473e;
+  color: #fff;
+}
+.button-danger:active, .button-danger.active {
+  background-color: #b61817;
+}
+.button-danger.disabled, .button-danger.disabled:hover, .button-danger.disabled:active, .button-danger.disabled:focus, .button-danger[disabled], .button-danger[disabled]:hover, .button-danger[disabled]:active, .button-danger[disabled]:focus {
+  background-color: #E21F1E;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+/* Outline buttons
+***********************************************/
+/* Default outline buttons */
+.button-outline {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #FF981A;
+}
+.button-outline:focus {
+  outline: 0;
+}
+.button-outline.disabled, .button-outline[disabled], fieldset[disabled] .button-outline {
+  cursor: not-allowed;
+}
+.button-outline:hover, .button-outline:focus {
+  color: #fff;
+  background: #FF981A;
+}
+.button-outline:active, .button-outline.active {
+  background: #e67f00;
+  color: #fff;
+}
+.button-outline.disabled, .button-outline.disabled:hover, .button-outline.disabled:active, .button-outline.disabled:focus, .button-outline[disabled], .button-outline[disabled]:hover, .button-outline[disabled]:active, .button-outline[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-neutral {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #ccc;
+}
+.button-outline-neutral:focus {
+  outline: 0;
+}
+.button-outline-neutral.disabled, .button-outline-neutral[disabled], fieldset[disabled] .button-outline-neutral {
+  cursor: not-allowed;
+}
+.button-outline-neutral:hover, .button-outline-neutral:focus {
+  color: #fff;
+  background: #ccc;
+}
+.button-outline-neutral:active, .button-outline-neutral.active {
+  background: #b3b3b3;
+  color: #fff;
+}
+.button-outline-neutral.disabled, .button-outline-neutral.disabled:hover, .button-outline-neutral.disabled:active, .button-outline-neutral.disabled:focus, .button-outline-neutral[disabled], .button-outline-neutral[disabled]:hover, .button-outline-neutral[disabled]:active, .button-outline-neutral[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-secondary {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #0d0d0d;
+}
+.button-outline-secondary:focus {
+  outline: 0;
+}
+.button-outline-secondary.disabled, .button-outline-secondary[disabled], fieldset[disabled] .button-outline-secondary {
+  cursor: not-allowed;
+}
+.button-outline-secondary:hover, .button-outline-secondary:focus {
+  color: #fff;
+  background: #0d0d0d;
+}
+.button-outline-secondary:active, .button-outline-secondary.active {
+  background: black;
+  color: #fff;
+}
+.button-outline-secondary.disabled, .button-outline-secondary.disabled:hover, .button-outline-secondary.disabled:active, .button-outline-secondary.disabled:focus, .button-outline-secondary[disabled], .button-outline-secondary[disabled]:hover, .button-outline-secondary[disabled]:active, .button-outline-secondary[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-info {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #6EB7C2;
+}
+.button-outline-info:focus {
+  outline: 0;
+}
+.button-outline-info.disabled, .button-outline-info[disabled], fieldset[disabled] .button-outline-info {
+  cursor: not-allowed;
+}
+.button-outline-info:hover, .button-outline-info:focus {
+  color: #fff;
+  background: #6EB7C2;
+}
+.button-outline-info:active, .button-outline-info.active {
+  background: #4ba5b2;
+  color: #fff;
+}
+.button-outline-info.disabled, .button-outline-info.disabled:hover, .button-outline-info.disabled:active, .button-outline-info.disabled:focus, .button-outline-info[disabled], .button-outline-info[disabled]:hover, .button-outline-info[disabled]:active, .button-outline-info[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-success {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #3DCC80;
+}
+.button-outline-success:focus {
+  outline: 0;
+}
+.button-outline-success.disabled, .button-outline-success[disabled], fieldset[disabled] .button-outline-success {
+  cursor: not-allowed;
+}
+.button-outline-success:hover, .button-outline-success:focus {
+  color: #fff;
+  background: #3DCC80;
+}
+.button-outline-success:active, .button-outline-success.active {
+  background: #2da967;
+  color: #fff;
+}
+.button-outline-success.disabled, .button-outline-success.disabled:hover, .button-outline-success.disabled:active, .button-outline-success.disabled:focus, .button-outline-success[disabled], .button-outline-success[disabled]:hover, .button-outline-success[disabled]:active, .button-outline-success[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-warning {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #F0D524;
+}
+.button-outline-warning:focus {
+  outline: 0;
+}
+.button-outline-warning.disabled, .button-outline-warning[disabled], fieldset[disabled] .button-outline-warning {
+  cursor: not-allowed;
+}
+.button-outline-warning:hover, .button-outline-warning:focus {
+  color: #fff;
+  background: #F0D524;
+}
+.button-outline-warning:active, .button-outline-warning.active {
+  background: #d3b90e;
+  color: #fff;
+}
+.button-outline-warning.disabled, .button-outline-warning.disabled:hover, .button-outline-warning.disabled:active, .button-outline-warning.disabled:focus, .button-outline-warning[disabled], .button-outline-warning[disabled]:hover, .button-outline-warning[disabled]:active, .button-outline-warning[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-outline-danger {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: transparent;
+  color: #0d0d0d;
+  border: 2px solid #E21F1E;
+}
+.button-outline-danger:focus {
+  outline: 0;
+}
+.button-outline-danger.disabled, .button-outline-danger[disabled], fieldset[disabled] .button-outline-danger {
+  cursor: not-allowed;
+}
+.button-outline-danger:hover, .button-outline-danger:focus {
+  color: #fff;
+  background: #E21F1E;
+}
+.button-outline-danger:active, .button-outline-danger.active {
+  background: #b61817;
+  color: #fff;
+}
+.button-outline-danger.disabled, .button-outline-danger.disabled:hover, .button-outline-danger.disabled:active, .button-outline-danger.disabled:focus, .button-outline-danger[disabled], .button-outline-danger[disabled]:hover, .button-outline-danger[disabled]:active, .button-outline-danger[disabled]:focus {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+/* Outline button size modifiers */
+[class*='button-outline'].button--xs {
+  padding: 0 8.4px;
+  height: 24px;
+  line-height: 20px;
+  font-size: 11px;
+  border-radius: 0;
+}
+[class*='button-outline'].button--sm {
+  padding: 0 11.2px;
+  height: 32px;
+  line-height: 28px;
+  font-size: 12px;
+  border-radius: 0;
+}
+[class*='button-outline'].button--lg {
+  padding: 0 16.8px;
+  height: 48px;
+  line-height: 44px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* 3D buttons
+***********************************************/
+/* 3d buttons */
+.button-3d {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #FF981A;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #e67f00, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #e67f00, 0px 3px 5px #AFAFAF;
+}
+.button-3d:focus {
+  outline: 0;
+}
+.button-3d.disabled, .button-3d[disabled], fieldset[disabled] .button-3d {
+  cursor: not-allowed;
+}
+.button-3d:hover, .button-3d:focus {
+  background-color: #ffb23e;
+  color: #fff;
+}
+.button-3d:active, .button-3d.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #e67f00, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #e67f00, 0px 1px 2px #AFAFAF;
+}
+.button-3d.disabled, .button-3d.disabled:hover, .button-3d.disabled:active, .button-3d.disabled:focus, .button-3d[disabled], .button-3d[disabled]:hover, .button-3d[disabled]:active, .button-3d[disabled]:focus {
+  top: -2px;
+  background-color: #FF981A;
+  -webkit-box-shadow: 0px 3px 0px #e67f00, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #e67f00, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-neutral {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  border-top: 1px solid #e6e6e6;
+  background-color: #fff;
+  color: #0d0d0d;
+  -webkit-box-shadow: 0px 3px 0px #e6e6e6, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #e6e6e6, 0px 3px 5px #AFAFAF;
+}
+.button-3d-neutral:focus {
+  outline: 0;
+}
+.button-3d-neutral.disabled, .button-3d-neutral[disabled], fieldset[disabled] .button-3d-neutral {
+  cursor: not-allowed;
+}
+.button-3d-neutral:hover, .button-3d-neutral:focus {
+  background-color: #f2f2f2;
+  color: #0d0d0d;
+}
+.button-3d-neutral:active, .button-3d-neutral.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #e6e6e6, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #e6e6e6, 0px 1px 2px #AFAFAF;
+}
+.button-3d-neutral.disabled, .button-3d-neutral.disabled:hover, .button-3d-neutral.disabled:active, .button-3d-neutral.disabled:focus, .button-3d-neutral[disabled], .button-3d-neutral[disabled]:hover, .button-3d-neutral[disabled]:active, .button-3d-neutral[disabled]:focus {
+  top: -2px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #e6e6e6, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #e6e6e6, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-secondary {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #333333;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #1a1a1a, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #1a1a1a, 0px 3px 5px #AFAFAF;
+}
+.button-3d-secondary:focus {
+  outline: 0;
+}
+.button-3d-secondary.disabled, .button-3d-secondary[disabled], fieldset[disabled] .button-3d-secondary {
+  cursor: not-allowed;
+}
+.button-3d-secondary:hover, .button-3d-secondary:focus {
+  background-color: #4d4d4d;
+  color: #fff;
+}
+.button-3d-secondary:active, .button-3d-secondary.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #1a1a1a, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #1a1a1a, 0px 1px 2px #AFAFAF;
+}
+.button-3d-secondary.disabled, .button-3d-secondary.disabled:hover, .button-3d-secondary.disabled:active, .button-3d-secondary.disabled:focus, .button-3d-secondary[disabled], .button-3d-secondary[disabled]:hover, .button-3d-secondary[disabled]:active, .button-3d-secondary[disabled]:focus {
+  top: -2px;
+  background-color: #333333;
+  -webkit-box-shadow: 0px 3px 0px #1a1a1a, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #1a1a1a, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-info {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #6EB7C2;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #4ba5b2, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #4ba5b2, 0px 3px 5px #AFAFAF;
+}
+.button-3d-info:focus {
+  outline: 0;
+}
+.button-3d-info.disabled, .button-3d-info[disabled], fieldset[disabled] .button-3d-info {
+  cursor: not-allowed;
+}
+.button-3d-info:hover, .button-3d-info:focus {
+  background-color: #87c0cd;
+  color: #fff;
+}
+.button-3d-info:active, .button-3d-info.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #4ba5b2, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #4ba5b2, 0px 1px 2px #AFAFAF;
+}
+.button-3d-info.disabled, .button-3d-info.disabled:hover, .button-3d-info.disabled:active, .button-3d-info.disabled:focus, .button-3d-info[disabled], .button-3d-info[disabled]:hover, .button-3d-info[disabled]:active, .button-3d-info[disabled]:focus {
+  top: -2px;
+  background-color: #6EB7C2;
+  -webkit-box-shadow: 0px 3px 0px #4ba5b2, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #4ba5b2, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-success {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #3DCC80;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #2da967, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #2da967, 0px 3px 5px #AFAFAF;
+}
+.button-3d-success:focus {
+  outline: 0;
+}
+.button-3d-success.disabled, .button-3d-success[disabled], fieldset[disabled] .button-3d-success {
+  cursor: not-allowed;
+}
+.button-3d-success:hover, .button-3d-success:focus {
+  background-color: #59d399;
+  color: #fff;
+}
+.button-3d-success:active, .button-3d-success.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #2da967, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #2da967, 0px 1px 2px #AFAFAF;
+}
+.button-3d-success.disabled, .button-3d-success.disabled:hover, .button-3d-success.disabled:active, .button-3d-success.disabled:focus, .button-3d-success[disabled], .button-3d-success[disabled]:hover, .button-3d-success[disabled]:active, .button-3d-success[disabled]:focus {
+  top: -2px;
+  background-color: #3DCC80;
+  -webkit-box-shadow: 0px 3px 0px #2da967, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #2da967, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-warning {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #F0D524;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #d3b90e, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #d3b90e, 0px 3px 5px #AFAFAF;
+}
+.button-3d-warning:focus {
+  outline: 0;
+}
+.button-3d-warning.disabled, .button-3d-warning[disabled], fieldset[disabled] .button-3d-warning {
+  cursor: not-allowed;
+}
+.button-3d-warning:hover, .button-3d-warning:focus {
+  background-color: #f2e445;
+  color: #fff;
+}
+.button-3d-warning:active, .button-3d-warning.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #d3b90e, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #d3b90e, 0px 1px 2px #AFAFAF;
+}
+.button-3d-warning.disabled, .button-3d-warning.disabled:hover, .button-3d-warning.disabled:active, .button-3d-warning.disabled:focus, .button-3d-warning[disabled], .button-3d-warning[disabled]:hover, .button-3d-warning[disabled]:active, .button-3d-warning[disabled]:focus {
+  top: -2px;
+  background-color: #F0D524;
+  -webkit-box-shadow: 0px 3px 0px #d3b90e, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #d3b90e, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-3d-danger {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 33px;
+  line-height: 33px;
+  font-size: 14px;
+  border-radius: 0;
+  position: relative;
+  top: -2px;
+  background-color: #E21F1E;
+  color: #fff;
+  -webkit-box-shadow: 0px 3px 0px #b61817, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #b61817, 0px 3px 5px #AFAFAF;
+}
+.button-3d-danger:focus {
+  outline: 0;
+}
+.button-3d-danger.disabled, .button-3d-danger[disabled], fieldset[disabled] .button-3d-danger {
+  cursor: not-allowed;
+}
+.button-3d-danger:hover, .button-3d-danger:focus {
+  background-color: #e6473e;
+  color: #fff;
+}
+.button-3d-danger:active, .button-3d-danger.active {
+  top: 0;
+  -webkit-box-shadow: 0px 1px 0px #b61817, 0px 1px 2px #AFAFAF;
+          box-shadow: 0px 1px 0px #b61817, 0px 1px 2px #AFAFAF;
+}
+.button-3d-danger.disabled, .button-3d-danger.disabled:hover, .button-3d-danger.disabled:active, .button-3d-danger.disabled:focus, .button-3d-danger[disabled], .button-3d-danger[disabled]:hover, .button-3d-danger[disabled]:active, .button-3d-danger[disabled]:focus {
+  top: -2px;
+  background-color: #E21F1E;
+  -webkit-box-shadow: 0px 3px 0px #b61817, 0px 3px 5px #AFAFAF;
+          box-shadow: 0px 3px 0px #b61817, 0px 3px 5px #AFAFAF;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+/* Outline button size modifiers */
+[class*='button-3d'].button--xs {
+  padding: 0 8.4px;
+  height: 21px;
+  line-height: 21px;
+  font-size: 11px;
+  border-radius: 0;
+}
+[class*='button-3d'].button--sm {
+  padding: 0 11.2px;
+  height: 29px;
+  line-height: 29px;
+  font-size: 12px;
+  border-radius: 0;
+}
+[class*='button-3d'].button--lg {
+  padding: 0 16.8px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* Gradient buttons
+***********************************************/
+/* Default gradient buttons */
+.button-gradient {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #e67f00 -webkit-gradient(linear, left top, left bottom, from(#ffaf4d), to(#e67f00));
+  background: #e67f00 -webkit-linear-gradient(#ffaf4d, #e67f00);
+  background: #e67f00 linear-gradient(#ffaf4d, #e67f00);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #ffba67 transparent #cd7100;
+}
+.button-gradient:focus {
+  outline: 0;
+}
+.button-gradient.disabled, .button-gradient[disabled], fieldset[disabled] .button-gradient {
+  cursor: not-allowed;
+}
+.button-gradient:hover, .button-gradient:focus {
+  color: #fff;
+  background: #e67f00 -webkit-gradient(linear, left top, left bottom, from(#ffaf4d), to(#ffaf4d));
+  background: #e67f00 -webkit-linear-gradient(#ffaf4d, #ffaf4d);
+  background: #e67f00 linear-gradient(#ffaf4d, #ffaf4d);
+}
+.button-gradient:active, .button-gradient.active {
+  background: #e67f00 -webkit-gradient(linear, left top, left bottom, from(#e67f00), to(#ffaf4d));
+  background: #e67f00 -webkit-linear-gradient(#e67f00, #ffaf4d);
+  background: #e67f00 linear-gradient(#e67f00, #ffaf4d);
+}
+.button-gradient.disabled, .button-gradient.disabled:hover, .button-gradient.disabled:active, .button-gradient.disabled:focus, .button-gradient[disabled], .button-gradient[disabled]:hover, .button-gradient[disabled]:active, .button-gradient[disabled]:focus {
+  color: #fff;
+  background: #e67f00 -webkit-gradient(linear, left top, left bottom, from(#ffaf4d), to(#e67f00));
+  background: #e67f00 -webkit-linear-gradient(#ffaf4d, #e67f00);
+  background: #e67f00 linear-gradient(#ffaf4d, #e67f00);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-neutral {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #b3b3b3 -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#b3b3b3));
+  background: #b3b3b3 -webkit-linear-gradient(#e6e6e6, #b3b3b3);
+  background: #b3b3b3 linear-gradient(#e6e6e6, #b3b3b3);
+  color: #0d0d0d;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #f2f2f2 transparent #a6a6a6;
+}
+.button-gradient-neutral:focus {
+  outline: 0;
+}
+.button-gradient-neutral.disabled, .button-gradient-neutral[disabled], fieldset[disabled] .button-gradient-neutral {
+  cursor: not-allowed;
+}
+.button-gradient-neutral:hover, .button-gradient-neutral:focus {
+  color: #0d0d0d;
+  background: #b3b3b3 -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#e6e6e6));
+  background: #b3b3b3 -webkit-linear-gradient(#e6e6e6, #e6e6e6);
+  background: #b3b3b3 linear-gradient(#e6e6e6, #e6e6e6);
+}
+.button-gradient-neutral:active, .button-gradient-neutral.active {
+  background: #b3b3b3 -webkit-gradient(linear, left top, left bottom, from(#b3b3b3), to(#e6e6e6));
+  background: #b3b3b3 -webkit-linear-gradient(#b3b3b3, #e6e6e6);
+  background: #b3b3b3 linear-gradient(#b3b3b3, #e6e6e6);
+}
+.button-gradient-neutral.disabled, .button-gradient-neutral.disabled:hover, .button-gradient-neutral.disabled:active, .button-gradient-neutral.disabled:focus, .button-gradient-neutral[disabled], .button-gradient-neutral[disabled]:hover, .button-gradient-neutral[disabled]:active, .button-gradient-neutral[disabled]:focus {
+  color: #0d0d0d;
+  background: #b3b3b3 -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#b3b3b3));
+  background: #b3b3b3 -webkit-linear-gradient(#e6e6e6, #b3b3b3);
+  background: #b3b3b3 linear-gradient(#e6e6e6, #b3b3b3);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-secondary {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: black -webkit-gradient(linear, left top, left bottom, from(#272727), to(black));
+  background: black -webkit-linear-gradient(#272727, black);
+  background: black linear-gradient(#272727, black);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #333333 transparent black;
+}
+.button-gradient-secondary:focus {
+  outline: 0;
+}
+.button-gradient-secondary.disabled, .button-gradient-secondary[disabled], fieldset[disabled] .button-gradient-secondary {
+  cursor: not-allowed;
+}
+.button-gradient-secondary:hover, .button-gradient-secondary:focus {
+  color: #fff;
+  background: black -webkit-gradient(linear, left top, left bottom, from(#272727), to(#272727));
+  background: black -webkit-linear-gradient(#272727, #272727);
+  background: black linear-gradient(#272727, #272727);
+}
+.button-gradient-secondary:active, .button-gradient-secondary.active {
+  background: black -webkit-gradient(linear, left top, left bottom, from(black), to(#272727));
+  background: black -webkit-linear-gradient(black, #272727);
+  background: black linear-gradient(black, #272727);
+}
+.button-gradient-secondary.disabled, .button-gradient-secondary.disabled:hover, .button-gradient-secondary.disabled:active, .button-gradient-secondary.disabled:focus, .button-gradient-secondary[disabled], .button-gradient-secondary[disabled]:hover, .button-gradient-secondary[disabled]:active, .button-gradient-secondary[disabled]:focus {
+  color: #fff;
+  background: black -webkit-gradient(linear, left top, left bottom, from(#272727), to(black));
+  background: black -webkit-linear-gradient(#272727, black);
+  background: black linear-gradient(#272727, black);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-info {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #4ba5b2 -webkit-gradient(linear, left top, left bottom, from(#92c9d1), to(#4ba5b2));
+  background: #4ba5b2 -webkit-linear-gradient(#92c9d1, #4ba5b2);
+  background: #4ba5b2 linear-gradient(#92c9d1, #4ba5b2);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #a4d2d9 transparent #4394a0;
+}
+.button-gradient-info:focus {
+  outline: 0;
+}
+.button-gradient-info.disabled, .button-gradient-info[disabled], fieldset[disabled] .button-gradient-info {
+  cursor: not-allowed;
+}
+.button-gradient-info:hover, .button-gradient-info:focus {
+  color: #fff;
+  background: #4ba5b2 -webkit-gradient(linear, left top, left bottom, from(#92c9d1), to(#92c9d1));
+  background: #4ba5b2 -webkit-linear-gradient(#92c9d1, #92c9d1);
+  background: #4ba5b2 linear-gradient(#92c9d1, #92c9d1);
+}
+.button-gradient-info:active, .button-gradient-info.active {
+  background: #4ba5b2 -webkit-gradient(linear, left top, left bottom, from(#4ba5b2), to(#92c9d1));
+  background: #4ba5b2 -webkit-linear-gradient(#4ba5b2, #92c9d1);
+  background: #4ba5b2 linear-gradient(#4ba5b2, #92c9d1);
+}
+.button-gradient-info.disabled, .button-gradient-info.disabled:hover, .button-gradient-info.disabled:active, .button-gradient-info.disabled:focus, .button-gradient-info[disabled], .button-gradient-info[disabled]:hover, .button-gradient-info[disabled]:active, .button-gradient-info[disabled]:focus {
+  color: #fff;
+  background: #4ba5b2 -webkit-gradient(linear, left top, left bottom, from(#92c9d1), to(#4ba5b2));
+  background: #4ba5b2 -webkit-linear-gradient(#92c9d1, #4ba5b2);
+  background: #4ba5b2 linear-gradient(#92c9d1, #4ba5b2);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-success {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #2da967 -webkit-gradient(linear, left top, left bottom, from(#65d79a), to(#2da967));
+  background: #2da967 -webkit-linear-gradient(#65d79a, #2da967);
+  background: #2da967 linear-gradient(#65d79a, #2da967);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #7adca8 transparent #27955b;
+}
+.button-gradient-success:focus {
+  outline: 0;
+}
+.button-gradient-success.disabled, .button-gradient-success[disabled], fieldset[disabled] .button-gradient-success {
+  cursor: not-allowed;
+}
+.button-gradient-success:hover, .button-gradient-success:focus {
+  color: #fff;
+  background: #2da967 -webkit-gradient(linear, left top, left bottom, from(#65d79a), to(#65d79a));
+  background: #2da967 -webkit-linear-gradient(#65d79a, #65d79a);
+  background: #2da967 linear-gradient(#65d79a, #65d79a);
+}
+.button-gradient-success:active, .button-gradient-success.active {
+  background: #2da967 -webkit-gradient(linear, left top, left bottom, from(#2da967), to(#65d79a));
+  background: #2da967 -webkit-linear-gradient(#2da967, #65d79a);
+  background: #2da967 linear-gradient(#2da967, #65d79a);
+}
+.button-gradient-success.disabled, .button-gradient-success.disabled:hover, .button-gradient-success.disabled:active, .button-gradient-success.disabled:focus, .button-gradient-success[disabled], .button-gradient-success[disabled]:hover, .button-gradient-success[disabled]:active, .button-gradient-success[disabled]:focus {
+  color: #fff;
+  background: #2da967 -webkit-gradient(linear, left top, left bottom, from(#65d79a), to(#2da967));
+  background: #2da967 -webkit-linear-gradient(#65d79a, #2da967);
+  background: #2da967 linear-gradient(#65d79a, #2da967);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-warning {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #d3b90e -webkit-gradient(linear, left top, left bottom, from(#f3de54), to(#d3b90e));
+  background: #d3b90e -webkit-linear-gradient(#f3de54, #d3b90e);
+  background: #d3b90e linear-gradient(#f3de54, #d3b90e);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #f5e36c transparent #bba40d;
+}
+.button-gradient-warning:focus {
+  outline: 0;
+}
+.button-gradient-warning.disabled, .button-gradient-warning[disabled], fieldset[disabled] .button-gradient-warning {
+  cursor: not-allowed;
+}
+.button-gradient-warning:hover, .button-gradient-warning:focus {
+  color: #fff;
+  background: #d3b90e -webkit-gradient(linear, left top, left bottom, from(#f3de54), to(#f3de54));
+  background: #d3b90e -webkit-linear-gradient(#f3de54, #f3de54);
+  background: #d3b90e linear-gradient(#f3de54, #f3de54);
+}
+.button-gradient-warning:active, .button-gradient-warning.active {
+  background: #d3b90e -webkit-gradient(linear, left top, left bottom, from(#d3b90e), to(#f3de54));
+  background: #d3b90e -webkit-linear-gradient(#d3b90e, #f3de54);
+  background: #d3b90e linear-gradient(#d3b90e, #f3de54);
+}
+.button-gradient-warning.disabled, .button-gradient-warning.disabled:hover, .button-gradient-warning.disabled:active, .button-gradient-warning.disabled:focus, .button-gradient-warning[disabled], .button-gradient-warning[disabled]:hover, .button-gradient-warning[disabled]:active, .button-gradient-warning[disabled]:focus {
+  color: #fff;
+  background: #d3b90e -webkit-gradient(linear, left top, left bottom, from(#f3de54), to(#d3b90e));
+  background: #d3b90e -webkit-linear-gradient(#f3de54, #d3b90e);
+  background: #d3b90e linear-gradient(#f3de54, #d3b90e);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+.button-gradient-danger {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  padding: 0 12.6px;
+  height: 36px;
+  line-height: 32px;
+  font-size: 14px;
+  border-radius: 0;
+  background: #b61817 -webkit-gradient(linear, left top, left bottom, from(#e84c4b), to(#b61817));
+  background: #b61817 -webkit-linear-gradient(#e84c4b, #b61817);
+  background: #b61817 linear-gradient(#e84c4b, #b61817);
+  color: #fff;
+  border-style: solid;
+  border-width: 2px 0;
+  border-color: #eb6262 transparent #9f1514;
+}
+.button-gradient-danger:focus {
+  outline: 0;
+}
+.button-gradient-danger.disabled, .button-gradient-danger[disabled], fieldset[disabled] .button-gradient-danger {
+  cursor: not-allowed;
+}
+.button-gradient-danger:hover, .button-gradient-danger:focus {
+  color: #fff;
+  background: #b61817 -webkit-gradient(linear, left top, left bottom, from(#e84c4b), to(#e84c4b));
+  background: #b61817 -webkit-linear-gradient(#e84c4b, #e84c4b);
+  background: #b61817 linear-gradient(#e84c4b, #e84c4b);
+}
+.button-gradient-danger:active, .button-gradient-danger.active {
+  background: #b61817 -webkit-gradient(linear, left top, left bottom, from(#b61817), to(#e84c4b));
+  background: #b61817 -webkit-linear-gradient(#b61817, #e84c4b);
+  background: #b61817 linear-gradient(#b61817, #e84c4b);
+}
+.button-gradient-danger.disabled, .button-gradient-danger.disabled:hover, .button-gradient-danger.disabled:active, .button-gradient-danger.disabled:focus, .button-gradient-danger[disabled], .button-gradient-danger[disabled]:hover, .button-gradient-danger[disabled]:active, .button-gradient-danger[disabled]:focus {
+  color: #fff;
+  background: #b61817 -webkit-gradient(linear, left top, left bottom, from(#e84c4b), to(#b61817));
+  background: #b61817 -webkit-linear-gradient(#e84c4b, #b61817);
+  background: #b61817 linear-gradient(#e84c4b, #b61817);
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+/* Outline button size modifiers */
+[class*='button-gradient'].button--xs {
+  padding: 0 8.4px;
+  height: 24px;
+  line-height: 20px;
+  font-size: 11px;
+  border-radius: 0;
+}
+[class*='button-gradient'].button--sm {
+  padding: 0 11.2px;
+  height: 32px;
+  line-height: 28px;
+  font-size: 12px;
+  border-radius: 0;
+}
+[class*='button-gradient'].button--lg {
+  padding: 0 16.8px;
+  height: 48px;
+  line-height: 44px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* Button modifiers
+***********************************************/
+/* Make button to be a block */
+.button--block {
+  display: block;
+}
+
+/* Default button size modifiers */
+.button--xs {
+  padding: 0 8.4px;
+  height: 24px;
+  line-height: 22px;
+  font-size: 11px;
+  border-radius: 0;
+}
+
+.button--sm {
+  padding: 0 11.2px;
+  height: 32px;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 0;
+}
+
+.button--lg {
+  padding: 0 16.8px;
+  height: 48px;
+  line-height: 46px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+/* Button groups
+***********************************************/
+.button-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+}
+.button-group:before, .button-group:after {
+  content: '';
+  display: table;
+}
+.button-group:after {
+  clear: both;
+}
+.button-group > [class*='button'] {
+  float: left;
+}
+.button-group > [class*='button']:not(:first-child):not(:last-child) {
+  border-radius: 0;
+}
+.button-group > [class*='button']:first-child:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.button-group > [class*='button']:last-child:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.button-group > [class*='button'] + [class*='button'] {
+  border-left: 0;
 }

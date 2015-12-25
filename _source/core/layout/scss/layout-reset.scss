@@ -116,6 +116,21 @@ a {
   background-color: transparent;
 }
 
+/* Transition for user action elements */
+a, 
+input,
+button,
+select,
+textarea {
+  transition: .3s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    transition: .1s;
+  }
+}
+
 /**
  * - Prevent modern browsers from displaying 'audio' without controls
  * - Remove excess height in iOS 5 devices
@@ -186,7 +201,8 @@ q:after {
  * Remove ugly outline from focused elements, 
  * don't remember to add your own focus styles 
  */
-:focus {
+:active:focus,
+:hover:focus {
   outline: 0;
 }
 
@@ -248,7 +264,8 @@ select {
 
 /** 
  * - Correct inability to style clickable 'input' types in iOS
- * - Set pointer cursor appearance for buttons 
+ * - Set pointer cursor appearance for buttons
+ * - Disable user selection of text 
  */
 button,
 html input[type="button"],
@@ -256,6 +273,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
+  user-select: none;
 }
 
 /* Default cursor for disabled elements */

@@ -1,0 +1,47 @@
+/////////////////////////////////////////////////
+//  Functions
+/////////////////////////////////////////////////
+
+//  Get color from palette
+/////////////////////////////////////////////////
+@function get-color($color, $palette: $palette_light) {
+  @return map-get($palette, $color);
+}
+
+//  Get hover of a color
+/////////////////////////////////////////////////
+@function hover($color) {
+  
+  @if lightness($color) < 15% {
+    $color: lighten($color, 20);
+  } @else if lightness($color) < 30% {
+    $color: lighten($color, 10);
+  } @else if lightness($color) > 97% {
+    $color: darken($color, 5);
+  } @else {
+    $color: adjust_hue(lighten($color, 7), 3);
+  }
+
+  @return $color;
+}
+
+//  Opacity crossbrowser mixin
+/////////////////////////////////////////////////
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//  Clearfix mixin
+/////////////////////////////////////////////////
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}

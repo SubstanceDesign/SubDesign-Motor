@@ -1,0 +1,250 @@
+<!doctype html>
+<!--[if IE 8]> <html class="no-js ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SITE TITLE AND DESCRIPTION 
+    *********************************************** -->
+    <title>Inputs | Framework</title>
+    <meta name="description" content="">
+
+    <!-- FIXES
+    *********************************************** -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- STYLESHEETS
+    *********************************************** -->
+
+    <!-- Docs stylesheets -->
+    <link rel="stylesheet" href="assets/css/prettify.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Framework stylesheets -->
+    <link rel="stylesheet" href="../css/framework.css">
+
+    <!-- Styles just for this page -->
+    <style>
+
+    </style>
+
+  </head>
+  <body>
+    <!-- WRAPPER
+    *********************************************** -->
+    <div class="docs_wrapper">      
+      <!-- HEADER
+      *********************************************** -->
+      <header id="docs_header">
+        <h1>Inputs</h1>
+      </header>
+      <!-- *********************************************** 
+      END HEADER -->
+
+      <!-- NAV
+      *********************************************** -->
+      <nav id="docs_page-nav">
+        <div class="docs_page-nav_button">
+          <span class="docs_page-nav_button_open"></span>
+          <span class="docs_page-nav_button_close">×</span>
+        </div>
+        <ul>
+          <li><a href="#anchor_buttons">Buttons</a></li>
+        </ul>
+      </nav>
+      <!-- *********************************************** 
+      END NAV -->
+
+      <!-- CONTENT
+      *********************************************** -->
+      <div class="docs_content docs_typo">
+        
+        <!-- GRID
+        *********************************************** -->
+        <div class="content">
+          <h2 id="anchor_buttons">Buttons</h2>
+          <p>Default button is created with <strong>.button</strong> class applied to <strong>&lt;a&gt;</strong>, <strong>&lt;button&gt;</strong> or <strong>&lt;input type=submit&gt;</strong> tag.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;a href="#" class="button">Default button&lt;/a>
+&lt;button class="button">Default button&lt;/button>
+&lt;input type="submit" class="button" value="Default button"></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <a href="#" class="button">Default button</a>
+            <button class="button">Default button</button>
+            <input type="submit" class="button" value="Default button">
+          </p>
+          <p class="docs_indent-section">Button have seven color modes: primary (default), neutral, secondary, info, success, warning and danger. The last six used by adding color name postfix to button class.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;button class="button">Primary&lt;/button>
+&lt;button class="button-neutral">Neutral&lt;/button>
+&lt;button class="button-secondary">Secondary&lt;/button>
+&lt;button class="button-info">Information&lt;/button>
+&lt;button class="button-success">Success&lt;/button>
+&lt;button class="button-warning">Warning&lt;/button>
+&lt;button class="button-danger">Danger&lt;/button></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <button class="button">Primary</button>
+            <button class="button-neutral">Neutral</button>
+            <button class="button-secondary">Secondary</button>
+            <button class="button-info">Information</button>
+            <button class="button-success">Success</button>
+            <button class="button-warning">Warning</button>
+            <button class="button-danger">Danger</button>
+          </p>
+          <p class="docs_indent-section">Buttons are implemented in four different styles. Each style's class name is formed by adding a <strong>.button-</strong> prefix to the name of the type (except default flat).</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;p>
+  &lt;button class="button">Primary&lt;/button>
+  &lt;button class="button-neutral">Neutral&lt;/button>
+  &lt;button class="button-secondary">Secondary&lt;/button>
+  &lt;button class="button-info">Information&lt;/button>
+  &lt;button class="button-success">Success&lt;/button>
+  &lt;button class="button-warning">Warning&lt;/button>
+  &lt;button class="button-danger">Danger&lt;/button>
+&lt;/p>
+&lt;p>
+  &lt;button class="button-outline">Primary&lt;/button>
+  &lt;button class="button-outline-neutral">Neutral&lt;/button>
+  &lt;button class="button-outline-secondary">Secondary&lt;/button>
+  &lt;button class="button-outline-info">Information&lt;/button>
+  &lt;button class="button-outline-success">Success&lt;/button>
+  &lt;button class="button-outline-warning">Warning&lt;/button>
+  &lt;button class="button-outline-danger">Danger&lt;/button>
+&lt;/p>
+&lt;p>
+  &lt;button class="button-3d">Primary&lt;/button>
+  &lt;button class="button-3d-neutral">Neutral&lt;/button>
+  &lt;button class="button-3d-secondary">Secondary&lt;/button>
+  &lt;button class="button-3d-info">Information&lt;/button>
+  &lt;button class="button-3d-success">Success&lt;/button>
+  &lt;button class="button-3d-warning">Warning&lt;/button>
+  &lt;button class="button-3d-danger">Danger&lt;/button>
+&lt;/p>
+&lt;p>
+  &lt;button class="button-gradient">Primary&lt;/button>
+  &lt;button class="button-gradient-neutral">Neutral&lt;/button>
+  &lt;button class="button-gradient-secondary">Secondary&lt;/button>
+  &lt;button class="button-gradient-info">Information&lt;/button>
+  &lt;button class="button-gradient-success">Success&lt;/button>
+  &lt;button class="button-gradient-warning">Warning&lt;/button>
+  &lt;button class="button-gradient-danger">Danger&lt;/button>
+&lt;/p></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <button class="button">Primary</button>
+            <button class="button-neutral">Neutral</button>
+            <button class="button-secondary">Secondary</button>
+            <button class="button-info">Information</button>
+            <button class="button-success">Success</button>
+            <button class="button-warning">Warning</button>
+            <button class="button-danger">Danger</button>
+          </p>
+          <p>
+            <button class="button-outline">Primary</button>
+            <button class="button-outline-neutral">Neutral</button>
+            <button class="button-outline-secondary">Secondary</button>
+            <button class="button-outline-info">Information</button>
+            <button class="button-outline-success">Success</button>
+            <button class="button-outline-warning">Warning</button>
+            <button class="button-outline-danger">Danger</button>
+          </p>
+          <p>
+            <button class="button-3d">Primary</button>
+            <button class="button-3d-neutral">Neutral</button>
+            <button class="button-3d-secondary">Secondary</button>
+            <button class="button-3d-info">Information</button>
+            <button class="button-3d-success">Success</button>
+            <button class="button-3d-warning">Warning</button>
+            <button class="button-3d-danger">Danger</button>
+          </p>
+          <p>
+            <button class="button-gradient">Primary</button>
+            <button class="button-gradient-neutral">Neutral</button>
+            <button class="button-gradient-secondary">Secondary</button>
+            <button class="button-gradient-info">Information</button>
+            <button class="button-gradient-success">Success</button>
+            <button class="button-gradient-warning">Warning</button>
+            <button class="button-gradient-danger">Danger</button>
+          </p>
+          <p class="docs_indent-section">Button have three size modes excluding default. To change size add corresponding modifier <strong>.button--xs</strong>, <strong>.button--sm</strong>, <strong>.button--lg</strong>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;button class="button">Medium size&lt;/button>
+&lt;button class="button button--xs">Extrasmall size&lt;/button>
+&lt;button class="button button--sm">Small size&lt;/button>
+&lt;button class="button button--lg">Large size&lt;/button></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <button class="button">Default size</button>
+            <button class="button button--xs">Extrasmall size</button>
+            <button class="button button--sm">Small size</button>
+            <button class="button button--lg">Large size</button>
+          </p>
+          <p class="docs_indent-section">Buttons can be united into seamless group by wrapping them with <strong>.button-group</strong> element.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="button-group">
+  &lt;button class="button">Success&lt;/button>
+  &lt;button class="button">Success&lt;/button>
+  &lt;button class="button">Success&lt;/button>
+&lt;/div>
+&lt;div class="button-group">
+  &lt;button class="button-success">Success&lt;/button>
+  &lt;button class="button-warning">Warning&lt;/button>
+  &lt;button class="button-danger">Danger&lt;/button>
+&lt;/div>
+&lt;div class="button-group">
+  &lt;a href="#" class="button-outline">Primary&lt;/a>
+  &lt;a href="#" class="button-outline">Primary&lt;/a>
+  &lt;a href="#" class="button-outline">Primary&lt;/a>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <div class="button-group">
+              <button class="button">Success</button>
+              <button class="button">Success</button>
+              <button class="button">Success</button>
+            </div>
+            <div class="button-group">
+              <button class="button-success">Success</button>
+              <button class="button-warning">Warning</button>
+              <button class="button-danger">Danger</button>
+            </div>
+            <div class="button-group">
+              <a href="#" class="button-outline">Primary</a>
+              <a href="#" class="button-outline">Primary</a>
+              <a href="#" class="button-outline">Primary</a>
+            </div>
+          </p>
+        </div>
+        <!-- *********************************************** 
+        END GRID -->
+
+      </div>
+      <!-- *********************************************** 
+      END CONTENT -->
+
+    </div>
+    <!-- *********************************************** 
+    END WRAPPER -->
+
+    <!-- SCRIPTS
+    *********************************************** -->
+
+    <!-- Docs scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.singlePageNav.js"></script>
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Framework scripts -->
+    <script src="../js/framework.js"></script>
+  </body>
+</html>

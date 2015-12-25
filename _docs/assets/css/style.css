@@ -463,6 +463,12 @@ pre.prettyprint.prettyprint-plain {
   border-right: 1px solid #FFE605;
 }
 
+.docs_indent-section {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #DADADA;
+}
+
 /* TYPOGRAPHY
 ***********************************************/
 .docs_typo h1 {
