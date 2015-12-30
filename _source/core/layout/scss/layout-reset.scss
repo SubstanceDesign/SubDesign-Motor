@@ -28,6 +28,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
+input, textarea, button,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
@@ -246,7 +247,6 @@ textarea {
 }
 
 /* Address 'overflow' set to 'hidden' in IE 8-11 */
-
 button {
   overflow: visible;
 }
@@ -327,6 +327,13 @@ input[type="search"]::-webkit-search-decoration {
 legend {
   border: 0;
   padding: 0;
+}
+
+/**
+ * - Set default block behavior to fieldset
+ */
+fieldset {
+  min-width: 0;
 }
 
 /* Remove default vertical scrollbar in IE 8-11 */

@@ -2,9 +2,11 @@
 //  Global config
 /////////////////////////////////////////////////
 
-//  Interface grid
+//  Interface grid and base sizes
 /////////////////////////////////////////////////
 $unit: 4px;
+$base_font-size: 16px;
+$base_line-height: 1.5;
 
 //  Color config
 /////////////////////////////////////////////////
@@ -93,7 +95,7 @@ $viewport_lg-desktop: $viewport_lg;
 $viewport_xl: 1440px;
 $viewport_xl-desktop: $viewport_xl;
 
-$viewport-breakpoints: (
+$viewport_breakpoints: (
   mc: $viewport_mc, 
   xs: $viewport_xs, 
   sm: $viewport_sm, 
@@ -105,7 +107,7 @@ $viewport-breakpoints: (
 //  Layout
 /////////////////////////////////////////////////
 
-$viewport-content-sizes: (
+$viewport_content-sizes: (
   mc: '100%', 
   xs: '100%', 
   sm: 750px, 
@@ -114,7 +116,7 @@ $viewport-content-sizes: (
   xl: 1280px
 );
 
-$content-fluid-max-width: 1280px;
+$content-fluid_max-width: 1280px;
 
 //  Grid
 /////////////////////////////////////////////////
@@ -147,30 +149,36 @@ $grid_gutters: (
 /////////////////////////////////////////////////
 
 // Inputs types (set true to include and false to exclude)
-$buttons_flat: true;
-$buttons_outline: true;
-$buttons_3d: true;
-$buttons_gradient: true;
+$button_flat: true;
+$button_outline: true;
+$button_3d: true;
+$button_gradient: true;
+
+$text-input_default: true;
 
 // common size settings
 $inputs_height: 9 * $unit;
 $inputs_padding-horizontal: $inputs_height * 0.35;
 $inputs_font-size: 14px;
+$inputs_button-font-size: 14px;
 $inputs_border-radius: 0;
 
 $inputs_height_xs: 6 * $unit;
 $inputs_padding-horizontal_xs: $inputs_height_xs * 0.35;
 $inputs_font-size_xs: 11px;
+$inputs_button-font-size_xs: 11px;
 $inputs_border-radius_xs: 0;
 
 $inputs_height_sm: 8 * $unit;
 $inputs_padding-horizontal_sm: $inputs_height_sm * 0.35;
 $inputs_font-size_sm: 12px;
+$inputs_button-font-size_sm: 12px;
 $inputs_border-radius_sm: 0;
 
 $inputs_height_lg: 12 * $unit;
 $inputs_padding-horizontal_lg: $inputs_height_lg * 0.35;
 $inputs_font-size_lg: 16px;
+$inputs_button-font-size_lg: 16px;
 $inputs_border-radius_lg: 0;
 
 // common colour settings
@@ -187,12 +195,11 @@ $inputs_color_danger: get-color(action-danger);
 
 // Buttons
 $button_flat_border-width: 1px;
-
 $button_outline_border-width: 2px;
-
 $button_gradient_border-width: 2px;
 
-
+// Text inputs
+$text-input_border-width: 2px;
 
 
 

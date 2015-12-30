@@ -1,0 +1,74 @@
+/////////////////////////////////////////////////
+//  Text input mixins
+/////////////////////////////////////////////////
+
+//  Common text input mixins
+/////////////////////////////////////////////////
+
+// Add common text input styles
+@mixin add_text-input_styles() {
+  display: block;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+
+  @at-root {
+    textarea#{&},
+    select[multiple]#{&} {
+      height: auto;
+    }
+  }
+
+  @at-root {
+    select#{&} {
+      background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+    }
+  }
+}
+
+//  Default text input mixin
+/////////////////////////////////////////////////
+@mixin create_text-input($background, $color, $border, $border-hover) {
+  @include add_text-input_styles(); // add common styles
+  @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_font-size, $inputs_border-radius, $text-input_border-width*2); // add default size
+  
+  background-color: $background;
+  color: $color;
+  border: $text-input_border-width solid $border;
+
+  @include placeholder() {
+    color: mix($color, $background, 50%);
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 3px $border-hover;
+    border-color: $border-hover;
+  }
+
+  &.disabled,
+  &[disabled] {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @include opacity(65);
+      border-color: $border;
+    }
+  }
+}

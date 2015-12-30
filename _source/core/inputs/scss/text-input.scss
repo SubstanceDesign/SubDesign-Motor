@@ -1,0 +1,50 @@
+/*********************************************** 
+    Text inputs
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import 'text-input-mixins';
+
+/* Default text inputs
+***********************************************/
+@if ($text-input_default == true) {
+  
+  .text-input {
+    @include create_text-input($inputs_color_background, $inputs_color_foreground, $inputs_color_border, $inputs_color_primary);
+
+    &.error,
+    .error & {
+      border-color: $inputs_color_danger;
+
+      &:focus {
+        box-shadow: inset 0 0 3px $inputs_color_danger;
+      }
+    }
+
+    &.warning,
+    .warning & {
+      border-color: $inputs_color_warning;
+
+      &:focus {
+        box-shadow: inset 0 0 3px $inputs_color_warning;
+      }
+    }
+
+    &.success,
+    .success & {
+      border-color: $inputs_color_success;
+
+      &:focus {
+        box-shadow: inset 0 0 3px $inputs_color_success;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

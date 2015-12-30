@@ -25,12 +25,48 @@
   @return $color;
 }
 
+//  Make color thiner
+/////////////////////////////////////////////////
+@function thiner($color, $context: 'light') {
+
+  $lightness: lightness($color);
+  $saturation: saturation($color);
+  $hue: hue($color);
+
+  @if $context == 'light' {
+
+    @if $lightness < 10% {
+      $saturation: $saturation * 0.1;
+    } @else if $lightness < 20% {
+      $saturation: $saturation * 0.2;
+    } @else if $lightness < 30% {
+      $saturation: $saturation * 0.4;
+    } @else if $lightness < 40% {
+      $saturation: $saturation * 0.6;
+    } @else if $lightness < 50% {
+      $saturation: $saturation * 0.8;
+    } @else {
+      $saturation: $saturation;
+    }
+
+    $lightness: $lightness + (100% - $lightness)/2;
+
+    $color: hsl($hue, $saturation, $lightness)
+  }
+
+  @return $color;
+}
+
 //  Opacity crossbrowser mixin
 /////////////////////////////////////////////////
 @mixin opacity($opacity) {
   opacity: $opacity / 100;
   filter: alpha(opacity=$opacity);
 }
+
+/////////////////////////////////////////////////
+//  Mixins
+/////////////////////////////////////////////////
 
 //  Clearfix mixin
 /////////////////////////////////////////////////
@@ -43,5 +79,28 @@
 
   &:after {
     clear: both;
+  }
+}
+
+//  Placeholder crossbrowser mixin
+/////////////////////////////////////////////////
+@mixin placeholder() {
+  &::-webkit-input-placeholder {  
+    @content;
+  } 
+  &:-moz-placeholder {  
+    @content;
+  } 
+  &::-moz-placeholder {
+    @content;
+  } 
+  &:-ms-input-placeholder { 
+    @content;
+  } 
+  &::input-placeholder, {   
+    @content;
+  }
+  &.placeholder { 
+    @content;
   }
 }
