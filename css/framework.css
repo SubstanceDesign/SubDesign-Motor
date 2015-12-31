@@ -4383,3 +4383,118 @@ select.text-input {
   -webkit-box-shadow: inset 0 0 3px #3DCC80;
           box-shadow: inset 0 0 3px #3DCC80;
 }
+
+/*********************************************** 
+    Checkbox and radio
+***********************************************/
+/* Default checkbox
+***********************************************/
+:not(.ie8) .radio {
+  padding-left: 30px;
+}
+:not(.ie8) .radio input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+:not(.ie8) .radio input[type=radio] + span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+:not(.ie8) .radio input[type=radio] + span:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  border: 2px solid;
+}
+:not(.ie8) .radio input[type=radio] + span:after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+:not(.ie8) .radio input[type=radio]:checked + span:after {
+  display: block;
+}
+:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after {
+  display: block;
+}
+:not(.ie8) .radio input[type=radio] + span:before {
+  border-radius: 100%;
+  border-color: #ccc;
+}
+:not(.ie8) .radio input[type=radio] + span:after {
+  width: 10px;
+  height: 10px;
+  top: 7px;
+  left: -25px;
+  border-radius: 100%;
+  background-color: #FF981A;
+}
+:not(.ie8) .radio input[type=radio].error + span:before {
+  border-color: #E21F1E;
+}
+:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, :not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
+  background-color: #ffcc8d;
+}
+:not(.ie8) .checkbox {
+  padding-left: 30px;
+}
+:not(.ie8) .checkbox input[type=checkbox] {
+  position: absolute;
+  visibility: hidden;
+}
+:not(.ie8) .checkbox input[type=checkbox] + span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+:not(.ie8) .checkbox input[type=checkbox] + span:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  border: 2px solid;
+}
+:not(.ie8) .checkbox input[type=checkbox] + span:after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+:not(.ie8) .checkbox input[type=checkbox]:checked + span:after {
+  display: block;
+}
+:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after {
+  display: block;
+}
+:not(.ie8) .checkbox input[type=checkbox] + span:before {
+  border-radius: 2px;
+  border-color: #ccc;
+}
+:not(.ie8) .checkbox input[type=checkbox] + span:after {
+  width: 8px;
+  height: 4px;
+  top: 7px;
+  left: -25px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom: 3px solid #FF981A;
+  border-left: 3px solid #FF981A;
+}
+:not(.ie8) .checkbox input[type=checkbox].error + span:before {
+  border-color: #E21F1E;
+}
+:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after, :not(.ie8) .checkbox:focus input[type=checkbox]:not(:checked) + span:after {
+  border-color: #ffcc8d;
+}

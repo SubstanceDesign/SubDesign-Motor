@@ -1,0 +1,111 @@
+/////////////////////////////////////////////////
+//  Checkbox and radio mixins
+/////////////////////////////////////////////////
+
+// Add common text input styles
+@mixin add_checkbox-radio_styles($type, $size) {
+  
+  padding-left: $size * 1.5;
+
+  input[type=#{$type}] {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  input[type=#{$type}] + span {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+  }
+
+  input[type=#{$type}] + span:before {
+    content: '';
+    display: block;
+    width: $size;
+    height: $size;
+    box-sizing: border-box;
+    position: absolute;
+    top: ($base_font-size * $base_line-height - $size) / 2;
+    left: - $size * 1.5;
+    border: $checkbox_border-width solid;
+  }
+
+  input[type=#{$type}] + span:after {
+    content: '';
+    display: none;
+    position: absolute;
+  }
+
+  input[type=#{$type}]:checked + span:after {
+    display: block;
+  }
+  
+  &:hover {
+    input[type=#{$type}]:not(:checked) + span:after {
+      display: block;
+    }
+  }
+}
+
+//  Default checkbox mixin
+/////////////////////////////////////////////////
+@mixin create_checkbox($size, $background, $border, $border-hover, $inner) {
+  @include add_checkbox-radio_styles('checkbox', $size); // add common styles
+  
+  input[type=checkbox] + span:before {
+    border-radius: $checkbox_border-radius;
+    border-color: $border;
+  }
+
+  input[type=checkbox] + span:after {
+    width: $size * 0.4;
+    height: $size * 0.2;
+    top: ($base_font-size * $base_line-height - $size) / 2 + $size * 0.25;
+    left: - $size * 1.5 + $size * 0.25;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid $inner;
+    border-left: 3px solid $inner;
+  }
+
+  input[type=checkbox].error + span:before {
+    border-color: $inputs_color_danger;
+  }
+  
+  &:hover,
+  &:focus {
+    input[type=checkbox]:not(:checked) + span:after {
+      border-color: mix($inner, $background, 50%);
+    }
+  }
+}
+
+//  Default radio mixin
+/////////////////////////////////////////////////
+@mixin create_radio($size, $background, $border, $border-hover, $inner) {
+  @include add_checkbox-radio_styles('radio', $size); // add common styles
+  
+  input[type=radio] + span:before {
+    border-radius: 100%;
+    border-color: $border;
+  }
+
+  input[type=radio] + span:after {
+    width: $size / 2;
+    height: $size / 2;
+    top: ($base_font-size * $base_line-height - $size) / 2 + $size / 4;
+    left: - $size * 1.5 + $size / 4;
+    border-radius: 100%;
+    background-color: $inner;
+  }
+
+  input[type=radio].error + span:before {
+    border-color: $inputs_color_danger;
+  }
+  
+  &:hover,
+  &:focus {
+    input[type=radio]:not(:checked) + span:after {
+      background-color: mix($inner, $background, 50%);
+    }
+  }
+}

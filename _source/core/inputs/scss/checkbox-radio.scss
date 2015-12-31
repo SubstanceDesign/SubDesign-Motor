@@ -1,0 +1,28 @@
+/*********************************************** 
+    Checkbox and radio
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import 'checkbox-radio-mixins';
+
+/* Default checkbox
+***********************************************/
+@if ($text-input_default == true) {
+  :not(.ie8) {
+    .radio {
+      @include create_radio($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+    }
+
+    .checkbox {
+      @include create_checkbox($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+    }
+  }
+}
+
+
+
+
+
+
+
