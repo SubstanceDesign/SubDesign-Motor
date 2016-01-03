@@ -4390,6 +4390,8 @@ select.text-input {
 /* Default checkbox
 ***********************************************/
 :not(.ie8) .radio {
+  display: inline-block;
+  min-height: 20px;
   padding-left: 30px;
 }
 :not(.ie8) .radio input[type=radio] {
@@ -4400,6 +4402,7 @@ select.text-input {
   cursor: pointer;
   position: relative;
   display: inline-block;
+  font-size: 16px;
 }
 :not(.ie8) .radio input[type=radio] + span:before {
   content: '';
@@ -4443,6 +4446,8 @@ select.text-input {
   background-color: #ffcc8d;
 }
 :not(.ie8) .checkbox {
+  display: inline-block;
+  min-height: 20px;
   padding-left: 30px;
 }
 :not(.ie8) .checkbox input[type=checkbox] {
@@ -4453,6 +4458,7 @@ select.text-input {
   cursor: pointer;
   position: relative;
   display: inline-block;
+  font-size: 16px;
 }
 :not(.ie8) .checkbox input[type=checkbox] + span:before {
   content: '';
@@ -4486,11 +4492,14 @@ select.text-input {
   height: 4px;
   top: 7px;
   left: -25px;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);
-  border-bottom: 3px solid #FF981A;
-  border-left: 3px solid #FF981A;
+  border-bottom: 2px solid #FF981A;
+  border-left: 2px solid #FF981A;
 }
 :not(.ie8) .checkbox input[type=checkbox].error + span:before {
   border-color: #E21F1E;
