@@ -6,9 +6,14 @@
 /////////////////////////////////////////////////
 @import 'checkbox-radio-mixins';
 
-/* Default checkbox
+/* Default checkbox and radio
 ***********************************************/
 @if ($text-input_default == true) {
+  .checkbox,
+  .radio {
+    display: inline-block;
+  }
+
   :not(.ie8) {
     .radio {
       @include create_radio($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
@@ -20,6 +25,35 @@
   }
 }
 
+/* Filled when checked checkbox and radio
+***********************************************/
+@if ($text-input_default == true) {
+  .checkbox-filled,
+  .radio-filled {
+    display: inline-block;
+  }
+
+  :not(.ie8) {
+    .radio-filled {
+      @include create_radio_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+    }
+
+    .checkbox-filled {
+      @include create_checkbox_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+
+
+    }
+  }
+}
+
+/* Checkbox modifiers
+***********************************************/
+
+/* Make checkbox and radio group to be a block */
+.checkbox--block,
+.radio--block {
+  display: block;
+}
 
 
 

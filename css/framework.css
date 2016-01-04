@@ -4387,10 +4387,14 @@ select.text-input {
 /*********************************************** 
     Checkbox and radio
 ***********************************************/
-/* Default checkbox
+/* Default checkbox and radio
 ***********************************************/
-:not(.ie8) .radio {
+.checkbox,
+.radio {
   display: inline-block;
+}
+
+:not(.ie8) .radio {
   min-height: 20px;
   padding-left: 30px;
 }
@@ -4445,8 +4449,17 @@ select.text-input {
 :not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, :not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
   background-color: #ffcc8d;
 }
+:not(.ie8) .radio.disabled, :not(.ie8) .radio.disabled input[type=radio] + span {
+  cursor: not-allowed;
+}
+:not(.ie8) .radio input[type=radio][disabled] + span:before,
+:not(.ie8) .radio input[type=radio].disabled + span:before, :not(.ie8) .radio.disabled input[type=radio] + span:before {
+  background: #e6e6e6;
+}
+:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:after, :not(.ie8) .radio:hover input[type=radio].disabled:not(:checked) + span:after, :not(.ie8) .radio.disabled:hover input[type=radio]:not(:checked) + span:after {
+  display: none;
+}
 :not(.ie8) .checkbox {
-  display: inline-block;
   min-height: 20px;
   padding-left: 30px;
 }
@@ -4506,4 +4519,196 @@ select.text-input {
 }
 :not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after, :not(.ie8) .checkbox:focus input[type=checkbox]:not(:checked) + span:after {
   border-color: #ffcc8d;
+}
+:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before {
+  background: #ccc;
+}
+:not(.ie8) .checkbox.disabled, :not(.ie8) .checkbox.disabled input[type=checkbox] + span {
+  cursor: not-allowed;
+}
+:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before,
+:not(.ie8) .checkbox input[type=checkbox].disabled + span:before, :not(.ie8) .checkbox.disabled input[type=checkbox] + span:before {
+  background: #e6e6e6;
+}
+:not(.ie8) .checkbox:hover input[type=checkbox][disabled]:not(:checked) + span:after, :not(.ie8) .checkbox:hover input[type=checkbox].disabled:not(:checked) + span:after, :not(.ie8) .checkbox.disabled:hover input[type=checkbox]:not(:checked) + span:after {
+  display: none;
+}
+
+/* Filled when checked checkbox and radio
+***********************************************/
+.checkbox-filled,
+.radio-filled {
+  display: inline-block;
+}
+
+:not(.ie8) .radio-filled {
+  min-height: 20px;
+  padding-left: 30px;
+}
+:not(.ie8) .radio-filled input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+:not(.ie8) .radio-filled input[type=radio] + span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+}
+:not(.ie8) .radio-filled input[type=radio] + span:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  border: 2px solid;
+}
+:not(.ie8) .radio-filled input[type=radio] + span:after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+  display: block;
+}
+:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after {
+  display: block;
+}
+:not(.ie8) .radio-filled input[type=radio] + span:before {
+  border-radius: 100%;
+  border-color: #ccc;
+}
+:not(.ie8) .radio-filled input[type=radio] + span:after {
+  width: 10px;
+  height: 10px;
+  top: 7px;
+  left: -25px;
+  border-radius: 100%;
+  background-color: #FF981A;
+}
+:not(.ie8) .radio-filled input[type=radio].error + span:before {
+  border-color: #E21F1E;
+}
+:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after, :not(.ie8) .radio-filled:focus input[type=radio]:not(:checked) + span:after {
+  background-color: #ffcc8d;
+}
+:not(.ie8) .radio-filled.disabled, :not(.ie8) .radio-filled.disabled input[type=radio] + span {
+  cursor: not-allowed;
+}
+:not(.ie8) .radio-filled input[type=radio][disabled] + span:before,
+:not(.ie8) .radio-filled input[type=radio].disabled + span:before, :not(.ie8) .radio-filled.disabled input[type=radio] + span:before {
+  background: #e6e6e6;
+}
+:not(.ie8) .radio-filled:hover input[type=radio][disabled]:not(:checked) + span:after, :not(.ie8) .radio-filled:hover input[type=radio].disabled:not(:checked) + span:after, :not(.ie8) .radio-filled.disabled:hover input[type=radio]:not(:checked) + span:after {
+  display: none;
+}
+:not(.ie8) .radio-filled input[type=radio]:checked + span:before {
+  background-color: #FF981A;
+  border-color: #FF981A;
+}
+:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+  background-color: #fff;
+}
+:not(.ie8) .radio-filled input[type=radio][disabled]:checked + span:before,
+:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, :not(.ie8) .radio-filled.disabled input[type=radio]:checked + span:before {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+:not(.ie8) .checkbox-filled {
+  min-height: 20px;
+  padding-left: 30px;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] {
+  position: absolute;
+  visibility: hidden;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] + span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  border: 2px solid;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
+  display: block;
+}
+:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after {
+  display: block;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
+  border-radius: 2px;
+  border-color: #ccc;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
+  width: 8px;
+  height: 4px;
+  top: 7px;
+  left: -25px;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom: 2px solid #FF981A;
+  border-left: 2px solid #FF981A;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox].error + span:before {
+  border-color: #E21F1E;
+}
+:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after, :not(.ie8) .checkbox-filled:focus input[type=checkbox]:not(:checked) + span:after {
+  border-color: #ffcc8d;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before {
+  background: #ccc;
+}
+:not(.ie8) .checkbox-filled.disabled, :not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span {
+  cursor: not-allowed;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before,
+:not(.ie8) .checkbox-filled input[type=checkbox].disabled + span:before, :not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span:before {
+  background: #e6e6e6;
+}
+:not(.ie8) .checkbox-filled:hover input[type=checkbox][disabled]:not(:checked) + span:after, :not(.ie8) .checkbox-filled:hover input[type=checkbox].disabled:not(:checked) + span:after, :not(.ie8) .checkbox-filled.disabled:hover input[type=checkbox]:not(:checked) + span:after {
+  display: none;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:before {
+  background-color: #FF981A;
+  border-color: #FF981A;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
+  border-color: #fff;
+}
+:not(.ie8) .checkbox-filled input[type=checkbox][disabled]:checked + span:before,
+:not(.ie8) .checkbox-filled input[type=checkbox].disabled:checked + span:before, :not(.ie8) .checkbox-filled.disabled input[type=checkbox]:checked + span:before {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
+/* Checkbox modifiers
+***********************************************/
+/* Make checkbox and radio group to be a block */
+.checkbox--block,
+.radio--block {
+  display: block;
 }

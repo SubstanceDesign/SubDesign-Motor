@@ -7,7 +7,6 @@
   
   $label_height: $checkbox_font-size * $base_line-height;
 
-  display: inline-block;
   min-height: $size;
   padding-left: $size * 1.5;
   @if $size > $label_height {
@@ -55,6 +54,8 @@
   }
 }
 
+// Add common checkbox styles
+
 //  Default checkbox mixin
 /////////////////////////////////////////////////
 @mixin create_checkbox($size, $background, $border, $border-hover, $inner) {
@@ -85,6 +86,50 @@
     input[type=checkbox]:not(:checked) + span:after {
       border-color: mix($inner, $background, 50%);
     }
+  }
+
+  input[type=checkbox][disabled] + span:before {
+    background: $border;
+  }
+
+  &.disabled,
+  &.disabled input[type=checkbox] + span {
+    cursor: not-allowed;
+  }
+
+  input[type=checkbox][disabled] + span:before,
+  input[type=checkbox].disabled + span:before,
+  &.disabled input[type=checkbox] + span:before {
+    background: mix($border, $background, 50%);
+  }
+
+  &:hover input[type=checkbox][disabled]:not(:checked) + span:after,
+  &:hover input[type=checkbox].disabled:not(:checked) + span:after,
+  &.disabled:hover input[type=checkbox]:not(:checked) + span:after {
+    display: none;
+  }
+}
+
+//  Filled checkbox mixin
+/////////////////////////////////////////////////
+@mixin create_checkbox_filled($size, $background, $border, $border-hover, $inner) {
+  @include create_checkbox($size, $background, $border, $border-hover, $inner); // add deault checkbox styles
+
+  input[type=checkbox]:checked {
+    & + span:before {
+      background-color: $border-hover;
+      border-color: $border-hover;
+    }
+
+    & + span:after {
+      border-color: $background;
+    }
+  }
+
+  input[type=checkbox][disabled]:checked + span:before,
+  input[type=checkbox].disabled:checked + span:before,
+  &.disabled input[type=checkbox]:checked + span:before {
+    @include opacity(65);
   }
 }
 
@@ -122,5 +167,45 @@
     input[type=radio]:not(:checked) + span:after {
       background-color: mix($inner, $background, 50%);
     }
+  }
+
+  &.disabled,
+  &.disabled input[type=radio] + span {
+    cursor: not-allowed;
+  }
+
+  input[type=radio][disabled] + span:before,
+  input[type=radio].disabled + span:before,
+  &.disabled input[type=radio] + span:before {
+    background: mix($border, $background, 50%);
+  }
+
+  &:hover input[type=radio][disabled]:not(:checked) + span:after,
+  &:hover input[type=radio].disabled:not(:checked) + span:after,
+  &.disabled:hover input[type=radio]:not(:checked) + span:after {
+    display: none;
+  }
+}
+
+//  Filled radio mixin
+/////////////////////////////////////////////////
+@mixin create_radio_filled($size, $background, $border, $border-hover, $inner) {
+  @include create_radio($size, $background, $border, $border-hover, $inner); // add deault radio styles
+
+  input[type=radio]:checked {
+    & + span:before {
+      background-color: $border-hover;
+      border-color: $border-hover;
+    }
+
+    & + span:after {
+      background-color: $background;
+    }
+  }
+  
+  input[type=radio][disabled]:checked + span:before,
+  input[type=radio].disabled:checked + span:before,
+  &.disabled input[type=radio]:checked + span:before {
+    @include opacity(65);
   }
 }
