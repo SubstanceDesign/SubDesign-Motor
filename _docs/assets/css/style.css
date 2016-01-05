@@ -293,6 +293,7 @@ body {
   top: 15px;
   height: 3px;
   width: 16px;
+  vertical-align: middle;
   background: #fff;
   opacity: .3;
 }
@@ -329,7 +330,8 @@ body {
   display: none;
   margin-left: -3px;
   font-size: 24px;
-  line-height: 46px;
+  line-height: 44px;
+  vertical-align: middle;
   color: #fff;
   opacity: .3;
 }
@@ -624,6 +626,12 @@ pre.prettyprint.prettyprint-plain {
   background: #EDF7F7;
 }
 
+.docs_mark {
+  background: #F7F7F7;
+  color: #8F1010;
+  padding: 2px 5px;
+  border: 1px solid #C4D4D4;
+}
 
 
 

@@ -148,14 +148,6 @@ $grid_gutters: (
 //  Inputs
 /////////////////////////////////////////////////
 
-// Inputs types (set true to include and false to exclude)
-$button_flat: true;
-$button_outline: true;
-$button_3d: true;
-$button_gradient: true;
-
-$text-input_default: true;
-
 // common size settings
 $inputs_height: 9 * $unit;
 $inputs_padding-horizontal: $inputs_height * 0.35;
@@ -198,8 +190,17 @@ $button_flat_border-width: 1px;
 $button_outline_border-width: 2px;
 $button_gradient_border-width: 2px;
 
+// Button types (set true to include and false to exclude)
+$button_flat: true;
+$button_outline: true;
+$button_3d: true;
+$button_gradient: true;
+
 // Text inputs
 $text-input_border-width: 2px;
+
+// Text input types (set true to include and false to exclude)
+$text-input_default: true;
 
 // Checkbox and radio
 $checkbox_size: 20px;

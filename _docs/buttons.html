@@ -8,7 +8,7 @@
     
     <!-- SITE TITLE AND DESCRIPTION 
     *********************************************** -->
-    <title>Inputs | Framework</title>
+    <title>Buttons | Framework</title>
     <meta name="description" content="">
 
     <!-- FIXES
@@ -38,7 +38,7 @@
       <!-- HEADER
       *********************************************** -->
       <header id="docs_header">
-        <h1>Inputs</h1>
+        <h1>Buttons</h1>
       </header>
       <!-- *********************************************** 
       END HEADER -->
@@ -51,7 +51,11 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#anchor_buttons">Buttons</a></li>
+          <li><a href="#anchor_buttons">Default buttons</a></li>
+          <li><a href="#anchor_colors">Button colors</a></li>
+          <li><a href="#anchor_styles">Button styles</a></li>
+          <li><a href="#anchor_sizes">Button sizes</a></li>
+          <li><a href="#anchor_groups">Button groups</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -64,8 +68,8 @@
         <!-- GRID
         *********************************************** -->
         <div class="content">
-          <h2 id="anchor_buttons">Buttons</h2>
-          <p>Default button is created with <strong>.button</strong> class applied to <strong>&lt;a&gt;</strong>, <strong>&lt;button&gt;</strong> or <strong>&lt;input type=submit&gt;</strong> tag.</p>
+          <h2 id="anchor_buttons">Default buttons</h2>
+          <p>Default button is created with <span class="docs_mark">.button</span> class applied to <span class="docs_mark">&lt;a&gt;</span>, <span class="docs_mark">&lt;button&gt;</span> or <span class="docs_mark">&lt;input type=submit&gt;</span> tag.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;a href="#" class="button">Default button&lt;/a>
@@ -77,7 +81,34 @@
             <button class="button">Default button</button>
             <input type="submit" class="button" value="Default button">
           </p>
-          <p class="docs_indent-section">Button have seven color modes: primary (default), neutral, secondary, info, success, warning and danger. The last six used by adding color name postfix to button class.</p>
+          <p class="docs_indent-section">For the block behavior use <span class="docs_mark">.button--block</span> class.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;div class="row">
+  &lt;div class="col-12 xs_col-4 sm_col-3">
+    &lt;a href="#" class="button button--block">Block button&lt;/a>
+  &lt;/div>
+  &lt;div class="col-12 xs_col-4 sm_col-3">
+    &lt;a href="#" class="button button--block">Block button&lt;/a>
+  &lt;/div>
+  &lt;div class="col-12 xs_col-4 sm_col-3">
+    &lt;a href="#" class="button button--block">Block button&lt;/a>
+  &lt;/div>
+&lt;/div></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="col-12 xs_col-4 sm_col-3">
+              <a href="#" class="button button--block">Block button</a>
+            </div>
+            <div class="col-12 xs_col-4 sm_col-3">
+              <a href="#" class="button button--block">Block button</a>
+            </div>
+            <div class="col-12 xs_col-4 sm_col-3">
+              <a href="#" class="button button--block">Block button</a>
+            </div>
+          </div>
+          <h2 id="anchor_colors">Button colors</h2>
+          <p>Button have seven color modes: primary (default), neutral, secondary, info, success, warning and danger. The last six used by adding color name postfix to button class.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;button class="button">Primary&lt;/button>
@@ -97,7 +128,8 @@
             <button class="button-warning">Warning</button>
             <button class="button-danger">Danger</button>
           </p>
-          <p class="docs_indent-section">Buttons are implemented in four different styles. Each style's class name is formed by adding a <strong>.button-</strong> prefix to the name of the type (except default flat).</p>
+          <h2 id="anchor_styles">Button styles</h2>
+          <p>Buttons are implemented in four different styles. Each style's class name is formed by adding a <span class="docs_mark">.button-</span> prefix to the name of the type (except default flat).</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;p>
@@ -173,7 +205,8 @@
             <button class="button-gradient-warning">Warning</button>
             <button class="button-gradient-danger">Danger</button>
           </p>
-          <p class="docs_indent-section">Button have three size modes excluding default. To change size add corresponding modifier <strong>.button--xs</strong>, <strong>.button--sm</strong>, <strong>.button--lg</strong>.</p>
+          <h2 id="anchor_sizes">Button sizes</h2>
+          <p>Button have three size modes excluding default. To change size add corresponding modifier <span class="docs_mark">.button--xs</span>, <span class="docs_mark">.button--sm</span>, <span class="docs_mark">.button--lg</span>.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;button class="button">Medium size&lt;/button>
@@ -187,7 +220,8 @@
             <button class="button button--sm">Small size</button>
             <button class="button button--lg">Large size</button>
           </p>
-          <p class="docs_indent-section">Buttons can be united into seamless group by wrapping them with <strong>.button-group</strong> element.</p>
+          <h2 id="anchor_groups">Button groups</h2>
+          <p>Buttons can be united into seamless group by wrapping them with <span class="docs_mark">.button-group</span> element.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;div class="button-group">
@@ -223,6 +257,102 @@
               <a href="#" class="button-outline">Primary</a>
             </div>
           </p>
+          <h2 id="anchor_custom-class">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+@mixin add_button_styles()</pre></td>
+              <td>Add necessary for any button settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_button_*</span> mixins. It is included already</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_flat($background, $color, $border)</pre></td>
+              <td>Create flat button</td>
+              <td>$background: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border: color of button border. Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_outline($border, $color, $border-width: 1px)</pre></td>
+              <td>Create outline button</td>
+              <td>$border: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border-width: border width. Optional!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_3d($background, $color)</pre></td>
+              <td>Create 3D button</td>
+              <td>$background: color of button background. Required! <br><br>$color: color of button text. Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_gradient(
+  $gradient-top, 
+  $gradient-bottom, 
+  $color, 
+  $border-top, 
+  $border-bottom
+)</pre></td>
+              <td>Create flat button</td>
+              <td>$gradient-top: top color of linear gradient. Required! <br><br>$gradient-bottom: bottom color of linear gradient. Required! <br><br>$color: color of button text. Required! <br><br>$border-top: color of button top border. Required! <br><br>$border-bottom: color of button top border. Required!</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>CSS</strong></p>
+          <pre class="prettyprint">
+.custom-button-name {
+  @include create_button_flat(#000, #fff, #ccc); // apply flat button styles
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;button class="custom-button-name">Custom buttom&lt;/button></pre>
+          <h2 id="anchor_config">Setting buttons config</h2>
+          <p>The framework has common input settings and individual button settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>button_flat_border-width</td>
+              <td>Border width of default flat button</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>button_outline_border-width</td>
+              <td>Border width of outline button</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>button_gradient_border-width</td>
+              <td>Border width of gradient button</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>button_flat</td>
+              <td>Enable default flat buttons</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>button_outline</td>
+              <td>Enable outline buttons</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>button_3d</td>
+              <td>Enable 3D buttons</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>button_gradient</td>
+              <td>Enable gradient buttons</td>
+              <td>true / false</td>
+            </tr>
+          </table>
         </div>
         <!-- *********************************************** 
         END GRID -->
