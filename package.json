@@ -1,5 +1,5 @@
 {
-  "name": "framework-build",
+  "name": "Motor framework",
   "description": "framework build script",
   "version": "0.0.0",
   "main": "./Gruntfile.js",

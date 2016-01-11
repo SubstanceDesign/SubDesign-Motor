@@ -42,6 +42,21 @@
   }
 }
 
+/* Button modifiers
+***********************************************/
+
+/* Default button size modifiers */
+.text-input--xs {
+  @include add_input_size($inputs_height_xs, $inputs_padding-horizontal_xs, $inputs_font-size_xs, $inputs_border-radius_xs, $text-input_border-width*2);
+}
+
+.text-input--sm {
+  @include add_input_size($inputs_height_sm, $inputs_padding-horizontal_sm, $inputs_font-size_sm, $inputs_border-radius_sm, $text-input_border-width*2);
+}
+
+.text-input--lg {
+  @include add_input_size($inputs_height_lg, $inputs_padding-horizontal_lg, $inputs_font-size_lg, $inputs_border-radius_lg, $text-input_border-width*2);
+}
 
 
 

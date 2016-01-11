@@ -4329,6 +4329,16 @@ textarea.text-input,
 select[multiple].text-input {
   height: auto;
 }
+
+textarea.text-input.autoresize {
+  overflow: hidden;
+  resize: none;
+  -webkit-transition: border-color .3s, color .3s, opacity .3s, background .3s;
+          transition: border-color .3s, color .3s, opacity .3s, background .3s;
+}
+textarea.text-input.autoresize.limited {
+  overflow: auto;
+}
 select.text-input {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
@@ -4382,6 +4392,30 @@ select.text-input {
 .text-input.success:focus, .success .text-input:focus {
   -webkit-box-shadow: inset 0 0 3px #3DCC80;
           box-shadow: inset 0 0 3px #3DCC80;
+}
+
+/* Button modifiers
+***********************************************/
+/* Default button size modifiers */
+.text-input--xs {
+  padding: 1.75px 8.4px;
+  line-height: 1.5;
+  font-size: 11px;
+  border-radius: 0;
+}
+
+.text-input--sm {
+  padding: 5px 11.2px;
+  line-height: 1.5;
+  font-size: 12px;
+  border-radius: 0;
+}
+
+.text-input--lg {
+  padding: 10px 16.8px;
+  line-height: 1.5;
+  font-size: 16px;
+  border-radius: 0;
 }
 
 /*********************************************** 

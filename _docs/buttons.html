@@ -8,7 +8,7 @@
     
     <!-- SITE TITLE AND DESCRIPTION 
     *********************************************** -->
-    <title>Buttons | Framework</title>
+    <title>Buttons | Motor</title>
     <meta name="description" content="">
 
     <!-- FIXES
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="assets/css/prettify.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Framework stylesheets -->
-    <link rel="stylesheet" href="../css/framework.css">
+    <!-- Motor stylesheets -->
+    <link rel="stylesheet" href="../css/motor.css">
 
     <!-- Styles just for this page -->
     <style>
@@ -268,27 +268,27 @@
             </tr>
             <tr>
               <td><pre class="prettyprint prettyprint-plain">
-@mixin add_button_styles()</pre></td>
+add_button_styles()</pre></td>
               <td>Add necessary for any button settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_button_*</span> mixins. It is included already</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_flat($background, $color, $border)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button_flat($background, $color, $border)</pre></td>
               <td>Create flat button</td>
               <td>$background: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border: color of button border. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_outline($border, $color, $border-width: 1px)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button_outline($border, $color, $border-width: 1px)</pre></td>
               <td>Create outline button</td>
               <td>$border: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border-width: border width. Optional!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_3d($background, $color)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button_3d($background, $color)</pre></td>
               <td>Create 3D button</td>
               <td>$background: color of button background. Required! <br><br>$color: color of button text. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_button_gradient(
+              <td><pre class="prettyprint prettyprint-plain">create_button_gradient(
   $gradient-top, 
   $gradient-bottom, 
   $color, 
@@ -296,11 +296,11 @@
   $border-bottom
 )</pre></td>
               <td>Create flat button</td>
-              <td>$gradient-top: top color of linear gradient. Required! <br><br>$gradient-bottom: bottom color of linear gradient. Required! <br><br>$color: color of button text. Required! <br><br>$border-top: color of button top border. Required! <br><br>$border-bottom: color of button top border. Required!</td>
+              <td>$gradient-top: top color of linear gradient. Required! <br><br>$gradient-bottom: bottom color of linear gradient. Required! <br><br>$color: color of button text. Required! <br><br>$border-top: color of button top border. Required! <br><br>$border-bottom: color of button bottom border. Required!</td>
             </tr>
           </table>
           <p>Examples:</p>
-          <p class="docs_subheading"><strong>CSS</strong></p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
           <pre class="prettyprint">
 .custom-button-name {
   @include create_button_flat(#000, #fff, #ccc); // apply flat button styles
@@ -308,6 +308,13 @@
           <p class="docs_subheading"><strong>HTML</strong></p>
           <pre class="prettyprint">
 &lt;button class="custom-button-name">Custom buttom&lt;/button></pre>
+          <div class="docs_note">Also you can include common input mixins. For example size mixin.</div>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-button-name {
+  @include create_button_outline(#ccc, #000); // apply outline button styles
+  @include add_input_size(60px, 20px, 16px, 3px, 4px);
+}</pre>
           <h2 id="anchor_config">Setting buttons config</h2>
           <p>The framework has common input settings and individual button settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
           <p class="docs_subheading"><strong>Settings list</strong></p>
@@ -375,6 +382,6 @@
     <script src="assets/js/script.js"></script>
 
     <!-- Framework scripts -->
-    <script src="../js/framework.js"></script>
+    <script src="../js/motor.js"></script>
   </body>
 </html>

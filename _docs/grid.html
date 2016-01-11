@@ -8,7 +8,7 @@
     
     <!-- SITE TITLE AND DESCRIPTION 
     *********************************************** -->
-    <title>Grid system | Framework</title>
+    <title>Grid system | Motor</title>
     <meta name="description" content="">
 
     <!-- FIXES
@@ -22,8 +22,8 @@
     <link rel="stylesheet" href="assets/css/prettify.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    <!-- Framework stylesheets -->
-    <link rel="stylesheet" href="../css/framework.css">
+    <!-- Motor stylesheets -->
+    <link rel="stylesheet" href="../css/motor.css">
 
     <!-- Styles just for this page -->
     <style>
@@ -473,100 +473,100 @@
             </tr>
             <tr>
               <td><pre class="prettyprint prettyprint-plain">
-@include viewport($breakpoint) {
+viewport($breakpoint) {
   // any content
 }</pre></td>
               <td>The mixin content will be applied to specified viewport. <br>Use this mixin to responsively apply row features to your classes.</td>
               <td>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_grid();</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_grid();</pre></td>
               <td>Apply <span class="docs_mark">.grid</span> styles to an element</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row();</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row();</pre></td>
               <td>Apply <span class="docs_mark">.row</span> styles to an element</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_collapse();</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_collapse();</pre></td>
               <td>Apply <strong>collapsed row</strong> feature to an element</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_gutter($gutter-width);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_gutter($gutter-width);</pre></td>
               <td>Apply <strong>different gutter</strong> feature to an element</td>
               <td>$gutter-width: px. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_gutter-reset();</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_gutter-reset();</pre></td>
               <td>Reset <strong>different gutter</strong> to default value</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_vertical-gutter($gutter-width);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_vertical-gutter($gutter-width);</pre></td>
               <td>Apply <strong>vertical gutter</strong> feature to an element</td>
               <td>$gutter-width: px. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_centered($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_centered($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>center</strong> alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_justified($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_justified($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>justify</strong> alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_valign-top($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_valign-top($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>top</strong> vertical alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_valign-bottom($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_valign-bottom($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>bottom</strong> vertical alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_valign-middle($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_valign-middle($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>middle</strong> vertical alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_row_valign-stretch($include-flexbox-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_row_valign-stretch($include-flexbox-mixin: true);</pre></td>
               <td>Apply <strong>stretch</strong> vertical alignment to columns of a target row</td>
               <td>$include-flexbox-mixin: true / false. Optional. Set false to not iclude common alignment features styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_col($cols, $breakpoint: 'mc', $include-col-mixin: true);</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_col($cols, $breakpoint: 'mc', $include-col-mixin: true);</pre></td>
               <td>Apply <span class="docs_mark">.col-*</span> styles to an element</td>
               <td>$cols: size in columns. Required! <br><br>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Optional. <br><br>$include-col-mixin: true / false. Optional. Set false to not iclude common column styles again.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_col_offset($cols, $breakpoint: 'mc');</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_col_offset($cols, $breakpoint: 'mc');</pre></td>
               <td>Apply column <strong>offset</strong> feature styles to an element</td>
               <td>$cols: size in columns. Required! <br><br>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Optional.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_col_right($cols, $breakpoint: 'mc');</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_col_right($cols, $breakpoint: 'mc');</pre></td>
               <td>Apply column <strong>move right</strong> feature styles to an element</td>
               <td>$cols: size in columns. Required! <br><br>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Optional.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_col_left($cols, $breakpoint: 'mc');</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_col_left($cols, $breakpoint: 'mc');</pre></td>
               <td>Apply column <strong>move left</strong> feature styles to an element</td>
               <td>$cols: size in columns. Required! <br><br>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Optional.</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">@mixin create_col_reset-order($breakpoint: 'mc');</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_col_reset-order($breakpoint: 'mc');</pre></td>
               <td>Reset column movement</td>
               <td>$breakpoint: one of the viewport shortnames (mc, xs, sm, md, lg, xl). Optional.</td>
             </tr>
           </table>
           <p>Examples:</p>
-          <p class="docs_subheading"><strong>CSS</strong></p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
           <pre class="prettyprint">
 .custom-grid-name {
   @include create_grid(); // extend .grid styles
@@ -594,7 +594,7 @@
   &lt;/div>
 &lt;/div></pre>
         <p>Also you can use SASS directive <span class="docs_mark">@extend</span>. Just extend the grid classes you need to reach the same effect.</p>
-        <p class="docs_subheading"><strong>CSS</strong></p>
+        <p class="docs_subheading"><strong>SCSS</strong></p>
           <pre class="prettyprint">
 .custom-class-1 {
   @extend .col-8;
@@ -712,6 +712,6 @@
     <script src="assets/js/script.js"></script>
 
     <!-- Framework scripts -->
-    <script src="../js/framework.js"></script>
+    <script src="../js/motor.js"></script>
   </body>
 </html>

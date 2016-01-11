@@ -11,14 +11,14 @@ module.exports = function( grunt ) {
         separator: ';'
       },
       scripts: {
-        src: ['_source/core/**/js/*.js','_source/modules/**/js/*.js'],
-        dest: 'js/framework.js'
+        src: ['_source/core/base/js/base.js','_source/core/**/js/*.js','_source/modules/**/js/*.js'],
+        dest: 'js/motor.js'
       }
     },
 
     // beautify deploy JS
     jsbeautifier: {
-      files: ['js/framework.js'],
+      files: ['js/motor.js'],
       options: {
           config: 'jsbeautifier.json'
       }
@@ -28,7 +28,7 @@ module.exports = function( grunt ) {
     uglify: {
       scripts: {
         files: {
-          'js/framework.min.js': 'js/framework.js'
+          'js/motor.min.js': 'js/motor.js'
         }
       }
     },
@@ -40,7 +40,7 @@ module.exports = function( grunt ) {
           style: 'expanded'
         },
         files: {              
-          'css/framework.css': '_source/main.scss'
+          'css/motor.css': '_source/main.scss'
         }
       }
     },
@@ -51,7 +51,7 @@ module.exports = function( grunt ) {
         browsers: ['> 1%', 'Android 3', 'last 2 versions', 'Firefox ESR', 'Opera 12.1', 'ie 7', 'ie 8', 'ie 9']
       },
       no_dest: {
-        src: ['css/framework.css']
+        src: ['css/motor.css']
       }
     },
 
@@ -62,7 +62,7 @@ module.exports = function( grunt ) {
           config: 'csscomb.json'
         },
         files: {
-          'css/framework.css': 'css/framework.css'
+          'css/motor.css': 'css/motor.css'
         }
       }
     },
@@ -74,7 +74,7 @@ module.exports = function( grunt ) {
       },
       styles: {
         files: {
-          'css/framework.min.css': 'css/framework.css'
+          'css/motor.min.css': 'css/motor.css'
         }
       }
     },

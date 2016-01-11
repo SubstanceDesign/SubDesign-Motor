@@ -22,17 +22,6 @@
   }
 }
 
-//  Responsive appliance mixin
-/////////////////////////////////////////////////
-@mixin viewport($breakpoint: '') {
-  
-  @if ($breakpoint != '') {
-    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
-      @content;
-    }
-  }
-}
-
 //  Row mixins
 /////////////////////////////////////////////////
 

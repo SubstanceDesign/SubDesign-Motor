@@ -72,7 +72,7 @@ $palette_hipster: (
 /////////////////////////////////////////////////
 
 // microscopic devices
-$viewport_mc: 320px;
+$viewport_mc: 0;
 $viewport_sm-phone: $viewport_mc;
 
 // extra small devices
@@ -102,6 +102,15 @@ $viewport_breakpoints: (
   md: $viewport_md, 
   lg: $viewport_lg, 
   xl: $viewport_xl
+);
+
+$viewport_breakpoints_max: (
+  mc: $viewport_xs - 1, 
+  xs: $viewport_sm - 1, 
+  sm: $viewport_md - 1, 
+  md: $viewport_lg - 1, 
+  lg: $viewport_xl - 1, 
+  xl: false
 );
 
 //  Layout
