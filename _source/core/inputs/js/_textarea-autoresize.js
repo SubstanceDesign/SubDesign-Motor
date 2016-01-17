@@ -28,11 +28,8 @@
     inst.opts = motor.extendDataOptions( inst.textarea, inst.opts, 'data-textarea-autoresize-' );
 
     // create events
-    var eventInit = document.createEvent('Event'),
-        eventResize = document.createEvent('Event');
-
-    eventInit.initEvent('textarea-autoresize-init', true, true);
-    eventResize.initEvent('textarea-autoresize-resize', true, true);
+    var eventInit = motor.createCustomEvent( 'textarea-autoresize-init' ),
+        eventResize = motor.createCustomEvent( 'textarea-autoresize-resize' );
 
     // get outer height difference
     inst.getOuterDiff = function() {
@@ -62,6 +59,9 @@
         if (!inst.limited) {
           var newHeight = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical;
 
+
+          console.log(newHeight, inst.shadowTextarea.scrollHeight, inst.outerDiff.vertical);
+
           // check if reaches height limit
           if ( newHeight > inst.opts.maxHeight ) {
             inst.limited = true;
@@ -71,7 +71,7 @@
             inst.textarea.style.height = newHeight + 'px';
             
             // dispatch plugin resize event
-            inst.textarea.dispatchEvent(eventResize);
+            motor.dispatchCustomEvent( inst.textarea, eventResize, 'textarea-autoresize-resize', true );
           }
         }
 
@@ -88,7 +88,7 @@
           motor.removeClass( inst.textarea, 'limited' );
 
           // dispatch plugin resize event
-          inst.textarea.dispatchEvent(eventResize);
+          motor.dispatchCustomEvent( inst.textarea, eventResize, 'textarea-autoresize-resize', true );
         }
       
       }
@@ -106,20 +106,20 @@
     inst.outerDiff = inst.getOuterDiff();
 
     // listen to keyup event that can change textarea size
-    inst.textarea.addEventListener( 'keyup', function() {
+    motor.Event.addListener( inst.textarea, 'keyup', function() {
       inst.updateHeight();
-    });
+    } );
 
     // update on window resize
     if ( inst.opts.updateOnResize ) {
       inst.updateHeightThrottled = motor.throttle( inst.updateHeight, 10 );
-      window.addEventListener( 'resize', function() {
+      motor.Event.addListener( window, 'resize', function() {
         inst.updateHeightThrottled();
-      });
+      } );
     }
 
     // dispatch plugin init event
-    inst.textarea.dispatchEvent(eventInit);
+    motor.dispatchCustomEvent( inst.textarea, eventInit, 'textarea-autoresize-init', true );
   };
 
   // auto init for [data-textarea-autoresize]

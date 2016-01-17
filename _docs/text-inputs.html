@@ -298,6 +298,7 @@ document.getElementById('my-textarea').value = '...Very long value...';
 // Update textarea height to fit its new scrollable content
 textareaAutoresized.updateHeight();
 </pre>
+          <p>The plugin work is accompanied by custom event calls. To listen to framework custom events use <span class="docs_mark">motor.addCustomEventListener( element, eventName, eventHandler )</span> method. <br>For modern browsers you can use default <span class="docs_mark">element.addEventListener</span> method.</p>
           <p class="docs_subheading"><strong>Events list</strong></p>
           <table>
             <tr>
@@ -318,14 +319,14 @@ textareaAutoresized.updateHeight();
 var textarea = document.getElementById('my-textarea');
 
 // Add init event listener 
-textarea.addEventListener('textarea-autoresize-init', function() {
+motor.addCustomEventListener( textarea, 'textarea-autoresize-init', function() {
   console.log('Textarea autoresize was inited');
-})
+} );
 
 // Add resize event listener 
-textarea.addEventListener('textarea-autoresize-resize', function() {
+motor.addCustomEventListener( textarea, 'textarea-autoresize-resize', function() {
   console.log('Textarea autoresize was resized');
-})
+} );
 
 // Initialize plugin
 new motor.textareaAutoresize( document.getElementById('my-textarea') );</pre>
@@ -356,13 +357,13 @@ new motor.textareaAutoresize( document.getElementById('my-textarea') );</pre>
     <script>
       var textarea = document.getElementById('my-textarea');
 
-      textarea.addEventListener('textarea-autoresize-init', function() {
+      motor.addCustomEventListener( textarea, 'textarea-autoresize-init', function() {
         console.log('Textarea autoresize was inited');
-      })
+      } );
 
-      textarea.addEventListener('textarea-autoresize-resize', function() {
+      motor.addCustomEventListener( textarea, 'textarea-autoresize-resize', function() {
         console.log('Textarea autoresize was resized');
-      })
+      } );
 
       new motor.textareaAutoresize( document.getElementById('my-textarea'), {
         maxHeight: 300

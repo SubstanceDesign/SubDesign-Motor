@@ -8,7 +8,7 @@ module.exports = function( grunt ) {
     // concat JS
     concat: {
       options: {
-        separator: ';'
+        separator: '\n\n'
       },
       scripts: {
         src: ['_source/core/base/js/base.js','_source/core/**/js/*.js','_source/modules/**/js/*.js'],
