@@ -391,7 +391,7 @@
       // check if the element was delivered as argument
       if (!elem) {
         // create array of items
-        inst.elements = document.querySelectorAll('[placeholder]');
+        inst.elements = document.querySelectorAll('input[placeholder], textarea[placeholder]');
 
         for ( var i = 0; i < inst.elements.length; i++ ) {
           inst.initPlaceholder(inst.elements[i]);

@@ -155,7 +155,8 @@
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, $button_gradient_border-width*2); // add default size
 
-  background: $gradient-bottom linear-gradient($gradient-top, $gradient-bottom);
+  background: darken($gradient-top, 10%);
+  background: linear-gradient($gradient-top, $gradient-bottom);
   color: $color;
   border-style: solid;
   border-width: $button_gradient_border-width 0;

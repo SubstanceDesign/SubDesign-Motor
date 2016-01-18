@@ -2901,6 +2901,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #FF981A;
@@ -2942,6 +2943,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #fff;
@@ -2983,6 +2985,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #0d0d0d;
@@ -3024,6 +3027,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #6EB7C2;
@@ -3065,6 +3069,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #3DCC80;
@@ -3106,6 +3111,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #F0D524;
@@ -3147,6 +3153,7 @@ th {
           user-select: none;
   padding: 6.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #E21F1E;
@@ -3191,6 +3198,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3232,6 +3240,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3273,6 +3282,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3314,6 +3324,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3355,6 +3366,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3396,6 +3408,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3437,6 +3450,7 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background: transparent;
@@ -3466,18 +3480,21 @@ th {
 [class*='button-outline'].button--xs {
   padding: 1.75px 8.4px;
   line-height: 1.5;
+  height: 24px;
   font-size: 11px;
   border-radius: 0;
 }
 [class*='button-outline'].button--sm {
   padding: 5px 11.2px;
   line-height: 1.5;
+  height: 32px;
   font-size: 12px;
   border-radius: 0;
 }
 [class*='button-outline'].button--lg {
   padding: 10px 16.8px;
   line-height: 1.5;
+  height: 48px;
   font-size: 16px;
   border-radius: 0;
 }
@@ -3501,6 +3518,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3550,6 +3568,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3600,6 +3619,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3649,6 +3669,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3698,6 +3719,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3747,6 +3769,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3796,6 +3819,7 @@ th {
           user-select: none;
   padding: 6px 12.6px;
   line-height: 1.5;
+  height: 33px;
   font-size: 14px;
   border-radius: 0;
   position: relative;
@@ -3833,18 +3857,21 @@ th {
 [class*='button-3d'].button--xs {
   padding: 2.25px 8.4px;
   line-height: 1.5;
+  height: 21px;
   font-size: 11px;
   border-radius: 0;
 }
 [class*='button-3d'].button--sm {
   padding: 5.5px 11.2px;
   line-height: 1.5;
+  height: 29px;
   font-size: 12px;
   border-radius: 0;
 }
 [class*='button-3d'].button--lg {
   padding: 10.5px 16.8px;
   line-height: 1.5;
+  height: 45px;
   font-size: 16px;
   border-radius: 0;
 }
@@ -3868,11 +3895,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #e67f00 -webkit-gradient(linear, left top, left bottom, from(#ffaf4d), to(#e67f00));
-  background: #e67f00 -webkit-linear-gradient(#ffaf4d, #e67f00);
-  background: #e67f00 linear-gradient(#ffaf4d, #e67f00);
+  background: #ff981a;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffaf4d), to(#e67f00));
+  background: -webkit-linear-gradient(#ffaf4d, #e67f00);
+  background: linear-gradient(#ffaf4d, #e67f00);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -3920,11 +3949,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #b3b3b3 -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#b3b3b3));
-  background: #b3b3b3 -webkit-linear-gradient(#e6e6e6, #b3b3b3);
-  background: #b3b3b3 linear-gradient(#e6e6e6, #b3b3b3);
+  background: #cccccc;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#b3b3b3));
+  background: -webkit-linear-gradient(#e6e6e6, #b3b3b3);
+  background: linear-gradient(#e6e6e6, #b3b3b3);
   color: #0d0d0d;
   border-style: solid;
   border-width: 2px 0;
@@ -3972,11 +4003,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: black -webkit-gradient(linear, left top, left bottom, from(#272727), to(black));
-  background: black -webkit-linear-gradient(#272727, black);
-  background: black linear-gradient(#272727, black);
+  background: #0d0d0d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#272727), to(black));
+  background: -webkit-linear-gradient(#272727, black);
+  background: linear-gradient(#272727, black);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -4024,11 +4057,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #4ba5b2 -webkit-gradient(linear, left top, left bottom, from(#92c9d1), to(#4ba5b2));
-  background: #4ba5b2 -webkit-linear-gradient(#92c9d1, #4ba5b2);
-  background: #4ba5b2 linear-gradient(#92c9d1, #4ba5b2);
+  background: #6eb7c2;
+  background: -webkit-gradient(linear, left top, left bottom, from(#92c9d1), to(#4ba5b2));
+  background: -webkit-linear-gradient(#92c9d1, #4ba5b2);
+  background: linear-gradient(#92c9d1, #4ba5b2);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -4076,11 +4111,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #2da967 -webkit-gradient(linear, left top, left bottom, from(#65d79a), to(#2da967));
-  background: #2da967 -webkit-linear-gradient(#65d79a, #2da967);
-  background: #2da967 linear-gradient(#65d79a, #2da967);
+  background: #3dcc80;
+  background: -webkit-gradient(linear, left top, left bottom, from(#65d79a), to(#2da967));
+  background: -webkit-linear-gradient(#65d79a, #2da967);
+  background: linear-gradient(#65d79a, #2da967);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -4128,11 +4165,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #d3b90e -webkit-gradient(linear, left top, left bottom, from(#f3de54), to(#d3b90e));
-  background: #d3b90e -webkit-linear-gradient(#f3de54, #d3b90e);
-  background: #d3b90e linear-gradient(#f3de54, #d3b90e);
+  background: #f0d524;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3de54), to(#d3b90e));
+  background: -webkit-linear-gradient(#f3de54, #d3b90e);
+  background: linear-gradient(#f3de54, #d3b90e);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -4180,11 +4219,13 @@ th {
           user-select: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
-  background: #b61817 -webkit-gradient(linear, left top, left bottom, from(#e84c4b), to(#b61817));
-  background: #b61817 -webkit-linear-gradient(#e84c4b, #b61817);
-  background: #b61817 linear-gradient(#e84c4b, #b61817);
+  background: #e21f1e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e84c4b), to(#b61817));
+  background: -webkit-linear-gradient(#e84c4b, #b61817);
+  background: linear-gradient(#e84c4b, #b61817);
   color: #fff;
   border-style: solid;
   border-width: 2px 0;
@@ -4220,18 +4261,21 @@ th {
 [class*='button-gradient'].button--xs {
   padding: 1.75px 8.4px;
   line-height: 1.5;
+  height: 24px;
   font-size: 11px;
   border-radius: 0;
 }
 [class*='button-gradient'].button--sm {
   padding: 5px 11.2px;
   line-height: 1.5;
+  height: 32px;
   font-size: 12px;
   border-radius: 0;
 }
 [class*='button-gradient'].button--lg {
   padding: 10px 16.8px;
   line-height: 1.5;
+  height: 48px;
   font-size: 16px;
   border-radius: 0;
 }
@@ -4247,6 +4291,7 @@ th {
 .button--xs {
   padding: 2.75px 8.4px;
   line-height: 1.5;
+  height: 24px;
   font-size: 11px;
   border-radius: 0;
 }
@@ -4254,6 +4299,7 @@ th {
 .button--sm {
   padding: 6px 11.2px;
   line-height: 1.5;
+  height: 32px;
   font-size: 12px;
   border-radius: 0;
 }
@@ -4261,6 +4307,7 @@ th {
 .button--lg {
   padding: 11px 16.8px;
   line-height: 1.5;
+  height: 48px;
   font-size: 16px;
   border-radius: 0;
 }
@@ -4313,6 +4360,7 @@ th {
   appearance: none;
   padding: 5.5px 12.6px;
   line-height: 1.5;
+  height: 36px;
   font-size: 14px;
   border-radius: 0;
   background-color: #fff;
@@ -4339,10 +4387,18 @@ textarea.text-input.autoresize {
 textarea.text-input.autoresize.limited {
   overflow: auto;
 }
-select.text-input {
+:not(.ie8) select.text-input {
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAG0lEQVR42mNgwAfKy8v/48I4FeA0AacVDFQBAP9wJkE/KhUMAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
   background-position: right 10px center;
+}
+
+select.text-input::-ms-expand {
+  display: none;
+}
+
+.ie9 select.text-input {
+  background-image: none;
 }
 .text-input::-webkit-input-placeholder {
   color: #868686;
@@ -4400,6 +4456,7 @@ select.text-input {
 .text-input--xs {
   padding: 1.75px 8.4px;
   line-height: 1.5;
+  height: 24px;
   font-size: 11px;
   border-radius: 0;
 }
@@ -4407,6 +4464,7 @@ select.text-input {
 .text-input--sm {
   padding: 5px 11.2px;
   line-height: 1.5;
+  height: 32px;
   font-size: 12px;
   border-radius: 0;
 }
@@ -4414,6 +4472,7 @@ select.text-input {
 .text-input--lg {
   padding: 10px 16.8px;
   line-height: 1.5;
+  height: 48px;
   font-size: 16px;
   border-radius: 0;
 }
