@@ -8,7 +8,7 @@
   ***********************************************/
   motor.placeHolder = function(elem) {
     // check placeholder support
-    if ( document.createElement("input").placeholder == undefined ) {
+    if ( document.createElement('input').placeholder == undefined ) {
 
       var inst = this;
 
@@ -19,9 +19,15 @@
         // add placeholder class
         motor.addClass( input, 'placeholder' );
 
+        // check if placeholder is needed
+        inst.showPlaceholder(input);
+
         // listen to keyup to hide or show placeholder
-        input.onkeyup = function() {
-          inst.updateHeight();
+        input.onfocus = function() {
+          inst.hidePlaceholder(input);
+        };
+        input.onblur = function() {
+          inst.showPlaceholder(input);
         };
 
         // prevent submiting placeholder value
@@ -49,13 +55,19 @@
         }
       }
 
-      // placeholder handling
-      inst.handlePlaceholder = function(input) {
-        if ( input.value.length == 0 ) {
+      // hide placeholder
+      inst.hidePlaceholder = function(input) {
+        if ( input.value == input.getAttribute('placeholder') ) {
+          input.value = '';
+          motor.removeClass( input, 'placeholder' );
+        }
+      }
+
+      // show placeholder
+      inst.showPlaceholder = function(input) {
+        if ( input.value == '' ) {
           input.value = input.getAttribute('placeholder');
           motor.addClass( input, 'placeholder' );
-        } else {
-          motor.removeClass( input, 'placeholder' );
         }
       }
 
@@ -74,5 +86,8 @@
     }
 
   };
+
+  // call placeholder polyfill
+  motor.placeHolder();
 
 })();

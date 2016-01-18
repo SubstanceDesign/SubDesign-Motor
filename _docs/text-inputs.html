@@ -251,7 +251,7 @@ add_text-input_styles()</pre></td>
           <div class="docs_note">Also you can call the script directly from js.</div>
           <p class="docs_subheading"><strong>JS</strong></p>
           <pre class="prettyprint">
-new motor.textareaAutoresize( document.getElementById('my-textarea'), {
+new motor.TextareaAutoresize( document.getElementById('my-textarea'), {
   maxHeight: 300
 });</pre>
           <p class="docs_subheading"><strong>Demo</strong></p>
@@ -290,7 +290,7 @@ new motor.textareaAutoresize( document.getElementById('my-textarea'), {
           <p class="docs_subheading"><strong>EXAMPLE</strong></p>
           <pre class="prettyprint">
 // Initialize plugin
-var textareaAutoresized = new motor.textareaAutoresize( document.getElementById('my-textarea') );
+var textareaAutoresized = new motor.TextareaAutoresize( document.getElementById('my-textarea') );
 
 // Increase textarea value to be anormous long
 document.getElementById('my-textarea').value = '...Very long value...';
@@ -329,7 +329,7 @@ motor.addCustomEventListener( textarea, 'textarea-autoresize-resize', function()
 } );
 
 // Initialize plugin
-new motor.textareaAutoresize( document.getElementById('my-textarea') );</pre>
+new motor.TextareaAutoresize( document.getElementById('my-textarea') );</pre>
         </div>
         <!-- *********************************************** 
         END GRID -->
@@ -365,7 +365,7 @@ new motor.textareaAutoresize( document.getElementById('my-textarea') );</pre>
         console.log('Textarea autoresize was resized');
       } );
 
-      new motor.textareaAutoresize( document.getElementById('my-textarea'), {
+      new motor.TextareaAutoresize( document.getElementById('my-textarea'), {
         maxHeight: 300
       });
 

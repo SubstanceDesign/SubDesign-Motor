@@ -6,7 +6,7 @@
 
   /* textarea with autoresize constructor
   ***********************************************/
-  motor.textareaAutoresize = function( elem, options ) {
+  motor.TextareaAutoresize = function( elem, options ) {
     var inst = this;
 
         inst.textarea = elem,
@@ -47,7 +47,7 @@
       return outerDiff;
     }
 
-    inst.updateHeight = function(test) {
+    inst.updateHeight = function() {
 
       // duplicate content and width to clone
       inst.shadowTextarea.value = inst.textarea.value;
@@ -58,9 +58,6 @@
 
         if (!inst.limited) {
           var newHeight = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical;
-
-
-          console.log(newHeight, inst.shadowTextarea.scrollHeight, inst.outerDiff.vertical);
 
           // check if reaches height limit
           if ( newHeight > inst.opts.maxHeight ) {
@@ -78,10 +75,12 @@
       } else {
 
         // check if greater than initial height
-        if ( inst.textarea.clientHeight > inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical ) {
+        if ( inst.textarea.clientHeight > inst.shadowTextarea.clientHeight + inst.outerDiff.vertical ) {
+
+          var newHeight = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical < inst.shadowTextarea.clientHeight + inst.outerDiff.vertical ? inst.shadowTextarea.clientHeight + inst.outerDiff.vertical : inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical;
 
           // decrease size
-          inst.textarea.style.height = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical + 'px';
+          inst.textarea.style.height = newHeight + 'px';
 
           // remove limited state
           inst.limited = false;
@@ -100,19 +99,24 @@
     inst.shadowTextarea.style.WebkitTransition = 'none';
     inst.shadowTextarea.style.MozTransition = 'none';
     inst.shadowTextarea.setAttribute( 'style', 'position: absolute; bottom: 0; z-index: -1; visibility: hidden;');
+    motor.addClass( inst.shadowTextarea, 'clone' );
     document.body.appendChild(inst.shadowTextarea);
 
     // save outer height difference
     inst.outerDiff = inst.getOuterDiff();
 
+    // update height in case of cache content
+    inst.updateHeight();
+
     // listen to keyup event that can change textarea size
-    motor.Event.addListener( inst.textarea, 'keyup', function() {
+    inst.textarea.onkeyup = function() {
       inst.updateHeight();
-    } );
+    }
 
     // update on window resize
     if ( inst.opts.updateOnResize ) {
       inst.updateHeightThrottled = motor.throttle( inst.updateHeight, 10 );
+
       motor.Event.addListener( window, 'resize', function() {
         inst.updateHeightThrottled();
       } );
@@ -122,11 +126,13 @@
     motor.dispatchCustomEvent( inst.textarea, eventInit, 'textarea-autoresize-init', true );
   };
 
+
+
   // auto init for [data-textarea-autoresize]
   var autoinitElements = document.querySelectorAll('[data-textarea-autoresize]');
 
   for ( var i = 0; i < autoinitElements.length; i++ ) {
-    new motor.textareaAutoresize(autoinitElements[i]);
+    new motor.TextareaAutoresize(autoinitElements[i]);
   }
 
 })();

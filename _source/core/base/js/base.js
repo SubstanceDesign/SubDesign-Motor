@@ -9,6 +9,8 @@
   window.motor = {
     // caching often usable nodes
     window: window,
+    windowWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+    windowHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
     body: document.body,
     html: document.documentElement,
 
@@ -34,6 +36,16 @@
           return true
       }
       return false
+    },
+
+    // get crossbrowser window width
+    getWindowWidth: function() {
+      return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    },
+
+    // get crossbrowser window height
+    getWindowHeight: function() {
+      return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     },
 
     // get computed style crossbrowser
@@ -94,9 +106,18 @@
       
       // normalize handler function
       function commonHandle(event) {
+        // return if window resize event fired without actial window resize
+        if ( event.type == 'resize' && motor.getWindowWidth() == motor.windowWidth && motor.getWindowHeight() == motor.windowHeight )
+          return;
+        else {
+          motor.windowWidth = motor.getWindowWidth();
+          motor.windowHeight = motor.getWindowHeight();
+        }
+
+        // fix event object
         event = fixEvent(event);
         
-        // get handlers
+        // get handlers of current type
         var handlers = this.events[event.type];
 
         for ( var i in handlers ) {
@@ -113,14 +134,18 @@
       return {
         // add event listener
         addListener: function( elem, eventName, eventHandler ) {
+
+          // check if elem is actually window
           if ( elem.setInterval && ( elem != window && !elem.frameElement ) ) {
             elem = window;
           }
           
+          // register handler id
           if (!eventHandler.handlerId) {
             eventHandler.handlerId = ++handlerList;
           }
           
+          // create event property and write in fixed handler
           if (!elem.events) {
             elem.events = {}
             elem.handle = function(event) {
@@ -140,11 +165,13 @@
               elem.attachEvent( 'on' + eventName, elem.handle );
           }
           
+          // add handler to corresponding event
           elem.events[eventName][eventHandler.handlerId] = eventHandler;
         },
         
         removeListener: function(elem, eventName, eventHandler) {
-          var handlers = elem.events && elem.events[eventName]
+          // get if event handlers added
+          var handlers = elem.events && elem.events[eventName];
           
           if (!handlers) return;
           

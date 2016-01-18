@@ -9,6 +9,8 @@
   window.motor = {
     // caching often usable nodes
     window: window,
+    windowWidth: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+    windowHeight: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
     body: document.body,
     html: document.documentElement,
 
@@ -34,6 +36,16 @@
           return true
       }
       return false
+    },
+
+    // get crossbrowser window width
+    getWindowWidth: function() {
+      return window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    },
+
+    // get crossbrowser window height
+    getWindowHeight: function() {
+      return window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     },
 
     // get computed style crossbrowser
@@ -94,9 +106,18 @@
       
       // normalize handler function
       function commonHandle(event) {
+        // return if window resize event fired without actial window resize
+        if ( event.type == 'resize' && motor.getWindowWidth() == motor.windowWidth && motor.getWindowHeight() == motor.windowHeight )
+          return;
+        else {
+          motor.windowWidth = motor.getWindowWidth();
+          motor.windowHeight = motor.getWindowHeight();
+        }
+
+        // fix event object
         event = fixEvent(event);
         
-        // get handlers
+        // get handlers of current type
         var handlers = this.events[event.type];
 
         for ( var i in handlers ) {
@@ -113,14 +134,18 @@
       return {
         // add event listener
         addListener: function( elem, eventName, eventHandler ) {
+
+          // check if elem is actually window
           if ( elem.setInterval && ( elem != window && !elem.frameElement ) ) {
             elem = window;
           }
           
+          // register handler id
           if (!eventHandler.handlerId) {
             eventHandler.handlerId = ++handlerList;
           }
           
+          // create event property and write in fixed handler
           if (!elem.events) {
             elem.events = {}
             elem.handle = function(event) {
@@ -140,11 +165,13 @@
               elem.attachEvent( 'on' + eventName, elem.handle );
           }
           
+          // add handler to corresponding event
           elem.events[eventName][eventHandler.handlerId] = eventHandler;
         },
         
         removeListener: function(elem, eventName, eventHandler) {
-          var handlers = elem.events && elem.events[eventName]
+          // get if event handlers added
+          var handlers = elem.events && elem.events[eventName];
           
           if (!handlers) return;
           
@@ -298,7 +325,7 @@
   ***********************************************/
   motor.placeHolder = function(elem) {
     // check placeholder support
-    if ( document.createElement("input").placeholder == undefined ) {
+    if ( document.createElement('input').placeholder == undefined ) {
 
       var inst = this;
 
@@ -309,9 +336,15 @@
         // add placeholder class
         motor.addClass( input, 'placeholder' );
 
+        // check if placeholder is needed
+        inst.showPlaceholder(input);
+
         // listen to keyup to hide or show placeholder
-        input.onkeyup = function() {
-          inst.updateHeight();
+        input.onfocus = function() {
+          inst.hidePlaceholder(input);
+        };
+        input.onblur = function() {
+          inst.showPlaceholder(input);
         };
 
         // prevent submiting placeholder value
@@ -339,13 +372,19 @@
         }
       }
 
-      // placeholder handling
-      inst.handlePlaceholder = function(input) {
-        if ( input.value.length == 0 ) {
+      // hide placeholder
+      inst.hidePlaceholder = function(input) {
+        if ( input.value == input.getAttribute('placeholder') ) {
+          input.value = '';
+          motor.removeClass( input, 'placeholder' );
+        }
+      }
+
+      // show placeholder
+      inst.showPlaceholder = function(input) {
+        if ( input.value == '' ) {
           input.value = input.getAttribute('placeholder');
           motor.addClass( input, 'placeholder' );
-        } else {
-          motor.removeClass( input, 'placeholder' );
         }
       }
 
@@ -365,6 +404,9 @@
 
   };
 
+  // call placeholder polyfill
+  motor.placeHolder();
+
 })();
 
 /*********************************************** 
@@ -375,7 +417,7 @@
 
   /* textarea with autoresize constructor
   ***********************************************/
-  motor.textareaAutoresize = function( elem, options ) {
+  motor.TextareaAutoresize = function( elem, options ) {
     var inst = this;
 
         inst.textarea = elem,
@@ -416,7 +458,7 @@
       return outerDiff;
     }
 
-    inst.updateHeight = function(test) {
+    inst.updateHeight = function() {
 
       // duplicate content and width to clone
       inst.shadowTextarea.value = inst.textarea.value;
@@ -427,9 +469,6 @@
 
         if (!inst.limited) {
           var newHeight = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical;
-
-
-          console.log(newHeight, inst.shadowTextarea.scrollHeight, inst.outerDiff.vertical);
 
           // check if reaches height limit
           if ( newHeight > inst.opts.maxHeight ) {
@@ -447,10 +486,12 @@
       } else {
 
         // check if greater than initial height
-        if ( inst.textarea.clientHeight > inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical ) {
+        if ( inst.textarea.clientHeight > inst.shadowTextarea.clientHeight + inst.outerDiff.vertical ) {
+
+          var newHeight = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical < inst.shadowTextarea.clientHeight + inst.outerDiff.vertical ? inst.shadowTextarea.clientHeight + inst.outerDiff.vertical : inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical;
 
           // decrease size
-          inst.textarea.style.height = inst.shadowTextarea.scrollHeight + inst.outerDiff.vertical + 'px';
+          inst.textarea.style.height = newHeight + 'px';
 
           // remove limited state
           inst.limited = false;
@@ -469,19 +510,24 @@
     inst.shadowTextarea.style.WebkitTransition = 'none';
     inst.shadowTextarea.style.MozTransition = 'none';
     inst.shadowTextarea.setAttribute( 'style', 'position: absolute; bottom: 0; z-index: -1; visibility: hidden;');
+    motor.addClass( inst.shadowTextarea, 'clone' );
     document.body.appendChild(inst.shadowTextarea);
 
     // save outer height difference
     inst.outerDiff = inst.getOuterDiff();
 
+    // update height in case of cache content
+    inst.updateHeight();
+
     // listen to keyup event that can change textarea size
-    motor.Event.addListener( inst.textarea, 'keyup', function() {
+    inst.textarea.onkeyup = function() {
       inst.updateHeight();
-    } );
+    }
 
     // update on window resize
     if ( inst.opts.updateOnResize ) {
       inst.updateHeightThrottled = motor.throttle( inst.updateHeight, 10 );
+
       motor.Event.addListener( window, 'resize', function() {
         inst.updateHeightThrottled();
       } );
@@ -491,11 +537,13 @@
     motor.dispatchCustomEvent( inst.textarea, eventInit, 'textarea-autoresize-init', true );
   };
 
+
+
   // auto init for [data-textarea-autoresize]
   var autoinitElements = document.querySelectorAll('[data-textarea-autoresize]');
 
   for ( var i = 0; i < autoinitElements.length; i++ ) {
-    new motor.textareaAutoresize(autoinitElements[i]);
+    new motor.TextareaAutoresize(autoinitElements[i]);
   }
 
 })();
