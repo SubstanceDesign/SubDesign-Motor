@@ -4487,21 +4487,33 @@ select.text-input::-ms-expand {
   display: inline-block;
 }
 
-:not(.ie8) .radio {
+.ie8 .radio {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .radio input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .radio input + span {
+  font-size: 16px;
+}
+html:not(.ie8) .radio {
   min-height: 20px;
   padding-left: 30px;
 }
-:not(.ie8) .radio input[type=radio] {
+html:not(.ie8) .radio input[type=radio] {
   position: absolute;
   visibility: hidden;
 }
-:not(.ie8) .radio input[type=radio] + span {
+html:not(.ie8) .radio input[type=radio] + span {
   cursor: pointer;
   position: relative;
   display: inline-block;
   font-size: 16px;
 }
-:not(.ie8) .radio input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio] + span:before {
   content: '';
   display: block;
   width: 20px;
@@ -4513,22 +4525,22 @@ select.text-input::-ms-expand {
   left: -30px;
   border: 2px solid;
 }
-:not(.ie8) .radio input[type=radio] + span:after {
+html:not(.ie8) .radio input[type=radio] + span:after {
   content: '';
   display: none;
   position: absolute;
 }
-:not(.ie8) .radio input[type=radio]:checked + span:after {
+html:not(.ie8) .radio input[type=radio]:checked + span:after {
   display: block;
 }
-:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after {
   display: block;
 }
-:not(.ie8) .radio input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio] + span:before {
   border-radius: 100%;
   border-color: #ccc;
 }
-:not(.ie8) .radio input[type=radio] + span:after {
+html:not(.ie8) .radio input[type=radio] + span:after {
   width: 10px;
   height: 10px;
   top: 7px;
@@ -4536,37 +4548,50 @@ select.text-input::-ms-expand {
   border-radius: 100%;
   background-color: #FF981A;
 }
-:not(.ie8) .radio input[type=radio].error + span:before {
+html:not(.ie8) .radio input[type=radio].error + span:before {
   border-color: #E21F1E;
 }
-:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, :not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
   background-color: #ffcc8d;
 }
-:not(.ie8) .radio.disabled, :not(.ie8) .radio.disabled input[type=radio] + span {
+html:not(.ie8) .radio.disabled, html:not(.ie8) .radio.disabled input[type=radio] + span {
   cursor: not-allowed;
 }
-:not(.ie8) .radio input[type=radio][disabled] + span:before,
-:not(.ie8) .radio input[type=radio].disabled + span:before, :not(.ie8) .radio.disabled input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio][disabled] + span:before,
+html:not(.ie8) .radio input[type=radio].disabled + span:before, html:not(.ie8) .radio.disabled input[type=radio] + span:before {
   background: #e6e6e6;
 }
-:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:after, :not(.ie8) .radio:hover input[type=radio].disabled:not(:checked) + span:after, :not(.ie8) .radio.disabled:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio.disabled:hover input[type=radio]:not(:checked) + span:after {
   display: none;
 }
-:not(.ie8) .checkbox {
+
+.ie8 .checkbox {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .checkbox input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .checkbox input + span {
+  font-size: 16px;
+}
+html:not(.ie8) .checkbox {
   min-height: 20px;
   padding-left: 30px;
 }
-:not(.ie8) .checkbox input[type=checkbox] {
+html:not(.ie8) .checkbox input[type=checkbox] {
   position: absolute;
   visibility: hidden;
 }
-:not(.ie8) .checkbox input[type=checkbox] + span {
+html:not(.ie8) .checkbox input[type=checkbox] + span {
   cursor: pointer;
   position: relative;
   display: inline-block;
   font-size: 16px;
 }
-:not(.ie8) .checkbox input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox input[type=checkbox] + span:before {
   content: '';
   display: block;
   width: 20px;
@@ -4578,22 +4603,22 @@ select.text-input::-ms-expand {
   left: -30px;
   border: 2px solid;
 }
-:not(.ie8) .checkbox input[type=checkbox] + span:after {
+html:not(.ie8) .checkbox input[type=checkbox] + span:after {
   content: '';
   display: none;
   position: absolute;
 }
-:not(.ie8) .checkbox input[type=checkbox]:checked + span:after {
+html:not(.ie8) .checkbox input[type=checkbox]:checked + span:after {
   display: block;
 }
-:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after {
   display: block;
 }
-:not(.ie8) .checkbox input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox input[type=checkbox] + span:before {
   border-radius: 2px;
   border-color: #ccc;
 }
-:not(.ie8) .checkbox input[type=checkbox] + span:after {
+html:not(.ie8) .checkbox input[type=checkbox] + span:after {
   width: 8px;
   height: 4px;
   top: 7px;
@@ -4607,23 +4632,23 @@ select.text-input::-ms-expand {
   border-bottom: 2px solid #FF981A;
   border-left: 2px solid #FF981A;
 }
-:not(.ie8) .checkbox input[type=checkbox].error + span:before {
+html:not(.ie8) .checkbox input[type=checkbox].error + span:before {
   border-color: #E21F1E;
 }
-:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after, :not(.ie8) .checkbox:focus input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox:hover input[type=checkbox]:not(:checked) + span:after, html:not(.ie8) .checkbox:focus input[type=checkbox]:not(:checked) + span:after {
   border-color: #ffcc8d;
 }
-:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before {
+html:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before {
   background: #ccc;
 }
-:not(.ie8) .checkbox.disabled, :not(.ie8) .checkbox.disabled input[type=checkbox] + span {
+html:not(.ie8) .checkbox.disabled, html:not(.ie8) .checkbox.disabled input[type=checkbox] + span {
   cursor: not-allowed;
 }
-:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before,
-:not(.ie8) .checkbox input[type=checkbox].disabled + span:before, :not(.ie8) .checkbox.disabled input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox input[type=checkbox][disabled] + span:before,
+html:not(.ie8) .checkbox input[type=checkbox].disabled + span:before, html:not(.ie8) .checkbox.disabled input[type=checkbox] + span:before {
   background: #e6e6e6;
 }
-:not(.ie8) .checkbox:hover input[type=checkbox][disabled]:not(:checked) + span:after, :not(.ie8) .checkbox:hover input[type=checkbox].disabled:not(:checked) + span:after, :not(.ie8) .checkbox.disabled:hover input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox:hover input[type=checkbox][disabled]:not(:checked) + span:after, html:not(.ie8) .checkbox:hover input[type=checkbox].disabled:not(:checked) + span:after, html:not(.ie8) .checkbox.disabled:hover input[type=checkbox]:not(:checked) + span:after {
   display: none;
 }
 
@@ -4634,21 +4659,33 @@ select.text-input::-ms-expand {
   display: inline-block;
 }
 
-:not(.ie8) .radio-filled {
+.ie8 .radio-filled {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .radio-filled input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .radio-filled input + span {
+  font-size: 16px;
+}
+html:not(.ie8) .radio-filled {
   min-height: 20px;
   padding-left: 30px;
 }
-:not(.ie8) .radio-filled input[type=radio] {
+html:not(.ie8) .radio-filled input[type=radio] {
   position: absolute;
   visibility: hidden;
 }
-:not(.ie8) .radio-filled input[type=radio] + span {
+html:not(.ie8) .radio-filled input[type=radio] + span {
   cursor: pointer;
   position: relative;
   display: inline-block;
   font-size: 16px;
 }
-:not(.ie8) .radio-filled input[type=radio] + span:before {
+html:not(.ie8) .radio-filled input[type=radio] + span:before {
   content: '';
   display: block;
   width: 20px;
@@ -4660,22 +4697,22 @@ select.text-input::-ms-expand {
   left: -30px;
   border: 2px solid;
 }
-:not(.ie8) .radio-filled input[type=radio] + span:after {
+html:not(.ie8) .radio-filled input[type=radio] + span:after {
   content: '';
   display: none;
   position: absolute;
 }
-:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
   display: block;
 }
-:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after {
   display: block;
 }
-:not(.ie8) .radio-filled input[type=radio] + span:before {
+html:not(.ie8) .radio-filled input[type=radio] + span:before {
   border-radius: 100%;
   border-color: #ccc;
 }
-:not(.ie8) .radio-filled input[type=radio] + span:after {
+html:not(.ie8) .radio-filled input[type=radio] + span:after {
   width: 10px;
   height: 10px;
   top: 7px;
@@ -4683,49 +4720,62 @@ select.text-input::-ms-expand {
   border-radius: 100%;
   background-color: #FF981A;
 }
-:not(.ie8) .radio-filled input[type=radio].error + span:before {
+html:not(.ie8) .radio-filled input[type=radio].error + span:before {
   border-color: #E21F1E;
 }
-:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after, :not(.ie8) .radio-filled:focus input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio-filled:focus input[type=radio]:not(:checked) + span:after {
   background-color: #ffcc8d;
 }
-:not(.ie8) .radio-filled.disabled, :not(.ie8) .radio-filled.disabled input[type=radio] + span {
+html:not(.ie8) .radio-filled.disabled, html:not(.ie8) .radio-filled.disabled input[type=radio] + span {
   cursor: not-allowed;
 }
-:not(.ie8) .radio-filled input[type=radio][disabled] + span:before,
-:not(.ie8) .radio-filled input[type=radio].disabled + span:before, :not(.ie8) .radio-filled.disabled input[type=radio] + span:before {
+html:not(.ie8) .radio-filled input[type=radio][disabled] + span:before,
+html:not(.ie8) .radio-filled input[type=radio].disabled + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio] + span:before {
   background: #e6e6e6;
 }
-:not(.ie8) .radio-filled:hover input[type=radio][disabled]:not(:checked) + span:after, :not(.ie8) .radio-filled:hover input[type=radio].disabled:not(:checked) + span:after, :not(.ie8) .radio-filled.disabled:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio-filled:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio-filled:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio-filled.disabled:hover input[type=radio]:not(:checked) + span:after {
   display: none;
 }
-:not(.ie8) .radio-filled input[type=radio]:checked + span:before {
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:before {
   background-color: #FF981A;
   border-color: #FF981A;
 }
-:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
   background-color: #fff;
 }
-:not(.ie8) .radio-filled input[type=radio][disabled]:checked + span:before,
-:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, :not(.ie8) .radio-filled.disabled input[type=radio]:checked + span:before {
+html:not(.ie8) .radio-filled input[type=radio][disabled]:checked + span:before,
+html:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio]:checked + span:before {
   opacity: 0.65;
   filter: alpha(opacity=65);
 }
-:not(.ie8) .checkbox-filled {
+
+.ie8 .checkbox-filled {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .checkbox-filled input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .checkbox-filled input + span {
+  font-size: 16px;
+}
+html:not(.ie8) .checkbox-filled {
   min-height: 20px;
   padding-left: 30px;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] {
+html:not(.ie8) .checkbox-filled input[type=checkbox] {
   position: absolute;
   visibility: hidden;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] + span {
+html:not(.ie8) .checkbox-filled input[type=checkbox] + span {
   cursor: pointer;
   position: relative;
   display: inline-block;
   font-size: 16px;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
   content: '';
   display: block;
   width: 20px;
@@ -4737,22 +4787,22 @@ select.text-input::-ms-expand {
   left: -30px;
   border: 2px solid;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
+html:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
   content: '';
   display: none;
   position: absolute;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
+html:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
   display: block;
 }
-:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after {
   display: block;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
   border-radius: 2px;
   border-color: #ccc;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
+html:not(.ie8) .checkbox-filled input[type=checkbox] + span:after {
   width: 8px;
   height: 4px;
   top: 7px;
@@ -4766,34 +4816,34 @@ select.text-input::-ms-expand {
   border-bottom: 2px solid #FF981A;
   border-left: 2px solid #FF981A;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox].error + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox].error + span:before {
   border-color: #E21F1E;
 }
-:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after, :not(.ie8) .checkbox-filled:focus input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox-filled:hover input[type=checkbox]:not(:checked) + span:after, html:not(.ie8) .checkbox-filled:focus input[type=checkbox]:not(:checked) + span:after {
   border-color: #ffcc8d;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before {
   background: #ccc;
 }
-:not(.ie8) .checkbox-filled.disabled, :not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span {
+html:not(.ie8) .checkbox-filled.disabled, html:not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span {
   cursor: not-allowed;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before,
-:not(.ie8) .checkbox-filled input[type=checkbox].disabled + span:before, :not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox][disabled] + span:before,
+html:not(.ie8) .checkbox-filled input[type=checkbox].disabled + span:before, html:not(.ie8) .checkbox-filled.disabled input[type=checkbox] + span:before {
   background: #e6e6e6;
 }
-:not(.ie8) .checkbox-filled:hover input[type=checkbox][disabled]:not(:checked) + span:after, :not(.ie8) .checkbox-filled:hover input[type=checkbox].disabled:not(:checked) + span:after, :not(.ie8) .checkbox-filled.disabled:hover input[type=checkbox]:not(:checked) + span:after {
+html:not(.ie8) .checkbox-filled:hover input[type=checkbox][disabled]:not(:checked) + span:after, html:not(.ie8) .checkbox-filled:hover input[type=checkbox].disabled:not(:checked) + span:after, html:not(.ie8) .checkbox-filled.disabled:hover input[type=checkbox]:not(:checked) + span:after {
   display: none;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:before {
   background-color: #FF981A;
   border-color: #FF981A;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
+html:not(.ie8) .checkbox-filled input[type=checkbox]:checked + span:after {
   border-color: #fff;
 }
-:not(.ie8) .checkbox-filled input[type=checkbox][disabled]:checked + span:before,
-:not(.ie8) .checkbox-filled input[type=checkbox].disabled:checked + span:before, :not(.ie8) .checkbox-filled.disabled input[type=checkbox]:checked + span:before {
+html:not(.ie8) .checkbox-filled input[type=checkbox][disabled]:checked + span:before,
+html:not(.ie8) .checkbox-filled input[type=checkbox].disabled:checked + span:before, html:not(.ie8) .checkbox-filled.disabled input[type=checkbox]:checked + span:before {
   opacity: 0.65;
   filter: alpha(opacity=65);
 }

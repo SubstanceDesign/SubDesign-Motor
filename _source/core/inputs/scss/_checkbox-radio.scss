@@ -14,14 +14,12 @@
     display: inline-block;
   }
 
-  :not(.ie8) {
-    .radio {
-      @include create_radio($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
-    }
+  .radio {
+    @include create_radio($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+  }
 
-    .checkbox {
-      @include create_checkbox($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
-    }
+  .checkbox {
+    @include create_checkbox($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
   }
 }
 
@@ -33,16 +31,12 @@
     display: inline-block;
   }
 
-  :not(.ie8) {
-    .radio-filled {
-      @include create_radio_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
-    }
+  .radio-filled {
+    @include create_radio_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+  }
 
-    .checkbox-filled {
-      @include create_checkbox_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
-
-
-    }
+  .checkbox-filled {
+    @include create_checkbox_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
   }
 }
 
