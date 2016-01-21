@@ -252,7 +252,7 @@ add_text-input_styles()</pre></td>
           <div class="docs_note">Also you can call the script directly from js.</div>
           <p class="docs_subheading"><strong>JS</strong></p>
           <pre class="prettyprint">
-new motor.TextareaAutoresize( document.getElementById('my-textarea'), {
+motor( document.getElementById('my-textarea') ).TextareaAutoresize({
   maxHeight: 300
 });</pre>
           <p class="docs_subheading"><strong>Demo</strong></p>
@@ -291,7 +291,7 @@ new motor.TextareaAutoresize( document.getElementById('my-textarea'), {
           <p class="docs_subheading"><strong>EXAMPLE</strong></p>
           <pre class="prettyprint">
 // Initialize plugin
-var textareaAutoresized = new motor.TextareaAutoresize( document.getElementById('my-textarea') );
+var textareaAutoresized = motor( document.getElementById('my-textarea') ).TextareaAutoresize();
 
 // Increase textarea value to be anormous long
 document.getElementById('my-textarea').value = '...Very long value...';
@@ -299,7 +299,7 @@ document.getElementById('my-textarea').value = '...Very long value...';
 // Update textarea height to fit its new scrollable content
 textareaAutoresized.updateHeight();
 </pre>
-          <p>The plugin work is accompanied by custom event calls. To listen to framework custom events use <span class="docs_mark">motor.addCustomEventListener( element, eventName, eventHandler )</span> method. <br>For modern browsers you can use default <span class="docs_mark">element.addEventListener</span> method.</p>
+          <p>The plugin work is accompanied by custom event calls. To listen to framework custom events use <span class="docs_mark">motor(element).addCustomEventListener( eventName, eventHandler )</span> method. <br>For modern browsers you can use default <span class="docs_mark">element.addEventListener</span> method.</p>
           <p class="docs_subheading"><strong>Events list</strong></p>
           <table>
             <tr>
@@ -320,17 +320,23 @@ textareaAutoresized.updateHeight();
 var textarea = document.getElementById('my-textarea');
 
 // Add init event listener 
-motor.addCustomEventListener( textarea, 'textarea-autoresize-init', function() {
+motor(textarea).addCustomEventListener( 'textarea-autoresize-init', function() {
   console.log('Textarea autoresize was inited');
 } );
 
 // Add resize event listener 
-motor.addCustomEventListener( textarea, 'textarea-autoresize-resize', function() {
+motor(textarea).addCustomEventListener( 'textarea-autoresize-resize', function() {
   console.log('Textarea autoresize was resized');
 } );
 
 // Initialize plugin
-new motor.TextareaAutoresize( document.getElementById('my-textarea') );</pre>
+motor(textarea).TextareaAutoresize();</pre>
+          <p>Also you can call <span class="docs_mark">motor</span> methods and plugins with selector string, like in example below. But note that motor.js use native js <span class="docs_mark">querySelectorAll</span> method, which can accept not all the <a href="http://caniuse.com/#search=querySelectorAll" target="_blank">CSS3 selectors for IE8</a>.</p>
+<pre class="prettyprint">
+motor('#my-textarea').TextareaAutoresize({
+  maxHeight: 300
+});
+</pre>
         </div>
         <!-- *********************************************** 
         END GRID -->
@@ -358,15 +364,15 @@ new motor.TextareaAutoresize( document.getElementById('my-textarea') );</pre>
     <script>
       var textarea = document.getElementById('my-textarea');
 
-      motor.addCustomEventListener( textarea, 'textarea-autoresize-init', function() {
+      motor(textarea).addCustomEventListener( 'textarea-autoresize-init', function() {
         console.log('Textarea autoresize was inited');
       } );
 
-      motor.addCustomEventListener( textarea, 'textarea-autoresize-resize', function() {
+      motor(textarea).addCustomEventListener( 'textarea-autoresize-resize', function() {
         console.log('Textarea autoresize was resized');
       } );
 
-      new motor.TextareaAutoresize( document.getElementById('my-textarea'), {
+      motor(textarea).TextareaAutoresize({
         maxHeight: 300
       });
 

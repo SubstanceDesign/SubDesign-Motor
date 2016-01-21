@@ -17,7 +17,7 @@
         // input.getAttribute('placeholder');
 
         // add placeholder class
-        motor.addClass( input, 'placeholder' );
+        motor(input).addClass( 'placeholder' );
 
         // check if placeholder is needed
         inst.showPlaceholder(input);
@@ -31,11 +31,11 @@
         };
 
         // prevent submiting placeholder value
-        if ( motor.parentUntil( input, 'form' ).length && !motor.hasClass( motor.parentUntil( input, 'form' )[0], 'prevent-placeholder' ) ) {
-          var form = motor.parentUntil( input, 'form' )[0];
+        if ( motor(input).parentUntil( 'form' ).length && !motor( motor(input).parentUntil( 'form' )[0] ).hasClass( 'prevent-placeholder' ) ) {
+          var form = motor(input).parentUntil( 'form' )[0];
 
           // add class to bind handler once
-          motor.addClass( form, 'prevent-placeholder' );
+          motor(form).addClass( 'prevent-placeholder' );
 
           // bind on submit event
           form.onsubmit = function() {
@@ -59,7 +59,7 @@
       inst.hidePlaceholder = function(input) {
         if ( input.value == input.getAttribute('placeholder') ) {
           input.value = '';
-          motor.removeClass( input, 'placeholder' );
+          motor(input).removeClass( 'placeholder' );
         }
       }
 
@@ -67,7 +67,7 @@
       inst.showPlaceholder = function(input) {
         if ( input.value == '' ) {
           input.value = input.getAttribute('placeholder');
-          motor.addClass( input, 'placeholder' );
+          motor(input).addClass( 'placeholder' );
         }
       }
 
