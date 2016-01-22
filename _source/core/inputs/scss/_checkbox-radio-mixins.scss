@@ -13,19 +13,20 @@
 
     input {
       position: absolute;
-      top: round($base_font-size * $base_line-height / 2 - 7px);
+      top: round($checkbox_label-font-size * $checkbox_label-line-height / 2 - 7px);
       left: 0;
     }
 
     input + span {
-      font-size: $checkbox_font-size;
+      font-size: $checkbox_label-font-size;
+      line-height: $checkbox_label-line-height;
     }
   }
 
   // modern style
   html:not(.ie8) & {
 
-    $label_height: $checkbox_font-size * $base_line-height;
+    $label_height: $checkbox_label-font-size * $checkbox_label-line-height;
 
     min-height: $size;
     padding-left: $size * 1.5;
@@ -42,7 +43,8 @@
       cursor: pointer;
       position: relative;
       display: inline-block;
-      font-size: $checkbox_font-size;
+      font-size: $checkbox_label-font-size;
+      line-height: $checkbox_label-line-height;
     }
 
     input[type=#{$type}] + span:before {
@@ -52,7 +54,7 @@
       height: $size;
       box-sizing: border-box;
       position: absolute;
-      top: round(($base_font-size * $base_line-height - $size) / 2);
+      top: round(($checkbox_label-font-size * $checkbox_label-line-height - $size) / 2);
       left: round(- $size * 1.5);
       border: $checkbox_border-width solid;
     }
@@ -93,7 +95,7 @@
     input[type=checkbox] + span:after {
       width: $size * 0.4;
       height: $size * 0.2;
-      top: round(($base_font-size * $base_line-height - $size) / 2 + $size * 0.25);
+      top: round(($checkbox_label-font-size * $checkbox_label-line-height - $size) / 2 + $size * 0.25);
       left: round(- $size * 1.5 + $size * 0.25);
       transform-origin: center;
       transform: rotate(-45deg);
@@ -178,7 +180,7 @@
     input[type=radio] + span:after {
 
       $position_offset: round($size / 4);
-      $top: round(($base_font-size * $base_line-height - $size) / 2) + $position_offset;
+      $top: round(($checkbox_label-font-size * $checkbox_label-line-height - $size) / 2) + $position_offset;
       $inner_size: $size - round($size / 4)*2;
 
       width: $inner_size;

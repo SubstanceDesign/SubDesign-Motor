@@ -4498,6 +4498,7 @@ select.text-input::-ms-expand {
 }
 .ie8 .radio input + span {
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .radio {
   min-height: 20px;
@@ -4512,6 +4513,7 @@ html:not(.ie8) .radio input[type=radio] + span {
   position: relative;
   display: inline-block;
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .radio input[type=radio] + span:before {
   content: '';
@@ -4576,6 +4578,7 @@ html:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:aft
 }
 .ie8 .checkbox input + span {
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .checkbox {
   min-height: 20px;
@@ -4590,6 +4593,7 @@ html:not(.ie8) .checkbox input[type=checkbox] + span {
   position: relative;
   display: inline-block;
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .checkbox input[type=checkbox] + span:before {
   content: '';
@@ -4670,6 +4674,7 @@ html:not(.ie8) .checkbox:hover input[type=checkbox][disabled]:not(:checked) + sp
 }
 .ie8 .radio-filled input + span {
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .radio-filled {
   min-height: 20px;
@@ -4684,6 +4689,7 @@ html:not(.ie8) .radio-filled input[type=radio] + span {
   position: relative;
   display: inline-block;
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .radio-filled input[type=radio] + span:before {
   content: '';
@@ -4760,6 +4766,7 @@ html:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, h
 }
 .ie8 .checkbox-filled input + span {
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .checkbox-filled {
   min-height: 20px;
@@ -4774,6 +4781,7 @@ html:not(.ie8) .checkbox-filled input[type=checkbox] + span {
   position: relative;
   display: inline-block;
   font-size: 16px;
+  line-height: 1.5;
 }
 html:not(.ie8) .checkbox-filled input[type=checkbox] + span:before {
   content: '';
