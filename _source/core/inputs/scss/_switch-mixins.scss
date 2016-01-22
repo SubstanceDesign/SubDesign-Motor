@@ -1,0 +1,119 @@
+/////////////////////////////////////////////////
+//  Switch mixins
+/////////////////////////////////////////////////
+
+//  Default switch mixin
+/////////////////////////////////////////////////
+@mixin create_switch($width, $height, $border-width, $on-color, $off-color, $tumbler-color) {
+  
+  // ie8 style
+  .ie8 & {
+
+    position: relative;
+    padding-left: 20px;
+
+    input {
+      position: absolute;
+      top: round($checkbox_label-font-size * $checkbox_label-line-height / 2 - 7px);
+      left: 0;
+    }
+
+    input + span {
+      font-size: $checkbox_label-font-size;
+      line-height: $checkbox_label-line-height;
+    }
+  }
+
+  html:not(.ie8) & {
+
+    margin-bottom: 0;
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    .switcher-vision {
+      .switcher-switch {
+        display: inline-block;
+        width: $width;
+        height: $height;
+        position: relative;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 999px;
+        background: $off-color;
+        border: $border-width solid transparent;
+        box-shadow: $off-color 0px 0px 0px 0px inset;
+        transition: background 0.3s, box-shadow 0.2s;
+
+        .switcher-tumbler { 
+          width: $switch_height - 2*$border-width;
+          height: $switch_height - 2*$border-width;
+          position: absolute;
+          top: 0;
+          left: 0;
+          box-sizing: content-box;
+          border-radius: 999px;
+          background: $tumbler-color;
+          transition: left 0.2s;
+          
+          &:after {
+            content:'';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            top: 50%;
+            left: 50%;
+            margin: -3px 0 0 -3px;
+            border-radius: 999px;
+            background: $off-color;
+          }
+        }
+
+        &:hover {
+          .switcher-tumbler:after { 
+            background-color: $on-color;
+          }
+        }
+      }
+
+      .switcher-on, .switcher-off {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 6px;
+      }
+
+      .switcher-on {
+        display: none;
+      }
+    }
+
+    input[type=checkbox]:checked + .switcher-vision {
+
+      .switcher-switch {
+        background: $on-color;
+        box-shadow: $on-color 0 0 0 30px inset;
+
+        &:hover .switcher-tumbler:after {
+          background: $off-color;
+        }
+      }
+
+      .switcher-tumbler {
+        left: 20px;
+
+        &:after { 
+          background-color: $on-color;
+        }
+      }
+
+      .switcher-on {
+        display: inline-block;
+      }
+
+      .switcher-off {
+        display: none;
+      }
+    }
+  } 
+}

@@ -4863,3 +4863,98 @@ html:not(.ie8) .checkbox-filled input[type=checkbox].disabled:checked + span:bef
 .radio--block {
   display: block;
 }
+
+/*********************************************** 
+    Switch
+***********************************************/
+/* Switch
+***********************************************/
+.ie8 .switcher {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .switcher input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .switcher input + span {
+  font-size: 16px;
+  line-height: 1.5;
+}
+html:not(.ie8) .switcher {
+  margin-bottom: 0;
+}
+html:not(.ie8) .switcher input[type=checkbox] {
+  display: none;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-switch {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 999px;
+  background: #ccc;
+  border: 1px solid transparent;
+  -webkit-box-shadow: #ccc 0px 0px 0px 0px inset;
+          box-shadow: #ccc 0px 0px 0px 0px inset;
+  -webkit-transition: background 0.3s, -webkit-box-shadow 0.2s;
+          transition: background 0.3s, box-shadow 0.2s;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-switch .switcher-tumbler {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 999px;
+  background: #fff;
+  -webkit-transition: left 0.2s;
+          transition: left 0.2s;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-switch .switcher-tumbler:after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  top: 50%;
+  left: 50%;
+  margin: -3px 0 0 -3px;
+  border-radius: 999px;
+  background: #ccc;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-switch:hover .switcher-tumbler:after {
+  background-color: #FF981A;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-on, html:not(.ie8) .switcher .switcher-vision .switcher-off {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+html:not(.ie8) .switcher .switcher-vision .switcher-on {
+  display: none;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-switch {
+  background: #FF981A;
+  -webkit-box-shadow: #FF981A 0 0 0 30px inset;
+          box-shadow: #FF981A 0 0 0 30px inset;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-switch:hover .switcher-tumbler:after {
+  background: #ccc;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-tumbler {
+  left: 20px;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-tumbler:after {
+  background-color: #FF981A;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-on {
+  display: inline-block;
+}
+html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-off {
+  display: none;
+}

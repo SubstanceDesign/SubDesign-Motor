@@ -1,0 +1,20 @@
+/*********************************************** 
+    Switch
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import 'switch-mixins';
+
+/* Switch
+***********************************************/
+@if ($text-input_default == true) {
+  .switcher {
+    @include create_switch($switch_width, $switch_height, $switch_border, $inputs_color_primary, $inputs_color_border, $inputs_color_background);
+  }
+}
+
+
+
+
+
