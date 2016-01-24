@@ -87,7 +87,4 @@
 
   };
 
-  // call placeholder polyfill
-  motor.placeHolder();
-
 })();

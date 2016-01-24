@@ -6,14 +6,47 @@
 /////////////////////////////////////////////////
 @import 'switch-mixins';
 
-/* Switch
+/* Switch default
 ***********************************************/
-@if ($text-input_default == true) {
-  .switcher {
-    @include create_switch($switch_width, $switch_height, $switch_border, $inputs_color_primary, $inputs_color_border, $inputs_color_background);
+@if ($switch_default == true) {
+  .switch {
+    display: block;
+    margin: $unit * 3 0;
+
+    @include create_switch($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_border, $inputs_color_background, $switch_border-color, false);
   }
 }
 
+/* Switch dotted
+***********************************************/
+@if ($switch_doted == true) {
+  .switch-doted {
+    display: block;
+    margin: $unit * 3 0;
+
+    @include create_switch($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_border, $inputs_color_background, $switch_border-color, true);
+  }
+}
+
+/* Switch dotted
+***********************************************/
+@if ($switch_ios == true) {
+  .switch-ios {
+    display: block;
+    margin: $unit * 3 0;
+
+    @include create_switch_ios($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_background, $inputs_color_border);
+  }
+}
+
+/* Checkbox modifiers
+***********************************************/
+
+/* Make switch to be an inline block */
+.switch--inline {
+  display: inline-block;
+  margin: 0 $unit * 3 0 0;
+}
 
 
 

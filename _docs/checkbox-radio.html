@@ -52,7 +52,12 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#anchor_buttons">Default appearance</a></li>
+          <li><a href="#anchor_default">Default checkbox and radio</a></li>
+          <li><a href="#anchor_styles">Checkbox and radio styles</a></li>
+          <li><a href="#anchor_disabled">Disabled state</a></li>
+          <li><a href="#anchor_inline">Inline modificator</a></li>
+          <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
+          <li><a href="#anchor_config">Setting checkbox and radio config</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -65,39 +70,185 @@
         <!-- GRID
         *********************************************** -->
         <div class="content">
-          <h2 id="anchor_buttons">Default appearance</h2>
+          <h2 id="anchor_default">Default checkbox and radio</h2>
+          <p>To use motor checkbox or radio create <span class="docs_mark">&lt;label&gt;</span> tag with <span class="docs_mark">.checkbox</span> or <span class="docs_mark">.radio</span> class. Put <span class="docs_mark">input[type=checkbox]</span> or <span class="docs_mark">input[type=radio]</span> inside it, and create <span class="docs_mark">&lt;span&gt;</span> tag next to input. You can place label text for the checkbox inside the span.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;!-- checkbox -->
+&lt;label class="checkbox">&lt;input type="checkbox" checked>&lt;span>Checkbox&lt;/span>&lt;/label>
+
+&lt;!-- radio -->
+&lt;label class="radio">&lt;input type="radio" name="radio-1" value="1" checked>&lt;span>Option 1&lt;/span>&lt;/label>
+&lt;label class="radio">&lt;input type="radio" name="radio-1" value="2">&lt;span>Option 2&lt;/span>&lt;/label>
+&lt;label class="radio">&lt;input type="radio" name="radio-1" value="3">&lt;span>Option 3&lt;/span>&lt;/label></pre>
           <p class="docs_subheading"><strong>Demo</strong></p>
           <p>
-            <label class="checkbox"><input type="checkbox" checked><span>Subscribe</span></label>
-            <label class="checkbox"><input type="checkbox"><span>Stay login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum</span></label>
+            <label class="checkbox"><input type="checkbox" checked><span>Checkbox</span></label>
+            <label class="checkbox"><input type="checkbox"><span>Checkbox with long label text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim</span></label>
           </p>
           <p>
-            <label class="checkbox disabled"><input type="checkbox" checked disabled><span>Subscribe</span></label>
-            <label class="checkbox disabled"><input type="checkbox" disabled><span>Stay login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum</span></label>
+            <label class="radio"><input type="radio" name="radio-1" value="1" checked><span>Option 1</span></label>
+            <label class="radio"><input type="radio" name="radio-1" value="2"><span>Option 2</span></label>
+            <label class="radio"><input type="radio" name="radio-1" value="3"><span>Option 3</span></label>
+          </p>
+          <h2 id="anchor_styles">Checkbox and radio styles</h2>
+          <p>Besides default motor checkbox or radio style you can use filled style with <span class="docs_mark">.checkbox-filled</span> and <span class="docs_mark">.radio-filled</span> classes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;!-- checkbox -->
+&lt;label class="checkbox-filled">&lt;input type="checkbox" checked>&lt;span>Checkbox&lt;/span>&lt;/label>
+
+&lt;!-- radio -->
+&lt;label class="radio-filled">&lt;input type="radio" name="radio-2" value="1" checked>&lt;span>Option 1&lt;/span>&lt;/label>
+&lt;label class="radio-filled">&lt;input type="radio" name="radio-2" value="2">&lt;span>Option 2&lt;/span>&lt;/label>
+&lt;label class="radio-filled">&lt;input type="radio" name="radio-2" value="3">&lt;span>Option 3&lt;/span>&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="checkbox-filled"><input type="checkbox" checked><span>Checkbox filled</span></label>
           </p>
           <p>
-            <label class="checkbox-filled"><input type="checkbox" checked><span>Subscribe</span></label>
-            <label class="checkbox-filled"><input type="checkbox"><span>Stay login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum</span></label>
+            <label class="radio-filled"><input type="radio" name="radio-2" value="1" checked><span>Option 1</span></label>
+            <label class="radio-filled"><input type="radio" name="radio-2" value="2"><span>Option 2</span></label>
+            <label class="radio-filled"><input type="radio" name="radio-2" value="3"><span>Option 3</span></label>
+          </p>
+          <h2 id="anchor_disabled">Disabled state</h2>
+          <p>For disabled state add ordinary <span class="docs_mark">disabled</span> attribute to input and <span class="docs_mark">.disabled</span> class to wrapper label.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="checkbox disabled">&lt;input type="checkbox" checked disabled>&lt;span>Disabled&lt;/span>&lt;/label>
+&lt;label class="checkbox disabled">&lt;input type="checkbox" disabled>&lt;span>Disabled&lt;/span>&lt;/label>
+&lt;label class="checkbox-filled disabled">&lt;input type="checkbox" checked disabled>&lt;span>Disabled&lt;/span>&lt;/label>
+&lt;label class="radio disabled">&lt;input type="radio" name="radio-4" value="1" checked disabled>&lt;span>Disabled&lt;/span>&lt;/label>
+&lt;label class="radio disabled">&lt;input type="radio" name="radio-4" value="2" disabled>&lt;span>Disabled&lt;/span>&lt;/label>
+&lt;label class="radio-filled disabled">&lt;input type="radio" name="radio-5" value="3" checked disabled>&lt;span>Disabled&lt;/span>&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="checkbox disabled"><input type="checkbox" checked disabled><span>Disabled</span></label>
+            <label class="checkbox disabled"><input type="checkbox" disabled><span>Disabled</span></label>
+            <label class="checkbox-filled disabled"><input type="checkbox" checked disabled><span>Disabled</span></label>
+            <label class="radio disabled"><input type="radio" name="radio-4" value="1" checked disabled><span>Disabled</span></label>
+            <label class="radio disabled"><input type="radio" name="radio-4" value="2" disabled><span>Disabled</span></label>
+            <label class="radio-filled disabled"><input type="radio" name="radio-5" value="3" checked disabled><span>Disabled</span></label>
+          </p>
+          <h2 id="anchor_inline">Inline modificator</h2>
+          <p>For the inline-block behavior use <span class="docs_mark">.checkbox--inline, .radio--inline</span> classes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="checkbox checkbox--inline">&lt;input type="checkbox" checked>&lt;span>Option 1&lt;/span>&lt;/label>
+&lt;label class="checkbox-filled checkbox--inline">&lt;input type="checkbox">&lt;span>Option 2&lt;/span>&lt;/label>
+&lt;label class="radio radio--inline">&lt;input type="radio" name="radio-6" checked>&lt;span>Option 1&lt;/span>&lt;/label>
+&lt;label class="radio radio--inline">&lt;input type="radio" name="radio-6">&lt;span>Option 2&lt;/span>&lt;/label>
+&lt;label class="radio radio--inline">&lt;input type="radio" name="radio-6">&lt;span>Option 3&lt;/span>&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="checkbox checkbox--inline"><input type="checkbox" checked><span>Option 1</span></label>
+            <label class="checkbox-filled checkbox--inline"><input type="checkbox" checked><span>Option 2</span></label>
           </p>
           <p>
-            <label class="checkbox-filled disabled"><input type="checkbox" checked disabled><span>Subscribe</span></label>
-            <label class="checkbox-filled disabled"><input type="checkbox" disabled><span>Stay login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum login lorem ipsum</span></label>
+            <label class="radio radio--inline"><input type="radio" name="radio-6" checked><span>Option 1</span></label>
+            <label class="radio radio--inline"><input type="radio" name="radio-6"><span>Option 2</span></label>
+            <label class="radio radio--inline"><input type="radio" name="radio-6"><span>Option 3</span></label>
           </p>
-          <p>
-            <label class="radio radio--block"><input type="radio" name="radio-1" checked><span>Subscribe</span></label>
-            <label class="radio radio--block"><input type="radio" name="radio-1"><span>Stay login</span></label>
-            <label class="radio radio--block disabled"><input type="radio" name="radio-1" disabled><span>Hello</span></label>
-            <label class="radio radio--block disabled"><input type="radio" name="radio-1" checked disabled><span>Hello</span></label>
-          </p>
-          <p>
-            <label class="radio-filled radio--block"><input type="radio" name="radio-2" checked><span>Subscribe</span></label>
-            <label class="radio-filled radio--block"><input type="radio" name="radio-2"><span>Stay login</span></label>
-            <label class="radio-filled radio--block"><input type="radio" name="radio-2"><span>Hello</span></label>
-          </p>
-          <p>
-            <label class="radio-filled radio--block disabled"><input type="radio" name="radio-3" checked disabled><span>Subscribe</span></label>
-            <label class="radio-filled radio--block disabled"><input type="radio" name="radio-3" disabled><span>Stay login</span></label>
-          </p>
+          <h2 id="anchor_mixins">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+add_checkbox-radio_styles($type, $size)</pre></td>
+              <td>Add necessary for any checkbox and radio settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_*</span> mixins. It is included already</td>
+              <td>$type: 'checkbox' or 'radio'. Required! <br><br>$size: input size in px. Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_checkbox($size, $background, $border, $inner)</pre></td>
+              <td>Create default checkbox.</td>
+              <td>$size: input size in px. Required! <br><br>$background: background color. Required! <br><br>$border: border color. Required! <br><br>$inner: inner glyph color. Required! <br><br></td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_checkbox_filled($size, $background, $border, $border-active, $inner)</pre></td>
+              <td>Create filled checkbox.</td>
+              <td>$size: input size in px. Required! <br><br>$background: background color. Required! <br><br>$border: border color. Required! <br><br>$border-active: checked border color. Required! <br><br>$inner: inner glyph color. Required! <br><br></td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_radio($size, $background, $border, $inner)</pre></td>
+              <td>Create default radio.</td>
+              <td>$size: input size in px. Required! <br><br>$background: background color. Required! <br><br>$border: border color. Required! <br><br>$inner: inner glyph color. Required! <br><br></td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_radio_filled($size, $background, $border, $border-active, $inner)</pre></td>
+              <td>Create filled radio.</td>
+              <td>$size: input size in px. Required! <br><br>$background: background color. Required! <br><br>$border: border color. Required! <br><br>$border-active: checked border color. Required! <br><br>$inner: inner glyph color. Required! <br><br></td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-checkbox-name {
+  @include create_checkbox(32px, #fff, #ccc, #000);
+}
+
+.custom-filled-radio-name {
+  @include create_radio_filled(32px, #fff, #ccc, #000, #000);
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;label class="custom-checkbox-name">&lt;input type="checkbox">&lt;span>Option&lt;/span>&lt;/label>
+
+&lt;label class="custom-filled-radio-name">&lt;input type="radio" name="custom-radio" value="1">&lt;span>Option&lt;/span>&lt;/label></pre>
+          <h2 id="anchor_config">Setting checkbox and radio config</h2>
+          <p>The framework has common input settings and individual checkbox and radio settings. Settings are in <span class="docs_mark">_source/config.scss</span> file. Variables for the component starts from 'checkbox' word missing 'radio' part to reduce names length.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>$checkbox_size</td>
+              <td>Input side size</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$checkbox_border-width</td>
+              <td>Input border width</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$checkbox_border-radius</td>
+              <td>Input border radius</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$checkbox_label-font-size</td>
+              <td>Input label font size</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$checkbox_label-line-height</td>
+              <td>Input label line height</td>
+              <td>float number</td>
+            </tr>
+            <tr>
+              <td>$checkbox_default</td>
+              <td>Enable default checkboxes and radio</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>$checkbox_filled</td>
+              <td>Enable filled checkboxes and radio</td>
+              <td>true / false</td>
+            </tr>
+          </table>
         </div>
         <!-- *********************************************** 
         END GRID -->

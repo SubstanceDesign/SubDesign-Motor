@@ -2,7 +2,7 @@
 //  Checkbox and radio mixins
 /////////////////////////////////////////////////
 
-// Add common text input styles
+// Add common checkbox and radio styles
 @mixin add_checkbox-radio_styles($type, $size) {
   
   // ie8 style
@@ -81,7 +81,7 @@
 
 //  Default checkbox mixin
 /////////////////////////////////////////////////
-@mixin create_checkbox($size, $background, $border, $border-hover, $inner) {
+@mixin create_checkbox($size, $background, $border, $inner) {
 
   @include add_checkbox-radio_styles('checkbox', $size); // add common styles
   
@@ -139,16 +139,16 @@
 
 //  Filled checkbox mixin
 /////////////////////////////////////////////////
-@mixin create_checkbox_filled($size, $background, $border, $border-hover, $inner) {
+@mixin create_checkbox_filled($size, $background, $border, $border-active, $inner) {
 
-  @include create_checkbox($size, $background, $border, $border-hover, $inner); // add deault checkbox styles
+  @include create_checkbox($size, $background, $border, $inner); // add deault checkbox styles
   
   html:not(.ie8) & {
 
     input[type=checkbox]:checked {
       & + span:before {
-        background-color: $border-hover;
-        border-color: $border-hover;
+        background-color: $border-active;
+        border-color: $border-active;
       }
 
       & + span:after {
@@ -166,7 +166,7 @@
 
 //  Default radio mixin
 /////////////////////////////////////////////////
-@mixin create_radio($size, $background, $border, $border-hover, $inner) {
+@mixin create_radio($size, $background, $border, $inner) {
 
   @include add_checkbox-radio_styles('radio', $size); // add common styles
 
@@ -224,16 +224,16 @@
 
 //  Filled radio mixin
 /////////////////////////////////////////////////
-@mixin create_radio_filled($size, $background, $border, $border-hover, $inner) {
+@mixin create_radio_filled($size, $background, $border, $border-active, $inner) {
   
-  @include create_radio($size, $background, $border, $border-hover, $inner); // add deault radio styles
+  @include create_radio($size, $background, $border, $inner); // add deault radio styles
   
   html:not(.ie8) & {
 
     input[type=radio]:checked {
       & + span:before {
-        background-color: $border-hover;
-        border-color: $border-hover;
+        background-color: $border-active;
+        border-color: $border-active;
       }
 
       & + span:after {

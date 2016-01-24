@@ -52,7 +52,12 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#anchor_buttons">Default appearance</a></li>
+          <li><a href="#anchor_default">Default switch</a></li>
+          <li><a href="#anchor_styles">Switch styles</a></li>
+          <li><a href="#anchor_disabled">Disabled state</a></li>
+          <li><a href="#anchor_inline">Inline modificator</a></li>
+          <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
+          <li><a href="#anchor_config">Setting switch config</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -65,42 +70,240 @@
         <!-- GRID
         *********************************************** -->
         <div class="content">
-          <h2 id="anchor_buttons">Default appearance</h2>
+          <h2 id="anchor_buttons">Default switch</h2>
+          <p>To use motor default switch create <span class="docs_mark">&lt;label&gt;</span> tag with <span class="docs_mark">.switch</span> class. Put <span class="docs_mark">input[type=checkbox]</span> or <span class="docs_mark">input[type=radio]</span> inside it, and create <span class="docs_mark">span.switch_lever</span> tag next to input. You can place label text for on and off states after that in <span class="docs_mark">span.switch_on</span> and <span class="docs_mark">span.switch_off</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="switch">
+  &lt;input type="checkbox" name="switch-1">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>
+
+&lt;label class="switch">
+  &lt;input type="radio" name="switch-radio" checked>
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label>
+&lt;label class="switch">
+  &lt;input type="radio" name="switch-radio">
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label>
+&lt;label class="switch">
+  &lt;input type="radio" name="switch-radio">
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label></pre>
           <p class="docs_subheading"><strong>Demo</strong></p>
           <p>
-            <label class="switcher">
-              <input type="checkbox" name="switcher-1" required>
-              <span class="switcher-vision">
-                <span class="switcher-switch">
-                  <span class="switcher-tumbler"></span>
-                </span>
-                <span class="switcher-on">on</span>
-                <span class="switcher-off">off</span>
-              </span>
+            <label class="switch">
+              <input type="checkbox" name="switch-1">
+              <span class="switch_lever"></span>
+              <span class="switch_on">on</span>
+              <span class="switch_off">off</span>
             </label>
           </p>
           <p>
-            <label class="switcher">
-              <input type="checkbox" name="switcher-1" required>
-              <span class="switcher-vision">
-                <span class="switcher-switch">
-                  <span class="switcher-tumbler"></span>
-                </span>
-                <span class="switcher-on">on</span>
-                <span class="switcher-off">off</span>
-              </span>
+            <label class="switch">
+              <input type="radio" name="switch-radio" checked>
+              <span class="switch_lever"></span>
+            </label>
+            <label class="switch">
+              <input type="radio" name="switch-radio">
+              <span class="switch_lever"></span>
+            </label>
+            <label class="switch">
+              <input type="radio" name="switch-radio">
+              <span class="switch_lever"></span>
+            </label>
+          </p>
+          <h2 id="anchor_styles">Switch styles</h2>
+          <p>Besides default motor switch style you can use doted style with <span class="docs_mark">.switch-doted</span> and ios style with <span class="docs_mark">.switch-ios</span> classes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="switch-doted">
+  &lt;input type="checkbox" name="switch-2">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>
+&lt;label class="switch-ios">
+  &lt;input type="checkbox" name="switch-3">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>&lt;</pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="switch-doted">
+              <input type="checkbox" name="switch-2">
+              <span class="switch_lever"></span>
+              <span class="switch_on">on</span>
+              <span class="switch_off">off</span>
             </label>
           </p>
           <p>
-            <label class="switcher">
-              <input type="checkbox" name="switcher-1" required>
-              <span class="switcher-vision">
-                <span class="switcher-switch">
-                  <span class="switcher-tumbler"></span>
-                </span>
-              </span>
+            <label class="switch-ios">
+              <input type="checkbox" name="switch-3">
+              <span class="switch_lever"></span>
+              <span class="switch_on">on</span>
+              <span class="switch_off">off</span>
             </label>
           </p>
+          <h2 id="anchor_disabled">Disabled state</h2>
+          <p>For disabled state add ordinary <span class="docs_mark">disabled</span> attribute to input and <span class="docs_mark">.disabled</span> class to it for old browsers support.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="switch">
+  &lt;input type="checkbox" name="switch-4" disabled>
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="switch">
+              <input type="checkbox" name="switch-4" disabled>
+              <span class="switch_lever"></span>
+              <span class="switch_on">on</span>
+              <span class="switch_off">off</span>
+            </label>
+          </p>
+          <p>
+            <label class="switch">
+              <input type="checkbox" name="switch-5" checked disabled>
+              <span class="switch_lever"></span>
+              <span class="switch_on">on</span>
+              <span class="switch_off">off</span>
+            </label>
+          </p>
+          <h2 id="anchor_inline">Inline modificator</h2>
+          <p>For the inline-block behavior use <span class="docs_mark">.switch--inline</span> class.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;label class="switch switch--inline">
+  &lt;input type="radio" name="switch-8" checked>
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label>
+&lt;label class="switch switch--inline">
+  &lt;input type="radio" name="switch-8">
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label>
+&lt;label class="switch switch--inline">
+  &lt;input type="radio" name="switch-8">
+  &lt;span class="switch_lever">&lt;/span>
+&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <label class="switch switch--inline">
+              <input type="radio" name="switch-8" checked>
+              <span class="switch_lever"></span>
+            </label>
+            <label class="switch switch--inline">
+              <input type="radio" name="switch-8">
+              <span class="switch_lever"></span>
+            </label>
+            <label class="switch switch--inline">
+              <input type="radio" name="switch-8">
+              <span class="switch_lever"></span>
+            </label>
+          </p>
+          <h2 id="anchor_mixins">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_switch(
+  $width, 
+  $height, 
+  $border-width, 
+  $on-color, 
+  $off-color, 
+  $tumbler-color, 
+  $border-color, 
+  $dot: true
+)</pre></td>
+              <td>Create default or doted switch.</td>
+              <td>$width: switch width in px. Required! <br><br>$height: switch height in px. Required! <br><br>$border-width: switch border-width in px. Required! <br><br>$on-color: on state color. Required! <br><br>$off-color: off state color. Required! <br><br>$tumbler-color: tumbler color. Required! <br><br>$border-color: switch border color. Required! <br><br>$dot: true / false. Optional. By default: false.</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_switch_ios(
+  $width, 
+  $height, 
+  $border-width, 
+  $on-color, 
+  $off-color, 
+  $border-color
+)</pre></td>
+              <td>Create ios styled switch.</td>
+              <td>$width: switch width in px. Required! <br><br>$height: switch height in px. Required! <br><br>$border-width: switch border-width in px. Required! <br><br>$on-color: on state color. Required! <br><br>$off-color: off state color. Required! <br><br>$border-color: switch border color. Required! <br><br></td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-switch-name {
+  @include create_switch_ios(60px, 40px, 1px, #000, #fff, #ccc);
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;label class="custom-switch-name">
+  &lt;input type="checkbox" name="switch-name">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label></pre>
+          <h2 id="anchor_config">Setting switch config</h2>
+          <p>The framework has common input settings and individual checkbox and radio settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>$switch_width</td>
+              <td>Switch width</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$switch_height</td>
+              <td>Switch height</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$switch_border-width</td>
+              <td>Switch border-width</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$switch_border-color</td>
+              <td>Switch border-color</td>
+              <td>color</td>
+            </tr>
+            <tr>
+              <td>$switch_default</td>
+              <td>Enable default switch</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>$switch_doted</td>
+              <td>Enable doted switch</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>$switch_ios</td>
+              <td>Enable ios switch</td>
+              <td>true / false</td>
+            </tr>
+          </table>
         </div>
         <!-- *********************************************** 
         END GRID -->

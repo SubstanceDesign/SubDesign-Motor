@@ -59,6 +59,7 @@
           <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
           <li><a href="#anchor_config">Setting text inputs config</a></li>
           <li><a href="#anchor_autoresize">Autoresize textarea</a></li>
+          <li><a href="#anchor_placeholder">Placeholder polyfill</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -72,7 +73,7 @@
         *********************************************** -->
         <div class="content">
           <h2 id="anchor_inputs">Default text inputs</h2>
-          <p>To create default text input add <span class="docs_mark">.text-input</span> class to <span class="docs_mark">&lt;input type=text&gt;</span>, <span class="docs_mark">&lt;textarea&gt;</span> or <span class="docs_mark">&lt;select&gt;</span> tag.</p>
+          <p>To create motor text input add <span class="docs_mark">.text-input</span> class to <span class="docs_mark">&lt;input type=text&gt;</span>, <span class="docs_mark">&lt;textarea&gt;</span> or <span class="docs_mark">&lt;select&gt;</span> tag.</p>
           <p class="docs_subheading"><strong>Code</strong></p>
           <pre class="prettyprint">
 &lt;input type="text" class="text-input" placeholder="Default text input">
@@ -337,6 +338,13 @@ motor('#my-textarea').TextareaAutoresize({
   maxHeight: 300
 });
 </pre>
+          <h2 id="anchor_placeholder">Placeholder polyfill</h2>
+          <p>To activate placeholder polyfill for old browsers call <span class="docs_mark">motor.placeHolder()</span> methode. It will automatically apply polyfill to all inputs and textareas with placeholder attribute. To activate polyfill on certain element you can pass it to the function as argument.</p>
+          <p class="docs_subheading"><strong>Example</strong></p>
+          <pre class="prettyprint">
+motor.placeHolder(); // call placeholder polyfill
+
+motor.placeHolder(document.getElementById('certain-input')); // apply to certain element </pre>
         </div>
         <!-- *********************************************** 
         END GRID -->
@@ -375,6 +383,9 @@ motor('#my-textarea').TextareaAutoresize({
       motor(textarea).TextareaAutoresize({
         maxHeight: 300
       });
+
+      // call placeholder polyfill
+      motor.placeHolder();
 
     </script>
   </body>

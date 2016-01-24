@@ -4484,87 +4484,8 @@ select.text-input::-ms-expand {
 ***********************************************/
 .checkbox,
 .radio {
-  display: inline-block;
-}
-
-.ie8 .radio {
-  position: relative;
-  padding-left: 20px;
-}
-.ie8 .radio input {
-  position: absolute;
-  top: 5px;
-  left: 0;
-}
-.ie8 .radio input + span {
-  font-size: 16px;
-  line-height: 1.5;
-}
-html:not(.ie8) .radio {
-  min-height: 20px;
-  padding-left: 30px;
-}
-html:not(.ie8) .radio input[type=radio] {
-  position: absolute;
-  visibility: hidden;
-}
-html:not(.ie8) .radio input[type=radio] + span {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  font-size: 16px;
-  line-height: 1.5;
-}
-html:not(.ie8) .radio input[type=radio] + span:before {
-  content: '';
   display: block;
-  width: 20px;
-  height: 20px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: absolute;
-  top: 2px;
-  left: -30px;
-  border: 2px solid;
-}
-html:not(.ie8) .radio input[type=radio] + span:after {
-  content: '';
-  display: none;
-  position: absolute;
-}
-html:not(.ie8) .radio input[type=radio]:checked + span:after {
-  display: block;
-}
-html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after {
-  display: block;
-}
-html:not(.ie8) .radio input[type=radio] + span:before {
-  border-radius: 100%;
-  border-color: #ccc;
-}
-html:not(.ie8) .radio input[type=radio] + span:after {
-  width: 10px;
-  height: 10px;
-  top: 7px;
-  left: -25px;
-  border-radius: 100%;
-  background-color: #FF981A;
-}
-html:not(.ie8) .radio input[type=radio].error + span:before {
-  border-color: #E21F1E;
-}
-html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
-  background-color: #ffcc8d;
-}
-html:not(.ie8) .radio.disabled, html:not(.ie8) .radio.disabled input[type=radio] + span {
-  cursor: not-allowed;
-}
-html:not(.ie8) .radio input[type=radio][disabled] + span:before,
-html:not(.ie8) .radio input[type=radio].disabled + span:before, html:not(.ie8) .radio.disabled input[type=radio] + span:before {
-  background: #e6e6e6;
-}
-html:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio.disabled:hover input[type=radio]:not(:checked) + span:after {
-  display: none;
+  margin: 8px 0;
 }
 
 .ie8 .checkbox {
@@ -4656,42 +4577,35 @@ html:not(.ie8) .checkbox:hover input[type=checkbox][disabled]:not(:checked) + sp
   display: none;
 }
 
-/* Filled when checked checkbox and radio
-***********************************************/
-.checkbox-filled,
-.radio-filled {
-  display: inline-block;
-}
-
-.ie8 .radio-filled {
+.ie8 .radio {
   position: relative;
   padding-left: 20px;
 }
-.ie8 .radio-filled input {
+.ie8 .radio input {
   position: absolute;
   top: 5px;
   left: 0;
 }
-.ie8 .radio-filled input + span {
+.ie8 .radio input + span {
   font-size: 16px;
   line-height: 1.5;
 }
-html:not(.ie8) .radio-filled {
+html:not(.ie8) .radio {
   min-height: 20px;
   padding-left: 30px;
 }
-html:not(.ie8) .radio-filled input[type=radio] {
+html:not(.ie8) .radio input[type=radio] {
   position: absolute;
   visibility: hidden;
 }
-html:not(.ie8) .radio-filled input[type=radio] + span {
+html:not(.ie8) .radio input[type=radio] + span {
   cursor: pointer;
   position: relative;
   display: inline-block;
   font-size: 16px;
   line-height: 1.5;
 }
-html:not(.ie8) .radio-filled input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio] + span:before {
   content: '';
   display: block;
   width: 20px;
@@ -4703,22 +4617,22 @@ html:not(.ie8) .radio-filled input[type=radio] + span:before {
   left: -30px;
   border: 2px solid;
 }
-html:not(.ie8) .radio-filled input[type=radio] + span:after {
+html:not(.ie8) .radio input[type=radio] + span:after {
   content: '';
   display: none;
   position: absolute;
 }
-html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+html:not(.ie8) .radio input[type=radio]:checked + span:after {
   display: block;
 }
-html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after {
   display: block;
 }
-html:not(.ie8) .radio-filled input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio] + span:before {
   border-radius: 100%;
   border-color: #ccc;
 }
-html:not(.ie8) .radio-filled input[type=radio] + span:after {
+html:not(.ie8) .radio input[type=radio] + span:after {
   width: 10px;
   height: 10px;
   top: 7px;
@@ -4726,33 +4640,35 @@ html:not(.ie8) .radio-filled input[type=radio] + span:after {
   border-radius: 100%;
   background-color: #FF981A;
 }
-html:not(.ie8) .radio-filled input[type=radio].error + span:before {
+html:not(.ie8) .radio input[type=radio].error + span:before {
   border-color: #E21F1E;
 }
-html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio-filled:focus input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio:focus input[type=radio]:not(:checked) + span:after {
   background-color: #ffcc8d;
 }
-html:not(.ie8) .radio-filled.disabled, html:not(.ie8) .radio-filled.disabled input[type=radio] + span {
+html:not(.ie8) .radio.disabled, html:not(.ie8) .radio.disabled input[type=radio] + span {
   cursor: not-allowed;
 }
-html:not(.ie8) .radio-filled input[type=radio][disabled] + span:before,
-html:not(.ie8) .radio-filled input[type=radio].disabled + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio] + span:before {
+html:not(.ie8) .radio input[type=radio][disabled] + span:before,
+html:not(.ie8) .radio input[type=radio].disabled + span:before, html:not(.ie8) .radio.disabled input[type=radio] + span:before {
   background: #e6e6e6;
 }
-html:not(.ie8) .radio-filled:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio-filled:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio-filled.disabled:hover input[type=radio]:not(:checked) + span:after {
+html:not(.ie8) .radio:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio.disabled:hover input[type=radio]:not(:checked) + span:after {
   display: none;
 }
-html:not(.ie8) .radio-filled input[type=radio]:checked + span:before {
-  background-color: #FF981A;
-  border-color: #FF981A;
+
+/* Filled when checked checkbox and radio
+***********************************************/
+.checkbox-filled,
+.radio-filled {
+  display: block;
 }
-html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
-  background-color: #fff;
-}
-html:not(.ie8) .radio-filled input[type=radio][disabled]:checked + span:before,
-html:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio]:checked + span:before {
-  opacity: 0.65;
-  filter: alpha(opacity=65);
+.checkbox-filled + .checkbox, .checkbox-filled + .radio, .checkbox-filled + .checkbox-filled, .checkbox-filled + .radio-filled,
+.radio-filled + .checkbox,
+.radio-filled + .radio,
+.radio-filled + .checkbox-filled,
+.radio-filled + .radio-filled {
+  margin-top: 8px;
 }
 
 .ie8 .checkbox-filled {
@@ -4856,39 +4772,147 @@ html:not(.ie8) .checkbox-filled input[type=checkbox].disabled:checked + span:bef
   filter: alpha(opacity=65);
 }
 
+.ie8 .radio-filled {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .radio-filled input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .radio-filled input + span {
+  font-size: 16px;
+  line-height: 1.5;
+}
+html:not(.ie8) .radio-filled {
+  min-height: 20px;
+  padding-left: 30px;
+}
+html:not(.ie8) .radio-filled input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+}
+html:not(.ie8) .radio-filled input[type=radio] + span {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.5;
+}
+html:not(.ie8) .radio-filled input[type=radio] + span:before {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+  left: -30px;
+  border: 2px solid;
+}
+html:not(.ie8) .radio-filled input[type=radio] + span:after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+  display: block;
+}
+html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after {
+  display: block;
+}
+html:not(.ie8) .radio-filled input[type=radio] + span:before {
+  border-radius: 100%;
+  border-color: #ccc;
+}
+html:not(.ie8) .radio-filled input[type=radio] + span:after {
+  width: 10px;
+  height: 10px;
+  top: 7px;
+  left: -25px;
+  border-radius: 100%;
+  background-color: #FF981A;
+}
+html:not(.ie8) .radio-filled input[type=radio].error + span:before {
+  border-color: #E21F1E;
+}
+html:not(.ie8) .radio-filled:hover input[type=radio]:not(:checked) + span:after, html:not(.ie8) .radio-filled:focus input[type=radio]:not(:checked) + span:after {
+  background-color: #ffcc8d;
+}
+html:not(.ie8) .radio-filled.disabled, html:not(.ie8) .radio-filled.disabled input[type=radio] + span {
+  cursor: not-allowed;
+}
+html:not(.ie8) .radio-filled input[type=radio][disabled] + span:before,
+html:not(.ie8) .radio-filled input[type=radio].disabled + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio] + span:before {
+  background: #e6e6e6;
+}
+html:not(.ie8) .radio-filled:hover input[type=radio][disabled]:not(:checked) + span:after, html:not(.ie8) .radio-filled:hover input[type=radio].disabled:not(:checked) + span:after, html:not(.ie8) .radio-filled.disabled:hover input[type=radio]:not(:checked) + span:after {
+  display: none;
+}
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:before {
+  background-color: #FF981A;
+  border-color: #FF981A;
+}
+html:not(.ie8) .radio-filled input[type=radio]:checked + span:after {
+  background-color: #fff;
+}
+html:not(.ie8) .radio-filled input[type=radio][disabled]:checked + span:before,
+html:not(.ie8) .radio-filled input[type=radio].disabled:checked + span:before, html:not(.ie8) .radio-filled.disabled input[type=radio]:checked + span:before {
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+}
+
 /* Checkbox modifiers
 ***********************************************/
-/* Make checkbox and radio group to be a block */
-.checkbox--block,
-.radio--block {
-  display: block;
+/* Make checkbox and radio group to be an inline block */
+.checkbox--inline,
+.radio--inline {
+  display: inline-block;
+  margin: 0 12px 0 0;
 }
 
 /*********************************************** 
     Switch
 ***********************************************/
-/* Switch
+/* Switch default
 ***********************************************/
-.ie8 .switcher {
+.switch {
+  display: block;
+  margin: 12px 0;
+}
+.ie8 .switch {
   position: relative;
   padding-left: 20px;
 }
-.ie8 .switcher input {
+.ie8 .switch input {
   position: absolute;
   top: 5px;
   left: 0;
 }
-.ie8 .switcher input + span {
+.ie8 .switch .switch_on,
+.ie8 .switch .switch_off {
   font-size: 16px;
   line-height: 1.5;
 }
-html:not(.ie8) .switcher {
+.ie8 .switch .switch_off {
+  position: relative;
+}
+.ie8 .switch .switch_off:before {
+  content: ' / ';
+}
+html:not(.ie8) .switch {
   margin-bottom: 0;
 }
-html:not(.ie8) .switcher input[type=checkbox] {
+html:not(.ie8) .switch input {
   display: none;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-switch {
+html:not(.ie8) .switch input:disabled + .switch_lever, html:not(.ie8) .switch input.disabled + .switch_lever {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+html:not(.ie8) .switch .switch_lever {
   display: inline-block;
   width: 50px;
   height: 30px;
@@ -4896,14 +4920,15 @@ html:not(.ie8) .switcher .switcher-vision .switcher-switch {
   vertical-align: middle;
   cursor: pointer;
   border-radius: 999px;
-  background: #ccc;
+  background-color: #ccc;
   border: 1px solid transparent;
   -webkit-box-shadow: #ccc 0px 0px 0px 0px inset;
           box-shadow: #ccc 0px 0px 0px 0px inset;
-  -webkit-transition: background 0.3s, -webkit-box-shadow 0.2s;
-          transition: background 0.3s, box-shadow 0.2s;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s;
+          transition: border 0.4s, box-shadow 0.4s;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-switch .switcher-tumbler {
+html:not(.ie8) .switch .switch_lever:before {
+  content: '';
   width: 28px;
   height: 28px;
   position: absolute;
@@ -4916,45 +4941,265 @@ html:not(.ie8) .switcher .switcher-vision .switcher-switch .switcher-tumbler {
   -webkit-transition: left 0.2s;
           transition: left 0.2s;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-switch .switcher-tumbler:after {
+html:not(.ie8) .switch .switch_lever:hover:after {
+  background-color: #FF981A;
+}
+html:not(.ie8) .switch .switch_on, html:not(.ie8) .switch .switch_off {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+html:not(.ie8) .switch .switch_on {
+  display: none;
+}
+html:not(.ie8) .switch input:checked + .switch_lever {
+  background-color: #FF981A;
+  -webkit-box-shadow: #FF981A 0 0 0 15px inset;
+          box-shadow: #FF981A 0 0 0 15px inset;
+  border-color: #FF981A;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s, background-color 1.2s;
+          transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+}
+html:not(.ie8) .switch input:checked + .switch_lever:before {
+  left: 20px;
+}
+html:not(.ie8) .switch input:checked + .switch_lever:after {
+  left: 35px;
+  background-color: #FF981A;
+}
+html:not(.ie8) .switch input:checked + .switch_lever:hover:after {
+  background: #ccc;
+}
+html:not(.ie8) .switch input:checked + .switch_lever + .switch_on {
+  display: inline-block;
+}
+html:not(.ie8) .switch input:checked + .switch_lever + .switch_on + .switch_off {
+  display: none;
+}
+
+/* Switch dotted
+***********************************************/
+.switch-doted {
+  display: block;
+  margin: 12px 0;
+}
+.ie8 .switch-doted {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .switch-doted input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .switch-doted .switch_on,
+.ie8 .switch-doted .switch_off {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ie8 .switch-doted .switch_off {
+  position: relative;
+}
+.ie8 .switch-doted .switch_off:before {
+  content: ' / ';
+}
+html:not(.ie8) .switch-doted {
+  margin-bottom: 0;
+}
+html:not(.ie8) .switch-doted input {
+  display: none;
+}
+html:not(.ie8) .switch-doted input:disabled + .switch_lever, html:not(.ie8) .switch-doted input.disabled + .switch_lever {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+html:not(.ie8) .switch-doted .switch_lever {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 999px;
+  background-color: #ccc;
+  border: 1px solid transparent;
+  -webkit-box-shadow: #ccc 0px 0px 0px 0px inset;
+          box-shadow: #ccc 0px 0px 0px 0px inset;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s;
+          transition: border 0.4s, box-shadow 0.4s;
+}
+html:not(.ie8) .switch-doted .switch_lever:before {
+  content: '';
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 999px;
+  background: #fff;
+  -webkit-transition: left 0.2s;
+          transition: left 0.2s;
+}
+html:not(.ie8) .switch-doted .switch_lever:after {
   content: '';
   position: absolute;
   width: 6px;
   height: 6px;
   top: 50%;
-  left: 50%;
+  left: 14px;
   margin: -3px 0 0 -3px;
   border-radius: 999px;
   background: #ccc;
+  -webkit-transition: left 0.2s;
+          transition: left 0.2s;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-switch:hover .switcher-tumbler:after {
+html:not(.ie8) .switch-doted .switch_lever:hover:after {
   background-color: #FF981A;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-on, html:not(.ie8) .switcher .switcher-vision .switcher-off {
+html:not(.ie8) .switch-doted .switch_on, html:not(.ie8) .switch-doted .switch_off {
   display: inline-block;
   vertical-align: middle;
   margin-left: 6px;
 }
-html:not(.ie8) .switcher .switcher-vision .switcher-on {
+html:not(.ie8) .switch-doted .switch_on {
   display: none;
 }
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-switch {
-  background: #FF981A;
-  -webkit-box-shadow: #FF981A 0 0 0 30px inset;
-          box-shadow: #FF981A 0 0 0 30px inset;
+html:not(.ie8) .switch-doted input:checked + .switch_lever {
+  background-color: #FF981A;
+  -webkit-box-shadow: #FF981A 0 0 0 15px inset;
+          box-shadow: #FF981A 0 0 0 15px inset;
+  border-color: #FF981A;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s, background-color 1.2s;
+          transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
 }
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-switch:hover .switcher-tumbler:after {
-  background: #ccc;
-}
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-tumbler {
+html:not(.ie8) .switch-doted input:checked + .switch_lever:before {
   left: 20px;
 }
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-tumbler:after {
+html:not(.ie8) .switch-doted input:checked + .switch_lever:after {
+  left: 35px;
   background-color: #FF981A;
 }
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-on {
+html:not(.ie8) .switch-doted input:checked + .switch_lever:hover:after {
+  background: #ccc;
+}
+html:not(.ie8) .switch-doted input:checked + .switch_lever + .switch_on {
   display: inline-block;
 }
-html:not(.ie8) .switcher input[type=checkbox]:checked + .switcher-vision .switcher-off {
+html:not(.ie8) .switch-doted input:checked + .switch_lever + .switch_on + .switch_off {
   display: none;
+}
+
+/* Switch dotted
+***********************************************/
+.switch-ios {
+  display: block;
+  margin: 12px 0;
+}
+.ie8 .switch-ios {
+  position: relative;
+  padding-left: 20px;
+}
+.ie8 .switch-ios input {
+  position: absolute;
+  top: 5px;
+  left: 0;
+}
+.ie8 .switch-ios .switch_on,
+.ie8 .switch-ios .switch_off {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.ie8 .switch-ios .switch_off {
+  position: relative;
+}
+.ie8 .switch-ios .switch_off:before {
+  content: ' / ';
+}
+html:not(.ie8) .switch-ios {
+  margin-bottom: 0;
+}
+html:not(.ie8) .switch-ios input {
+  display: none;
+}
+html:not(.ie8) .switch-ios input:disabled + .switch_lever, html:not(.ie8) .switch-ios input.disabled + .switch_lever {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+html:not(.ie8) .switch-ios .switch_lever {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 999px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  -webkit-box-shadow: #fff 0px 0px 0px 0px inset;
+          box-shadow: #fff 0px 0px 0px 0px inset;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s;
+          transition: border 0.4s, box-shadow 0.4s;
+}
+html:not(.ie8) .switch-ios .switch_lever:before {
+  content: '';
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  border-radius: 999px;
+  background: #fff;
+  -webkit-transition: left 0.2s;
+          transition: left 0.2s;
+}
+html:not(.ie8) .switch-ios .switch_lever:hover:after {
+  background-color: #FF981A;
+}
+html:not(.ie8) .switch-ios .switch_on, html:not(.ie8) .switch-ios .switch_off {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+}
+html:not(.ie8) .switch-ios .switch_on {
+  display: none;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever {
+  background-color: #FF981A;
+  -webkit-box-shadow: #FF981A 0 0 0 15px inset;
+          box-shadow: #FF981A 0 0 0 15px inset;
+  border-color: #FF981A;
+  -webkit-transition: border 0.4s, -webkit-box-shadow 0.4s, background-color 1.2s;
+          transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever:before {
+  left: 20px;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever:after {
+  left: 35px;
+  background-color: #FF981A;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever:hover:after {
+  background: #fff;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever + .switch_on {
+  display: inline-block;
+}
+html:not(.ie8) .switch-ios input:checked + .switch_lever + .switch_on + .switch_off {
+  display: none;
+}
+html:not(.ie8) .switch-ios .switch_lever:before {
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Checkbox modifiers
+***********************************************/
+/* Make switch to be an inline block */
+.switch--inline {
+  display: inline-block;
+  margin: 0 12px 0 0;
 }

@@ -4,7 +4,7 @@
 
 //  Default switch mixin
 /////////////////////////////////////////////////
-@mixin create_switch($width, $height, $border-width, $on-color, $off-color, $tumbler-color) {
+@mixin create_switch($width, $height, $border-width, $on-color, $off-color, $tumbler-color, $border-color, $dot: false) {
   
   // ie8 style
   .ie8 & {
@@ -18,9 +18,18 @@
       left: 0;
     }
 
-    input + span {
+    .switch_on,
+    .switch_off {
       font-size: $checkbox_label-font-size;
       line-height: $checkbox_label-line-height;
+    }
+
+    .switch_off {
+      position: relative;
+
+      &:before {
+        content: ' / ';
+      }
     }
   }
 
@@ -28,92 +37,123 @@
 
     margin-bottom: 0;
 
-    input[type=checkbox] {
+    input {
+      display: none;
+
+      &:disabled + .switch_lever,
+      &.disabled + .switch_lever {
+        @include opacity(50);
+      }
+    }
+
+    // off state
+    .switch_lever {
+      display: inline-block;
+      width: $width;
+      height: $height;
+      position: relative;
+      vertical-align: middle;
+      cursor: pointer;
+      border-radius: 999px;
+      background-color: $off-color;
+      border: $border-width solid $border-color;
+      box-shadow: $off-color 0px 0px 0px 0px inset;
+      transition: border 0.4s, box-shadow 0.4s;
+
+      // lever
+      &:before {
+        content:''; 
+        width: $height - 2*$border-width;
+        height: $height - 2*$border-width;
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: content-box;
+        border-radius: 999px;
+        background: $tumbler-color;
+        transition: left 0.2s;
+      }
+      
+      @if ($dot == true) {
+
+        // dot
+        &:after {
+          content:'';
+          position: absolute;
+          width: 6px;
+          height: 6px;
+          top: 50%;
+          left: $height / 2 - $border-width;
+          margin: -3px 0 0 -3px;
+          border-radius: 999px;
+          background: $off-color;
+          transition: left 0.2s;
+        }
+      }
+
+      &:hover:after {
+        background-color: $on-color;
+      }
+    }
+
+    .switch_on, .switch_off {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    .switch_on {
       display: none;
     }
 
-    .switcher-vision {
-      .switcher-switch {
-        display: inline-block;
-        width: $width;
-        height: $height;
-        position: relative;
-        vertical-align: middle;
-        cursor: pointer;
-        border-radius: 999px;
+    input:checked + .switch_lever {
+
+      background-color: $on-color;
+      box-shadow: $on-color 0 0 0 $height / 2 inset;
+      border-color: $on-color;
+      transition: border 0.4s, box-shadow 0.4s, background-color 1.2s;
+
+      // lever
+      &:before {
+        left: $width - $height;
+      }
+
+      // dot
+      &:after { 
+        left: $width - $height / 2;
+        background-color: $on-color;
+      }
+      
+      &:hover:after {
         background: $off-color;
-        border: $border-width solid transparent;
-        box-shadow: $off-color 0px 0px 0px 0px inset;
-        transition: background 0.3s, box-shadow 0.2s;
-
-        .switcher-tumbler { 
-          width: $switch_height - 2*$border-width;
-          height: $switch_height - 2*$border-width;
-          position: absolute;
-          top: 0;
-          left: 0;
-          box-sizing: content-box;
-          border-radius: 999px;
-          background: $tumbler-color;
-          transition: left 0.2s;
-          
-          &:after {
-            content:'';
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            top: 50%;
-            left: 50%;
-            margin: -3px 0 0 -3px;
-            border-radius: 999px;
-            background: $off-color;
-          }
-        }
-
-        &:hover {
-          .switcher-tumbler:after { 
-            background-color: $on-color;
-          }
-        }
       }
 
-      .switcher-on, .switcher-off {
+      & + .switch_on {
         display: inline-block;
-        vertical-align: middle;
-        margin-left: 6px;
-      }
 
-      .switcher-on {
-        display: none;
-      }
-    }
-
-    input[type=checkbox]:checked + .switcher-vision {
-
-      .switcher-switch {
-        background: $on-color;
-        box-shadow: $on-color 0 0 0 30px inset;
-
-        &:hover .switcher-tumbler:after {
-          background: $off-color;
+        & + .switch_off {
+          display: none;
         }
-      }
-
-      .switcher-tumbler {
-        left: 20px;
-
-        &:after { 
-          background-color: $on-color;
-        }
-      }
-
-      .switcher-on {
-        display: inline-block;
-      }
-
-      .switcher-off {
-        display: none;
       }
     }
   } 
+}
+
+//  IOS switch mixin
+/////////////////////////////////////////////////
+@mixin create_switch_ios($width, $height, $border-width, $on-color, $off-color, $border-color) {
+
+  @include create_switch($width, $height, $border-width, $on-color, $off-color, $off-color, $border-color, false); // add default switch styles
+
+  html:not(.ie8) & {
+
+    // off state
+    .switch_lever {
+
+      // lever
+      &:before {
+        box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
 }
