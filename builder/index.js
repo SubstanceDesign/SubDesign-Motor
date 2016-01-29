@@ -9,8 +9,9 @@ var server = require('./modules/server'),
 var handle = {
   '/': requestHandler.start,
   '/start': requestHandler.start,
-  '/compile': requestHandler.compile,
-  '/upload': requestHandler.upload
+  '/get-config': requestHandler.getConfig,
+  '/update': requestHandler.update,
+  '/compile': requestHandler.compile
 }
 
 server.start(router.route, handle);

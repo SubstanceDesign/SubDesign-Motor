@@ -32,7 +32,7 @@ function scssToXml(fileString) {
   fileString = fileString.replace(/\/\/  (.*)\n\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\//g, '\n<h2>$1</h2>\n');
   fileString = fileString.replace(/\n\/\/\s*(.*)\n/g, '\n<h3>$1</h3>\n');
   fileString = fileString.replace(/\n(.*)\s*\/\/(.*)\n/g, '\n<h4>$2</h4>\n$1\n');
-  fileString = fileString.replace(/\n(.*)\s*\/\/(.*)\n/g, '\n<h5>$2</h5>\n$1\n');
+  fileString = fileString.replace(/\n(.*)\s*\/\/(.*)\n/g, '\n<h4>$2</h4>\n$1\n');
 
   // parse variables
   fileString = fileString.replace(/\$(.*):\s*(.*);/g, '\n<var><name>$1</name><value>$2</value></var>\n');
@@ -50,10 +50,23 @@ function scssToXml(fileString) {
   // wrap into root
   fileString = fileString.replace(/(.*)/, '<root>$1</root>');
 
+  return fileString;
+}
+
+function scssToJson(fileString) {
+  fileString = scssToXml(fileString);
   fileString = objTree.parseXML( fileString );
+
+  return fileString;
+}
+
+function jsonToScss(fileString) {
+  fileString = fileString.replace(/%5B/g, '[').replace(/%5D/g, ']');
 
   return fileString;
 }
 
 exports.scssToHtml = scssToHtml;
 exports.scssToXml = scssToXml;
+exports.scssToJson = scssToJson;
+exports.jsonToScss = jsonToScss;
