@@ -4,7 +4,7 @@
 
 //  Interface grid and base sizes
 /////////////////////////////////////////////////
-$unit: 6px;
+$unit: 4px;
 $base_font-size: 16px;
 $base_line-height: 1.5;
 
@@ -12,20 +12,20 @@ $base_line-height: 1.5;
 /////////////////////////////////////////////////
 
 //  global palette
-$color_base: #f0f0f0; // base theme background color                                                               
-$color_contrast: #0d0d0d; // contrast to base theme background color                                                               
-$color_brand: #4580FD; // special brand theme color                                                               
-$color_info: #00BCFF; // information status color                                                               
-$color_success: #8BD33C; // success status color                                                               
-$color_warning: #E1B13A; // warning status color                                                               
-$color_danger: #E14B3A; // danger/error status color                                                               
+$color_base: #fff; // base theme background color                                                   
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                   
+$color_brand: #FF981A; // special brand theme color                                                   
+$color_info: #6EB7C2; // information status color                                                   
+$color_success: #3DCC80; // success status color                                                   
+$color_warning: #F0D524; // warning status color                                                   
+$color_danger: #E21F1E; // danger/error status color                                                   
 
 //  light palette
 $palette_light: (
   background: $color_base,
   background-border: #ccc,
   text: $color_contrast,
-  text-secondary: #2A3032,
+  text-secondary: #ccc,
   action-default: $color_brand,
   action-secondary: $color_contrast,
   action-info: $color_info,
@@ -39,7 +39,7 @@ $palette_dark: (
   background: $color_contrast,
   background-border: #aaa,
   text: $color_base,
-  text-secondary: #4E595D,
+  text-secondary: #eee,
   action-default: $color_brand,
   action-secondary: $color_contrast,
   action-info: $color_info,
@@ -148,13 +148,13 @@ $grid_gutters: (
 
 //  common size settings
 $inputs_height: 9 * $unit;
-$inputs_padding-horizontal: $inputs_height * 0.70;
+$inputs_padding-horizontal: $inputs_height * 0.35;
 $inputs_font-size: 14px;
 $inputs_button-font-size: 14px;
 $inputs_border-radius: 0;
 $inputs_height_xs: 6 * $unit;
 $inputs_padding-horizontal_xs: $inputs_height_xs * 0.35;
-$inputs_font-size_xs: 12px;
+$inputs_font-size_xs: 11px;
 $inputs_button-font-size_xs: 11px;
 $inputs_border-radius_xs: 0;
 $inputs_height_sm: 8 * $unit;
@@ -181,7 +181,7 @@ $inputs_color_warning: get-color(action-warning);
 $inputs_color_danger: get-color(action-danger);
 
 //  Buttons
-$button_flat_border-width: 0px;
+$button_flat_border-width: 1px;
 $button_outline_border-width: 2px;
 $button_gradient_border-width: 1px;
 
