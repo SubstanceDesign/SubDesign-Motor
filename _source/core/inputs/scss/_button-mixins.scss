@@ -155,8 +155,8 @@
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, $button_gradient_border-width*2); // add default size
 
-  background: darken($gradient-top, 10%);
-  background: linear-gradient($gradient-top, $gradient-bottom);
+  background-color: darken($gradient-top, 10%);
+  background-image: linear-gradient($gradient-top, $gradient-bottom);
   color: $color;
   border-style: solid;
   border-width: $button_gradient_border-width 0;
@@ -165,12 +165,14 @@
   &:hover,
   &:focus {
     color: $color;
-    background: $gradient-bottom linear-gradient($gradient-top, $gradient-top);
+    background-color: $gradient-bottom;
+    background-image: linear-gradient($gradient-top, $gradient-top);
   }
 
   &:active,
   &.active {
-    background: $gradient-bottom linear-gradient($gradient-bottom, $gradient-top);
+    background-color: $gradient-bottom;
+    background-image: linear-gradient($gradient-top, $gradient-top);
   }
 
   &.disabled,
@@ -180,7 +182,9 @@
     &:active,
     &:focus {
       color: $color;
-      background: $gradient-bottom linear-gradient($gradient-top, $gradient-bottom);
+
+      background-color: $gradient-bottom;
+      background-image: linear-gradient($gradient-top, $gradient-bottom);
       @include opacity(65);
     }
   }

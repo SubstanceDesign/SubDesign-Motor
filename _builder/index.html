@@ -20,7 +20,7 @@
 
     <!-- STYLESHEETS
     *********************************************** -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="_builder/assets/css/style.css">
 
     <!-- FALLBACKS - for IE8 and lesser versions
     *********************************************** -->
@@ -52,10 +52,17 @@
       <!-- PAGE CONTENT
       *********************************************** -->
       <section class="content">
-        
-        <section id="config">
+
+        <div class="config_window">
+          <iframe id="config_iframe" src="_docs/buttons.html" frameborder="0"></iframe>
+        </div>
           
-        </section>
+        <form id="config_form" method="post" action="">
+          <section id="config">
+            
+          </section>
+          <input class="button" type="submit" id="config_submit" value="Save">
+        </form>
 
       </section>
       <!-- *********************************************** 
@@ -73,7 +80,7 @@
     <script>window.jQuery || document.write('<script src="assets/js/jquery.min.js"><\/script>')</script>
 
     <!-- JQuery -->
-    <script src="assets/js/script.js"></script>
+    <script src="_builder/assets/js/script.js"></script>
 
   </body>
 </html>

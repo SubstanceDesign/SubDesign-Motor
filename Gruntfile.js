@@ -118,6 +118,7 @@ module.exports = function( grunt ) {
 
   grunt.registerTask( 'default', [ 'concat', 'sass', 'autoprefixer' ] );
   grunt.registerTask( 'publish', [ 'concat', 'uglify', 'jsbeautifier', 'sass', 'autoprefixer', 'csscomb', 'cssmin' ] );
+  grunt.registerTask( 'styles', [ 'sass', 'autoprefixer', 'csscomb', 'cssmin' ] );
   grunt.registerTask( 'serv', [ 'connect', 'watch' ] );
 
 };
