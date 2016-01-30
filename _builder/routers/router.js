@@ -17,7 +17,7 @@ function route( handle, request, response, data) {
 
     // handle static
     var extension = path.extname(pathname),
-        filePath = '.' + request.url,
+        filePath = '.' + request.url.split('?')[0],
         contentType = 'text/html';
     switch (extension) {
       case '.js':

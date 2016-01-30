@@ -55,11 +55,17 @@ var builder = {
 
           if ( data == 'Updated succesfully' ) {
             builder.reloadStylesheets(document.getElementById('config_iframe').contentDocument);
-            //document.getElementById('config_iframe').contentWindow.location.reload();
           }
         }
       });
     });
+
+    // init colorpicker
+    //$('#config input[name*=color]').colorPicker();
+    /*$('#config input[name*=color]').each(function() {
+      this.setAttribute( 'type', 'color');
+    })
+    */
   },
 
   prepareFormData: function(parent) {
@@ -74,8 +80,8 @@ var builder = {
     data = parent.innerHTML;
 
     // parse data to xml
-    data = data.replace(/<div class="variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input type="text" name=".*?" value="(.*?)"><\/div><\/div>/g, '<var><name>$1</name><value>$2</value></var>');
-    data = data.replace(/<div class="map-variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input type="text" name=".*?" value="(.*?)"><\/div><\/div>/g, '<map-var><name>$1</name><value>$2</value></map-var>');
+    data = data.replace(/<div class="variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input.*?name=".*?".*?value="(.*?)".*?><\/div><\/div>/g, '<var><name>$1</name><value>$2</value></var>');
+    data = data.replace(/<div class="map-variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input.*?name=".*?".*?value="(.*?)".*?><\/div><\/div>/g, '<map-var><name>$1</name><value>$2</value></map-var>');
     data = data.replace(/<div class="map"><div class="map-name">(.*?)<\/div><div class="map-array">(.*?)<\/div><\/div>/g, '<map><map-name>$1</map-name><map-array>$2</map-array></map>');
 
     // wrap root
@@ -113,7 +119,7 @@ var builder = {
 
   reloadStylesheets: function(document) {
     var queryString = '?reload=' + new Date().getTime();
-    queryString = '';
+    //queryString = '';
     $(document).find('link[rel="stylesheet"]').each(function () {
       this.href = this.href.replace(/\?.*|$/, queryString);
     });

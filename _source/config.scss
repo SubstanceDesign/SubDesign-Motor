@@ -12,13 +12,13 @@ $base_line-height: 1.5;
 /////////////////////////////////////////////////
 
 //  global palette
-$color_base: #fff; // base theme background color                                                  
-$color_contrast: #0d0d0d; // contrast to base theme background color                                                  
-$color_brand: #FF981A; // special brand theme color                                                  
-$color_info: #6EB7C2; // information status color                                                  
-$color_success: #3DCC80; // success status color                                                  
-$color_warning: #F0D524; // warning status color                                                  
-$color_danger: #E21F1E; // danger/error status color                                                  
+$color_base: #fff; // base theme background color                                                             
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                             
+$color_brand: #FF981A; // special brand theme color                                                             
+$color_info: #6EB7C2; // information status color                                                             
+$color_success: #3DCC80; // success status color                                                             
+$color_warning: #F0D524; // warning status color                                                             
+$color_danger: #E21F1E; // danger/error status color                                                             
 
 //  light palette
 $palette_light: (
@@ -154,7 +154,7 @@ $inputs_button-font-size: 14px;
 $inputs_border-radius: 0;
 $inputs_height_xs: 6 * $unit;
 $inputs_padding-horizontal_xs: $inputs_height_xs * 0.35;
-$inputs_font-size_xs: 11px;
+$inputs_font-size_xs: 12px;
 $inputs_button-font-size_xs: 11px;
 $inputs_border-radius_xs: 0;
 $inputs_height_sm: 8 * $unit;
