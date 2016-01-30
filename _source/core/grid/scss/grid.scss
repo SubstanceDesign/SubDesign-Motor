@@ -16,13 +16,13 @@
 .grid-fluid,
 .content,
 .content-fluid {
-  @include create-grid();
+  @include create_grid();
 }
 
 /* Grid rows
 ***********************************************/
 .row {
-  @include create-row();
+  @include create_row();
 }
 
 /* Grid row features
@@ -32,7 +32,7 @@
 @if $grid_feature_row-collapsed == true {
   /* Collapse row feature */
   .row-collapse {
-    @include create-row-collapse();
+    @include create_row_collapse();
   }
 }
 
@@ -41,13 +41,13 @@
   /* Different gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
     .row-gutter-#{$gutter} {
-      @include create-row-gutter($gutter-width);
+      @include create_row_gutter($gutter-width);
     }
   }
 
   // reset gutter
   .row-gutter-reset {
-    @include create-row-gutter-reset();
+    @include create_row_gutter-reset();
   }
 }
 
@@ -56,7 +56,7 @@
   /* Vertical gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
     .row-vertical-gutter-#{$gutter} { 
-      @include create-row-vertical-gutter($gutter-width);
+      @include create_row_vertical-gutter($gutter-width);
     }
   }
 }
@@ -66,15 +66,15 @@
 
   .row-centered,
   .row-justified {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
 
   .row-centered {
-    @include create-row-centered(false);
+    @include create_row_centered(false);
   }
 
   .row-justified {
-    @include create-row-justified(false);
+    @include create_row_justified(false);
   }
 }
 
@@ -84,30 +84,30 @@
   .row-valign-bottom,
   .row-valign-middle,
   .row-valign-stretch {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
    
   .row-valign-top {
-    @include create-row-valign-top(false);
+    @include create_row_valign-top(false);
   }
 
   .row-valign-bottom {
-    @include create-row-valign-bottom(false);
+    @include create_row_valign-bottom(false);
   }
 
   .row-valign-middle {
-    @include create-row-valign-middle(false);
+    @include create_row_valign-middle(false);
   }
 
   .row-valign-stretch {
-    @include create-row-valign-stretch(false);
+    @include create_row_valign-stretch(false);
   }
 }
 
 /* Responsive grid row features
 ***********************************************/
 @if $grid_feature_responsive == true {
-  @each $breakpoint, $breakpoint-width in $grid_viewport-breakpoints {
+  @each $breakpoint, $breakpoint-width in $grid_viewport_breakpoints {
     // exclude the smallest devices
     @if $breakpoint != 'mc' {
       $breakpoint-prefix: $breakpoint + '_';
@@ -116,7 +116,7 @@
         // collapse row feature
         @if $grid_feature_row-collapsed == true {
           .#{$breakpoint-prefix}row-collapse {
-            @include create-row-collapse();
+            @include create_row_collapse();
           }
         }
 
@@ -124,13 +124,13 @@
         @if $grid_feature_different-gutters == true {
           @each $gutter, $gutter-width in $grid_gutters {
             .#{$breakpoint-prefix}row-gutter-#{$gutter} {
-              @include create-row-gutter($gutter-width);
+              @include create_row_gutter($gutter-width);
             }
           }
 
           // reset gutter
           .#{$breakpoint-prefix}row-gutter-reset {
-            @include create-row-gutter-reset();
+            @include create_row_gutter-reset();
           }
         }
 
@@ -138,7 +138,7 @@
         @if $grid_feature_vertical-gutters == true {
           @each $gutter, $gutter-width in $grid_gutters {
             .#{$breakpoint-prefix}row-vertical-gutter-#{$gutter} { 
-              @include create-row-vertical-gutter($gutter-width);
+              @include create_row_vertical-gutter($gutter-width);
             }
           }
         }
@@ -153,7 +153,7 @@
 
 /* common column settings */
 #{$all-cols-selector} {
-  @include add-col-styles();
+  @include add_col_styles();
 }
 
 /* Grid column features
@@ -161,9 +161,9 @@
 
 /* cols' width for all screen sizes */
 @if $grid_feature_responsive == true {
-  @each $breakpoint, $breakpoint-width in $grid_viewport-breakpoints {
-    @include create-cols-for-breakpoint($breakpoint, $breakpoint-width);
+  @each $breakpoint, $breakpoint-width in $grid_viewport_breakpoints {
+    @include create_cols-for-breakpoint($breakpoint, $breakpoint-width);
   }
 } @else {
-  @include create-cols-for-breakpoint('mc', map-get($grid_viewport-breakpoints, 'mc'));
+  @include create_cols-for-breakpoint('mc', map-get($grid_viewport_breakpoints, 'mc'));
 }

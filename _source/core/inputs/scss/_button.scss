@@ -1,0 +1,278 @@
+/*********************************************** 
+    Buttons
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import 'button-mixins';
+
+/* Flat buttons
+***********************************************/
+@if ($button_flat == true) {
+  /* Default flat buttons */
+
+  .button {
+    @include create_button_flat($inputs_color_primary, $inputs_color_button-text, true);
+  }
+
+  .button-neutral {
+    @include create_button_flat($inputs_color_background, $inputs_color_foreground, $inputs_color_border);
+  }
+
+  .button-secondary {
+    @include create_button_flat($inputs_color_secondary, $inputs_color_button-text, true);
+  }
+
+  .button-info {
+    @include create_button_flat($inputs_color_info, $inputs_color_button-text, true);
+  }
+
+  .button-success {
+    @include create_button_flat($inputs_color_success, $inputs_color_button-text, true);
+  }
+
+  .button-warning {
+    @include create_button_flat($inputs_color_warning, $inputs_color_button-text, true);
+  }
+
+  .button-danger {
+    @include create_button_flat($inputs_color_danger, $inputs_color_button-text, true);
+  }
+}
+
+/* Outline buttons
+***********************************************/
+@if ($button_outline == true) {
+  /* Default outline buttons */
+
+  .button-outline {
+    @include create_button_outline($inputs_color_primary, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-neutral {
+    @include create_button_outline($inputs_color_border, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-secondary {
+    @include create_button_outline($inputs_color_secondary, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-info {
+    @include create_button_outline($inputs_color_info, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-success {
+    @include create_button_outline($inputs_color_success, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-warning {
+    @include create_button_outline($inputs_color_warning, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  .button-outline-danger {
+    @include create_button_outline($inputs_color_danger, $inputs_color_foreground, $button_outline_border-width);
+  }
+
+  /* Outline button size modifiers */
+  [class *= 'button-outline'] {
+    &.button--xs {
+      @include add_input_size($inputs_height_xs, $inputs_padding-horizontal_xs, $inputs_button-font-size_xs, $inputs_border-radius_xs, $button_outline_border-width*2);
+    }
+
+    &.button--sm {
+      @include add_input_size($inputs_height_sm, $inputs_padding-horizontal_sm, $inputs_button-font-size_sm, $inputs_border-radius_sm, $button_outline_border-width*2);
+    }
+
+    &.button--lg {
+      @include add_input_size($inputs_height_lg, $inputs_padding-horizontal_lg, $inputs_button-font-size_lg, $inputs_border-radius_lg, $button_outline_border-width*2);
+    }
+  }
+}
+
+/* 3D buttons
+***********************************************/
+@if ($button_3d == true) {
+  /* 3d buttons */
+
+  .button-3d {
+    @include create_button_3d($inputs_color_primary, $inputs_color_button-text);
+  }
+
+  .button-3d-neutral {
+    @include create_button_3d($inputs_color_background, $inputs_color_foreground);
+  }
+
+  .button-3d-secondary {
+    @include create_button_3d($inputs_color_secondary, $inputs_color_button-text);
+  }
+
+  .button-3d-info {
+    @include create_button_3d($inputs_color_info, $inputs_color_button-text);
+  }
+
+  .button-3d-success {
+    @include create_button_3d($inputs_color_success, $inputs_color_button-text);
+  }
+
+  .button-3d-warning {
+    @include create_button_3d($inputs_color_warning, $inputs_color_button-text);
+  }
+
+  .button-3d-danger {
+    @include create_button_3d($inputs_color_danger, $inputs_color_button-text);
+  }
+
+  /* Outline button size modifiers */
+  [class *= 'button-3d'] {
+    &.button--xs {
+      @include add_input_size($inputs_height_xs - 3, $inputs_padding-horizontal_xs, $inputs_button-font-size_xs, $inputs_border-radius_xs, 0);
+    }
+
+    &.button--sm {
+      @include add_input_size($inputs_height_sm - 3, $inputs_padding-horizontal_sm, $inputs_button-font-size_sm, $inputs_border-radius_sm, 0);
+    }
+
+    &.button--lg {
+      @include add_input_size($inputs_height_lg - 3, $inputs_padding-horizontal_lg, $inputs_button-font-size_lg, $inputs_border-radius_lg, 0);
+    }
+  }
+}
+
+/* Gradient buttons
+***********************************************/
+@if ($button_gradient == true) {
+  /* Default gradient buttons */
+
+  .button-gradient {
+    @include create_button_gradient(lighten($inputs_color_primary, 10%), darken($inputs_color_primary, 10%), $inputs_color_button-text, lighten($inputs_color_primary, 15%), darken($inputs_color_primary, 15%));
+  }
+
+  .button-gradient-neutral {
+    @include create_button_gradient(lighten($inputs_color_border, 10%), darken($inputs_color_border, 10%), $inputs_color_foreground, lighten($inputs_color_border, 15%), darken($inputs_color_border, 15%));
+  }
+
+  .button-gradient-secondary {
+    @include create_button_gradient(lighten($inputs_color_secondary, 10%), darken($inputs_color_secondary, 10%), $inputs_color_button-text, lighten($inputs_color_secondary, 15%), darken($inputs_color_secondary, 15%));
+  }
+
+  .button-gradient-info {
+    @include create_button_gradient(lighten($inputs_color_info, 10%), darken($inputs_color_info, 10%), $inputs_color_button-text, lighten($inputs_color_info, 15%), darken($inputs_color_info, 15%));
+  }
+
+  .button-gradient-success {
+    @include create_button_gradient(lighten($inputs_color_success, 10%), darken($inputs_color_success, 10%), $inputs_color_button-text, lighten($inputs_color_success, 15%), darken($inputs_color_success, 15%));
+  }
+
+  .button-gradient-warning {
+    @include create_button_gradient(lighten($inputs_color_warning, 10%), darken($inputs_color_warning, 10%), $inputs_color_button-text, lighten($inputs_color_warning, 15%), darken($inputs_color_warning, 15%));
+  }
+
+  .button-gradient-danger {
+    @include create_button_gradient(lighten($inputs_color_danger, 10%), darken($inputs_color_danger, 10%), $inputs_color_button-text, lighten($inputs_color_danger, 15%), darken($inputs_color_danger, 15%));
+  }
+
+  /* Outline button size modifiers */
+  [class *= 'button-gradient'] {
+    &.button--xs {
+      @include add_input_size($inputs_height_xs, $inputs_padding-horizontal_xs, $inputs_button-font-size_xs, $inputs_border-radius_xs, $button_gradient_border-width*2);
+    }
+
+    &.button--sm {
+      @include add_input_size($inputs_height_sm, $inputs_padding-horizontal_sm, $inputs_button-font-size_sm, $inputs_border-radius_sm, $button_gradient_border-width*2);
+    }
+
+    &.button--lg {
+      @include add_input_size($inputs_height_lg, $inputs_padding-horizontal_lg, $inputs_button-font-size_lg, $inputs_border-radius_lg, $button_gradient_border-width*2);
+    }
+  }
+}
+
+/* Button modifiers
+***********************************************/
+
+/* Make button to be a block */
+.button--block {
+  display: block;
+}
+
+/* Default button size modifiers */
+.button--xs {
+  @include add_input_size($inputs_height_xs, $inputs_padding-horizontal_xs, $inputs_button-font-size_xs, $inputs_border-radius_xs, $button_flat_border-width*2);
+}
+
+.button--sm {
+  @include add_input_size($inputs_height_sm, $inputs_padding-horizontal_sm, $inputs_button-font-size_sm, $inputs_border-radius_sm, $button_flat_border-width*2);
+}
+
+.button--lg {
+  @include add_input_size($inputs_height_lg, $inputs_padding-horizontal_lg, $inputs_button-font-size_lg, $inputs_border-radius_lg, $button_flat_border-width*2);
+}
+
+/* Button groups
+***********************************************/
+.button-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  @include clearfix;
+
+  > [class *= 'button'] {
+    float: left;
+
+  }
+
+  > [class *= 'button']:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+
+  > [class *= 'button']:first-child {
+    &:not(:last-child) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  > [class *= 'button']:last-child {
+    &:not(:first-child) {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  > [class *= 'button'] + [class *= 'button'] {
+    border-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

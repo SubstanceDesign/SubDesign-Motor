@@ -3,10 +3,10 @@
 /////////////////////////////////////////////////
 
 // Viewport breakpoints for responsive layout 
-$layout_viewport-breakpoints: $viewport-breakpoints;
-// $layout_viewport-breakpoints: (mc: 320px, xs: 480px, sm: 768px, md: 992px, lg: 1200px, xl: 1440px);
+$layout_viewport_breakpoints: $viewport_breakpoints;
+// $layout_viewport_breakpoints: (mc: 320px, xs: 480px, sm: 768px, md: 992px, lg: 1200px, xl: 1440px);
 
-// $viewport-content-sizes: (
+// $viewport_content-sizes: (
   // mc: '100%', 
   // xs: '100%', 
   // sm: 750px, 
@@ -15,4 +15,4 @@ $layout_viewport-breakpoints: $viewport-breakpoints;
   // xl: 1280px
 // );
 
-// $content-fluid-max-width: 1280px;
+// $content-fluid_max-width: 1280px;

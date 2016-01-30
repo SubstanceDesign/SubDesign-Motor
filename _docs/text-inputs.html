@@ -1,0 +1,392 @@
+<!doctype html>
+<!--[if lte IE 8]> <html class="no-js ie8"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SITE TITLE AND DESCRIPTION 
+    *********************************************** -->
+    <title>Text Inputs | Motor</title>
+    <meta name="description" content="">
+
+    <!-- FIXES
+    *********************************************** -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- STYLESHEETS
+    *********************************************** -->
+
+    <!-- Docs stylesheets -->
+    <link rel="stylesheet" href="assets/css/prettify.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Motor stylesheets -->
+    <link rel="stylesheet" href="../css/motor.css">
+
+    <!-- Styles just for this page -->
+    <style>
+
+    </style>
+
+  </head>
+  <body>
+    <!-- WRAPPER
+    *********************************************** -->
+    <div class="docs_wrapper">      
+      <!-- HEADER
+      *********************************************** -->
+      <header id="docs_header">
+        <h1>Text inputs</h1>
+      </header>
+      <!-- *********************************************** 
+      END HEADER -->
+
+      <!-- NAV
+      *********************************************** -->
+      <nav id="docs_page-nav">
+        <div class="docs_page-nav_button">
+          <span class="docs_page-nav_button_open"></span>
+          <span class="docs_page-nav_button_close">×</span>
+        </div>
+        <ul>
+          <li><a href="#anchor_inputs">Default text inputs</a></li>
+          <li><a href="#anchor_states">Validation states</a></li>
+          <li><a href="#anchor_disabled">Disabled state</a></li>
+          <li><a href="#anchor_sizes">Input sizes</a></li>
+          <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
+          <li><a href="#anchor_config">Setting text inputs config</a></li>
+          <li><a href="#anchor_autoresize">Autoresize textarea</a></li>
+          <li><a href="#anchor_placeholder">Placeholder polyfill</a></li>
+        </ul>
+      </nav>
+      <!-- *********************************************** 
+      END NAV -->
+
+      <!-- CONTENT
+      *********************************************** -->
+      <div class="docs_content docs_typo">
+        
+        <!-- GRID
+        *********************************************** -->
+        <div class="content">
+          <h2 id="anchor_inputs">Default text inputs</h2>
+          <p>To create motor text input add <span class="docs_mark">.text-input</span> class to <span class="docs_mark">&lt;input type=text&gt;</span>, <span class="docs_mark">&lt;textarea&gt;</span> or <span class="docs_mark">&lt;select&gt;</span> tag.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;input type="text" class="text-input" placeholder="Default text input">
+
+&lt;textarea class="text-input" placeholder="Default text input" rows="4">&lt;/textarea>
+
+&lt;select class="text-input" placeholder="Default text input">
+  &lt;option disabled selected>Default selectbox&lt;/option>
+  &lt;option>Option 1&lt;/option>
+  &lt;option>Option 2&lt;/option>
+  &lt;option>Option 3&lt;/option>
+&lt;/select></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <input type="text" class="text-input" placeholder="Default text input">
+          </p>
+          <p>
+            <textarea class="text-input" placeholder="Default text input" rows="4"></textarea>
+          </p>
+          <p>
+            <select class="text-input" placeholder="Default text input">
+              <option disabled selected>Default selectbox</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </p> 
+          <h2 id="anchor_states">Validation states</h2>
+          <p>For validation states use <span class="docs_mark">.error</span>, <span class="docs_mark">.warning</span> and <span class="docs_mark">.success</span> classes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;input type="text" class="text-input error" placeholder="Error">
+&lt;input type="text" class="text-input warning" placeholder="Warning">
+&lt;input type="text" class="text-input success" placeholder="Success"></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <input type="text" class="text-input error" placeholder="Error">
+          </p>
+          <p>
+            <input type="text" class="text-input warning" placeholder="Warning">
+          </p>
+          <p>
+            <input type="text" class="text-input success" placeholder="Success">
+          </p>
+          <p>Also you can use state classes for a parent of input.</p>
+<pre class="prettyprint">
+&lt;div class="input-wrapper error">
+  &lt;input type="text" class="text-input" placeholder="Error">
+&lt;/div></pre>
+          <h2 id="anchor_disabled">Disabled state</h2>
+          <p>For disabled state add ordinary <span class="docs_mark">disabled</span> attribute. Also you can use <span class="docs_mark">.disabled</span> for specific purposes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;input type="text" class="text-input" placeholder="Default text input" disabled></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <input type="text" class="text-input" placeholder="Default text input" disabled>
+          </p>
+          <h2 id="anchor_sizes">Input sizes</h2>
+          <p>Text inputs have three size modes excluding default. To change size add corresponding modifier <span class="docs_mark">.text-input--xs</span>, <span class="docs_mark">.text-input--sm</span>, <span class="docs_mark">.text-input--lg</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;input type="text" class="text-input text-input--xs" placeholder="Default text input">
+&lt;input type="text" class="text-input text-input--sm" placeholder="Default text input">
+&lt;input type="text" class="text-input text-input--lg" placeholder="Default text input"></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <input type="text" class="text-input text-input--xs" placeholder="Default text input">
+          </p>
+          <p>
+            <input type="text" class="text-input text-input--sm" placeholder="Default text input">
+          </p>
+          <p>
+            <input type="text" class="text-input text-input--lg" placeholder="Default text input">
+          </p>
+          <p>
+            <textarea class="text-input text-input--xs" placeholder="Default text input" rows="4"></textarea>
+          </p>
+          <p>
+            <textarea class="text-input text-input--sm" placeholder="Default text input" rows="4"></textarea>
+          </p>
+          <p>
+            <textarea class="text-input text-input--lg" placeholder="Default text input" rows="4"></textarea>
+          </p>
+          <p>
+            <select class="text-input text-input--xs" placeholder="Default text input">
+              <option disabled selected>Default selectbox</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </p>
+          <p>
+            <select class="text-input text-input--sm" placeholder="Default text input">
+              <option disabled selected>Default selectbox</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </p>
+          <p>
+            <select class="text-input text-input--lg" placeholder="Default text input">
+              <option disabled selected>Default selectbox</option>
+              <option>Option 1</option>
+              <option>Option 2</option>
+              <option>Option 3</option>
+            </select>
+          </p>
+          <h2 id="anchor_mixins">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+add_text-input_styles()</pre></td>
+              <td>Add necessary for any text input settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_text-input</span> mixins. It is included already</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">create_text-input($background, $color, $border, $border-focus)</pre></td>
+              <td>Create default text input</td>
+              <td>$background: color of input background. Required! <br><br>$color: color of input text. Required! <br><br>$border: color of input border. Required! <br><br>$border-focus: color of focused input border. Required!</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-input-name {
+  @include create_text-input(#000, #fff, #ccc, #ddd); // apply default text input styles
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;input class="custom-input-name" type="text"></pre>
+          <div class="docs_note">Also you can include common input mixins. For example size mixin.</div>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-input-name {
+  @include create_text-input(#000, #fff, #ccc, #ddd); // apply default text input styles
+  @include add_input_size(60px, 20px, 16px, 3px, 4px);
+}</pre>
+          <h2 id="anchor_config">Setting text inputs config</h2>
+          <p>The framework has common input settings and individual text input settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>$text-input_border-width</td>
+              <td>Border width of default text-input</td>
+              <td>px</td>
+            </tr>
+            <tr>
+              <td>$text-input_default</td>
+              <td>Enable default text-inputs</td>
+              <td>true / false</td>
+            </tr>
+          </table>
+          <h2 id="anchor_autoresize">Autoresize textarea</h2>
+          <p>You can use autoresize textarea feature implemented with javascript. Just add <span class="docs_mark">data-textarea-autoresize</span> attribute to textarea.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;textarea class="text-input" placeholder="Autoresize" rows="4" 
+  data-textarea-autoresize 
+  data-textarea-autoresize-max-height='300'>&lt;/textarea></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <textarea class="text-input" placeholder="Autoresize" rows="4" data-textarea-autoresize data-textarea-autoresize-max-height='300'></textarea>
+          </p>
+          <div class="docs_note">Also you can call the script directly from js.</div>
+          <p class="docs_subheading"><strong>JS</strong></p>
+          <pre class="prettyprint">
+motor( document.getElementById('my-textarea') ).TextareaAutoresize({
+  maxHeight: 300
+});</pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <textarea class="text-input" id="my-textarea" placeholder="Autoresize" rows="4"></textarea>
+          </p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>maxHeight <br><br>data-textarea-autoresize-max-height</td>
+              <td>Height limit for textarea autoresize</td>
+              <td>number</td>
+            </tr>
+            <tr>
+              <td>updateOnResize <br><br>data-textarea-autoresize-update-on-resize</td>
+              <td>Update textarea height on window resize</td>
+              <td>true / false</td>
+            </tr>
+          </table>
+          <p class="docs_subheading"><strong>Methods list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>updateHeight()</td>
+              <td>Check textarea overflow and update its height if needed</td>
+            </tr>
+          </table>
+          <p class="docs_subheading"><strong>EXAMPLE</strong></p>
+          <pre class="prettyprint">
+// Initialize plugin
+var textareaAutoresized = motor( document.getElementById('my-textarea') ).TextareaAutoresize();
+
+// Increase textarea value to be anormous long
+document.getElementById('my-textarea').value = '...Very long value...';
+
+// Update textarea height to fit its new scrollable content
+textareaAutoresized.updateHeight();
+</pre>
+          <p>The plugin work is accompanied by custom event calls. To listen to framework custom events use <span class="docs_mark">motor(element).addCustomEventListener( eventName, eventHandler )</span> method. <br>For modern browsers you can use default <span class="docs_mark">element.addEventListener</span> method.</p>
+          <p class="docs_subheading"><strong>Events list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+              <td>textarea-autoresize-init</td>
+              <td>Fires on textarea plugin initialized</td>
+            </tr>
+            <tr>
+              <td>textarea-autoresize-resize</td>
+              <td>Fires on textarea resize</td>
+            </tr>
+          </table>
+          <p class="docs_subheading"><strong>EXAMPLE</strong></p>
+          <pre class="prettyprint">
+var textarea = document.getElementById('my-textarea');
+
+// Add init event listener 
+motor(textarea).addCustomEventListener( 'textarea-autoresize-init', function() {
+  console.log('Textarea autoresize was inited');
+} );
+
+// Add resize event listener 
+motor(textarea).addCustomEventListener( 'textarea-autoresize-resize', function() {
+  console.log('Textarea autoresize was resized');
+} );
+
+// Initialize plugin
+motor(textarea).TextareaAutoresize();</pre>
+          <p>Also you can call <span class="docs_mark">motor</span> methods and plugins with selector string, like in example below. But note that motor.js use native js <span class="docs_mark">querySelectorAll</span> method, which can accept not all the <a href="http://caniuse.com/#search=querySelectorAll" target="_blank">CSS3 selectors for IE8</a>.</p>
+<pre class="prettyprint">
+motor('#my-textarea').TextareaAutoresize({
+  maxHeight: 300
+});
+</pre>
+          <h2 id="anchor_placeholder">Placeholder polyfill</h2>
+          <p>To activate placeholder polyfill for old browsers call <span class="docs_mark">motor.placeHolder()</span> methode. It will automatically apply polyfill to all inputs and textareas with placeholder attribute. To activate polyfill on certain element you can pass it to the function as argument.</p>
+          <p class="docs_subheading"><strong>Example</strong></p>
+          <pre class="prettyprint">
+motor.placeHolder(); // call placeholder polyfill
+
+motor.placeHolder(document.getElementById('certain-input')); // apply to certain element </pre>
+        </div>
+        <!-- *********************************************** 
+        END GRID -->
+
+      </div>
+      <!-- *********************************************** 
+      END CONTENT -->
+
+    </div>
+    <!-- *********************************************** 
+    END WRAPPER -->
+
+    <!-- SCRIPTS
+    *********************************************** -->
+
+    <!-- Docs scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.singlePageNav.js"></script>
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Framework scripts -->
+    <script src="../js/motor.js"></script>
+
+    <script>
+      var textarea = document.getElementById('my-textarea');
+
+      motor(textarea).addCustomEventListener( 'textarea-autoresize-init', function() {
+        console.log('Textarea autoresize was inited');
+      } );
+
+      motor(textarea).addCustomEventListener( 'textarea-autoresize-resize', function() {
+        console.log('Textarea autoresize was resized');
+      } );
+
+      motor(textarea).TextareaAutoresize({
+        maxHeight: 300
+      });
+
+      // call placeholder polyfill
+      motor.placeHolder();
+
+    </script>
+  </body>
+</html>

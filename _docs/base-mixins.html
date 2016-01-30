@@ -1,0 +1,301 @@
+<!doctype html>
+<!--[if lte IE 8]> <html class="no-js ie8"> <![endif]-->
+<!--[if IE 9]> <html class="no-js ie9"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- SITE TITLE AND DESCRIPTION 
+    *********************************************** -->
+    <title>Mixins | Motor</title>
+    <meta name="description" content="">
+
+    <!-- FIXES
+    *********************************************** -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- STYLESHEETS
+    *********************************************** -->
+
+    <!-- Docs stylesheets -->
+    <link rel="stylesheet" href="assets/css/prettify.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Motor stylesheets -->
+    <link rel="stylesheet" href="../css/motor.css">
+
+    <!-- Styles just for this page -->
+    <style>
+
+    </style>
+
+  </head>
+  <body>
+    <!-- WRAPPER
+    *********************************************** -->
+    <div class="docs_wrapper">      
+      <!-- HEADER
+      *********************************************** -->
+      <header id="docs_header">
+        <h1>Mixins</h1>
+      </header>
+      <!-- *********************************************** 
+      END HEADER -->
+
+      <!-- NAV
+      *********************************************** -->
+      <nav id="docs_page-nav">
+        <div class="docs_page-nav_button">
+          <span class="docs_page-nav_button_open"></span>
+          <span class="docs_page-nav_button_close">×</span>
+        </div>
+        <ul>
+          <li><a href="#anchor_responsive">Responsive mixins</a></li>
+          <li><a href="#anchor_crossbrowser">Crossbrowser mixins</a></li>
+          <li><a href="#anchor_other">Other mixins</a></li>
+        </ul>
+      </nav>
+      <!-- *********************************************** 
+      END NAV -->
+
+      <!-- CONTENT
+      *********************************************** -->
+      <div class="docs_content docs_typo">
+        
+        <!-- GRID
+        *********************************************** -->
+        <div class="content">
+          <h2 id="anchor_responsive">Responsive mixins</h2>
+          <p>Responsive mixins were designed to easily code in predefined screen breakpoints stystem. They accept breakpoints shortcodes as arguments.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+viewport-from($breakpoint)</pre></td>
+              <td>pick the range from breakpoint to infinity<br>useful for mobile first design</td>
+              <td>$breakpoint: breakpoint shortcode name from $viewport_breakpoints map (by default mc, xs, sm, md, lg, xl). Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+viewport-while($breakpoint)</pre></td>
+              <td>pick the range from 0 to breakpoint inclusive</td>
+              <td>$breakpoint: breakpoint shortcode name from $viewport_breakpoints map (by default mc, xs, sm, md, lg, xl). Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+viewport-from-to($from, $to)</pre></td>
+              <td>pick the range from one breakpoint to another</td>
+              <td>$from, $to: breakpoint shortcode name from $viewport_breakpoints map (by default mc, xs, sm, md, lg, xl). Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+viewport-range($breakpoint)</pre></td>
+              <td>pick the range from one breakpoint to next greater breakpoint</td>
+              <td>$breakpoint: breakpoint shortcode name from $viewport_breakpoints map (by default mc, xs, sm, md, lg, xl). Required!</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+.test-viewport-mixin {
+
+  @include viewport-from(md) {
+    content:'from md';
+  }
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+@media (min-width: 992px) {
+  .test-viewport-mixin {
+    content: 'from md';
+  }
+}</pre>
+            </div>
+          </div>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+.test-viewport-mixin {
+
+  @include viewport-while(sm) {
+    content:'while sm';
+  }
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+@media (max-width: 991px) {
+  .test-viewport-mixin {
+    content:'while sm';
+  }
+}</pre>
+            </div>
+          </div>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+.test-viewport-mixin {
+
+  @include viewport-from-to(sm,lg) {
+    content:'from sm to lg';
+  }
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+@media (min-width: 768px) and (max-width: 1199px) {
+  .test-viewport-mixin {
+    content:'from sm to lg';
+  }
+}</pre>
+            </div>
+          </div>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+.test-viewport-mixin {
+
+  @include viewport-range(md) {
+    content:'range md';
+  }
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+@media (min-width: 992px) and (max-width: 1199px) {
+  .test-viewport-mixin {
+    content:'range md';
+  }
+}</pre>
+            </div>
+          </div>
+          <h2 id="anchor_crossbrowser">Crossbrowser mixins</h2>
+          <p>Crossbrowser CSS mixins</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+placeholder()</pre></td>
+              <td>set placeholder style</td>
+              <td>-</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+textarea {
+
+  @include placeholder() {
+    color: #ccc;
+  }
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+textarea::-webkit-input-placeholder {  
+  color: #ccc;
+} 
+textarea:-moz-placeholder {  
+  color: #ccc;
+} 
+textarea::-moz-placeholder {
+  color: #ccc;
+} 
+textarea:-ms-input-placeholder { 
+  color: #ccc;
+} 
+textarea::input-placeholder, {   
+  color: #ccc;
+}
+textarea.placeholder { 
+  color: #ccc;
+}</pre>
+            </div>
+          </div>
+          <h2 id="anchor_other">Other mixins</h2>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+clearfix()</pre></td>
+              <td>apply clearfix styles</td>
+              <td>-</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <div class="row">
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>SCSS</strong></p>
+              <pre class="prettyprint">
+.my-row {
+  @include clearfix();
+}</pre>
+            </div>
+            <div class="sm_col-6">
+              <p class="docs_subheading"><strong>output CSS</strong></p>
+              <pre class="prettyprint">
+.my-row:before,
+.my-row:after {
+  content: '';
+  display: table;
+}
+.my-row:after {
+  clear: both;
+}</pre>
+            </div>
+          </div>
+        </div>
+        <!-- *********************************************** 
+        END GRID -->
+
+      </div>
+      <!-- *********************************************** 
+      END CONTENT -->
+
+    </div>
+    <!-- *********************************************** 
+    END WRAPPER -->
+
+    <!-- SCRIPTS
+    *********************************************** -->
+
+    <!-- Docs scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.singlePageNav.js"></script>
+    <script src="assets/js/prettify.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <!-- Framework scripts -->
+    <script src="../js/motor.js"></script>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+/////////////////////////////////////////////////
+//  Functions
+/////////////////////////////////////////////////
+
+//  Get color from palette
+/////////////////////////////////////////////////
+@function get-color($color, $palette: $palette_light) {
+  @return map-get($palette, $color);
+}
+
+//  Get hover of a color
+/////////////////////////////////////////////////
+@function hover($color) {
+  
+  @if lightness($color) < 15% {
+    $color: lighten($color, 20);
+  } @else if lightness($color) < 30% {
+    $color: lighten($color, 10);
+  } @else if lightness($color) > 97% {
+    $color: darken($color, 5);
+  } @else {
+    $color: adjust_hue(lighten($color, 7), 3);
+  }
+
+  @return $color;
+}
+
+//  Make color thiner
+/////////////////////////////////////////////////
+@function thiner($color, $context: 'light') {
+
+  $lightness: lightness($color);
+  $saturation: saturation($color);
+  $hue: hue($color);
+
+  @if $context == 'light' {
+
+    @if $lightness < 10% {
+      $saturation: $saturation * 0.1;
+    } @else if $lightness < 20% {
+      $saturation: $saturation * 0.2;
+    } @else if $lightness < 30% {
+      $saturation: $saturation * 0.4;
+    } @else if $lightness < 40% {
+      $saturation: $saturation * 0.6;
+    } @else if $lightness < 50% {
+      $saturation: $saturation * 0.8;
+    } @else {
+      $saturation: $saturation;
+    }
+
+    $lightness: $lightness + (100% - $lightness)/2;
+
+    $color: hsl($hue, $saturation, $lightness)
+  }
+
+  @return $color;
+}
+
+//  Opacity crossbrowser mixin
+/////////////////////////////////////////////////
+@mixin opacity($opacity) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}

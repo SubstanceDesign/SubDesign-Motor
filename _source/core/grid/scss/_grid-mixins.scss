@@ -6,7 +6,7 @@
 /////////////////////////////////////////////////
 
 // Cteate grid
-@mixin create-grid() {
+@mixin create_grid() {
   box-sizing: border-box;
   padding-right: $grid_gutter / 2; 
   padding-left: $grid_gutter / 2;
@@ -22,22 +22,11 @@
   }
 }
 
-//  Responsive appliance mixin
-/////////////////////////////////////////////////
-@mixin viewport($breakpoint: '') {
-  
-  @if ($breakpoint != '') {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
-      @content;
-    }
-  }
-}
-
 //  Row mixins
 /////////////////////////////////////////////////
 
 // Create row
-@mixin create-row() {
+@mixin create_row() {
   margin-right: -$grid_gutter / 2; 
   margin-left: -$grid_gutter / 2;
 
@@ -53,7 +42,7 @@
 }
 
 // Add collapse feature
-@mixin create-row-collapse() {
+@mixin create_row_collapse() {
   margin-left: 0;
   margin-right: 0;
 
@@ -64,7 +53,7 @@
 }
 
 // Add different gutter feature to row
-@mixin create-row-gutter($gutter-width) {
+@mixin create_row_gutter($gutter-width) {
   margin-left: 0;
   margin-right: 0;
 
@@ -87,7 +76,7 @@
 }
 
 // Reset different gutter feature on row
-@mixin create-row-gutter-reset() {
+@mixin create_row_gutter-reset() {
   margin-right: -$grid_gutter / 2; 
   margin-left: -$grid_gutter / 2;
 
@@ -100,14 +89,14 @@
 }
 
 // Add vertical gutter feature to row
-@mixin create-row-vertical-gutter($gutter-width) {
+@mixin create_row_vertical-gutter($gutter-width) {
   > [class *= 'col-'] + [class *= 'col-'] {
     margin-top: $gutter-width;
   }
 }
 
 // Switch to flexbox / inline-block mode for alignment features
-@mixin create-row-flexbox() {
+@mixin create_row_flexbox() {
   display: flex;
   flex-wrap: wrap;
 
@@ -127,9 +116,9 @@
 }
 
 // Add centered row styles
-@mixin create-row-centered($include-flexbox-mixin: true) {
+@mixin create_row_centered($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
   
   justify-content: center;
@@ -137,9 +126,9 @@
 }
 
 // Add justified row styles
-@mixin create-row-justified($include-flexbox-mixin: true) {
+@mixin create_row_justified($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
   
   justify-content: space-between;
@@ -154,9 +143,9 @@
 }
 
 // Add vertically aligned to top row styles
-@mixin create-row-valign-top($include-flexbox-mixin: true) {
+@mixin create_row_valign-top($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
   
   align-items: flex-start;
@@ -167,9 +156,9 @@
 }
 
 // Add vertically aligned to bottom row styles
-@mixin create-row-valign-bottom($include-flexbox-mixin: true) {
+@mixin create_row_valign-bottom($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
 
   align-items: flex-end;
@@ -180,9 +169,9 @@
 }
 
 // Add vertically aligned to middle row styles
-@mixin create-row-valign-middle($include-flexbox-mixin: true) {
+@mixin create_row_valign-middle($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
 
   align-items: center;
@@ -193,9 +182,9 @@
 }
 
 // Add vertically stretched row styles
-@mixin create-row-valign-stretch($include-flexbox-mixin: true) {
+@mixin create_row_valign-stretch($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create-row-flexbox();
+    @include create_row_flexbox();
   }
 
   align-items: stretch;
@@ -210,7 +199,7 @@
   $all-cols-selector: '';
 
   @if $for-breakpoint == '' {
-    @each $breakpoint, $width in $grid_viewport-breakpoints {
+    @each $breakpoint, $width in $grid_viewport_breakpoints {
       $cols: $grid_cols;
       @while $cols > 0 {
         @if $breakpoint == 'mc' and $cols == $grid_cols {
@@ -246,7 +235,7 @@
 $all-cols-selector: get-cols-selector();
 
 // Add common column styles
-@mixin add-col-styles($grid_gutter: $grid_gutter) {
+@mixin add_col_styles($grid_gutter: $grid_gutter) {
   position: relative;
   padding-right: $grid_gutter / 2; 
   padding-left: $grid_gutter / 2;
@@ -254,16 +243,16 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Create column
-@mixin create-col($cols, $breakpoint: 'mc', $include-col-mixin: true) {
+@mixin create_col($cols, $breakpoint: 'mc', $include-col-mixin: true) {
   @if ($include-col-mixin == true) {
-    @include add-col-styles();
+    @include add_col_styles();
   }
 
   @if $breakpoint == 'mc' {
     width: percentage($cols / $grid_cols);
     float: left;
   } @else {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
       width: percentage($cols / $grid_cols);
       float: left;
     }
@@ -271,49 +260,49 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Add column offset feature
-@mixin create-col-offset($cols, $breakpoint: 'mc') {
+@mixin create_col_offset($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     margin-left: percentage($cols / $grid_cols);
   } @else {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
       margin-left: percentage($cols / $grid_cols);
     }
   }
 }
 
 // Add move column to the right feature
-@mixin create-col-right($cols, $breakpoint: 'mc') {
+@mixin create_col_right($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     left: percentage($cols / $grid_cols);
   } @else {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
       left: percentage($cols / $grid_cols);
     }
   }
 }
 
 // Add move column to the left feature
-@mixin create-col-left($cols, $breakpoint: 'mc') {
+@mixin create_col_left($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     right: percentage($cols / $grid_cols);
   } @else {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
       right: percentage($cols / $grid_cols);
     }
   }
 }
 
 // Reset column order
-@mixin create-col-reset-order($breakpoint: 'mc') {
+@mixin create_col_reset-order($breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     right: auto;
     left: auto;
   } @else {
-    @media (min-width: #{map-get($grid_viewport-breakpoints, $breakpoint)}) {
+    @media (min-width: #{map-get($grid_viewport_breakpoints, $breakpoint)}) {
       right: auto;
       left: auto;
     }
@@ -321,7 +310,7 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Create colset
-@mixin create-colset($breakpoint) {
+@mixin create_colset($breakpoint) {
   $breakpoint-prefix: '';
   @if $breakpoint != 'mc' {
     $breakpoint-prefix: $breakpoint + '_';
@@ -370,15 +359,15 @@ $all-cols-selector: get-cols-selector();
 }
 
 //  Create cols for breakpoint
-@mixin create-cols-for-breakpoint($breakpoint, $breakpoint-width) {
+@mixin create_cols-for-breakpoint($breakpoint, $breakpoint-width) {
 
   // no media for the smallest devices
   @if $breakpoint == 'mc' {
-    @include create-colset($breakpoint);
+    @include create_colset($breakpoint);
   } @else {
     @if $grid_feature_responsive == true {
       @media (min-width: $breakpoint-width) {
-        @include create-colset($breakpoint);
+        @include create_colset($breakpoint);
       }
     }
   }

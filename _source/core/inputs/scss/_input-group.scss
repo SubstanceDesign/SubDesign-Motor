@@ -1,0 +1,38 @@
+/*********************************************** 
+    Input groups
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import '_input-group-mixins';
+
+/* Default text inputs
+***********************************************/
+@if ($text-input_default == true) {
+  
+  .input-group {
+    @include create_input-group();
+  }
+}
+
+/* Default text inputs
+***********************************************/
+@if ($text-input_default == true) {
+  
+  .input-group_appendix {
+    @include create_input-group_appendix();
+  }
+}
+
+/* Default text inputs
+***********************************************/
+@if ($text-input_default == true) {
+  
+  .input-group_part {
+    @include create_input-group_part();
+  }
+}
+
+
+
+

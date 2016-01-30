@@ -1,0 +1,206 @@
+/*********************************************** 
+   BUILDER
+***********************************************/
+
+/* STYLES
+***********************************************/
+
+/* Layout */
+body {
+  font-size: 14px;
+  color: #444;
+  font-family: 'Open Sans', 'Helvetica', 'Verdana', 'Arial', sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Config section */
+#config {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 240px;
+  padding: 0 30px 60px;
+  height: 100%;
+  background: #3B8686;
+  border-bottom: 5px solid #2C6363;
+  overflow: auto;
+}
+
+#config h1 {
+  font-size: 20px;
+  line-height: 150%;
+  margin: 32px 0 12px;
+  color: #fff;
+  opacity: .5;
+  font-weight: normal;
+}
+
+#config h2 {
+  font-size: 16px;
+  line-height: 150%;
+  margin: 32px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid #ccc;
+  color: #fff;
+  opacity: .5;
+  font-weight: normal;
+}
+
+#config h3 {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 150%;
+  margin: 36px 0 6px;
+  color: #fff;
+  opacity: .5;
+}
+
+#config h4 {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 150%;
+  margin: 24px 0 6px;
+  color: #fff;
+  opacity: .5;
+}
+
+#config .variable,
+#config .map-variable {
+  margin: 12px 0;
+}
+
+#config .variable-name {
+  font-size: 12px;
+  line-height: 150%;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+#config .input-wrap {
+  position: relative;
+}
+
+#config .input-wrap input {
+  display: block;
+  box-sizing: border-box;
+
+  width: 100%;
+  height: 36px;
+  margin: 0;
+  padding: 5.5px 12.6px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #0d0d0d;
+
+  border: 0;
+  border: 2px solid #2C6363;
+  border-radius: 0;
+  background-color: #E4F1F1;
+  background-image: none;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+#config .map {
+
+}
+
+#config .map-name {
+  margin: 16px 0 12px;
+  color: #ccc;
+}
+
+#config .map-array {
+
+}
+
+#config_form .button {
+  display: inline-block;
+  position: fixed;
+  left: 300px;
+  top: 0;
+
+  height: 48px;
+  margin: 0;
+  padding: 6.5px 12.6px;
+
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+
+  border: 0;
+  border: 1px solid #e67f00;
+  border-radius: 0;
+  background-color: #ff981a;
+  background-image: none;
+}
+
+.config_alert {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  padding: 16px 24px;
+  color: #fff;
+  font-size: 12px;
+  background: #3B8686;
+  background: rgba(59, 134, 134, 0.6);
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: .3s;
+          transition: .3s;
+}
+
+.config_alert.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.config_loader {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 50px;
+  margin: -25px 0 0 100px;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+  line-height: 50px;
+  background: #3B8686;
+  background: rgba(59, 134, 134, 0.6);
+}
+
+.config_window {
+  position: absolute;
+  left: 300px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.config_window iframe {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

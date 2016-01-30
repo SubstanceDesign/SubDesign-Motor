@@ -2,218 +2,6 @@
    DOCS
 ***********************************************/
 
-/* RESET
-***********************************************/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/**
- * Prevent iOS text size adjust after orientation change, without disabling user zoom.
- */
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
-audio,
-canvas,
-progress,
-video {
-  display: inline-block; /* 1 */
-  vertical-align: baseline; /* 2 */
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
- */
-[hidden],
-template {
-  display: none;
-}
-
-/**
- * Remove the gray background color from active links in IE 10.
- */
-a {
-  background: transparent;
-}
-
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-b, strong {
-  font-weight: 600;
-}
-
-i, em, dfn {
-  font-style: italic;
-}
-
-sup {
-  vertical-align: super;
-  font-size: 50%;
-  margin: 0 0 0 1px;
-}
-
-sub {
-  vertical-align: sub;
-  font-size: 50%;
-  margin: 0 0 0 1px;
-}
-
-input, textarea, select,
-input:focus, textarea:focus, select:focus, a, img {
-  outline:none;
-  outline-offset: 0;
-}
-
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
-img {
-  border: 0;
-  max-width: 100%;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-input,
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-span.skype_pnh_print_container{display:inline !important;}
-span.skype_pnh_container{display:none !important;}
-
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
-
-/*
- * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
- */
-img {
-  vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-textarea {
-  resize: vertical;
-}
-
 /* STYLES
 ***********************************************/
 
@@ -249,6 +37,9 @@ body {
           transition: .3s;
 }
 
+#docs_header h1 {
+  font-weight: normal;
+}
 
 .docs_wrapper--nav-showed #docs_header {
   padding-left: 312px;
@@ -293,6 +84,7 @@ body {
   top: 15px;
   height: 3px;
   width: 16px;
+  vertical-align: middle;
   background: #fff;
   opacity: .3;
 }
@@ -329,7 +121,8 @@ body {
   display: none;
   margin-left: -3px;
   font-size: 24px;
-  line-height: 46px;
+  line-height: 44px;
+  vertical-align: middle;
   color: #fff;
   opacity: .3;
 }
@@ -463,6 +256,12 @@ pre.prettyprint.prettyprint-plain {
   border-right: 1px solid #FFE605;
 }
 
+.docs_indent-section {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid #DADADA;
+}
+
 /* TYPOGRAPHY
 ***********************************************/
 .docs_typo h1 {
@@ -495,6 +294,13 @@ pre.prettyprint.prettyprint-plain {
   font-size: 24px;
   line-height: 117%;
   margin: 48px 0 36px;
+}
+
+.docs_typo h4 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 124%;
+  margin: 36px 0 24px;
 }
 
 .docs_typo p {
@@ -618,6 +424,12 @@ pre.prettyprint.prettyprint-plain {
   background: #EDF7F7;
 }
 
+.docs_mark {
+  background: #F7F7F7;
+  color: #8F1010;
+  padding: 2px 5px;
+  border: 1px solid #C4D4D4;
+}
 
 
 

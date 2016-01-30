@@ -1,0 +1,65 @@
+/*********************************************** 
+    Checkbox and radio
+***********************************************/
+
+//  Mixins
+/////////////////////////////////////////////////
+@import 'checkbox-radio-mixins';
+
+/* Default checkbox and radio
+***********************************************/
+@if ($checkbox_default == true) {
+  .checkbox,
+  .radio {
+    display: block;
+    margin: $unit * 2 0;
+  }
+
+  .checkbox {
+    @include create_checkbox($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary);
+  }
+
+  .radio {
+    @include create_radio($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary);
+  }
+}
+
+/* Filled when checked checkbox and radio
+***********************************************/
+@if ($checkbox_filled == true) {
+  .checkbox-filled,
+  .radio-filled {
+    display: block;
+
+    & + .checkbox,
+    & + .radio, 
+    & + .checkbox-filled,
+    & + .radio-filled {
+      margin-top: $unit * 2;
+    }
+  }
+
+  .checkbox-filled {
+    @include create_checkbox_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+  }
+
+  .radio-filled {
+    @include create_radio_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+  }
+}
+
+/* Checkbox modifiers
+***********************************************/
+
+/* Make checkbox and radio group to be an inline block */
+.checkbox--inline,
+.radio--inline {
+  display: inline-block;
+  margin: 0 $unit * 3 0 0;
+}
+
+
+
+
+
+
