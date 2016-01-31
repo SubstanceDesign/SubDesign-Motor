@@ -68,7 +68,7 @@ var builder = {
     });
 
     colorInputs.each( function(index) {
-      $(this).after( '<span id="color-preview-' + index + '" class="color-preview"></span>' );
+      $(this).after( '<span id="color-preview-' + index + '" class="compile-drop color-preview"></span>' );
       $(this).colorpicker({
         colorFormat: '#HEX',
         altField: '#color-preview-' + index
@@ -94,8 +94,8 @@ var builder = {
     // receive data
     data = parent.innerHTML;
 
-    // remove color previews
-    data = data.replace(/<span.*?class="color-preview".*?><\/span>/g, '');
+    // remove drop tags
+    data = data.replace(/<span.*?class="compile-drop.*?><\/span>/g, '');
 
     // parse data to xml
     data = data.replace(/<div class="variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input.*?name=".*?".*?value="(.*?)".*?><\/div><\/div>/g, '<var><name>$1</name><value>$2</value></var>');
