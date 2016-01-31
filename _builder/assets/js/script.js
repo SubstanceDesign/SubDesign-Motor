@@ -66,8 +66,13 @@ var builder = {
       if ( $(this).text().indexOf('palette') > -1 )
         colorInputs = colorInputs.add( $(this).siblings('.map-array').find('input[name]') );
     });
-    colorInputs.colorpicker({
-      colorFormat: '#HEX'
+
+    colorInputs.each( function(index) {
+      $(this).after( '<span id="color-preview-' + index + '" class="color-preview"></span>' );
+      $(this).colorpicker({
+        colorFormat: '#HEX',
+        altField: '#color-preview-' + index
+      });
     });
     /*$('#config input[name*=color]').each(function() {
       this.setAttribute( 'type', 'color');
@@ -83,8 +88,14 @@ var builder = {
       this.setAttribute( 'value', this.value );
     });
 
+    
+    $('.color-preview')
+
     // receive data
     data = parent.innerHTML;
+
+    // remove color previews
+    data = data.replace(/<span.*?class="color-preview".*?><\/span>/g, '');
 
     // parse data to xml
     data = data.replace(/<div class="variable"><div class="variable-name">(.*?)<\/div><div class="input-wrap"><input.*?name=".*?".*?value="(.*?)".*?><\/div><\/div>/g, '<var><name>$1</name><value>$2</value></var>');

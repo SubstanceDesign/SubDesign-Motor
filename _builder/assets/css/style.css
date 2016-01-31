@@ -212,3 +212,12 @@ html, body {
   background: #F1F1F1;
   border: 2px solid #CECECE;
 }
+
+.color-preview {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 26px;
+  width: 26px;
+  z-index: 2;
+}
