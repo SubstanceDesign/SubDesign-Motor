@@ -1,0 +1,220 @@
+/////////////////////////////////////////////////
+//  Global config
+/////////////////////////////////////////////////
+
+//  Interface grid and base sizes
+/////////////////////////////////////////////////
+$unit: 4px;
+$base_font-size: 16px;
+$base_line-height: 1.5;
+
+//  Color config
+/////////////////////////////////////////////////
+
+//  global palette
+$color_base: #fff; // base theme background color                                                   
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                   
+$color_brand: #FF981A; // special brand theme color                                                   
+$color_info: #6EB7C2; // information status color                                                   
+$color_success: #3DCC80; // success status color                                                   
+$color_warning: #F0D524; // warning status color                                                   
+$color_danger: #E21F1E; // danger/error status color                                                   
+
+//  light palette
+$palette_light: (
+  background: $color_base,
+  background-border: #ccc,
+  text: $color_contrast,
+  text-secondary: #ccc,
+  action-default: $color_brand,
+  action-secondary: $color_contrast,
+  action-info: $color_info,
+  action-success: $color_success,
+  action-warning: $color_warning,
+  action-danger: $color_danger
+);
+
+//  dark palette
+$palette_dark: (
+  background: $color_contrast,
+  background-border: #aaa,
+  text: $color_base,
+  text-secondary: #eee,
+  action-default: $color_brand,
+  action-secondary: $color_contrast,
+  action-info: $color_info,
+  action-success: $color_success,
+  action-warning: $color_warning,
+  action-danger: $color_danger
+);
+
+//  example custom palette
+$palette_hipster: (
+  background: $color_base,
+  background-border: #aaa,
+  text: #252A34,
+  text-secondary: #eee,
+  action-default: #5F397A,
+  action-secondary: #252A34,
+  action-info: #408C82,
+  action-success: #668C46,
+  action-warning: #CF8B4F,
+  action-danger: #9A2C38
+);
+
+//  Media queries breakpoint
+/////////////////////////////////////////////////
+
+//  microscopic devices
+$viewport_mc: 0;
+$viewport_sm-phone: $viewport_mc;
+
+//  extra small devices
+$viewport_xs: 480px;
+$viewport_phone: $viewport_xs;
+
+//  small devices
+$viewport_sm: 768px;
+$viewport_tablet: $viewport_sm;
+
+//  medium devices
+$viewport_md: 992px;
+$viewport_desktop: $viewport_md;
+
+//  large devices
+$viewport_lg: 1200px;
+$viewport_lg-desktop: $viewport_lg;
+
+//  extra large devices
+$viewport_xl: 1440px;
+$viewport_xl-desktop: $viewport_xl;
+$viewport_breakpoints: (
+  mc: $viewport_mc,
+  xs: $viewport_xs,
+  sm: $viewport_sm,
+  md: $viewport_md,
+  lg: $viewport_lg,
+  xl: $viewport_xl
+);
+$viewport_breakpoints_max: (
+  mc: $viewport_xs - 1,
+  xs: $viewport_sm - 1,
+  sm: $viewport_md - 1,
+  md: $viewport_lg - 1,
+  lg: $viewport_xl - 1,
+  xl: false
+);
+
+//  Layout
+/////////////////////////////////////////////////
+$viewport_content-sizes: (
+  mc: '100%',
+  xs: '100%',
+  sm: 750px,
+  md: 970px,
+  lg: 1120px,
+  xl: 1280px
+);
+$content-fluid_max-width: 1280px;
+
+//  Grid
+/////////////////////////////////////////////////
+
+//  Grid features (set true to include and false to exclude)
+$grid_feature_responsive: true;
+$grid_feature_offset: true;
+$grid_feature_columns-order: true;
+$grid_feature_row-collapsed: true;
+$grid_feature_different-gutters: true;
+$grid_feature_vertical-gutters: true;
+$grid_feature_horizontal-alignment: true;
+$grid_feature_vertical-alignment: true;
+
+//  Grid settings
+$grid_cols: 12;
+$grid_gutter: 6 * $unit;
+$grid_gutters: (
+  0: 0,
+  3u: 3 * $unit,
+  6u: 6 * $unit,
+  9u: 9 * $unit,
+  12u: 12 * $unit,
+  15u: 15 * $unit,
+  18u: 18 * $unit
+);
+
+//  Inputs
+/////////////////////////////////////////////////
+
+//  common size settings
+$inputs_height: 9 * $unit;
+$inputs_padding-horizontal: $inputs_height * 0.35;
+$inputs_font-size: 14px;
+$inputs_button-font-size: 14px;
+$inputs_border-radius: 0;
+$inputs_height_xs: 6 * $unit;
+$inputs_padding-horizontal_xs: $inputs_height_xs * 0.35;
+$inputs_font-size_xs: 11px;
+$inputs_button-font-size_xs: 11px;
+$inputs_border-radius_xs: 0;
+$inputs_height_sm: 8 * $unit;
+$inputs_padding-horizontal_sm: $inputs_height_sm * 0.35;
+$inputs_font-size_sm: 12px;
+$inputs_button-font-size_sm: 12px;
+$inputs_border-radius_sm: 0;
+$inputs_height_lg: 12 * $unit;
+$inputs_padding-horizontal_lg: $inputs_height_lg * 0.35;
+$inputs_font-size_lg: 16px;
+$inputs_button-font-size_lg: 16px;
+$inputs_border-radius_lg: 0;
+
+//  common colour settings
+$inputs_color_background: get-color(background);
+$inputs_color_border: get-color(background-border);
+$inputs_color_foreground: get-color(text);
+$inputs_color_button-text: #fff;
+$inputs_color_primary: get-color(action-default);
+$inputs_color_secondary: get-color(action-secondary);
+$inputs_color_info: get-color(action-info);
+$inputs_color_success: get-color(action-success);
+$inputs_color_warning: get-color(action-warning);
+$inputs_color_danger: get-color(action-danger);
+
+//  Buttons
+$button_flat_border-width: 1px;
+$button_outline_border-width: 2px;
+$button_gradient_border-width: 1px;
+
+//  Button types (set true to include and false to exclude)
+$button_flat: true;
+$button_outline: true;
+$button_3d: true;
+$button_gradient: true;
+
+//  Text inputs
+$text-input_border-width: 2px;
+
+//  Text input types (set true to include and false to exclude)
+$text-input_default: true;
+
+//  Checkbox and radio
+$checkbox_size: 20px;
+$checkbox_border-width: 2px;
+$checkbox_border-radius: 2px;
+$checkbox_label-font-size: $base_font-size;
+$checkbox_label-line-height: $base_line-height;
+
+//  Checkbox and radio types (set true to include and false to exclude)
+$checkbox_default: true;
+$checkbox_filled: true;
+
+//  Switch
+$switch_width: 50px;
+$switch_height: 30px;
+$switch_border-width: 1px;
+$switch_border-color: transparent;
+
+//  Switch styles
+$switch_default: true;
+$switch_doted: true;
+$switch_ios: true;

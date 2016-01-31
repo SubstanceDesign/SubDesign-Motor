@@ -19,13 +19,14 @@ html, body {
 
 /* Config section */
 #config {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 0;
   left: 0;
-  width: 240px;
-  padding: 0 30px 60px;
+  width: 300px;
+  padding: 0 30px 20px;
   height: 100%;
+  box-sizing: border-box;
   background: #3B8686;
   border-bottom: 5px solid #2C6363;
   overflow: auto;
@@ -203,4 +204,11 @@ html, body {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.ui-colorpicker, .ui-dialog.ui-colorpicker {
+  width: 404px;
+  padding: 5px;
+  background: #F1F1F1;
+  border: 2px solid #CECECE;
 }

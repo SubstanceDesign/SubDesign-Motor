@@ -61,7 +61,14 @@ var builder = {
     });
 
     // init colorpicker
-    //$('#config input[name*=color]').colorPicker();
+    var colorInputs = $('#config input[name*=color]');
+    $('.map-name').each(function() {
+      if ( $(this).text().indexOf('palette') > -1 )
+        colorInputs = colorInputs.add( $(this).siblings('.map-array').find('input[name]') );
+    });
+    colorInputs.colorpicker({
+      colorFormat: '#HEX'
+    });
     /*$('#config input[name*=color]').each(function() {
       this.setAttribute( 'type', 'color');
     })
