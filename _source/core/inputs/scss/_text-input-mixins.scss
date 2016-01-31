@@ -15,6 +15,8 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  font-weight: $text-input_font-weight;
+  text-align: $text-input_text-align;
 
   &:focus {
     outline: 0;

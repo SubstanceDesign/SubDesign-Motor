@@ -12,13 +12,13 @@ $base_line-height: 1.5;
 /////////////////////////////////////////////////
 
 //  global palette
-$color_base: #fff; // base theme background color                                                      
-$color_contrast: #0d0d0d; // contrast to base theme background color                                                      
-$color_brand: #FF981A; // special brand theme color                                                      
-$color_info: #54d0ed; // information status color                                                      
-$color_success: #3DCC80; // success status color                                                      
-$color_warning: #F0D524; // warning status color                                                      
-$color_danger: #E21F1E; // danger/error status color                                                      
+$color_base: #fff; // base theme background color                                                        
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                        
+$color_brand: #FF981A; // special brand theme color                                                        
+$color_info: #54d0ed; // information status color                                                        
+$color_success: #3DCC80; // success status color                                                        
+$color_warning: #F0D524; // warning status color                                                        
+$color_danger: #E21F1E; // danger/error status color                                                        
 
 //  light palette
 $palette_light: (
@@ -154,7 +154,7 @@ $text-input_border-radius: 0;
 $button_font-size: 14px;
 $button_border-radius: 0;
 
-// extra small size settings 
+//  extra small size settings 
 $inputs_height_xs: 6 * $unit;
 $inputs_padding-horizontal_xs: $inputs_height_xs * 0.35;
 $text-input_font-size_xs: 11px;
@@ -162,7 +162,7 @@ $text-input_border-radius_xs: 0;
 $button_font-size_xs: 11px;
 $button_border-radius_xs: 0;
 
-// small size settings
+//  small size settings
 $inputs_height_sm: 8 * $unit;
 $inputs_padding-horizontal_sm: $inputs_height_sm * 0.35;
 $text-input_font-size_sm: 12px;
@@ -170,7 +170,7 @@ $text-input_border-radius_sm: 0;
 $button_font-size_sm: 12px;
 $button_border-radius_sm: 0;
 
-// large size settings
+//  large size settings
 $inputs_height_lg: 12 * $unit;
 $inputs_padding-horizontal_lg: $inputs_height_lg * 0.35;
 $text-input_font-size_lg: 16px;
@@ -191,6 +191,7 @@ $inputs_color_warning: get-color(action-warning);
 $inputs_color_danger: get-color(action-danger);
 
 //  Buttons
+$button_font-weight: normal;
 $button_flat_border-width: 1px;
 $button_outline_border-width: 2px;
 $button_gradient_border-width: 1px;
@@ -202,6 +203,8 @@ $button_3d: true;
 $button_gradient: true;
 
 //  Text inputs
+$text-input_font-weight: normal;
+$text-input_text-align: left;
 $text-input_border-width: 2px;
 
 //  Text input types (set true to include and false to exclude)
@@ -232,15 +235,7 @@ $switch_ios: true;
 //  Input group features (set true to include and false to exclude)
 $input-group_feature_collapse: true;
 
-// Input group appendix
+//  Input group appendix
 $input-group_appendix_color_background: lighten($inputs_color_border, 10%);
 $input-group_appendix_color_border: $inputs_color_border;
 $input-group_appendix_color_text: $inputs_color_foreground;
-
-
-
-
-
-
-
-
