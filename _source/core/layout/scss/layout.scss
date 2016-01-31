@@ -18,6 +18,19 @@
 /////////////////////////////////////////////////
 @import 'layout-print';
 
+//  Set default font size settings to use with rem
+/////////////////////////////////////////////////
+
+/* html and body
+***********************************************/
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: $base_font-size;
+}
+
 /* Page content
 ***********************************************/
 .content, 

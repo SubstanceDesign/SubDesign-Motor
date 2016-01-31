@@ -7,25 +7,37 @@
 $unit: 4px;
 $base_font-size: 16px;
 $base_line-height: 1.5;
+$base_font-family: 'Open Sans', 'Helvetica', 'Verdana', 'Arial', sans-serif;
+
+//  Indentetions set
+/////////////////////////////////////////////////
+$indent-mc: $unit;
+$indent-xs: 3 * $unit;
+$indent-sm: 6 * $unit;
+$indent-md: 9 * $unit;
+$indent-lg: 12 * $unit;
+$indent-xl: 15 * $unit;
+$indent-gn: 18 * $unit;
+$indent-hg: 30 * $unit;
 
 //  Color config
 /////////////////////////////////////////////////
 
 //  global palette
-$color_base: #fff; // base theme background color                                                            
-$color_contrast: #c75757; // contrast to base theme background color                                                            
-$color_brand: #1a89ff; // special brand theme color                                                            
-$color_info: #54d0ed; // information status color                                                            
-$color_success: #3DCC80; // success status color                                                            
-$color_warning: #F0D524; // warning status color                                                            
-$color_danger: #E21F1E; // danger/error status color                                                            
+$color_base: #fff; // base theme background color                                                    
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                    
+$color_brand: #FF981A; // special brand theme color                                                    
+$color_info: #6EB7C2; // information status color                                                    
+$color_success: #3DCC80; // success status color                                                    
+$color_warning: #F0D524; // warning status color                                                    
+$color_danger: #E21F1E; // danger/error status color                                                    
 
 //  light palette
 $palette_light: (
   background: $color_base,
   background-border: #ccc,
   text: $color_contrast,
-  text-secondary: #ccc,
+  text-secondary: #bbb,
   action-default: $color_brand,
   action-secondary: $color_contrast,
   action-info: $color_info,
@@ -239,3 +251,145 @@ $input-group_feature_collapse: true;
 $input-group_appendix_color_background: lighten($inputs_color_border, 10%);
 $input-group_appendix_color_border: $inputs_color_border;
 $input-group_appendix_color_text: $inputs_color_foreground;
+
+//  Typography
+/////////////////////////////////////////////////
+
+// Text big and small modifiers coefficient
+$typography_small_coef: .85;
+$typography_big_coef: 1.15;
+
+// Heading 1 text settings
+$h1_font-family: $base_font-family;
+$h1_font-size: 4.8rem;
+$h1_line-height: 100%;
+$h1_font-style: normal;
+$h1_font-weight: normal;
+$h1_letter-spacing: 0;
+
+// Heading 2 text settings
+$h2_font-family: $base_font-family;
+$h2_font-size: 3.2rem;
+$h2_line-height: 112.5%;
+$h2_font-style: normal;
+$h2_font-weight: bold;
+$h2_letter-spacing: 0.1rem;
+
+// Heading 3 text settings
+$h3_font-family: $base_font-family;
+$h3_font-size: 2.4rem;
+$h3_line-height: 125%;
+$h3_font-style: normal;
+$h3_font-weight: normal;
+$h3_letter-spacing: 0;
+
+// Heading 4 text settings
+$h4_font-family: $base_font-family;
+$h4_font-size: $base_font-size;
+$h4_line-height: $base_line-height;
+$h4_font-style: normal;
+$h4_font-weight: bold;
+$h4_letter-spacing: 0;
+
+// Heading 5 text settings
+$h5_font-family: $base_font-family;
+$h5_font-size: 14px;
+$h5_line-height: 125%;
+$h5_font-style: normal;
+$h5_font-weight: bold;
+$h5_letter-spacing: 0;
+
+// Heading 6 text settings
+$h6_font-family: $base_font-family;
+$h6_font-size: 12px;
+$h6_line-height: 125%;
+$h6_font-style: normal;
+$h6_font-weight: bold;
+$h6_letter-spacing: 0;
+
+// Paragraph text settings
+$p_font-family: $base_font-family;
+$p_font-size: $base_font-size;
+$p_line-height: $base_line-height;
+$p_font-style: normal;
+$p_font-weight: normal;
+$p_letter-spacing: 0;
+
+// Large paragraph text settings
+$p-lg_font-family: $base_font-family;
+$p-lg_font-size: 2.4rem;
+$p-lg_line-height: 125%;
+$p-lg_font-style: normal;
+$p-lg_font-weight: normal;
+$p-lg_letter-spacing: 0;
+
+// Small paragraph text settings
+$p-sm_font-family: $base_font-family;
+$p-sm_font-size: 12px;
+$p-sm_line-height: 133%;
+$p-sm_font-style: normal;
+$p-sm_font-weight: normal;
+$p-sm_letter-spacing: 0;
+
+// Caption text settings
+$caption_font-family: $base_font-family;
+$caption_font-size: 12px;
+$caption_line-height: 133%;
+$caption_font-style: italic;
+$caption_font-weight: normal;
+$caption_letter-spacing: 0;
+
+// Mark styles
+$mark_padding-vertical: 2px;
+$mark_padding-horizontal: 3px;
+$mark_color-background: mix( get-color(action-warning), get-color(background), 25% );
+$mark_color-text: get-color(text);
+
+// Code and pre styles
+$code_padding-vertical: 2px;
+$code_padding-horizontal: 3px;
+$code_color-background: mix( get-color(background-border), get-color(background), 25% );
+$code_color-text: get-color(action-danger);
+$pre_padding-vertical: 5 * $unit;
+$pre_padding-horizontal: 6 * $unit;
+$pre_color-border: get-color(background-border);
+$pre_border-width: 1px;
+
+// Blockquote
+$blockquote_padding-vertical: 5 * $unit;
+$blockquote_padding-horizontal: 6 * $unit;
+$blockquote_color-background: transparent;
+$blockquote_color-border: get-color(action-default);
+$blockquote_border-width: $unit;
+$blockquote_quotes_quotes-color: get-color(text);
+$blockquote_quotes_quotes-size: 30 * $unit;
+
+// Lists
+$list_padding-left: 6 * $unit;
+$list_bullet_color: get-color(action-default);
+$list_bullet_opacity: 1;
+
+// Tables
+$table_head_font-size: 12px;
+$table_head_line-height: 145%;
+$table_head_font-style: normal;
+$table_head_font-weight: 700;
+$table_head_letter-spacing: 1px;
+$table_head_text-align: left;
+$table_head_border-bottom-width: 2px; 
+$table_body_font-size: 14px;
+$table_body_line-height: 142%;
+$table_body_font-style: normal;
+$table_body_font-weight: normal;
+$table_body_letter-spacing: 0;
+$table_body_text-align: left;
+$table_padding-horizontal: 3 * $unit;
+$table_padding-vertical: 2 * $unit;
+$table_border-width: 1px;
+$table_color-border: get-color(background-border);
+$table_stripe-border: mix( get-color(background-border), get-color(background), 25% );
+
+
+
+
+

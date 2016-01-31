@@ -10,7 +10,466 @@
 /////////////////////////////////////////////////
 @import 'typography-mixins';
 
+/*********************************************** 
+    Typography
+***********************************************/
 
+/* Headings
+***********************************************/
+h1, .h1 {
+  @include create_h1();
+}
+
+h2, .h2 {
+  @include create_h2();
+}
+
+h3, .h3 {
+  @include create_h3();
+}
+
+h4, .h4 {
+  @include create_h4();
+}
+
+h5, .h5 {
+  @include create_h5();
+}
+
+h6, .h6 {
+  @include create_h6();
+}
+
+/* Paragraphs
+***********************************************/
+p {
+  line-height: $base_line-height;
+}
+
+.p--large {
+  @include create_p-lg();
+}
+
+.p--small {
+  @include create_p-sm();
+}
+
+/* Small and big text
+***********************************************/
+small, .small {
+  font-size: $typography_small_coef;
+}
+
+big, .big {
+  font-size: $typography_big_coef;
+}
+
+/* Text higlightes
+***********************************************/
+
+/* Mark */
+mark, .mark {
+  @include create_mark();
+}
+
+/* Code */
+code, .code {
+  @include create_code();
+}
+
+/* Pre */
+pre, .pre {
+  @include create_pre();
+}
+
+/* Global typography modifiers
+***********************************************/
+
+/* Text colors */
+.color-base {
+  color: get-color(background);
+}
+
+.color-contrast {
+  color: get-color(text);
+}
+
+.color-secondary {
+  color: get-color(text-secondary);
+}
+
+.color-brand {
+  color: get-color(action-default);
+}
+
+.color-info {
+  color: get-color(action-info);
+}
+
+.color-success {
+  color: get-color(action-success);
+}
+
+.color-warning {
+  color: get-color(action-warning);
+}
+
+.color-danger {
+  color: get-color(action-danger);
+}
+
+/* Text alignment */
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-justify {
+  text-align: justify;
+}
+
+/* Text case */
+.lowercase {
+  text-transform: lowercase;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+/* Blockquotes
+***********************************************/
+
+blockquote, .blockquote {
+  @include create_blockquote($blockquote_padding-vertical, $blockquote_padding-horizontal, $blockquote_color-background, $blockquote_color-border, $blockquote_border-width);
+}
+
+.blockquote-quotes {
+  @include create_blockquote_quotes($blockquote_padding-vertical, $blockquote_padding-horizontal, $blockquote_quotes_quotes-color, $blockquote_quotes_quotes-size);
+}
+
+/* Lists
+***********************************************/
+
+.typo ul,
+.ul {
+  @include create_ul($list_bullet_color, $list_bullet_opacity);
+}
+
+.typo ol,
+.ol {
+  @include create_ol($list_bullet_color, $list_bullet_opacity);
+}
+
+/* Tables
+***********************************************/
+
+.typo table,
+.table {
+  @include create_table();
+}
+
+/* Indentation
+***********************************************/
+
+// large heading from large heading
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.heading-lg,
+.heading-md,
+.heading-sm {
+
+  & + h1, & + .h1,
+  & + .heading-lg {
+    margin-top: $indent-gn+0px;
+  }
+}
+
+// medium heading from larger heading
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.heading-lg,
+.heading-md,
+.heading-sm {
+
+  & + h2, & + .h2,
+  & + h3, & + .h3,
+  & + .heading-md {
+    margin-top: $indent-xl+0px;
+  }
+}
+
+// small heading from larger heading
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.heading-lg,
+.heading-md,
+.heading-sm {
+
+  & + h4, & + .h4,
+  & + h5, & + .h5,
+  & + h6, & + .h6,
+  & + .heading-sm {
+    margin-top: $indent-md+0px;
+  }
+}
+
+// text from large heading
+h1, .h1,
+.heading-lg {
+
+  & + p,
+  & + .ul,
+  & + .ol,
+  & + .table,
+  & + .blockquote,
+  & + .paragraph {
+    margin-top: $indent-md+0px;
+  }
+}
+
+.typo {
+
+  h1, .h1,
+  .heading-lg {
+
+    & + p,
+    & + ul,
+    & + ol,
+    & + table,
+    & + blockquote,
+    & + .paragraph {
+      margin-top: $indent-md+0px;
+    }
+  }
+}
+
+// text from medium heading
+h2, .h2,
+h3, .h3,
+.heading-md {
+
+  & + p,
+  & + .ul,
+  & + .ol,
+  & + .table,
+  & + .blockquote,
+  & + .paragraph {
+    margin-top: $indent-sm+0px;
+  }
+}
+
+.typo {
+
+  h2, .h2,
+  h3, .h3,
+  .heading-md {
+
+    & + p,
+    & + ul,
+    & + ol,
+    & + table,
+    & + blockquote,
+    & + .paragraph {
+      margin-top: $indent-sm+0px;
+    }
+  }
+}
+
+// text from small heading
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.heading-sm {
+
+  & + p,
+  & + .ul,
+  & + .ol,
+  & + .table,
+  & + .blockquote,
+  & + .paragraph {
+    margin-top: $indent-xs+0px;
+  }
+}
+
+.typo {
+  h4, .h4,
+  h5, .h5,
+  h6, .h6,
+  .heading-sm {
+
+    & + p,
+    & + ul,
+    & + ol,
+    & + table,
+    & + blockquote,
+    & + .paragraph {
+      margin-top: $indent-xs+0px;
+    }
+  }
+}
+
+// p--small text from large heading
+h1, .h1,
+.heading-lg {
+
+  & + .p--small {
+    margin-top: $indent-sm+0px;
+  }
+
+  &.uppercase + .p--small {
+    margin-top: $indent-xs+0px;
+  }
+}
+
+// p--small text from medium headings
+h2, .h2,
+h3, .h3,
+.heading-md {
+
+  & + .p--small {
+    margin-top: $indent-xs+0px;
+  }
+
+  &.uppercase + .p--small {
+    margin-top: $indent-mc+0px;
+  }
+}
+
+// p--small text from small headings
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.heading-sm {
+
+  & + .p--small {
+    margin-top: $indent-mc+0px;
+  }
+}
+
+// indents from text
+p,
+.ul,
+.ol,
+.table,
+blockquote,
+.typo ul,
+.typo ol,
+.typo table,
+.blockquote,
+.paragraph {
+
+  // heading from text
+  & + h1, & + .h1,
+  & + h2, & + .h2,
+  & + h3, & + .h3,
+  & + h4, & + .h4,
+  & + h5, & + .h5,
+  & + h6, & + .h6,
+  & + .heading-lg,
+  & + .heading-md,
+  & + .heading-sm {
+    margin-top: $indent-xl+0px;
+  }
+
+  // p--small text from text
+  & + .p--small {
+    margin-top: $indent-md+0px;
+  }
+
+  // text from text
+  & + & {
+    margin-top: $indent-md+0px;
+  }
+}
+// text from text
+.typo {
+  p,
+  ul,
+  ol,
+  table,
+  blockquote,
+  .paragraph {
+
+    & + p,
+    & + ul,
+    & + ol,
+    & + table,
+    & + blockquote,
+    & + .paragraph {
+      margin-top: $indent-md+0px;
+    }
+  }
+}
+
+// paragraph from paragraph
+p + p,
+.typo p + p {
+  margin-top: $indent-sm+0px;
+}
+
+// figure indents
+figure {
+  margin: $indent-lg+0px 0;
+}
+
+// p--small indents
+.p--small {
+
+  // big heading from p--small
+  & + h1, & + .h1,
+  & + h2, & + .h2,
+  & + h3, & + .h3
+  & + .heading-lg,
+  & + .heading-md {
+    margin-top: $indent-gn+0px;
+  }
+
+  // small heading from p--small
+  & + h4, & + .h4,
+  & + h5, & + .h5,
+  & + h6, & + .h6,
+  & + .heading-sm {
+    margin-top: $indent-xl+0px;
+  }
+
+  // text from p--small
+  & + p,
+  & + .ul,
+  & + .ol,
+  & + .table,
+  & + blockquote,
+  & + .paragraph,
+  .typo & + ul,
+  .typo & + ol,
+  .typo & + table,
+  .typo & + blockquote {
+    margin-top: $indent-xl+0px;
+  }
+}
 
 
 

@@ -39,6 +39,13 @@
   }
 }
 
+//  Opacity crossbrowser mixin
+/////////////////////////////////////////////////
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity * 100);
+}
+
 //  Responsive appliance mixin
 /////////////////////////////////////////////////
 

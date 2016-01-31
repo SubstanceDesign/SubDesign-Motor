@@ -2,5 +2,311 @@
 //  Typography mixins
 /////////////////////////////////////////////////
 
-//  Mixin
+//  Heading mixins
 /////////////////////////////////////////////////
+
+// Cteate h1
+@mixin create_h1() {
+  font-family: $h1_font-family;
+  font-size: $h1_font-size;
+  line-height: $h1_line-height;
+  font-style: $h1_font-style;
+  font-weight: $h1_font-weight;
+  letter-spacing: $h1_letter-spacing;
+}
+
+// Cteate h2
+@mixin create_h2() {
+  font-family: $h2_font-family;
+  font-size: $h2_font-size;
+  line-height: $h2_line-height;
+  font-style: $h2_font-style;
+  font-weight: $h2_font-weight;
+  letter-spacing: $h2_letter-spacing;
+}
+
+// Cteate h3
+@mixin create_h3() {
+  font-family: $h3_font-family;
+  font-size: $h3_font-size;
+  line-height: $h3_line-height;
+  font-style: $h3_font-style;
+  font-weight: $h3_font-weight;
+  letter-spacing: $h3_letter-spacing;
+}
+
+// Cteate h4
+@mixin create_h4() {
+  font-family: $h4_font-family;
+  font-size: $h4_font-size;
+  line-height: $h4_line-height;
+  font-style: $h4_font-style;
+  font-weight: $h4_font-weight;
+  letter-spacing: $h4_letter-spacing;
+}
+
+// Cteate h5
+@mixin create_h5() {
+  font-family: $h5_font-family;
+  font-size: $h5_font-size;
+  line-height: $h5_line-height;
+  font-style: $h5_font-style;
+  font-weight: $h5_font-weight;
+  letter-spacing: $h5_letter-spacing;
+}
+
+// Cteate h6
+@mixin create_h6() {
+  font-family: $h6_font-family;
+  font-size: $h6_font-size;
+  line-height: $h6_line-height;
+  font-style: $h6_font-style;
+  font-weight: $h6_font-weight;
+  letter-spacing: $h6_letter-spacing;
+}
+
+//  Paragraph mixins
+/////////////////////////////////////////////////
+
+// Cteate large paragraph
+@mixin create_p-lg() {
+  font-family: $p-lg_font-family;
+  font-size: $p-lg_font-size;
+  line-height: $p-lg_line-height;
+  font-style: $p-lg_font-style;
+  font-weight: $p-lg_font-weight;
+  letter-spacing: $p-lg_letter-spacing;
+}
+
+// Cteate small paragraph
+@mixin create_p-sm() {
+  font-family: $p-sm_font-family;
+  font-size: $p-sm_font-size;
+  line-height: $p-sm_line-height;
+  font-style: $p-sm_font-style;
+  font-weight: $p-sm_font-weight;
+  letter-spacing: $p-sm_letter-spacing;
+}
+
+// Cteate caption text
+@mixin create_caption() {
+  font-family: $caption_font-family;
+  font-size: $caption_font-size;
+  line-height: $caption_line-height;
+  font-style: $caption_font-style;
+  font-weight: $caption_font-weight;
+  letter-spacing: $caption_letter-spacing;
+}
+
+//  Highlight mixins
+/////////////////////////////////////////////////
+
+// Create mark
+@mixin create_mark() {
+  padding: $mark_padding-vertical $mark_padding-horizontal;
+  background-color: $mark_color-background;
+  color: $mark_color-text;
+}
+
+//  Code mixins
+/////////////////////////////////////////////////
+
+// Create code
+@mixin create_code() {
+  padding: $code_padding-vertical $code_padding-horizontal;
+  background: $code_color-background;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  color: $code_color-text;
+  overflow: auto;
+}
+
+// Create pre
+@mixin create_pre() {
+  @include create_code();
+  display: block;
+  padding: $pre_padding-vertical $pre_padding-horizontal;
+  border: $pre_border-width solid $pre_color-border;
+}
+
+//  Blockquote mixins
+/////////////////////////////////////////////////
+
+// default blockquote
+@mixin create_blockquote($padding-vertical, $padding-horizontal, $background, $border, $border-width) {
+  @include create_p-lg();
+
+  position: relative;
+  padding: $padding-vertical $padding-horizontal;
+  background-color: $background;
+  border-left: $border-width solid $border;
+
+  footer {
+    @include create_caption();
+
+    margin: $indent-xs 0 0 0;
+  }
+}
+
+// create quoted blockquote
+@mixin create_blockquote_quotes($padding-vertical, $padding-horizontal, $quotes-color, $quotes-size) {
+  @include create_p-lg();
+
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  padding: $quotes-size / 3 + $padding-vertical $padding-horizontal 0 $padding-horizontal + $quotes-size / 3;
+
+  &:before {
+    content:'“';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $quotes-color;
+    font-size: $quotes-size;
+    line-height: $quotes-size;
+  }
+
+  footer {
+    @include create_caption();
+
+    margin: $indent-xs 0 0 0;
+  }
+}
+
+//  List mixins
+/////////////////////////////////////////////////
+
+// default list styles
+@mixin add_list_styles() {
+  list-style-type: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: $list_padding-left;
+    line-height: $base_line-height;
+
+    &:before {
+      position: absolute;
+    }
+
+    & + li {
+      margin-top: $indent-xs;
+    }
+
+    ul, 
+    ol {
+      margin: $indent-xs 0;
+    }
+  }
+}
+
+@mixin create_ul($color, $opacity) {
+  @include add_list_styles();
+
+  li {
+
+    &:before {
+      content: '•';
+      top: 1px;
+      left: 0px;
+      color: $color;
+      @include opacity($opacity);
+    }
+
+    li:before {
+      content: '◦';
+    }
+
+    li li:before {
+      content: '—';
+    }
+  }
+}
+
+@mixin create_ol($color, $opacity) {
+  @include add_list_styles();
+  counter-reset: i 0;
+
+  li {
+
+    &:before {
+      content: counter(i)".";    
+      counter-increment: i;
+      width: $list_padding-left;
+      text-align: right;
+      left: - 2 * $unit;
+      color: $color;
+      @include opacity($opacity);
+    }
+
+    ol {
+      counter-reset: n 0;
+    }
+
+    li:before {
+      content:counter(n)".";
+      counter-increment: n;
+    }
+
+    li ol {
+      counter-reset: j 0;
+    }
+
+    li li:before {
+      content:counter(j)".";
+      counter-increment: j;
+    }
+  }
+}
+
+//  Table mixins
+/////////////////////////////////////////////////
+
+@mixin create_table() {
+  
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+  border: $table_border-width solid $table_color-border;
+
+  th,
+  td {
+    padding: $table_padding-vertical $table_padding-horizontal;
+    border-top: $table_border-width solid $table_color-border;
+    border-left: $table_border-width solid $table_color-border;
+  }
+
+  th:first-child,
+  td:first-child {
+    border-left: 0;
+  }
+
+  tr:first-child th,
+  tr:first-child td {
+    border-top: 0;
+  }
+
+  th {
+    font-size: $table_head_font-size;
+    line-height: $table_head_line-height;
+    font-style: $table_head_font-style;
+    font-weight: $table_head_font-weight;
+    letter-spacing: $table_head_letter-spacing;
+    text-align: $table_head_text-align;
+    border-bottom: $table_head_border-bottom-width solid $table_color-border;
+  }
+
+  td {
+    font-size: $table_body_font-size;
+    line-height: $table_body_line-height;
+    font-style: $table_body_font-style;
+    font-weight: $table_body_font-weight;
+    letter-spacing: $table_body_letter-spacing;
+    text-align: $table_body_text-align;
+  }
+
+  tr:nth-child(odd) td {
+    background: $table_stripe-border;
+  }
+}
