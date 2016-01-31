@@ -53,34 +53,66 @@
 
   // remove space from button and right border
   .input-group_part {
+    vertical-align: middle;
 
     [class *= 'button'] {
       margin-right: -1px;
+      display: block;
     }
+  }
+}
 
-    &:not(:last-child) [class *= 'button'] {
-      border-right: 0;
+// Create input group with collapsed siblings to input borders
+@mixin create_input-group_collapse-outside() {
+
+  .text-input {
+
+    & + .input-group_appendix,
+    & + .input-group_part [class *= 'button'] {
+      border-left: 0;
     }
   }
 
+  .input-group_appendix:not(:last-child),
+  .input-group_part:not(:last-child) [class *= 'button'] {
+    border-right: 0;
+  }
+}
+
+// Create input group with collapsed input borders
+@mixin create_input-group_collapse-inside() {
+
+  .input-group_appendix,
+  .input-group_part {
+    & + .input-group_appendix,
+    & + .input-group_part [class *= 'button'],
+    & + .text-input {
+      border-left: 0;
+    }
+  }
+
+  .text-input:not(:last-child) {
+    border-right: 0;
+  }
 }
 
 //  Create input group appendix
 /////////////////////////////////////////////////
-@mixin create_input-group_appendix() {
-      padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1;
-    color: #555;
-    text-align: center;
-    background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+@mixin create_input-group_appendix($padding-horizontal, $font-size, $background, $color, $border, $border-width, $border-radius) {
+  @include add_input-group_appendix_size($padding-horizontal, $font-size, $border-radius); // add default size
+
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  color: $color;
+  background-color: $background;
+  border: $border-width solid $border;
 }
 
-//  Create input group part
+//  Set input group appendix size
 /////////////////////////////////////////////////
-@mixin create_input-group_part() {
-  
+@mixin add_input-group_appendix_size($padding-horizontal, $font-size, $border-radius) {
+  padding: 0 $padding-horizontal;
+  font-size: $font-size;
+  border-radius: $border-radius;
 }

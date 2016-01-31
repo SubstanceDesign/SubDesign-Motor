@@ -65,7 +65,7 @@
 /////////////////////////////////////////////////
 @mixin create_text-input($background, $color, $border, $border-focus) {
   @include add_text-input_styles(); // add common styles
-  @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_font-size, $inputs_border-radius, $text-input_border-width*2); // add default size
+  @include add_input_size($inputs_height, $inputs_padding-horizontal, $text-input_font-size, $text-input_border-radius, $text-input_border-width*2); // add default size
   
   background-color: $background;
   color: $color;

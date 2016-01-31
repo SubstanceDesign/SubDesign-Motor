@@ -33,7 +33,7 @@
 /////////////////////////////////////////////////
 @mixin create_button_flat($background, $color, $border) {
   @include add_button_styles(); // add common styles
-  @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, $button_flat_border-width*2); // add default size
+  @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $button_flat_border-width*2); // add default size
   
   @if $border == true {
     $border: darken($background, 10%);
@@ -72,7 +72,7 @@
 /////////////////////////////////////////////////
 @mixin create_button_outline($border, $color, $border-width: 1px) {
   @include add_button_styles(); // add common styles
-  @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, $border-width*2); // add default size
+  @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $border-width*2); // add default size
   
   background: transparent;
   color: $color;
@@ -105,7 +105,7 @@
 /////////////////////////////////////////////////
 @mixin create_button_3d($background, $color) {
   @include add_button_styles(); // add common styles
-  @include add_input_size($inputs_height - 3, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, 0); // add default size
+  @include add_input_size($inputs_height - 3, $inputs_padding-horizontal, $button_font-size, $button_border-radius, 0); // add default size
 
   position: relative;
   top: -2px;
@@ -153,7 +153,7 @@
 /////////////////////////////////////////////////
 @mixin create_button_gradient($gradient-top, $gradient-bottom, $color, $border-top, $border-bottom) {
   @include add_button_styles(); // add common styles
-  @include add_input_size($inputs_height, $inputs_padding-horizontal, $inputs_button-font-size, $inputs_border-radius, $button_gradient_border-width*2); // add default size
+  @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $button_gradient_border-width*2); // add default size
 
   background-color: darken($gradient-top, 10%);
   background-image: linear-gradient($gradient-top, $gradient-bottom);
@@ -172,7 +172,7 @@
   &:active,
   &.active {
     background-color: $gradient-bottom;
-    background-image: linear-gradient($gradient-top, $gradient-top);
+    background-image: linear-gradient($gradient-bottom, $gradient-top);
   }
 
   &.disabled,

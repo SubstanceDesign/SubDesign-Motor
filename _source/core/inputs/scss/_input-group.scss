@@ -8,29 +8,43 @@
 
 /* Default text inputs
 ***********************************************/
-@if ($text-input_default == true) {
+.input-group {
+  @include create_input-group();
+}
+
+/* Input group with collapsed borders
+***********************************************/
+@if ($input-group_feature_collapse == true) {
   
-  .input-group {
-    @include create_input-group();
+  .input-group--collapse-outside {
+    @include create_input-group_collapse-outside();
+  }
+
+  .input-group--collapse-inside {
+    @include create_input-group_collapse-inside();
   }
 }
 
-/* Default text inputs
+/* Input group appendix
 ***********************************************/
-@if ($text-input_default == true) {
-  
-  .input-group_appendix {
-    @include create_input-group_appendix();
-  }
+.input-group_appendix {
+  @include create_input-group_appendix($inputs_padding-horizontal, $text-input_font-size, $input-group_appendix_color_background, $input-group_appendix_color_text, $input-group_appendix_color_border, $text-input_border-width, $text-input_border-radius);
 }
 
-/* Default text inputs
+/* Input group modifiers
 ***********************************************/
-@if ($text-input_default == true) {
-  
-  .input-group_part {
-    @include create_input-group_part();
-  }
+
+/* Size modifiers */
+.input-group--xs .input-group_appendix {
+  @include add_input-group_appendix_size($inputs_padding-horizontal_xs, $text-input_font-size_xs, $text-input_border-radius_xs);
+}
+
+.input-group--sm .input-group_appendix {
+  @include add_input-group_appendix_size($inputs_padding-horizontal_sm, $text-input_font-size_sm, $text-input_border-radius_sm);
+}
+
+.input-group--lg .input-group_appendix {
+  @include add_input-group_appendix_size($inputs_padding-horizontal_lg, $text-input_font-size_lg, $text-input_border-radius_lg);
 }
 
 
