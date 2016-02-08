@@ -40,11 +40,11 @@
   }
 
   .checkbox-filled {
-    @include create_checkbox_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+    @include create_checkbox-filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
   }
 
   .radio-filled {
-    @include create_radio_filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
+    @include create_radio-filled($checkbox_size, $inputs_color_background, $inputs_color_border, $inputs_color_primary, $inputs_color_primary);
   }
 }
 

@@ -141,7 +141,7 @@
 
 //  IOS switch mixin
 /////////////////////////////////////////////////
-@mixin create_switch_ios($width, $height, $border-width, $on-color, $off-color, $border-color) {
+@mixin create_switch-ios($width, $height, $border-width, $on-color, $off-color, $border-color) {
 
   @include create_switch($width, $height, $border-width, $on-color, $off-color, $off-color, $border-color, false); // add default switch styles
 

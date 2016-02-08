@@ -63,7 +63,7 @@
 }
 
 // Create input group with collapsed siblings to input borders
-@mixin create_input-group_collapse-outside() {
+@mixin create_input-group--collapse-outside() {
 
   .text-input {
 
@@ -80,7 +80,7 @@
 }
 
 // Create input group with collapsed input borders
-@mixin create_input-group_collapse-inside() {
+@mixin create_input-group--collapse-inside() {
 
   .input-group_appendix,
   .input-group_part {

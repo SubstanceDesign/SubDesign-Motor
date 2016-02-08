@@ -142,7 +142,7 @@
 
 //  Filled checkbox mixin
 /////////////////////////////////////////////////
-@mixin create_checkbox_filled($size, $background, $border, $border-active, $inner) {
+@mixin create_checkbox-filled($size, $background, $border, $border-active, $inner) {
 
   // invert background color if lightness difference is not enough
   $background: inverted($background, $inner, 80%, 50%);
@@ -233,7 +233,7 @@
 
 //  Filled radio mixin
 /////////////////////////////////////////////////
-@mixin create_radio_filled($size, $background, $border, $border-active, $inner) {
+@mixin create_radio-filled($size, $background, $border, $border-active, $inner) {
 
   // invert background color if lightness difference is not enough
   $background: inverted($background, $inner, 80%, 50%);

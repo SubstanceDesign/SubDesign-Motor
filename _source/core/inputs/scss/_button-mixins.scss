@@ -32,7 +32,7 @@
 
 //  Flat button mixin
 /////////////////////////////////////////////////
-@mixin create_button_flat($background, $color, $border) {
+@mixin create_button-flat($background, $color, $border) {
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $button_flat_border-width*2); // add default size
   
@@ -79,7 +79,7 @@
 
 //  Outline button mixin
 /////////////////////////////////////////////////
-@mixin create_button_outline($border, $color, $border-width: 1px) {
+@mixin create_button-outline($border, $color, $border-width: 1px) {
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $border-width*2); // add default size
 
@@ -112,7 +112,7 @@
 
 //  3D button mixin
 /////////////////////////////////////////////////
-@mixin create_button_3d($background, $color) {
+@mixin create_button-3d($background, $color) {
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height - 3, $inputs_padding-horizontal, $button_font-size, $button_border-radius, 0); // add default size
 
@@ -164,7 +164,7 @@
 
 //  Gradient button mixin
 /////////////////////////////////////////////////
-@mixin create_button_gradient($gradient-top, $gradient-bottom, $color, $border-top, $border-bottom) {
+@mixin create_button-gradient($gradient-top, $gradient-bottom, $color, $border-top, $border-bottom) {
   @include add_button_styles(); // add common styles
   @include add_input_size($inputs_height, $inputs_padding-horizontal, $button_font-size, $button_border-radius, $button_gradient_border-width*2); // add default size
 

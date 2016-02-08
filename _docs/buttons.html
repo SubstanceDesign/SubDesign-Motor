@@ -270,26 +270,26 @@
             <tr>
               <td><pre class="prettyprint prettyprint-plain">
 add_button_styles()</pre></td>
-              <td>Add necessary for any button settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_button_*</span> mixins. It is included already</td>
+              <td>Add necessary for any button settings and style resets. <br>You shouldn't use it with <span class="docs_mark">create_button-*</span> mixins. It is included already</td>
               <td>-</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">create_button_flat($background, $color, $border)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button-flat($background, $color, $border)</pre></td>
               <td>Create flat button</td>
               <td>$background: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border: color of button border. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">create_button_outline($border, $color, $border-width: 1px)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button-outline($border, $color, $border-width: 1px)</pre></td>
               <td>Create outline button</td>
               <td>$border: color of button background. Required! <br><br>$color: color of button text. Required! <br><br>$border-width: border width. Optional!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">create_button_3d($background, $color)</pre></td>
+              <td><pre class="prettyprint prettyprint-plain">create_button-3d($background, $color)</pre></td>
               <td>Create 3D button</td>
               <td>$background: color of button background. Required! <br><br>$color: color of button text. Required!</td>
             </tr>
             <tr>
-              <td><pre class="prettyprint prettyprint-plain">create_button_gradient(
+              <td><pre class="prettyprint prettyprint-plain">create_button-gradient(
   $gradient-top, 
   $gradient-bottom, 
   $color, 
@@ -304,7 +304,7 @@ add_button_styles()</pre></td>
           <p class="docs_subheading"><strong>SCSS</strong></p>
           <pre class="prettyprint">
 .custom-button-name {
-  @include create_button_flat(#000, #fff, #ccc); // apply flat button styles
+  @include create_button-flat(#000, #fff, #ccc); // apply flat button styles
 }</pre>
           <p class="docs_subheading"><strong>HTML</strong></p>
           <pre class="prettyprint">
@@ -313,7 +313,7 @@ add_button_styles()</pre></td>
           <p class="docs_subheading"><strong>SCSS</strong></p>
           <pre class="prettyprint">
 .custom-button-name {
-  @include create_button_outline(#ccc, #000); // apply outline button styles
+  @include create_button-outline(#ccc, #000); // apply outline button styles
   @include add_input_size(60px, 20px, 16px, 3px, 4px);
 }</pre>
           <h2 id="anchor_config">Setting buttons config</h2>

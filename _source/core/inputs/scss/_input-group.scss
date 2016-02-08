@@ -17,11 +17,11 @@
 @if ($input-group_feature_collapse == true) {
   
   .input-group--collapse-outside {
-    @include create_input-group_collapse-outside();
+    @include create_input-group--collapse-outside();
   }
 
   .input-group--collapse-inside {
-    @include create_input-group_collapse-inside();
+    @include create_input-group--collapse-inside();
   }
 }
 

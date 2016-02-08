@@ -12,31 +12,31 @@
   /* Default flat buttons */
 
   .button {
-    @include create_button_flat($inputs_color_primary, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_primary, $inputs_color_button-text, true);
   }
 
   .button-neutral {
-    @include create_button_flat($inputs_color_background, $inputs_color_foreground, $inputs_color_border);
+    @include create_button-flat($inputs_color_background, $inputs_color_foreground, $inputs_color_border);
   }
 
   .button-secondary {
-    @include create_button_flat($inputs_color_secondary, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_secondary, $inputs_color_button-text, true);
   }
 
   .button-info {
-    @include create_button_flat($inputs_color_info, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_info, $inputs_color_button-text, true);
   }
 
   .button-success {
-    @include create_button_flat($inputs_color_success, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_success, $inputs_color_button-text, true);
   }
 
   .button-warning {
-    @include create_button_flat($inputs_color_warning, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_warning, $inputs_color_button-text, true);
   }
 
   .button-danger {
-    @include create_button_flat($inputs_color_danger, $inputs_color_button-text, true);
+    @include create_button-flat($inputs_color_danger, $inputs_color_button-text, true);
   }
 }
 
@@ -46,31 +46,31 @@
   /* Default outline buttons */
 
   .button-outline {
-    @include create_button_outline($inputs_color_primary, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_primary, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-neutral {
-    @include create_button_outline($inputs_color_border, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_border, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-secondary {
-    @include create_button_outline($inputs_color_secondary, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_secondary, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-info {
-    @include create_button_outline($inputs_color_info, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_info, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-success {
-    @include create_button_outline($inputs_color_success, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_success, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-warning {
-    @include create_button_outline($inputs_color_warning, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_warning, $inputs_color_foreground, $button_outline_border-width);
   }
 
   .button-outline-danger {
-    @include create_button_outline($inputs_color_danger, $inputs_color_foreground, $button_outline_border-width);
+    @include create_button-outline($inputs_color_danger, $inputs_color_foreground, $button_outline_border-width);
   }
 
   /* Outline button size modifiers */
@@ -99,31 +99,31 @@
   /* 3d buttons */
 
   .button-3d {
-    @include create_button_3d($inputs_color_primary, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_primary, $inputs_color_button-text);
   }
 
   .button-3d-neutral {
-    @include create_button_3d($inputs_color_background, $inputs_color_foreground);
+    @include create_button-3d($inputs_color_background, $inputs_color_foreground);
   }
 
   .button-3d-secondary {
-    @include create_button_3d($inputs_color_secondary, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_secondary, $inputs_color_button-text);
   }
 
   .button-3d-info {
-    @include create_button_3d($inputs_color_info, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_info, $inputs_color_button-text);
   }
 
   .button-3d-success {
-    @include create_button_3d($inputs_color_success, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_success, $inputs_color_button-text);
   }
 
   .button-3d-warning {
-    @include create_button_3d($inputs_color_warning, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_warning, $inputs_color_button-text);
   }
 
   .button-3d-danger {
-    @include create_button_3d($inputs_color_danger, $inputs_color_button-text);
+    @include create_button-3d($inputs_color_danger, $inputs_color_button-text);
   }
 
   /* Outline button size modifiers */
@@ -152,31 +152,31 @@
   /* Default gradient buttons */
 
   .button-gradient {
-    @include create_button_gradient(lighten($inputs_color_primary, 10%), darken($inputs_color_primary, 10%), $inputs_color_button-text, lighten($inputs_color_primary, 15%), darken($inputs_color_primary, 15%));
+    @include create_button-gradient(lighten($inputs_color_primary, 10%), darken($inputs_color_primary, 10%), $inputs_color_button-text, lighten($inputs_color_primary, 15%), darken($inputs_color_primary, 15%));
   }
 
   .button-gradient-neutral {
-    @include create_button_gradient(lighten($inputs_color_border, 10%), darken($inputs_color_border, 10%), $inputs_color_foreground, lighten($inputs_color_border, 15%), darken($inputs_color_border, 15%));
+    @include create_button-gradient(lighten($inputs_color_border, 10%), darken($inputs_color_border, 10%), $inputs_color_foreground, lighten($inputs_color_border, 15%), darken($inputs_color_border, 15%));
   }
 
   .button-gradient-secondary {
-    @include create_button_gradient(lighten($inputs_color_secondary, 10%), darken($inputs_color_secondary, 10%), $inputs_color_button-text, lighten($inputs_color_secondary, 15%), darken($inputs_color_secondary, 15%));
+    @include create_button-gradient(lighten($inputs_color_secondary, 10%), darken($inputs_color_secondary, 10%), $inputs_color_button-text, lighten($inputs_color_secondary, 15%), darken($inputs_color_secondary, 15%));
   }
 
   .button-gradient-info {
-    @include create_button_gradient(lighten($inputs_color_info, 10%), darken($inputs_color_info, 10%), $inputs_color_button-text, lighten($inputs_color_info, 15%), darken($inputs_color_info, 15%));
+    @include create_button-gradient(lighten($inputs_color_info, 10%), darken($inputs_color_info, 10%), $inputs_color_button-text, lighten($inputs_color_info, 15%), darken($inputs_color_info, 15%));
   }
 
   .button-gradient-success {
-    @include create_button_gradient(lighten($inputs_color_success, 10%), darken($inputs_color_success, 10%), $inputs_color_button-text, lighten($inputs_color_success, 15%), darken($inputs_color_success, 15%));
+    @include create_button-gradient(lighten($inputs_color_success, 10%), darken($inputs_color_success, 10%), $inputs_color_button-text, lighten($inputs_color_success, 15%), darken($inputs_color_success, 15%));
   }
 
   .button-gradient-warning {
-    @include create_button_gradient(lighten($inputs_color_warning, 10%), darken($inputs_color_warning, 10%), $inputs_color_button-text, lighten($inputs_color_warning, 15%), darken($inputs_color_warning, 15%));
+    @include create_button-gradient(lighten($inputs_color_warning, 10%), darken($inputs_color_warning, 10%), $inputs_color_button-text, lighten($inputs_color_warning, 15%), darken($inputs_color_warning, 15%));
   }
 
   .button-gradient-danger {
-    @include create_button_gradient(lighten($inputs_color_danger, 10%), darken($inputs_color_danger, 10%), $inputs_color_button-text, lighten($inputs_color_danger, 15%), darken($inputs_color_danger, 15%));
+    @include create_button-gradient(lighten($inputs_color_danger, 10%), darken($inputs_color_danger, 10%), $inputs_color_button-text, lighten($inputs_color_danger, 15%), darken($inputs_color_danger, 15%));
   }
 
   /* Outline button size modifiers */
