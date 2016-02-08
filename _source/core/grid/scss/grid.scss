@@ -29,9 +29,9 @@
 ***********************************************/
 
 // collapse row feature
-@if $grid_feature_row-collapsed == true {
+@if $grid_feature_row--collapsed == true {
   /* Collapse row feature */
-  .row-collapse {
+  .row--collapse {
     @include create_row_collapse();
   }
 }
@@ -40,13 +40,13 @@
 @if $grid_feature_different-gutters == true {
   /* Different gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
-    .row-gutter-#{$gutter} {
+    .row--gutter-#{$gutter} {
       @include create_row_gutter($gutter-width);
     }
   }
 
   // reset gutter
-  .row-gutter-reset {
+  .row--gutter-reset {
     @include create_row_gutter-reset();
   }
 }
@@ -55,7 +55,7 @@
 @if $grid_feature_vertical-gutters == true {
   /* Vertical gutter row feature */
   @each $gutter, $gutter-width in $grid_gutters {
-    .row-vertical-gutter-#{$gutter} { 
+    .row--vertical-gutter-#{$gutter} { 
       @include create_row_vertical-gutter($gutter-width);
     }
   }
@@ -64,42 +64,42 @@
 /* Horizontal columns alignment in rows */
 @if $grid_feature_horizontal-alignment == true {
 
-  .row-centered,
-  .row-justified {
+  .row--centered,
+  .row--justified {
     @include create_row_flexbox();
   }
 
-  .row-centered {
+  .row--centered {
     @include create_row_centered(false);
   }
 
-  .row-justified {
+  .row--justified {
     @include create_row_justified(false);
   }
 }
 
 /* Vertical columns alignment in rows */
 @if $grid_feature_vertical-alignment == true {
-  .row-valign-top,
-  .row-valign-bottom,
-  .row-valign-middle,
-  .row-valign-stretch {
+  .row--valign-top,
+  .row--valign-bottom,
+  .row--valign-middle,
+  .row--valign-stretch {
     @include create_row_flexbox();
   }
    
-  .row-valign-top {
+  .row--valign-top {
     @include create_row_valign-top(false);
   }
 
-  .row-valign-bottom {
+  .row--valign-bottom {
     @include create_row_valign-bottom(false);
   }
 
-  .row-valign-middle {
+  .row--valign-middle {
     @include create_row_valign-middle(false);
   }
 
-  .row-valign-stretch {
+  .row--valign-stretch {
     @include create_row_valign-stretch(false);
   }
 }
@@ -114,8 +114,8 @@
       @media (min-width: $breakpoint-width) {
 
         // collapse row feature
-        @if $grid_feature_row-collapsed == true {
-          .#{$breakpoint-prefix}row-collapse {
+        @if $grid_feature_row--collapsed == true {
+          .#{$breakpoint-prefix}row--collapse {
             @include create_row_collapse();
           }
         }
@@ -123,13 +123,13 @@
         // different gutter row feature
         @if $grid_feature_different-gutters == true {
           @each $gutter, $gutter-width in $grid_gutters {
-            .#{$breakpoint-prefix}row-gutter-#{$gutter} {
+            .#{$breakpoint-prefix}row--gutter-#{$gutter} {
               @include create_row_gutter($gutter-width);
             }
           }
 
           // reset gutter
-          .#{$breakpoint-prefix}row-gutter-reset {
+          .#{$breakpoint-prefix}row--gutter-reset {
             @include create_row_gutter-reset();
           }
         }
@@ -137,7 +137,7 @@
         // vertical gutter row feature
         @if $grid_feature_vertical-gutters == true {
           @each $gutter, $gutter-width in $grid_gutters {
-            .#{$breakpoint-prefix}row-vertical-gutter-#{$gutter} { 
+            .#{$breakpoint-prefix}row--vertical-gutter-#{$gutter} { 
               @include create_row_vertical-gutter($gutter-width);
             }
           }

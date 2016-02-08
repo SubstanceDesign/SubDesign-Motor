@@ -331,17 +331,17 @@ $all-cols-selector: get-cols-selector();
   
     // create offset in cols
     @if $grid_feature_offset == true {
-      .#{$breakpoint-prefix}col-offset-#{$cols} {
+      .#{$breakpoint-prefix}col--offset-#{$cols} {
         margin-left: percentage($cols / $grid_cols);
       }
     }
 
     // push column to the left or to the right
     @if $grid_feature_columns-order == true {
-      .#{$breakpoint-prefix}col-right-#{$cols} {
+      .#{$breakpoint-prefix}col--right-#{$cols} {
         left: percentage($cols / $grid_cols);
       }
-      .#{$breakpoint-prefix}col-left-#{$cols} {
+      .#{$breakpoint-prefix}col--left-#{$cols} {
         right: percentage($cols / $grid_cols);
       }
     }
@@ -351,7 +351,7 @@ $all-cols-selector: get-cols-selector();
 
   // reset order
   @if $grid_feature_columns-order == true {
-    .#{$breakpoint-prefix}col-reset-order {
+    .#{$breakpoint-prefix}col--reset-order {
       right: auto;
       left: auto;
     }
