@@ -42,7 +42,7 @@
 }
 
 // Add collapse feature
-@mixin create_row_collapse() {
+@mixin create_row--collapse() {
   margin-left: 0;
   margin-right: 0;
 
@@ -53,7 +53,7 @@
 }
 
 // Add different gutter feature to row
-@mixin create_row_gutter($gutter-width) {
+@mixin create_row--gutter($gutter-width) {
   margin-left: 0;
   margin-right: 0;
 
@@ -76,7 +76,7 @@
 }
 
 // Reset different gutter feature on row
-@mixin create_row_gutter-reset() {
+@mixin create_row--gutter-reset() {
   margin-right: -$grid_gutter / 2; 
   margin-left: -$grid_gutter / 2;
 
@@ -89,14 +89,14 @@
 }
 
 // Add vertical gutter feature to row
-@mixin create_row_vertical-gutter($gutter-width) {
+@mixin create_row--vertical-gutter($gutter-width) {
   > [class *= 'col-'] + [class *= 'col-'] {
     margin-top: $gutter-width;
   }
 }
 
 // Switch to flexbox / inline-block mode for alignment features
-@mixin create_row_flexbox() {
+@mixin create_row--flexbox() {
   display: flex;
   flex-wrap: wrap;
 
@@ -116,9 +116,9 @@
 }
 
 // Add centered row styles
-@mixin create_row_centered($include-flexbox-mixin: true) {
+@mixin create_row--centered($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
   
   justify-content: center;
@@ -126,9 +126,9 @@
 }
 
 // Add justified row styles
-@mixin create_row_justified($include-flexbox-mixin: true) {
+@mixin create_row--justified($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
   
   justify-content: space-between;
@@ -143,9 +143,9 @@
 }
 
 // Add vertically aligned to top row styles
-@mixin create_row_valign-top($include-flexbox-mixin: true) {
+@mixin create_row--valign-top($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
   
   align-items: flex-start;
@@ -156,9 +156,9 @@
 }
 
 // Add vertically aligned to bottom row styles
-@mixin create_row_valign-bottom($include-flexbox-mixin: true) {
+@mixin create_row--valign-bottom($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
 
   align-items: flex-end;
@@ -169,9 +169,9 @@
 }
 
 // Add vertically aligned to middle row styles
-@mixin create_row_valign-middle($include-flexbox-mixin: true) {
+@mixin create_row--valign-middle($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
 
   align-items: center;
@@ -182,9 +182,9 @@
 }
 
 // Add vertically stretched row styles
-@mixin create_row_valign-stretch($include-flexbox-mixin: true) {
+@mixin create_row--valign-stretch($include-flexbox-mixin: true) {
   @if ($include-flexbox-mixin == true) {
-    @include create_row_flexbox();
+    @include create_row--flexbox();
   }
 
   align-items: stretch;
@@ -260,7 +260,7 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Add column offset feature
-@mixin create_col_offset($cols, $breakpoint: 'mc') {
+@mixin create_col--offset($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     margin-left: percentage($cols / $grid_cols);
@@ -272,7 +272,7 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Add move column to the right feature
-@mixin create_col_right($cols, $breakpoint: 'mc') {
+@mixin create_col--right($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     left: percentage($cols / $grid_cols);
@@ -284,7 +284,7 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Add move column to the left feature
-@mixin create_col_left($cols, $breakpoint: 'mc') {
+@mixin create_col--left($cols, $breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     right: percentage($cols / $grid_cols);
@@ -296,7 +296,7 @@ $all-cols-selector: get-cols-selector();
 }
 
 // Reset column order
-@mixin create_col_reset-order($breakpoint: 'mc') {
+@mixin create_col--reset-order($breakpoint: 'mc') {
 
   @if $breakpoint == 'mc' {
     right: auto;
