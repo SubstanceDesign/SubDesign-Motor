@@ -35,7 +35,7 @@
     display: block;
     margin: $unit * 3 0;
 
-    @include create_switch_ios($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_background, $inputs_color_border);
+    @include create_switch_ios($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, #fff, $inputs_color_border);
   }
 }
 

@@ -84,6 +84,9 @@
 @mixin create_checkbox($size, $background, $border, $inner) {
 
   @include add_checkbox-radio_styles('checkbox', $size); // add common styles
+
+  // invert background color if lightness difference is not enough
+  $background: inverted($background, $inner, 80%, 50%);
   
   html:not(.ie8) & {
 
@@ -141,6 +144,9 @@
 /////////////////////////////////////////////////
 @mixin create_checkbox_filled($size, $background, $border, $border-active, $inner) {
 
+  // invert background color if lightness difference is not enough
+  $background: inverted($background, $inner, 80%, 50%);
+
   @include create_checkbox($size, $background, $border, $inner); // add deault checkbox styles
   
   html:not(.ie8) & {
@@ -169,6 +175,9 @@
 @mixin create_radio($size, $background, $border, $inner) {
 
   @include add_checkbox-radio_styles('radio', $size); // add common styles
+
+  // invert background color if lightness difference is not enough
+  $background: inverted($background, $inner, 80%, 50%);
 
   html:not(.ie8) & {
     
@@ -225,6 +234,9 @@
 //  Filled radio mixin
 /////////////////////////////////////////////////
 @mixin create_radio_filled($size, $background, $border, $border-active, $inner) {
+
+  // invert background color if lightness difference is not enough
+  $background: inverted($background, $inner, 80%, 50%);
   
   @include create_radio($size, $background, $border, $inner); // add deault radio styles
   

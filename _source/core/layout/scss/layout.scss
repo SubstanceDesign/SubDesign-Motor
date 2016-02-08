@@ -29,6 +29,8 @@ html {
 
 body {
   font-size: $base_font-size;
+  color: get-color(text);
+  background: get-color(background);
 }
 
 /* Page content

@@ -4,7 +4,7 @@
 
 //  Get color from palette
 /////////////////////////////////////////////////
-@function get-color($color, $palette: $palette_light) {
+@function get-color($color, $palette: $palette_global) {
   @return map-get($palette, $color);
 }
 
@@ -20,6 +20,17 @@
     $color: darken($color, 5);
   } @else {
     $color: adjust_hue(lighten($color, 7), 3);
+  }
+
+  @return $color;
+}
+
+//  Get inverted color based on background
+/////////////////////////////////////////////////
+@function inverted($color, $background, $light_percent: 60%, $dark_percent: 40%) {
+  
+  @if (lightness($background) > $light_percent and lightness($color) > $light_percent) or (lightness($background) < $dark_percent and lightness($color) < $dark_percent) {
+    $color: invert($color);
   }
 
   @return $color;
