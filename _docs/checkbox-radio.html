@@ -55,6 +55,7 @@
           <li><a href="#anchor_default">Default checkbox and radio</a></li>
           <li><a href="#anchor_styles">Checkbox and radio styles</a></li>
           <li><a href="#anchor_disabled">Disabled state</a></li>
+          <li><a href="#anchor_states">Validation states</a></li>
           <li><a href="#anchor_inline">Inline modificator</a></li>
           <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
           <li><a href="#anchor_config">Setting checkbox and radio config</a></li>
@@ -130,6 +131,51 @@
             <label class="radio disabled"><input type="radio" name="radio-4" value="2" disabled><span>Disabled</span></label>
             <label class="radio-filled disabled"><input type="radio" name="radio-5" value="3" checked disabled><span>Disabled</span></label>
           </p>
+          <h2 id="anchor_states">Validation state</h2>
+          <p>For validation states use <span class="docs_mark">.error</span>, <span class="docs_mark">.warning</span> and <span class="docs_mark">.success</span> classes on <span class="docs_mark">label</span>, <span class="docs_mark">input</span> or <span class="docs_mark">label wrapper</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;!-- Set error state on label -->
+&lt;label class="checkbox error">&lt;input type="checkbox" checked>&lt;span>Error state&lt;/span>&lt;/label>
+
+&lt;!-- Set error state on input -->
+&lt;label class="checkbox">&lt;input class="error" type="checkbox" checked>&lt;span>Error state&lt;/span>&lt;/label>
+
+&lt;!-- Set error state on wrapper -->
+&lt;div class="error">&lt;label class="checkbox">&lt;input type="checkbox" checked>&lt;span>Error state&lt;/span>&lt;/label>&lt;/div>
+
+&lt;!-- Set warning state -->
+&lt;label class="checkbox warning">&lt;input type="checkbox" checked>&lt;span>Warning state&lt;/span>&lt;/label>
+
+&lt;!-- Set success state -->
+&lt;label class="checkbox success">&lt;input type="checkbox" checked>&lt;span>Success state&lt;/span>&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="sm_col-4">
+              <label class="checkbox error"><input type="checkbox" checked><span>Error state</span></label>
+              <label class="checkbox error"><input type="checkbox"><span>Error state</span></label>
+              <label class="checkbox-filled error"><input type="checkbox" checked><span>Error state</span></label>
+              <label class="radio error"><input type="radio" name="radio-7" value="1" checked><span>Error state</span></label>
+              <label class="radio error"><input type="radio" name="radio-7" value="2"><span>Error state</span></label>
+              <label class="radio-filled error"><input type="radio" name="radio-7" value="3" checked><span>Error state</span></label>
+            </div>
+            <div class="sm_col-4">
+              <label class="checkbox warning"><input type="checkbox" checked><span>Warning state</span></label>
+              <label class="checkbox warning"><input type="checkbox"><span>Warning state</span></label>
+              <label class="checkbox-filled warning"><input type="checkbox" checked><span>Warning state</span></label>
+              <label class="radio warning"><input type="radio" name="radio-7" value="1" checked><span>Warning state</span></label>
+              <label class="radio warning"><input type="radio" name="radio-7" value="2"><span>Warning state</span></label>
+              <label class="radio-filled warning"><input type="radio" name="radio-7" value="3" checked><span>Warning state</span></label>
+            </div>
+            <div class="sm_col-4">
+              <label class="checkbox success"><input type="checkbox" checked><span>Success state</span></label>
+              <label class="checkbox success"><input type="checkbox"><span>Success state</span></label>
+              <label class="checkbox-filled success"><input type="checkbox" checked><span>Success state</span></label>
+              <label class="radio success"><input type="radio" name="radio-7" value="1" checked><span>Success state</span></label>
+              <label class="radio success"><input type="radio" name="radio-7" value="2"><span>Success state</span></label>
+              <label class="radio-filled success"><input type="radio" name="radio-7" value="3" checked><span>Success state</span></label>
+            </div>
+          </div>
           <h2 id="anchor_inline">Inline modificator</h2>
           <p>For the inline-block behavior use <span class="docs_mark">.checkbox--inline, .radio--inline</span> classes.</p>
           <p class="docs_subheading"><strong>Code</strong></p>

@@ -21,6 +21,24 @@
       font-size: $checkbox_label-font-size;
       line-height: $checkbox_label-line-height;
     }
+
+    &.error input + span,
+    .error & input + span,
+    & input.error + span {
+      color: $inputs_color_danger;
+    }
+
+    &.warning input + span,
+    .warning & input + span,
+    & input.warning + span {
+      color: $inputs_color_warning;
+    }
+
+    &.success input + span,
+    .success & input + span,
+    & input.success + span {
+      color: $inputs_color_success;
+    }
   }
 
   // modern style
@@ -105,10 +123,6 @@
       border-bottom: round($size * 0.1) solid $inner;
       border-left: round($size * 0.1) solid $inner;
     }
-
-    input[type=checkbox].error + span:before {
-      border-color: $inputs_color_danger;
-    }
     
     &:hover,
     &:focus {
@@ -136,6 +150,48 @@
     &:hover input[type=checkbox].disabled:not(:checked) + span:after,
     &.disabled:hover input[type=checkbox]:not(:checked) + span:after {
       display: none;
+    }
+  }
+
+  html:not(.ie8) &.error input[type=checkbox],
+  html:not(.ie8) .error & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].error {
+
+    & + span {
+
+      color: $inputs_color_danger;
+
+      &:before {
+        border-color: $inputs_color_danger;
+      }
+    }
+  }
+
+  html:not(.ie8) &.warning input[type=checkbox],
+  html:not(.ie8) .warning & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].warning {
+
+    & + span {
+
+      color: $inputs_color_warning;
+
+      &:before {
+        border-color: $inputs_color_warning;
+      }
+    }
+  }
+
+  html:not(.ie8) &.success input[type=checkbox],
+  html:not(.ie8) .success & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].success {
+
+    & + span {
+
+      color: $inputs_color_success;
+
+      &:before {
+        border-color: $inputs_color_success;
+      }
     }
   }
 }
@@ -166,6 +222,42 @@
     input[type=checkbox].disabled:checked + span:before,
     &.disabled input[type=checkbox]:checked + span:before {
       @include opacity(65);
+    }
+  }
+
+  html:not(.ie8) &.error input[type=checkbox],
+  html:not(.ie8) .error & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].error {
+
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_danger;
+        border-color: $inputs_color_danger;
+      }
+    }
+  }
+
+  html:not(.ie8) &.warning input[type=checkbox],
+  html:not(.ie8) .warning & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].warning {
+
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_warning;
+        border-color: $inputs_color_warning;
+      }
+    }
+  }
+
+  html:not(.ie8) &.success input[type=checkbox],
+  html:not(.ie8) .success & input[type=checkbox],
+  html:not(.ie8) & input[type=checkbox].success {
+    
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_success;
+        border-color: $inputs_color_success;
+      }
     }
   }
 }
@@ -201,10 +293,6 @@
       background-color: $inner;
     }
 
-    input[type=radio].error + span:before {
-      border-color: $inputs_color_danger;
-    }
-    
     &:hover,
     &:focus {
       input[type=radio]:not(:checked) + span:after {
@@ -227,6 +315,48 @@
     &:hover input[type=radio].disabled:not(:checked) + span:after,
     &.disabled:hover input[type=radio]:not(:checked) + span:after {
       display: none;
+    }
+  }
+
+  html:not(.ie8) &.error input[type=radio],
+  html:not(.ie8) .error & input[type=radio],
+  html:not(.ie8) & input[type=radio].error {
+
+    & + span {
+
+      color: $inputs_color_danger;
+
+      &:before {
+        border-color: $inputs_color_danger;
+      }
+    }
+  }
+
+  html:not(.ie8) &.warning input[type=radio],
+  html:not(.ie8) .warning & input[type=radio],
+  html:not(.ie8) & input[type=radio].warning {
+
+    & + span {
+
+      color: $inputs_color_warning;
+
+      &:before {
+        border-color: $inputs_color_warning;
+      }
+    }
+  }
+
+  html:not(.ie8) &.success input[type=radio],
+  html:not(.ie8) .success & input[type=radio],
+  html:not(.ie8) & input[type=radio].success {
+
+    & + span {
+
+      color: $inputs_color_success;
+
+      &:before {
+        border-color: $inputs_color_success;
+      }
     }
   }
 }
@@ -257,6 +387,42 @@
     input[type=radio].disabled:checked + span:before,
     &.disabled input[type=radio]:checked + span:before {
       @include opacity(65);
+    }
+  }
+  
+  html:not(.ie8) &.error input[type=radio],
+  html:not(.ie8) .error & input[type=radio],
+  html:not(.ie8) & input[type=radio].error {
+
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_danger;
+        border-color: $inputs_color_danger;
+      }
+    }
+  }
+
+  html:not(.ie8) &.warning input[type=radio],
+  html:not(.ie8) .warning & input[type=radio],
+  html:not(.ie8) & input[type=radio].warning {
+    
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_warning;
+        border-color: $inputs_color_warning;
+      }
+    }
+  }
+
+  html:not(.ie8) &.success input[type=radio],
+  html:not(.ie8) .success & input[type=radio],
+  html:not(.ie8) & input[type=radio].success {
+    
+    &:checked + span {
+      &:before {
+        background-color: $inputs_color_success;
+        border-color: $inputs_color_success;
+      }
     }
   }
 }

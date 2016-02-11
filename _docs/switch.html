@@ -55,6 +55,7 @@
           <li><a href="#anchor_default">Default switch</a></li>
           <li><a href="#anchor_styles">Switch styles</a></li>
           <li><a href="#anchor_disabled">Disabled state</a></li>
+          <li><a href="#anchor_states">Validation states</a></li>
           <li><a href="#anchor_inline">Inline modificator</a></li>
           <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
           <li><a href="#anchor_config">Setting switch config</a></li>
@@ -176,6 +177,204 @@
               <span class="switch_off">off</span>
             </label>
           </p>
+          <h2 id="anchor_states">Validation state</h2>
+          <p>For validation states use <span class="docs_mark">.error</span>, <span class="docs_mark">.warning</span> and <span class="docs_mark">.success</span> classes on <span class="docs_mark">label</span>, <span class="docs_mark">input</span> or <span class="docs_mark">label wrapper</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;!-- Set error state on label -->
+&lt;label class="switch error">
+  &lt;input type="checkbox" name="switch-2">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>
+
+&lt;!-- Set error state on input -->
+&lt;label class="switch">
+  &lt;input class="error" type="checkbox" name="switch-2">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>
+
+&lt;!-- Set error state on wrapper -->
+&lt;div class="error">
+  &lt;label class="switch error">
+    &lt;input type="checkbox" name="switch-2">
+    &lt;span class="switch_lever">&lt;/span>
+    &lt;span class="switch_on">on&lt;/span>
+    &lt;span class="switch_off">off&lt;/span>
+  &lt;/label>
+&lt;/div>
+
+&lt;!-- Set warning state -->
+&lt;label class="switch warning">
+  &lt;input type="checkbox" name="switch-2">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label>
+
+&lt;!-- Set success state -->
+&lt;label class="switch success">
+  &lt;input type="checkbox" name="switch-2">
+  &lt;span class="switch_lever">&lt;/span>
+  &lt;span class="switch_on">on&lt;/span>
+  &lt;span class="switch_off">off&lt;/span>
+&lt;/label></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <div class="row">
+            <div class="sm_col-4">    
+              <p>
+                <label class="switch error">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch error">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted error">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted error">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios error">
+                  <input type="checkbox" checked name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios error">
+                  <input type="checkbox" name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+            </div>
+            <div class="sm_col-4">    
+              <p>
+                <label class="switch warning">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch warning">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted warning">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted warning">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios warning">
+                  <input type="checkbox" checked name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios warning">
+                  <input type="checkbox" name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+            </div>
+            <div class="sm_col-4">    
+              <p>
+                <label class="switch success">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch success">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted success">
+                  <input type="checkbox" checked name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-doted success">
+                  <input type="checkbox" name="switch-2">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios success">
+                  <input type="checkbox" checked name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+              <p>
+                <label class="switch-ios success">
+                  <input type="checkbox" name="switch-3">
+                  <span class="switch_lever"></span>
+                  <span class="switch_on">on</span>
+                  <span class="switch_off">off</span>
+                </label>
+              </p>
+            </div>
+          </div>
           <h2 id="anchor_inline">Inline modificator</h2>
           <p>For the inline-block behavior use <span class="docs_mark">.switch--inline</span> class.</p>
           <p class="docs_subheading"><strong>Code</strong></p>

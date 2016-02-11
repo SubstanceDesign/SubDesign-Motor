@@ -24,13 +24,13 @@ $indent-hg: 30 * $unit;
 /////////////////////////////////////////////////
 
 //  design color palette
-$color_base: #fff; // base theme background color                                                                   
-$color_contrast: #0d0d0d; // contrast to base theme background color                                                                   
-$color_brand: #ff981a; // special brand theme color                                                                   
-$color_info: #6EB7C2; // information status color                                                                   
-$color_success: #3DCC80; // success status color                                                                   
-$color_warning: #FFE74D; // warning status color                                                                   
-$color_danger: #E21F1E; // danger/error status color                                                                   
+$color_base: #fff; // base theme background color                                                                    
+$color_contrast: #0d0d0d; // contrast to base theme background color                                                                    
+$color_brand: #ff981a; // special brand theme color                                                                    
+$color_info: #6EB7C2; // information status color                                                                    
+$color_success: #3DCC80; // success status color                                                                    
+$color_warning: #f3cb2d; // warning status color                                                                    
+$color_danger: #E21F1E; // danger/error status color                                                                    
 
 //  light palette
 $palette_light: (
