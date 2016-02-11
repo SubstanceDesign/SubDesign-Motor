@@ -12,7 +12,13 @@
   .checkbox,
   .radio {
     display: block;
-    margin: $unit * 2 0;
+
+    & + .checkbox,
+    & + .radio, 
+    & + .checkbox-filled,
+    & + .radio-filled {
+      margin-top: $unit * 2;
+    }
   }
 
   .checkbox {
@@ -56,6 +62,13 @@
 .radio--inline {
   display: inline-block;
   margin: 0 $unit * 3 0 0;
+
+  & + .checkbox,
+  & + .radio, 
+  & + .checkbox-filled,
+  & + .radio-filled {
+    margin-top: 0;
+  }
 }
 
 

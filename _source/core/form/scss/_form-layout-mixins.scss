@@ -1,0 +1,13 @@
+/////////////////////////////////////////////////
+//  Form mixins
+/////////////////////////////////////////////////
+
+//  Set input size
+/////////////////////////////////////////////////
+@mixin add_input_size($height, $padding-horizontal, $font-size, $border-radius, $border-vetical-offset) {
+  padding: ($height - $font-size * $base_line-height - $border-vetical-offset)/2 $padding-horizontal;
+  line-height: $base_line-height;
+  height: $height;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}

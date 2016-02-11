@@ -229,7 +229,7 @@ $text-input_default: true;
 $checkbox_size: 20px;
 $checkbox_border-width: 2px;
 $checkbox_border-radius: 2px;
-$checkbox_label-font-size: $base_font-size;
+$checkbox_label-font-size: $base_font-size - 2px;
 $checkbox_label-line-height: $base_line-height;
 
 //  Checkbox and radio types (set true to include and false to exclude)
@@ -241,6 +241,7 @@ $switch_width: 50px;
 $switch_height: 30px;
 $switch_border-width: 1px;
 $switch_border-color: transparent;
+$switch_label-font-size: $base_font-size - 2px;
 
 //  Switch styles
 $switch_default: true;

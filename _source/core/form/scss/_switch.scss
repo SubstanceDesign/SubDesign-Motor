@@ -11,9 +11,14 @@
 @if ($switch_default == true) {
   .switch {
     display: block;
-    margin: $unit * 3 0;
 
     @include create_switch($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_border, $inputs_color_background, $switch_border-color, false);
+
+    & + .switch,
+    & + .switch-doted,
+    & + .switch-ios {
+      margin-top: $unit * 3;
+    }
   }
 }
 
@@ -22,9 +27,14 @@
 @if ($switch_doted == true) {
   .switch-doted {
     display: block;
-    margin: $unit * 3 0;
 
     @include create_switch($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, $inputs_color_border, $inputs_color_background, $switch_border-color, true);
+
+    & + .switch,
+    & + .switch-doted,
+    & + .switch-ios {
+      margin-top: $unit * 3;
+    }
   }
 }
 
@@ -33,9 +43,14 @@
 @if ($switch_ios == true) {
   .switch-ios {
     display: block;
-    margin: $unit * 3 0;
 
     @include create_switch-ios($switch_width, $switch_height, $switch_border-width, $inputs_color_primary, #fff, $inputs_color_border);
+
+    & + .switch,
+    & + .switch-doted,
+    & + .switch-ios {
+      margin-top: $unit * 3;
+    }
   }
 }
 
@@ -46,6 +61,12 @@
 .switch--inline {
   display: inline-block;
   margin: 0 $unit * 3 0 0;
+
+  & + .switch,
+  & + .switch-doted,
+  & + .switch-ios {
+    margin-top: 0;
+  }
 }
 
 
