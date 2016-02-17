@@ -20,8 +20,10 @@
 
     .switch_on,
     .switch_off {
-      font-size: $checkbox_label-font-size;
-      line-height: $checkbox_label-line-height;
+      font-size: $switch_label_font-size;
+      line-height: $base_line-height;
+      font-style: $switch_label_font-style;
+      font-weight: $switch_label_font-weight;
     }
 
     .switch_off {
@@ -127,6 +129,11 @@
       display: inline-block;
       vertical-align: middle;
       margin-left: 6px;
+      
+      font-size: $switch_label_font-size;
+      line-height: $base_line-height;
+      font-style: $switch_label_font-style;
+      font-weight: $switch_label_font-weight;
     }
 
     .switch_on {

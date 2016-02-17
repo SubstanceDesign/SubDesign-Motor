@@ -1,13 +1,120 @@
 /////////////////////////////////////////////////
-//  Form mixins
+//  Form layout mixing
 /////////////////////////////////////////////////
 
-//  Set input size
+//  Create form label
 /////////////////////////////////////////////////
-@mixin add_input_size($height, $padding-horizontal, $font-size, $border-radius, $border-vetical-offset) {
-  padding: ($height - $font-size * $base_line-height - $border-vetical-offset)/2 $padding-horizontal;
-  line-height: $base_line-height;
-  height: $height;
-  font-size: $font-size;
-  border-radius: $border-radius;
+@mixin create_form-label() {
+  display: inline-block;
+  max-width: 100%;
+
+  margin-bottom: $indent-mc;
+
+  color: $form-label_color;
+
+  font-family: $form-label_font-family;
+  font-size: $form-label_font-size;
+  line-height: $form-label_line-height;
+  font-style: $form-label_font-style;
+  font-weight: $form-label_font-weight;
+
+  // inline behavior
+  .form-inline & {
+    margin-bottom: 0;
+    margin-right: $indent-mc;
+  }
+
+  // horizontal behavior
+  .form-horizontal & {
+    text-align: right;
+    margin-top: ($inputs_height - $form-label_font-size) / 2;
+  }
+}
+
+//  Create form group
+/////////////////////////////////////////////////
+@mixin create_form-group() {
+  position: relative;
+
+  margin-top: $indent-xs;
+
+  form > &:first-child {
+    margin-top: 0;
+  }
+
+  // inline behavior
+  .form-inline & {
+    display: inline-block;
+    vertical-align: middle;
+
+    margin-top: 0;
+
+    .text-input {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+    }
+  }
+
+  .form-inline & + & {
+    margin-left: $indent-xs;
+  }
+
+  // horizontal behavior
+  .form-horizontal & {
+    @if mixin-exists(create_row) {
+      @include create_row();
+    }
+  }
+}
+
+//  Create form header
+/////////////////////////////////////////////////
+@mixin create_form-header() {
+  position: relative;
+
+  margin-bottom: $indent-sm;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+  }
+}
+
+//  Create form footer
+/////////////////////////////////////////////////
+@mixin create_form-footer() {
+  position: relative;
+
+  margin-top: $indent-sm;
+
+  // horizontal behavior
+  .form-horizontal & {
+    @if mixin-exists(create_row) {
+      @include create_row();
+    }
+  }
+}
+
+//  Create form text
+/////////////////////////////////////////////////
+@mixin create_form-text() {
+  max-width: 100%;
+  margin-top: $indent-mc;
+
+  color: $form-text_color;
+
+  font-family: $form-text_font-family;
+  font-size: $form-text_font-size;
+  line-height: $form-text_line-height;
+  font-style: $form-text_font-style;
+  font-weight: $form-text_font-weight;
+
+  // inline behavior
+  .form-inline & {
+    display: inline-block;
+    vertical-align: middle;
+    
+    margin-top: 0;
+  }
 }

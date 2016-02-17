@@ -1,10 +1,50 @@
 /*********************************************** 
-    Switch
+    Form layout
 ***********************************************/
 
 //  Mixins
 /////////////////////////////////////////////////
 @import 'form-layout-mixins';
 
-/* Switch default
+/* Form label
 ***********************************************/
+.form-label {
+  @include create_form-label();
+}
+
+// form label sizes in horizontal mode
+.form-horizontal .form-label--xs {
+  margin-top: ($inputs_height_xs - $form-label_font-size) / 2;
+}
+
+.form-horizontal .form-label--sm {
+  margin-top: ($inputs_height_sm - $form-label_font-size) / 2;
+}
+
+.form-horizontal .form-label--lg {
+  margin-top: ($inputs_height_lg - $form-label_font-size) / 2;
+}
+
+/* Form group
+***********************************************/
+.form-group {
+  @include create_form-group();
+}
+
+/* Form header
+***********************************************/
+.form-header {
+  @include create_form-header();
+}
+
+/* Form footer
+***********************************************/
+.form-footer {
+  @include create_form-footer();
+}
+
+/* Form text
+***********************************************/
+.form-text {
+  @include create_form-text();
+}

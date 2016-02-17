@@ -26,7 +26,7 @@ $indent-hg: 30 * $unit;
 //  design color palette
 $color_base: #fff; // base theme background color                                                                    
 $color_contrast: #0d0d0d; // contrast to base theme background color                                                                    
-$color_brand: #ff981a; // special brand theme color                                                                    
+$color_brand: #ff981a; // special brand theme color                                                                                
 $color_info: #6EB7C2; // information status color                                                                    
 $color_success: #3DCC80; // success status color                                                                    
 $color_warning: #f3cb2d; // warning status color                                                                    
@@ -35,9 +35,9 @@ $color_danger: #E21F1E; // danger/error status color
 //  light palette
 $palette_light: (
   background: $color_base,
-  background-border: #ccc,
+  background-border: darken($color_base, 15%),
   text: $color_contrast,
-  text-secondary: #bbb,
+  text-secondary: lighten($color_contrast, 35%),
   action-default: $color_brand,
   action-secondary: $color_contrast,
   action-info: $color_info,
@@ -49,9 +49,9 @@ $palette_light: (
 //  dark palette
 $palette_dark: (
   background: $color_contrast,
-  background-border: #aaa,
+  background-border: lighten($color_contrast, 15%),
   text: $color_base,
-  text-secondary: #eee,
+  text-secondary: darken($color_base, 35%),
   action-default: $color_brand,
   action-secondary: $color_base,
   action-info: $color_info,
@@ -158,10 +158,11 @@ $grid_gutters: (
   18u: 18 * $unit
 );
 
-//  Inputs
+
+//  Form
 /////////////////////////////////////////////////
 
-//  Defaul size settings
+//  Defaul input size settings
 $inputs_height: 9 * $unit;
 $inputs_padding-horizontal: $inputs_height * 0.35;
 $text-input_font-size: 14px;
@@ -205,6 +206,22 @@ $inputs_color_success: get-color(action-success);
 $inputs_color_warning: get-color(action-warning);
 $inputs_color_danger: get-color(action-danger);
 
+//  From label
+$form-label_color: get-color(text-secondary);
+$form-label_font-family: $base_font-family;
+$form-label_font-size: 12px;
+$form-label_line-height: 100%;
+$form-label_font-style: italic;
+$form-label_font-weight: normal;
+
+//  From text
+$form-text_color: get-color(text-secondary);
+$form-text_font-family: $base_font-family;
+$form-text_font-size: 13px;
+$form-text_line-height: 100%;
+$form-text_font-style: normal;
+$form-text_font-weight: normal;
+
 //  Buttons
 $button_font-weight: normal;
 $button_flat_border-width: 1px;
@@ -229,8 +246,10 @@ $text-input_default: true;
 $checkbox_size: 20px;
 $checkbox_border-width: 2px;
 $checkbox_border-radius: 2px;
-$checkbox_label-font-size: $base_font-size - 2px;
-$checkbox_label-line-height: $base_line-height;
+$checkbox_label_font-size: $base_font-size - 2px;
+$checkbox_label_line-height: $base_line-height;
+$checkbox_label_font-style: normal;
+$checkbox_label_font-weight: normal;
 
 //  Checkbox and radio types (set true to include and false to exclude)
 $checkbox_default: true;
@@ -241,7 +260,9 @@ $switch_width: 50px;
 $switch_height: 30px;
 $switch_border-width: 1px;
 $switch_border-color: transparent;
-$switch_label-font-size: $base_font-size - 2px;
+$switch_label_font-size: $base_font-size - 2px;
+$switch_label_font-style: normal;
+$switch_label_font-weight: normal;
 
 //  Switch styles
 $switch_default: true;
