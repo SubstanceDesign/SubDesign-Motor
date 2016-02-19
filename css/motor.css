@@ -6553,6 +6553,7 @@ pre, .pre {
   color: #E21F1E;
   overflow: auto;
   display: block;
+  margin: 0;
   padding: 20px 24px;
   border: 1px solid #d9d9d9;
 }
@@ -6826,9 +6827,25 @@ blockquote footer, .blockquote footer {
   letter-spacing: 0;
   text-align: left;
 }
-.typo table tr:nth-child(odd) td,
-.table tr:nth-child(odd) td {
+
+.typo .table--striped tr:nth-child(odd) td,
+.table--striped tr:nth-child(odd) td {
   background: #f6f6f6;
+}
+
+.typo .table--free,
+.table--free {
+  border: 0;
+}
+.typo .table--free td, .typo .table--free th,
+.table--free td,
+.table--free th {
+  border-left: 0;
+}
+
+.table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 /* Indentation
@@ -6965,99 +6982,111 @@ h6 + .heading-sm, .h6 + h4, .h6 + .h4, .h6 + h5, .h6 + .h5, .h6 + h6, .h6 + .h6,
   margin-top: 36px;
 }
 
-h1 + p, h1 + .ul, h1 + .ol, h1 + .table, h1 + .blockquote, h1 + .paragraph, .h1 + p, .h1 + .ul, .h1 + .ol, .h1 + .table, .h1 + .blockquote, .h1 + .paragraph,
+h1 + p, h1 + .ul, h1 + .ol, h1 + .table, h1 + .table-responsive, h1 + .blockquote, h1 + .paragraph, h1 + .pre, .h1 + p, .h1 + .ul, .h1 + .ol, .h1 + .table, .h1 + .table-responsive, .h1 + .blockquote, .h1 + .paragraph, .h1 + .pre,
 .heading-lg + p,
 .heading-lg + .ul,
 .heading-lg + .ol,
 .heading-lg + .table,
+.heading-lg + .table-responsive,
 .heading-lg + .blockquote,
-.heading-lg + .paragraph {
+.heading-lg + .paragraph,
+.heading-lg + .pre {
   margin-top: 36px;
 }
 
-.typo h1 + p, .typo h1 + ul, .typo h1 + ol, .typo h1 + table, .typo h1 + blockquote, .typo h1 + .paragraph, .typo .h1 + p, .typo .h1 + ul, .typo .h1 + ol, .typo .h1 + table, .typo .h1 + blockquote, .typo .h1 + .paragraph,
+.typo h1 + p, .typo h1 + ul, .typo h1 + ol, .typo h1 + table, .typo h1 + blockquote, .typo h1 + pre, .typo .h1 + p, .typo .h1 + ul, .typo .h1 + ol, .typo .h1 + table, .typo .h1 + blockquote, .typo .h1 + pre,
 .typo .heading-lg + p,
 .typo .heading-lg + ul,
 .typo .heading-lg + ol,
 .typo .heading-lg + table,
 .typo .heading-lg + blockquote,
-.typo .heading-lg + .paragraph {
+.typo .heading-lg + pre {
   margin-top: 36px;
 }
 
-h2 + p, h2 + .ul, h2 + .ol, h2 + .table, h2 + .blockquote, h2 + .paragraph, .h2 + p, .h2 + .ul, .h2 + .ol, .h2 + .table, .h2 + .blockquote, .h2 + .paragraph,
+h2 + p, h2 + .ul, h2 + .ol, h2 + .table, h2 + .table-responsive, h2 + .blockquote, h2 + .paragraph, h2 + .pre, .h2 + p, .h2 + .ul, .h2 + .ol, .h2 + .table, .h2 + .table-responsive, .h2 + .blockquote, .h2 + .paragraph, .h2 + .pre,
 h3 + p,
 h3 + .ul,
 h3 + .ol,
 h3 + .table,
+h3 + .table-responsive,
 h3 + .blockquote,
-h3 + .paragraph, .h3 + p, .h3 + .ul, .h3 + .ol, .h3 + .table, .h3 + .blockquote, .h3 + .paragraph,
+h3 + .paragraph,
+h3 + .pre, .h3 + p, .h3 + .ul, .h3 + .ol, .h3 + .table, .h3 + .table-responsive, .h3 + .blockquote, .h3 + .paragraph, .h3 + .pre,
 .heading-md + p,
 .heading-md + .ul,
 .heading-md + .ol,
 .heading-md + .table,
+.heading-md + .table-responsive,
 .heading-md + .blockquote,
-.heading-md + .paragraph {
+.heading-md + .paragraph,
+.heading-md + .pre {
   margin-top: 24px;
 }
 
-.typo h2 + p, .typo h2 + ul, .typo h2 + ol, .typo h2 + table, .typo h2 + blockquote, .typo h2 + .paragraph, .typo .h2 + p, .typo .h2 + ul, .typo .h2 + ol, .typo .h2 + table, .typo .h2 + blockquote, .typo .h2 + .paragraph,
+.typo h2 + p, .typo h2 + ul, .typo h2 + ol, .typo h2 + table, .typo h2 + blockquote, .typo h2 + pre, .typo .h2 + p, .typo .h2 + ul, .typo .h2 + ol, .typo .h2 + table, .typo .h2 + blockquote, .typo .h2 + pre,
 .typo h3 + p,
 .typo h3 + ul,
 .typo h3 + ol,
 .typo h3 + table,
 .typo h3 + blockquote,
-.typo h3 + .paragraph, .typo .h3 + p, .typo .h3 + ul, .typo .h3 + ol, .typo .h3 + table, .typo .h3 + blockquote, .typo .h3 + .paragraph,
+.typo h3 + pre, .typo .h3 + p, .typo .h3 + ul, .typo .h3 + ol, .typo .h3 + table, .typo .h3 + blockquote, .typo .h3 + pre,
 .typo .heading-md + p,
 .typo .heading-md + ul,
 .typo .heading-md + ol,
 .typo .heading-md + table,
 .typo .heading-md + blockquote,
-.typo .heading-md + .paragraph {
+.typo .heading-md + pre {
   margin-top: 24px;
 }
 
-h4 + p, h4 + .ul, h4 + .ol, h4 + .table, h4 + .blockquote, h4 + .paragraph, .h4 + p, .h4 + .ul, .h4 + .ol, .h4 + .table, .h4 + .blockquote, .h4 + .paragraph,
+h4 + p, h4 + .ul, h4 + .ol, h4 + .table, h4 + .table-responsive, h4 + .blockquote, h4 + .paragraph, h4 + .pre, .h4 + p, .h4 + .ul, .h4 + .ol, .h4 + .table, .h4 + .table-responsive, .h4 + .blockquote, .h4 + .paragraph, .h4 + .pre,
 h5 + p,
 h5 + .ul,
 h5 + .ol,
 h5 + .table,
+h5 + .table-responsive,
 h5 + .blockquote,
-h5 + .paragraph, .h5 + p, .h5 + .ul, .h5 + .ol, .h5 + .table, .h5 + .blockquote, .h5 + .paragraph,
+h5 + .paragraph,
+h5 + .pre, .h5 + p, .h5 + .ul, .h5 + .ol, .h5 + .table, .h5 + .table-responsive, .h5 + .blockquote, .h5 + .paragraph, .h5 + .pre,
 h6 + p,
 h6 + .ul,
 h6 + .ol,
 h6 + .table,
+h6 + .table-responsive,
 h6 + .blockquote,
-h6 + .paragraph, .h6 + p, .h6 + .ul, .h6 + .ol, .h6 + .table, .h6 + .blockquote, .h6 + .paragraph,
+h6 + .paragraph,
+h6 + .pre, .h6 + p, .h6 + .ul, .h6 + .ol, .h6 + .table, .h6 + .table-responsive, .h6 + .blockquote, .h6 + .paragraph, .h6 + .pre,
 .heading-sm + p,
 .heading-sm + .ul,
 .heading-sm + .ol,
 .heading-sm + .table,
+.heading-sm + .table-responsive,
 .heading-sm + .blockquote,
-.heading-sm + .paragraph {
+.heading-sm + .paragraph,
+.heading-sm + .pre {
   margin-top: 12px;
 }
 
-.typo h4 + p, .typo h4 + ul, .typo h4 + ol, .typo h4 + table, .typo h4 + blockquote, .typo h4 + .paragraph, .typo .h4 + p, .typo .h4 + ul, .typo .h4 + ol, .typo .h4 + table, .typo .h4 + blockquote, .typo .h4 + .paragraph,
+.typo h4 + p, .typo h4 + ul, .typo h4 + ol, .typo h4 + table, .typo h4 + blockquote, .typo h4 + pre, .typo .h4 + p, .typo .h4 + ul, .typo .h4 + ol, .typo .h4 + table, .typo .h4 + blockquote, .typo .h4 + pre,
 .typo h5 + p,
 .typo h5 + ul,
 .typo h5 + ol,
 .typo h5 + table,
 .typo h5 + blockquote,
-.typo h5 + .paragraph, .typo .h5 + p, .typo .h5 + ul, .typo .h5 + ol, .typo .h5 + table, .typo .h5 + blockquote, .typo .h5 + .paragraph,
+.typo h5 + pre, .typo .h5 + p, .typo .h5 + ul, .typo .h5 + ol, .typo .h5 + table, .typo .h5 + blockquote, .typo .h5 + pre,
 .typo h6 + p,
 .typo h6 + ul,
 .typo h6 + ol,
 .typo h6 + table,
 .typo h6 + blockquote,
-.typo h6 + .paragraph, .typo .h6 + p, .typo .h6 + ul, .typo .h6 + ol, .typo .h6 + table, .typo .h6 + blockquote, .typo .h6 + .paragraph,
+.typo h6 + pre, .typo .h6 + p, .typo .h6 + ul, .typo .h6 + ol, .typo .h6 + table, .typo .h6 + blockquote, .typo .h6 + pre,
 .typo .heading-sm + p,
 .typo .heading-sm + ul,
 .typo .heading-sm + ol,
 .typo .heading-sm + table,
 .typo .heading-sm + blockquote,
-.typo .heading-sm + .paragraph {
+.typo .heading-sm + pre {
   margin-top: 12px;
 }
 
@@ -7134,6 +7163,21 @@ p + h1, p + .h1, p + h2, p + .h2, p + h3, p + .h3, p + h4, p + .h4, p + h5, p + 
 .table + .heading-lg,
 .table + .heading-md,
 .table + .heading-sm,
+.table-responsive + h1,
+.table-responsive + .h1,
+.table-responsive + h2,
+.table-responsive + .h2,
+.table-responsive + h3,
+.table-responsive + .h3,
+.table-responsive + h4,
+.table-responsive + .h4,
+.table-responsive + h5,
+.table-responsive + .h5,
+.table-responsive + h6,
+.table-responsive + .h6,
+.table-responsive + .heading-lg,
+.table-responsive + .heading-md,
+.table-responsive + .heading-sm,
 blockquote + h1,
 blockquote + .h1,
 blockquote + h2,
@@ -7209,6 +7253,36 @@ blockquote + .heading-sm,
 .blockquote + .heading-lg,
 .blockquote + .heading-md,
 .blockquote + .heading-sm,
+pre + h1,
+pre + .h1,
+pre + h2,
+pre + .h2,
+pre + h3,
+pre + .h3,
+pre + h4,
+pre + .h4,
+pre + h5,
+pre + .h5,
+pre + h6,
+pre + .h6,
+pre + .heading-lg,
+pre + .heading-md,
+pre + .heading-sm,
+.pre + h1,
+.pre + .h1,
+.pre + h2,
+.pre + .h2,
+.pre + h3,
+.pre + .h3,
+.pre + h4,
+.pre + .h4,
+.pre + h5,
+.pre + .h5,
+.pre + h6,
+.pre + .h6,
+.pre + .heading-lg,
+.pre + .heading-md,
+.pre + .heading-sm,
 .paragraph + h1,
 .paragraph + .h1,
 .paragraph + h2,
@@ -7230,11 +7304,14 @@ p + .p--small,
 .ul + .p--small,
 .ol + .p--small,
 .table + .p--small,
+.table-responsive + .p--small,
 blockquote + .p--small,
 .typo ul + .p--small,
 .typo ol + .p--small,
 .typo table + .p--small,
 .blockquote + .p--small,
+pre + .p--small,
+.pre + .p--small,
 .paragraph + .p--small {
   margin-top: 36px;
 }
@@ -7242,11 +7319,14 @@ p + p,
 .ul + p,
 .ol + p,
 .table + p,
+.table-responsive + p,
 blockquote + p,
 .typo ul + p,
 .typo ol + p,
 .typo table + p,
 .blockquote + p,
+pre + p,
+.pre + p,
 .paragraph + p, p +
 .ul,
 .ul +
@@ -7254,6 +7334,8 @@ blockquote + p,
 .ol +
 .ul,
 .table +
+.ul,
+.table-responsive +
 .ul,
 blockquote +
 .ul,
@@ -7264,6 +7346,10 @@ blockquote +
 .typo table +
 .ul,
 .blockquote +
+.ul,
+pre +
+.ul,
+.pre +
 .ul,
 .paragraph +
 .ul, p +
@@ -7274,6 +7360,8 @@ blockquote +
 .ol,
 .table +
 .ol,
+.table-responsive +
+.ol,
 blockquote +
 .ol,
 .typo ul +
@@ -7283,6 +7371,10 @@ blockquote +
 .typo table +
 .ol,
 .blockquote +
+.ol,
+pre +
+.ol,
+.pre +
 .ol,
 .paragraph +
 .ol, p +
@@ -7293,6 +7385,8 @@ blockquote +
 .table,
 .table +
 .table,
+.table-responsive +
+.table,
 blockquote +
 .table,
 .typo ul +
@@ -7303,8 +7397,37 @@ blockquote +
 .table,
 .blockquote +
 .table,
+pre +
+.table,
+.pre +
+.table,
 .paragraph +
 .table, p +
+.table-responsive,
+.ul +
+.table-responsive,
+.ol +
+.table-responsive,
+.table +
+.table-responsive,
+.table-responsive +
+.table-responsive,
+blockquote +
+.table-responsive,
+.typo ul +
+.table-responsive,
+.typo ol +
+.table-responsive,
+.typo table +
+.table-responsive,
+.blockquote +
+.table-responsive,
+pre +
+.table-responsive,
+.pre +
+.table-responsive,
+.paragraph +
+.table-responsive, p +
 blockquote,
 .ul +
 blockquote,
@@ -7312,6 +7435,8 @@ blockquote,
 blockquote,
 .table +
 blockquote,
+.table-responsive +
+blockquote,
 blockquote +
 blockquote,
 .typo ul +
@@ -7321,6 +7446,10 @@ blockquote,
 .typo table +
 blockquote,
 .blockquote +
+blockquote,
+pre +
+blockquote,
+.pre +
 blockquote,
 .paragraph +
 blockquote, p +
@@ -7331,6 +7460,8 @@ blockquote, p +
 .typo ul,
 .table +
 .typo ul,
+.table-responsive +
+.typo ul,
 blockquote +
 .typo ul,
 .typo ul +
@@ -7340,6 +7471,10 @@ blockquote +
 .typo table +
 .typo ul,
 .blockquote +
+.typo ul,
+pre +
+.typo ul,
+.pre +
 .typo ul,
 .paragraph +
 .typo ul, p +
@@ -7350,6 +7485,8 @@ blockquote +
 .typo ol,
 .table +
 .typo ol,
+.table-responsive +
+.typo ol,
 blockquote +
 .typo ol,
 .typo ul +
@@ -7359,6 +7496,10 @@ blockquote +
 .typo table +
 .typo ol,
 .blockquote +
+.typo ol,
+pre +
+.typo ol,
+.pre +
 .typo ol,
 .paragraph +
 .typo ol, p +
@@ -7369,6 +7510,8 @@ blockquote +
 .typo table,
 .table +
 .typo table,
+.table-responsive +
+.typo table,
 blockquote +
 .typo table,
 .typo ul +
@@ -7378,6 +7521,10 @@ blockquote +
 .typo table +
 .typo table,
 .blockquote +
+.typo table,
+pre +
+.typo table,
+.pre +
 .typo table,
 .paragraph +
 .typo table, p +
@@ -7388,6 +7535,8 @@ blockquote +
 .blockquote,
 .table +
 .blockquote,
+.table-responsive +
+.blockquote,
 blockquote +
 .blockquote,
 .typo ul +
@@ -7398,8 +7547,62 @@ blockquote +
 .blockquote,
 .blockquote +
 .blockquote,
+pre +
+.blockquote,
+.pre +
+.blockquote,
 .paragraph +
 .blockquote, p +
+pre,
+.ul +
+pre,
+.ol +
+pre,
+.table +
+pre,
+.table-responsive +
+pre,
+blockquote +
+pre,
+.typo ul +
+pre,
+.typo ol +
+pre,
+.typo table +
+pre,
+.blockquote +
+pre,
+pre +
+pre,
+.pre +
+pre,
+.paragraph +
+pre, p +
+.pre,
+.ul +
+.pre,
+.ol +
+.pre,
+.table +
+.pre,
+.table-responsive +
+.pre,
+blockquote +
+.pre,
+.typo ul +
+.pre,
+.typo ol +
+.pre,
+.typo table +
+.pre,
+.blockquote +
+.pre,
+pre +
+.pre,
+.pre +
+.pre,
+.paragraph +
+.pre, p +
 .paragraph,
 .ul +
 .paragraph,
@@ -7407,6 +7610,8 @@ blockquote +
 .paragraph,
 .table +
 .paragraph,
+.table-responsive +
+.paragraph,
 blockquote +
 .paragraph,
 .typo ul +
@@ -7417,52 +7622,64 @@ blockquote +
 .paragraph,
 .blockquote +
 .paragraph,
+pre +
+.paragraph,
+.pre +
+.paragraph,
 .paragraph +
 .paragraph {
   margin-top: 36px;
 }
 
-.typo p + p, .typo p + ul, .typo p + ol, .typo p + table, .typo p + blockquote, .typo p + .paragraph,
+.typo p + p, .typo p + ul, .typo p + ol, .typo p + table, .typo p + .table-responsive, .typo p + blockquote, .typo p + pre,
 .typo ul + p,
 .typo ul + ul,
 .typo ul + ol,
 .typo ul + table,
+.typo ul + .table-responsive,
 .typo ul + blockquote,
-.typo ul + .paragraph,
+.typo ul + pre,
 .typo ol + p,
 .typo ol + ul,
 .typo ol + ol,
 .typo ol + table,
+.typo ol + .table-responsive,
 .typo ol + blockquote,
-.typo ol + .paragraph,
+.typo ol + pre,
 .typo table + p,
 .typo table + ul,
 .typo table + ol,
 .typo table + table,
+.typo table + .table-responsive,
 .typo table + blockquote,
-.typo table + .paragraph,
+.typo table + pre,
 .typo blockquote + p,
 .typo blockquote + ul,
 .typo blockquote + ol,
 .typo blockquote + table,
+.typo blockquote + .table-responsive,
 .typo blockquote + blockquote,
-.typo blockquote + .paragraph,
+.typo blockquote + pre,
+.typo pre + p,
+.typo pre + ul,
+.typo pre + ol,
+.typo pre + table,
+.typo pre + .table-responsive,
+.typo pre + blockquote,
+.typo pre + pre,
 .typo .paragraph + p,
 .typo .paragraph + ul,
 .typo .paragraph + ol,
 .typo .paragraph + table,
+.typo .paragraph + .table-responsive,
 .typo .paragraph + blockquote,
-.typo .paragraph + .paragraph {
+.typo .paragraph + pre {
   margin-top: 36px;
 }
 
 p + p,
 .typo p + p {
   margin-top: 24px;
-}
-
-figure {
-  margin: 48px 0;
 }
 
 .p--small + h1, .p--small + .h1, .p--small + h2, .p--small + .h2, .p--small + h3, .p--small + .h3
@@ -7472,6 +7689,7 @@ figure {
 .p--small + h4, .p--small + .h4, .p--small + h5, .p--small + .h5, .p--small + h6, .p--small + .h6, .p--small + .heading-sm {
   margin-top: 60px;
 }
-.p--small + p, .p--small + .ul, .p--small + .ol, .p--small + .table, .p--small + blockquote, .p--small + .paragraph, .typo .p--small + ul, .typo .p--small + ol, .typo .p--small + table, .typo .p--small + blockquote {
+.p--small + p, .p--small + .ul, .p--small + .ol, .p--small + .table, .p--small + .table-responsive, .p--small + blockquote, .p--small + .paragraph
+.p--small + pre, .p--small + .pre, .typo .p--small + ul, .typo .p--small + ol, .typo .p--small + table, .typo .p--small + blockquote {
   margin-top: 60px;
 }

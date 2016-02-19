@@ -52,12 +52,13 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#anchor_default">Default switch</a></li>
-          <li><a href="#anchor_styles">Switch styles</a></li>
-          <li><a href="#anchor_disabled">Disabled state</a></li>
-          <li><a href="#anchor_inline">Inline modificator</a></li>
-          <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
-          <li><a href="#anchor_config">Setting switch config</a></li>
+          <li><a href="#anchor_parts">Input group part</a></li>
+          <li><a href="#anchor_appendix">Input group appendix</a></li>
+          <li><a href="#anchor_buttons">Input group button</a></li>
+          <li><a href="#anchor_collapse">Input group collapse border</a></li>
+          <li><a href="#anchor_sizes">Input group sizes</a></li>
+           <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
+          <li><a href="#anchor_config">Setting input group config</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -70,6 +71,45 @@
         <!-- GRID
         *********************************************** -->
         <div class="content">
+          <h2 id="anchor_parts">Input group part</h2>
+          <p>You can mix text input in an inline group with any content. Place text input into element with <span class="docs_mark">.input-group</span> class and add <span class="docs_mark">.input-group_part</span> element. Now you can place any content inside input group part.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;span class="input-group">
+  &lt;span class="input-group_part">Any content&lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+  &lt;span class="input-group_part">Any content&lt;/span>
+&lt;/span></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <span class="input-group">
+              <span class="input-group_part pr--xs">Any content</span>
+              <input type="text" class="text-input" placeholder="Default text input">
+              <span class="input-group_part pl--xs">Any content</span>
+            </span>
+          </p>
+          <h2 id="anchor_appendix">Input group appendix</h2>
+          <p>To create stylized appendix add <span class="docs_mark">.input-group_appendix</span> element.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;span class="input-group input-group--collapse-outside">
+  &lt;span class="input-group_appendix">Price&lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+  &lt;span class="input-group_appendix">$&lt;/span>
+&lt;/span></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <p>
+            <span class="input-group input-group--collapse-outside">
+              <span class="input-group_appendix">$</span>
+              <input type="text" class="text-input" placeholder="Default text input">
+            </span>
+          </p>
+          <p>
+            <span class="input-group input-group--collapse-outside">
+              <input type="text" class="text-input" placeholder="Default text input">
+              <span class="input-group_appendix">$</span>
+            </span>
+          </p>
           <p>
             <span class="input-group input-group--collapse-outside">
               <span class="input-group_appendix">Price</span>
@@ -77,25 +117,17 @@
               <span class="input-group_appendix">$</span>
             </span>
           </p>
-          <p>
-            <span class="input-group input-group--collapse-outside">
-              <span class="input-group_appendix">$</span>
-              <input type="text" class="text-input" placeholder="Default text input">
-            </span>
-          </p>
-          <p>
-            <span class="input-group input-group--collapse-outside">
-              <input type="text" class="text-input" placeholder="Default text input">
-              <span class="input-group_appendix">$</span>
-            </span>
-          </p>
-          <p>
-            <span class="input-group">
-              <span class="input-group_part">Any content</span>
-              <input type="text" class="text-input" placeholder="Default text input">
-              <span class="input-group_part">Any content</span>
-            </span>
-          </p>
+          <h2 id="anchor_buttons">Input group button</h2>
+          <p>To create input group with button add <span class="docs_mark">.input-group_part</span> element and place any button inside. You can mix it with other parts and appendixes.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;span class="input-group">
+  &lt;span class="input-group_part">
+    &lt;button class="button">Action&lt;/button>
+  &lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+&lt;/span></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
           <p>
             <span class="input-group">
               <span class="input-group_part">
@@ -124,10 +156,23 @@
               <span class="input-group_appendix">$</span>
             </span>
           </p>
+          <h2 id="anchor_collapse">Input group collapse border</h2>
+          <p>There is a common issue to remove double border in input group (one border from a button or an appendix and another from text input). To solve the problem use <span class="docs_mark">.input-group--collapse-outside</span> and <span class="docs_mark">.input-group--collapse-inside</span> modifiers. The first one remove borders of neighbor to text input elements. The second one remove borders of text input. To clearify the difference please see the example.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;span class="input-group">
+  &lt;span class="input-group_part">
+    &lt;button class="button">Action&lt;/button>
+  &lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+&lt;/span></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
           <p>
             <span class="input-group input-group--collapse-outside">
+              <span class="input-group_part">
+                <button class="button">Action</button>
+              </span>
               <input type="text" class="text-input" placeholder="Default text input">
-              <span class="input-group_appendix">$</span>
             </span>
           </p>
           <p>
@@ -138,6 +183,33 @@
               <input type="text" class="text-input" placeholder="Default text input">
             </span>
           </p>
+          <h2 id="anchor_sizes">Input group sizes</h2>
+          <p>Input groups have three size modes excluding default. To change size add corresponding modifier <span class="docs_mark">.input-group--xs</span>, <span class="docs_mark">.input-group--sm</span>, <span class="docs_mark">.input-group--lg</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;span class="input-group input-group--xs input-group--collapse-outside">
+  &lt;span class="input-group_part">
+    &lt;button class="button">Action&lt;/button>
+  &lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+  &lt;span class="input-group_appendix">$&lt;/span>
+&lt;/span>
+
+&lt;span class="input-group input-group--sm input-group--collapse-outside">
+  &lt;span class="input-group_part">
+    &lt;button class="button">Action&lt;/button>
+  &lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+  &lt;span class="input-group_appendix">$&lt;/span>
+&lt;/span>
+
+&lt;span class="input-group input-group--lg input-group--collapse-outside">
+  &lt;span class="input-group_part">
+    &lt;button class="button">Action&lt;/button>
+  &lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+  &lt;span class="input-group_appendix">$&lt;/span>
+&lt;/span></pre>
           <p>
             <span class="input-group input-group--xs input-group--collapse-outside">
               <span class="input-group_part">
@@ -165,7 +237,105 @@
               <span class="input-group_appendix">$</span>
             </span>
           </p>
+          <h2 id="anchor_mixins">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_input-group()</pre></td>
+              <td>Create input group</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_input-group--collapse-outside()</pre></td>
+              <td>Make input group to collapse outside borders</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_input-group--collapse-inside()</pre></td>
+              <td>Make input group to collapse inside borders</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_input-group_appendix(
+  $padding-horizontal, 
+  $font-size, 
+  $background, 
+  $color, 
+  $border, 
+  $border-width, 
+  $border-radius)</pre></td>
+              <td>Create input group appendix</td>
+              <td>$padding-horizontal: horizontal padding. Required! <br><br>$font-size: font size. Required! <br><br>$background: background color. Required! <br><br>$color: text color. Required! <br><br>$border: border color. Required! <br><br>$border-width: border width. Required! <br><br>$border-radius: border radius. Required!</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+add_input-group_appendix_size(
+  $padding-horizontal, 
+  $font-size, 
+  $border-radius)</pre></td>
+              <td>Modify input group appendix size</td>
+              <td>$padding-horizontal: horizontal padding. Required! <br><br>$font-size: font size. Required! <br><br>$border-radius: border radius. Required!</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-input-group-name {
+  @include create_input-group();
+  @include create_input-group--collapse-outside();
+}
+
+.custom-appendix-name {
+  @include create_input-group_appendix(12px, 14px, #000, #fff, #ccc, 2px, 0);
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;span class="custom-input-group-name">
+  &lt;span class="custom-appendix-name">Price&lt;/span>
+  &lt;input type="text" class="text-input" placeholder="Default text input">
+&lt;/span></pre>
+          <h2 id="anchor_config">Setting input group config</h2>
+          <p>The framework has common input settings and individual text input settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>$input-group_feature_collapse</td>
+              <td>Enable collapse border feature</td>
+              <td>true / false</td>
+            </tr>
+            <tr>
+              <td>$input-group_appendix_color_background</td>
+              <td>Appendix background</td>
+              <td>color</td>
+            </tr>
+            <tr>
+              <td>$input-group_appendix_color_border</td>
+              <td>Appendix border color</td>
+              <td>color</td>
+            </tr>
+            <tr>
+              <td>$input-group_appendix_color_text</td>
+              <td>Appendix text color</td>
+              <td>color</td>
+            </tr>
+          </table>
         </div>
+
         <!-- *********************************************** 
         END GRID -->
 

@@ -180,6 +180,21 @@ blockquote, .blockquote {
   @include create_table();
 }
 
+.typo .table--striped,
+.table--striped {
+  @include create_table--striped();
+}
+
+.typo .table--free,
+.table--free {
+  @include create_table--free();
+}
+
+.table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* Indentation
 ***********************************************/
 
@@ -196,7 +211,7 @@ h6, .h6,
 
   & + h1, & + .h1,
   & + .heading-lg {
-    margin-top: $indent-gn+0px;
+    margin-top: $indent-gn;
   }
 }
 
@@ -214,7 +229,7 @@ h6, .h6,
   & + h2, & + .h2,
   & + h3, & + .h3,
   & + .heading-md {
-    margin-top: $indent-xl+0px;
+    margin-top: $indent-xl;
   }
 }
 
@@ -233,7 +248,7 @@ h6, .h6,
   & + h5, & + .h5,
   & + h6, & + .h6,
   & + .heading-sm {
-    margin-top: $indent-md+0px;
+    margin-top: $indent-md;
   }
 }
 
@@ -245,9 +260,11 @@ h1, .h1,
   & + .ul,
   & + .ol,
   & + .table,
+  & + .table-responsive,
   & + .blockquote,
-  & + .paragraph {
-    margin-top: $indent-md+0px;
+  & + .paragraph,
+  & + .pre {
+    margin-top: $indent-md;
   }
 }
 
@@ -261,8 +278,8 @@ h1, .h1,
     & + ol,
     & + table,
     & + blockquote,
-    & + .paragraph {
-      margin-top: $indent-md+0px;
+    & + pre {
+      margin-top: $indent-md;
     }
   }
 }
@@ -276,9 +293,11 @@ h3, .h3,
   & + .ul,
   & + .ol,
   & + .table,
+  & + .table-responsive,
   & + .blockquote,
-  & + .paragraph {
-    margin-top: $indent-sm+0px;
+  & + .paragraph,
+  & + .pre {
+    margin-top: $indent-sm;
   }
 }
 
@@ -293,8 +312,8 @@ h3, .h3,
     & + ol,
     & + table,
     & + blockquote,
-    & + .paragraph {
-      margin-top: $indent-sm+0px;
+    & + pre {
+      margin-top: $indent-sm;
     }
   }
 }
@@ -309,9 +328,11 @@ h6, .h6,
   & + .ul,
   & + .ol,
   & + .table,
+  & + .table-responsive,
   & + .blockquote,
-  & + .paragraph {
-    margin-top: $indent-xs+0px;
+  & + .paragraph,
+  & + .pre {
+    margin-top: $indent-xs;
   }
 }
 
@@ -326,8 +347,8 @@ h6, .h6,
     & + ol,
     & + table,
     & + blockquote,
-    & + .paragraph {
-      margin-top: $indent-xs+0px;
+    & + pre {
+      margin-top: $indent-xs;
     }
   }
 }
@@ -337,11 +358,11 @@ h1, .h1,
 .heading-lg {
 
   & + .p--small {
-    margin-top: $indent-sm+0px;
+    margin-top: $indent-sm;
   }
 
   &.uppercase + .p--small {
-    margin-top: $indent-xs+0px;
+    margin-top: $indent-xs;
   }
 }
 
@@ -351,11 +372,11 @@ h3, .h3,
 .heading-md {
 
   & + .p--small {
-    margin-top: $indent-xs+0px;
+    margin-top: $indent-xs;
   }
 
   &.uppercase + .p--small {
-    margin-top: $indent-mc+0px;
+    margin-top: $indent-mc;
   }
 }
 
@@ -366,7 +387,7 @@ h6, .h6,
 .heading-sm {
 
   & + .p--small {
-    margin-top: $indent-mc+0px;
+    margin-top: $indent-mc;
   }
 }
 
@@ -375,11 +396,14 @@ p,
 .ul,
 .ol,
 .table,
+.table-responsive,
 blockquote,
 .typo ul,
 .typo ol,
 .typo table,
 .blockquote,
+pre,
+.pre,
 .paragraph {
 
   // heading from text
@@ -392,19 +416,20 @@ blockquote,
   & + .heading-lg,
   & + .heading-md,
   & + .heading-sm {
-    margin-top: $indent-xl+0px;
+    margin-top: $indent-xl;
   }
 
   // p--small text from text
   & + .p--small {
-    margin-top: $indent-md+0px;
+    margin-top: $indent-md;
   }
 
   // text from text
   & + & {
-    margin-top: $indent-md+0px;
+    margin-top: $indent-md;
   }
 }
+
 // text from text
 .typo {
   p,
@@ -412,15 +437,17 @@ blockquote,
   ol,
   table,
   blockquote,
+  pre,
   .paragraph {
 
     & + p,
     & + ul,
     & + ol,
     & + table,
+    & + .table-responsive,
     & + blockquote,
-    & + .paragraph {
-      margin-top: $indent-md+0px;
+    & + pre {
+      margin-top: $indent-md;
     }
   }
 }
@@ -428,12 +455,7 @@ blockquote,
 // paragraph from paragraph
 p + p,
 .typo p + p {
-  margin-top: $indent-sm+0px;
-}
-
-// figure indents
-figure {
-  margin: $indent-lg+0px 0;
+  margin-top: $indent-sm;
 }
 
 // p--small indents
@@ -445,7 +467,7 @@ figure {
   & + h3, & + .h3
   & + .heading-lg,
   & + .heading-md {
-    margin-top: $indent-gn+0px;
+    margin-top: $indent-gn;
   }
 
   // small heading from p--small
@@ -453,7 +475,7 @@ figure {
   & + h5, & + .h5,
   & + h6, & + .h6,
   & + .heading-sm {
-    margin-top: $indent-xl+0px;
+    margin-top: $indent-xl;
   }
 
   // text from p--small
@@ -461,13 +483,16 @@ figure {
   & + .ul,
   & + .ol,
   & + .table,
+  & + .table-responsive,
   & + blockquote,
-  & + .paragraph,
+  & + .paragraph
+  & + pre,
+  & + .pre,
   .typo & + ul,
   .typo & + ol,
   .typo & + table,
   .typo & + blockquote {
-    margin-top: $indent-xl+0px;
+    margin-top: $indent-xl;
   }
 }
 

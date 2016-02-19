@@ -136,11 +136,11 @@ body {
 }
 
 #docs_page-nav ul {
-
+  padding: 0;
 }
 
 #docs_page-nav ul li {
-
+  list-style: none;
 }
 
 #docs_page-nav ul li a {
@@ -311,6 +311,10 @@ pre.prettyprint.prettyprint-plain {
 
 .docs_typo .docs_subheading {
   margin-bottom: 8px;
+}
+
+.docs_typo .docs_subheading + .prettyprint {
+  margin-top: 0;
 }
 
 .docs_typo ul,

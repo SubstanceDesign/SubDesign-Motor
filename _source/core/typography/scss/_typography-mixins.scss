@@ -124,6 +124,7 @@
 @mixin create_pre() {
   @include create_code();
   display: block;
+  margin: 0;
   padding: $pre_padding-vertical $pre_padding-horizontal;
   border: $pre_border-width solid $pre_color-border;
 }
@@ -305,8 +306,18 @@
     letter-spacing: $table_body_letter-spacing;
     text-align: $table_body_text-align;
   }
+}
 
+@mixin create_table--striped() {
   tr:nth-child(odd) td {
     background: $table_stripe-border;
+  }
+}
+
+@mixin create_table--free() {
+  border: 0;
+
+  td, th {
+    border-left: 0;
   }
 }
