@@ -52,12 +52,11 @@
           <span class="docs_page-nav_button_close">×</span>
         </div>
         <ul>
-          <li><a href="#anchor_default">Default switch</a></li>
-          <li><a href="#anchor_styles">Switch styles</a></li>
-          <li><a href="#anchor_disabled">Disabled state</a></li>
-          <li><a href="#anchor_inline">Inline modificator</a></li>
+          <li><a href="#anchor_layout">Form layout</a></li>
+          <li><a href="#anchor_inline">Inline form</a></li>
+          <li><a href="#anchor_horizontal">Horizontal form</a></li>
           <li><a href="#anchor_mixins">Semantic classes / Mixins</a></li>
-          <li><a href="#anchor_config">Setting switch config</a></li>
+          <li><a href="#anchor_config">Setting form layout config</a></li>
         </ul>
       </nav>
       <!-- *********************************************** 
@@ -70,6 +69,44 @@
         <!-- GRID
         *********************************************** -->
         <div class="content">
+          <h2 id="anchor_layout">Form layout</h2>
+          <p>The basic form layout constists of optional <span class="docs_mark">.form-header</span>, <span class="docs_mark">.form-footer</span> and <span class="docs_mark">.from-group</span>. Form header and form footer have larger margins from form content.</p>
+          <p>Form group can include any content, basicaly there are <span class="docs_mark">.form-label</span>, one of input elements and help <span class="docs_mark">.form-text</span>.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;form action="#">
+  &lt;div class="form-header">
+    &lt;div class="h3">Form header&lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label">Name&lt;/label>
+    &lt;input type="text" class="text-input" placeholder="Your name">
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label">Email&lt;/label>
+    &lt;input type="text" class="text-input" placeholder="Your email">
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="switch">
+      &lt;input type="checkbox" checked>
+      &lt;span class="switch_lever">&lt;/span>
+      &lt;span class="switch_on">Show my email&lt;/span>
+      &lt;span class="switch_off">Hide my email&lt;/span>
+    &lt;/label>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label">Password&lt;/label>
+    &lt;input type="password" class="text-input" placeholder="Your password">
+    &lt;div class="form-text">Please be sure to use only latin characters, numbers and symbol "_"&lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="checkbox">&lt;input type="checkbox">&lt;span>I accept the Terms and Conditions&lt;/span>&lt;/label>
+  &lt;/div>
+  &lt;div class="form-footer">
+    &lt;input type="submit" class="button" value="Submit">
+  &lt;/div>
+&lt;/form></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
           <form action="#">
             <div class="form-header">
               <div class="h3">Form header</div>
@@ -102,7 +139,25 @@
               <input type="submit" class="button" value="Submit">
             </div>
           </form>
-          <form class="form-inline mt--md" action="#">
+          <h2 id="anchor_inline">Inline form</h2>
+          <p>To create one row form add <span class="docs_mark">.form-inline</span> class to <span class="docs_mark">form</span> tag.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;form class="form-inline" action="#">
+  &lt;div class="form-group">
+    &lt;label class="form-label">Name&lt;/label>
+    &lt;input type="text" class="text-input" placeholder="Your name">
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label">Password&lt;/label>
+    &lt;input type="password" class="text-input" placeholder="Your password">
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;input type="submit" class="button" value="Submit">
+  &lt;/div>
+&lt;/form></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <form class="form-inline" action="#">
             <div class="form-group">
               <label class="form-label">Name</label>
               <input type="text" class="text-input" placeholder="Your name">
@@ -115,6 +170,52 @@
               <input type="submit" class="button" value="Submit">
             </div>
           </form>
+          <h2 id="anchor_horizontal">Horizontal form</h2>
+          <p>To create horizontal form add <span class="docs_mark">.form-horizontal</span> class to <span class="docs_mark">form</span> tag and use grid columns inside each <span class="docs_mark">.form-group</span>. Horizontal form class makes <span class="docs_mark">.form-group</span> behave like a grid <span class="docs_mark">.row</span></p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;form class="form-horizontal" action="#">
+  &lt;div class="form-group">
+    &lt;label class="form-label xs_col-2">Name&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="text" class="text-input" placeholder="Your name">
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label xs_col-2">Email&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="text" class="text-input" placeholder="Your email">
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;div class="xs_col-10 xs_col--offset-2">
+      &lt;label class="switch">
+        &lt;input type="checkbox" checked>
+        &lt;span class="switch_lever">&lt;/span>
+        &lt;span class="switch_on">Show my email&lt;/span>
+        &lt;span class="switch_off">Hide my email&lt;/span>
+      &lt;/label>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label xs_col-2">Password&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="password" class="text-input" placeholder="Your password">
+      &lt;div class="form-text">Please be sure to use only latin characters, numbers and symbol "_"&lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;div class="xs_col-10 xs_col--offset-2">
+      &lt;label class="checkbox">&lt;input type="checkbox">&lt;span>I accept the Terms and Conditions&lt;/span>&lt;/label>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-footer">
+    &lt;div class="xs_col-10 xs_col--offset-2">
+      &lt;input type="submit" class="button" value="Submit">
+    &lt;/div>
+  &lt;/div>
+&lt;/form></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
           <form class="form-horizontal" action="#">
             <div class="form-group">
               <label class="form-label xs_col-2">Name</label>
@@ -126,24 +227,6 @@
               <label class="form-label xs_col-2">Email</label>
               <div class="xs_col-10">
                 <input type="text" class="text-input" placeholder="Your email">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label form-label--xs xs_col-2">Extrasmall</label>
-              <div class="xs_col-10">
-                <input type="text" class="text-input text-input--xs" placeholder="Your name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label form-label--sm xs_col-2">Small</label>
-              <div class="xs_col-10">
-                <input type="text" class="text-input text-input--sm" placeholder="Your name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label form-label--lg xs_col-2">Large</label>
-              <div class="xs_col-10">
-                <input type="text" class="text-input text-input--lg" placeholder="Your name">
               </div>
             </div>
             <div class="form-group">
@@ -174,6 +257,178 @@
               </div>
             </div>
           </form>
+          <p class="mt--lg">To make labels fit various size inputs use <span class="docs_mark">.form-label--xs</span>, <span class="docs_mark">.form-label--sm</span>, <span class="docs_mark">.form-label--lg</span> modifiers.</p>
+          <p class="docs_subheading"><strong>Code</strong></p>
+          <pre class="prettyprint">
+&lt;form class="form-horizontal" action="#">
+  &lt;div class="form-group">
+    &lt;label class="form-label form-label--xs xs_col-2">Extrasmall&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="text" class="text-input text-input--xs" placeholder="Your name">
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label form-label--sm xs_col-2">Small&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="text" class="text-input text-input--sm" placeholder="Your name">
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="form-group">
+    &lt;label class="form-label form-label--lg xs_col-2">Large&lt;/label>
+    &lt;div class="xs_col-10">
+      &lt;input type="text" class="text-input text-input--lg" placeholder="Your name">
+    &lt;/div>
+  &lt;/div>
+&lt;/form></pre>
+          <p class="docs_subheading"><strong>Demo</strong></p>
+          <form class="form-horizontal" action="#">
+            <div class="form-group">
+              <label class="form-label form-label--xs xs_col-2">Extrasmall</label>
+              <div class="xs_col-10">
+                <input type="text" class="text-input text-input--xs" placeholder="Your name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--sm xs_col-2">Small</label>
+              <div class="xs_col-10">
+                <input type="text" class="text-input text-input--sm" placeholder="Your name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label form-label--lg xs_col-2">Large</label>
+              <div class="xs_col-10">
+                <input type="text" class="text-input text-input--lg" placeholder="Your name">
+              </div>
+            </div>
+          </form>
+          <h2 id="anchor_mixins">Semantic classes / Mixins</h2>
+          <p>If you are a fan of semantic and clean HTML code, you may like to use your own class names for structure blocks. We designed mixins that can apply framework styles to your own classes.</p>
+          <p class="docs_subheading"><strong>Mixins list</strong></p>
+          <table>
+            <tr>
+              <th>Mixin</th>
+              <th>Description</th>
+              <th>Variables</th>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_form-label()</pre></td>
+              <td>Create form label</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_form-group()</pre></td>
+              <td>Create form group</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_form-header()</pre></td>
+              <td>Create form header</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_form-footer()</pre></td>
+              <td>Create form footer</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><pre class="prettyprint prettyprint-plain">
+create_form-text()</pre></td>
+              <td>Create form text</td>
+              <td>-</td>
+            </tr>
+          </table>
+          <p>Examples:</p>
+          <p class="docs_subheading"><strong>SCSS</strong></p>
+          <pre class="prettyprint">
+.custom-form-group-name {
+  @include create_form-group();
+}
+
+.custom-form-label-name {
+  @include create_form-label();
+}</pre>
+          <p class="docs_subheading"><strong>HTML</strong></p>
+          <pre class="prettyprint">
+&lt;form action="#">
+  &lt;div class="custom-form-group-name">
+    &lt;label class="custom-form-label-name">Name&lt;/label>
+    &lt;input type="text" class="text-input" placeholder="Your name">
+  &lt;/div>
+&lt;/form></pre>
+          <h2 id="anchor_config">Setting form layout config</h2>
+          <p>The framework has common input settings and individual text input settings. Settings are in <span class="docs_mark">_source/config.scss</span> file.</p>
+          <p class="docs_subheading"><strong>Settings list</strong></p>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Values</th>
+            </tr>
+            <tr>
+              <td>$form-label_color</td>
+              <td>Label text color</td>
+              <td>color</td>
+            </tr>
+            <tr>
+              <td>$form-label_font-family</td>
+              <td>Label text font family</td>
+              <td>font-family css property values</td>
+            </tr>
+            <tr>
+              <td>$form-label_font-size</td>
+              <td>Label text font size</td>
+              <td>font-size css property values</td>
+            </tr>
+            <tr>
+              <td>$form-label_line-height</td>
+              <td>Label text line height</td>
+              <td>line-height css property values</td>
+            </tr>
+            <tr>
+              <td>$form-label_font-style</td>
+              <td>Label text font style</td>
+              <td>font-style css property values</td>
+            </tr>
+            <tr>
+              <td>$form-label_font-weight</td>
+              <td>Label text font weight</td>
+              <td>font-weight css property values</td>
+            </tr>
+            <tr>
+              <td>$form-text_color</td>
+              <td>Form text color</td>
+              <td>color</td>
+            </tr>
+            <tr>
+              <td>$form-text_font-family</td>
+              <td>Form text font family</td>
+              <td>font-family css property values</td>
+            </tr>
+            <tr>
+              <td>$form-text_font-size</td>
+              <td>Form text font size</td>
+              <td>font-size css property values</td>
+            </tr>
+            <tr>
+              <td>$form-text_line-height</td>
+              <td>Form text line height</td>
+              <td>line-height css property values</td>
+            </tr>
+            <tr>
+              <td>$form-text_font-style</td>
+              <td>Form text font style</td>
+              <td>font-style css property values</td>
+            </tr>
+            <tr>
+              <td>$form-text_font-weight</td>
+              <td>Form text font weight</td>
+              <td>font-weight css property values</td>
+            </tr>
+          </table>
         </div>
         <!-- *********************************************** 
         END GRID -->
