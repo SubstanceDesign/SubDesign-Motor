@@ -910,7 +910,6 @@ body {
 
 /* Page content
 ***********************************************/
-.content,
 .content-fluid {
   margin-right: auto;
   margin-left: auto;
@@ -922,6 +921,14 @@ body {
 }
 
 /* Responsive styles for content */
+.content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Centrify */
+  margin-right: auto;
+  margin-left: auto;
+  /* Responsive styles for content */
+}
 @media (min-width: 768px) {
   .content {
     width: 750px;
@@ -942,6 +949,7 @@ body {
     width: 1280px;
   }
 }
+
 /*********************************************** 
     Grid system
 ***********************************************/
@@ -7692,4 +7700,149 @@ p + p,
 .p--small + p, .p--small + .ul, .p--small + .ol, .p--small + .table, .p--small + .table-responsive, .p--small + blockquote, .p--small + .paragraph
 .p--small + pre, .p--small + .pre, .typo .p--small + ul, .typo .p--small + ol, .typo .p--small + table, .typo .p--small + blockquote {
   margin-top: 60px;
+}
+
+/*********************************************** 
+    Header
+***********************************************/
+/* Header
+***********************************************/
+.header {
+  margin-top: 24px;
+  z-index: 20;
+  -webkit-transition: background 0.3s ease 0.15s, margin 0.3s ease;
+          transition: background 0.3s ease 0.15s, margin 0.3s ease;
+  position: fixed;
+  width: 100%;
+}
+
+.header_content {
+  background: #aaa;
+  height: 60px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* Centrify */
+  margin-right: auto;
+  margin-left: auto;
+  /* Responsive styles for content */
+  padding-left: 24px;
+  padding-right: 24px;
+  -webkit-transition: 0.3s ease;
+          transition: 0.3s ease;
+  background: rgba(13, 13, 13, 0.8);
+}
+@media (min-width: 768px) {
+  .header_content {
+    width: 726px;
+  }
+}
+@media (min-width: 992px) {
+  .header_content {
+    width: 946px;
+  }
+}
+@media (min-width: 1200px) {
+  .header_content {
+    width: 1096px;
+  }
+}
+@media (min-width: 1440px) {
+  .header_content {
+    width: 1256px;
+  }
+}
+.header_content:before, .header_content:after {
+  content: '';
+  display: table;
+}
+.header_content:after {
+  clear: both;
+}
+
+.header_section-left,
+.header_section-right,
+.header_section-center {
+  display: block;
+  line-height: 60px;
+}
+
+.header_section-left {
+  float: left;
+  z-index: 1;
+}
+
+.header_section-right {
+  float: right;
+  z-index: 1;
+}
+
+.header_section-center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.header_section-left {
+  margin-right: 24px;
+}
+
+.header_section-right {
+  margin-left: 24px;
+}
+
+/* Header logo
+***********************************************/
+.header_logo img,
+.header_logo .header_logo_img {
+  vertical-align: middle;
+  -webkit-transition: 0.3 ease 0.3;
+          transition: 0.3 ease 0.3;
+}
+
+/* Header button
+***********************************************/
+.header_button {
+  height: 20px;
+  font-size: 20px !important;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #fff;
+}
+.header_button:hover, .header_button:focus {
+  color: #ff981a;
+}
+.header_button:active {
+  color: #ff981a;
+}
+
+/* Header sticked mode
+***********************************************/
+.header--sticked {
+  position: fixed;
+  margin-top: 0;
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  background: #0d0d0d;
+  -webkit-transition: 0.3s ease;
+          transition: 0.3s ease;
+}
+.header--sticked .header_content {
+  height: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent !important;
+  -webkit-transition: background 0.3s ease 0.3s, all 0.3s ease;
+          transition: background 0.3s ease 0.3s, all 0.3s ease;
+}
+.header--sticked .header_section-left,
+.header--sticked .header_section-right,
+.header--sticked .header_section-center {
+  line-height: 40px;
+}
+.header--sticked .header_logo img,
+.header--sticked .header_logo .header_logo_img {
+  width: auto;
+  height: 20px;
+  -webkit-transition: 0.3 ease;
+          transition: 0.3 ease;
 }

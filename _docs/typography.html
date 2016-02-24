@@ -66,6 +66,24 @@
         *********************************************** -->
         <div class="content">
           <div class="typo">
+            <h2 class="mt--xl" id="anchor_headings">Headings</h2>
+            <p>Create headings with <span class="docs_mark">h1-6</span> tags or with <span class="docs_mark">.h1</span>, <span class="docs_mark">.h2</span>, <span class="docs_mark">.h3</span>, <span class="docs_mark">.h4</span>, <span class="docs_mark">.h5</span>, <span class="docs_mark">.h6</span> classes.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">
+&lt;h1>Typography Heading 1&lt;/h1>
+&lt;h2>Typography Heading 2&lt;/h2>
+&lt;h3>Typography Heading 3&lt;/h3>
+&lt;h4>Typography Heading 4&lt;/h4>
+&lt;h5>Typography Heading 5&lt;/h5>
+&lt;h6>Typography Heading 6&lt;/h6>
+
+&lt;div class="h1">Typography Heading 1&lt;/div>
+&lt;div class="h2">Typography Heading 2&lt;/div>
+&lt;div class="h3">Typography Heading 3&lt;/div>
+&lt;div class="h4">Typography Heading 4&lt;/div>
+&lt;div class="h5">Typography Heading 5&lt;/div>
+&lt;div class="h6">Typography Heading 6&lt;/div></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <h1>Typography Heading 1</h1>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
             <h2>Typography Heading 2</h2>
@@ -78,35 +96,74 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
             <h6>Typography Heading 6</h6>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-            <h1>Typography Heading indentation 1</h1>
-            <h2>Typography Heading indentation 2</h2>
-            <h3>Typography Heading indentation 3</h3>
-            <h4>Typography Heading indentation 4</h4>
-            <h5>Typography Heading indentation 5</h5>
-            <h6>Typography Heading indentation 6</h6>
-            <h2>Paragraph sizes</h2>
+            <h1>Typography Heading 1 indentation</h1>
+            <h2>Typography Heading 2 indentation</h2>
+            <h3>Typography Heading 3 indentation</h3>
+            <h4>Typography Heading 4 indentation</h4>
+            <h5>Typography Heading 5 indentation</h5>
+            <h6>Typography Heading 6 indentation</h6>
+            <h2 id="anchor_psizes">Paragraph sizes</h2>
+            <p>To create smaller or larger paragraphs use <span class="docs_mark">.p--large</span> and <span class="docs_mark">.p--small</span> modifiers.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">
+&lt;p class="p--large">...&lt;/p>
+&lt;p class="p--small">...&lt;/p></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
             <p class="p--large">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
             <p class="p--small">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.</p>
-            <h2>Small and big tags</h2>
+            <h2 id="anchor_small-big">Small and big tags</h2>
+            <p>Use <span class="docs_mark">small</span> and <span class="docs_mark">big</span> tags to change text size.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">Lorem &lt;big>ipsum dolor&lt;/big> sit amet, &lt;small>consectetuer adipiscing&lt;/small> elit.</pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p>Lorem <big>ipsum dolor</big> sit amet, <small>consectetuer adipiscing</small> elit.</p>
-            <h2>Text colors</h2>
+            <h2 id="anchor_text-color">Text colors</h2>
+            <p>You can change text color with <span class="docs_mark">.color-secondary</span>, <span class="docs_mark">.color-brand</span>, <span class="docs_mark">.color-info</span>, <span class="docs_mark">.color-success</span>, <span class="docs_mark">.color-warning</span>, <span class="docs_mark">.color-danger</span> classes.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">
+&lt;p class="color-secondary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p>
+&lt;p class="color-brand">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p>
+&lt;p class="color-info">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p>
+&lt;p class="color-success">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p>
+&lt;p class="color-warning">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p>
+&lt;p class="color-danger">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/p></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p class="color-secondary">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p class="color-brand">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p class="color-info">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p class="color-success">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p class="color-warning">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
             <p class="color-danger">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-            <h2>Text higlightes</h2>
-            <h3>Marked text</h3>
+            <h2 id="anchor_mark">Marked text</h2>
+            <p>Use <span class="docs_mark">mark</span> tag to highlight text.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">Lorem &lt;mark>ipsum&lt;/mark> dolor sit amet, consectetuer &lt;mark>adipiscing elit&lt;/mark>.</pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p>Lorem <mark>ipsum</mark> dolor sit amet, consectetuer <mark>adipiscing elit</mark>.</p>
-            <h3>Deleted and strikethrough text</h3>
+            <h2 id="anchor_deleted">Deleted and strikethrough text</h2>
+            <p>Use <span class="docs_mark">del</span> or <span class="docs_mark">s</span> tag to create strikethrough text.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">&lt;del>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/del> &lt;s>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/s></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p><del>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</del> <s>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</s></p>
-            <h3>Underline and inserted text</h3>
+            <h2 id="anchor_underline">Underline and inserted text</h2>
+            <p>Use <span class="docs_mark">u</span> or <span class="docs_mark">ins</span> tag to create underline text.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">&lt;u>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/u> &lt;ins>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/ins></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p><u>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</u> <ins>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</ins></p>
-            <h3>Bold text</h3>
+            <h2 id="anchor_bold">Bold text</h2>
+            <p>Use <span class="docs_mark">strong</span> or old <span class="docs_mark">b</span> tag to create bold text.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">&lt;strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/strong> &lt;b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/b></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</strong> <b>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</b></p>
-            <h3>Italic text</h3>
+            <h2 id="anchor_italic">Italic text</h2>
+            <p>Use <span class="docs_mark">em</span> or old <span class="docs_mark">i</span> tag to create italic text.</p>
+            <p class="docs_subheading"><strong>Code</strong></p>
+            <pre class="prettyprint">&lt;em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/em> &lt;i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/i></pre>
+            <p class="docs_subheading"><strong>Demo</strong></p>
             <p><em>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</em> <i>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</i></p>
             <h2>Code highlight</h2>
             <p>Lorem <code>some code</code> sit amet, consectetuer adipiscing elit.</p>

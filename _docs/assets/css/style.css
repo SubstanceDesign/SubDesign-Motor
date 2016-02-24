@@ -314,8 +314,8 @@ pre.prettyprint.prettyprint-plain {
   margin-bottom: 8px;
 }
 
-.docs_typo .docs_subheading + .prettyprint {
-  margin-top: 0;
+.docs_subheading + .prettyprint {
+  margin-top: 5px;
 }
 
 .docs_typo ul,

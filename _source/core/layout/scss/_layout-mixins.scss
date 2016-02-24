@@ -5,3 +5,26 @@
 
 //  Layout content mixin
 /////////////////////////////////////////////////
+
+@mixin create_content($exclude-paddings: false) {
+  box-sizing: border-box;
+
+  /* Centrify */
+  margin-right: auto;
+  margin-left: auto;
+
+  /* Responsive styles for content */
+  @each $breakpoint, $content-width in $viewport_content-sizes {
+
+    @if $content-width != '100%' {
+      @media (min-width: #{map-get($layout_viewport_breakpoints, $breakpoint)}) {
+
+        @if $exclude-paddings == true {
+          width: $content-width - $grid_gutter;
+        } @else {
+          width: $content-width;
+        }
+      }
+    }
+  }
+}

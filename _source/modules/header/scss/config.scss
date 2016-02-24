@@ -1,0 +1,40 @@
+/////////////////////////////////////////////////
+//  Header config
+/////////////////////////////////////////////////
+
+//  Header box settings
+/////////////////////////////////////////////////
+$header_height: 60px;
+$header_offset-top: 24px;
+$header_exclude-grid-paddings: true; // exclude grid paddings
+$header_horizontal-padding: $indent-sm; // corner paddings
+
+//  Header modes
+/////////////////////////////////////////////////
+$header_stretch: false; // stretch background to the page width
+$header_fixed: true;
+$header_sticked: true; // add sticked state to header when the page is scrolled
+
+//  Header sticked mode settings
+/////////////////////////////////////////////////
+$header_sticked_height: 40px;
+
+//  Header color settings
+/////////////////////////////////////////////////
+$header_palette: $palette_dark;
+$header_color_background: get-color(background, $header_palette); // background
+$header_color_foreground: get-color(text, $header_palette);
+$header_color_foreground_hover: get-color(action-default, $header_palette);
+$header_background-transparency: .2;
+
+//  Header sections
+/////////////////////////////////////////////////
+$header_section_gutter: $indent-sm;
+$header_section_use-paddings-as-gutter: false;
+
+//  Logo section
+/////////////////////////////////////////////////
+
+//  Header button
+/////////////////////////////////////////////////
+$header_button_height: $header_height / 3;
