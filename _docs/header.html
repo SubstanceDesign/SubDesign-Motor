@@ -31,16 +31,6 @@
     *********************************************** -->
     <link rel="stylesheet" href="../css/motor.css">
 
-    <!-- FONT AWESOME FOR DEMO
-    *********************************************** -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/FontAwesome.otf">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.eot">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.woff">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.woff2">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-
     <!-- FALLBACKS - for IE8 and lesser versions
     *********************************************** -->
     <!--[if lt IE 9]>
@@ -65,22 +55,105 @@
       <!-- HEADER
       *********************************************** -->
       <header class="header">
+        <!-- Header content -->
         <div class="header_content">
+          <!-- Header button -->
           <div class="header_section-right">
             <a class="header_button fa fa-search" href="#"></a>
-          </div>
+          </div><!-- /END Header button -->
+
+          <!-- Show navigation button -->
+          <li class="header_show-nav header_section-right">
+            <a href="#" class="header_button">
+              <i class="header_show-nav_ico"></i>
+            </a>
+          </li><!-- /END Show navigation button -->
+
+          <!-- Logo -->
           <a href="#" class="header_logo header_section-left">
             <img src="assets/img/logo_white.png" width="140" alt="Logo">
-          </a>
-          <div class="header_section-center">Center section</div>
-        </div>
+          </a><!-- /END Logo -->
+
+          <!-- Navigation -->
+          <nav class="header_nav header_section-center">
+            <ul>
+              <li><a class="active" href="#">Home</a></li>
+              <li>
+                <a href="#">Parent</a>
+                <ul>
+                  <li><a href="#">Apples</a></li>
+                  <li><a href="#">Banannas</a></li>
+                  <li><a href="#">Coconats</a></li>
+                  <li><a href="#">Grapes</a></li>
+                  <li><a href="#">Watermelons</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Deep parent</a>
+                <ul>
+                  <li>
+                    <a href="#">Parent</a>
+                    <ul>
+                      <li><a href="#">Apples</a></li>
+                      <li><a href="#">Banannas</a></li>
+                      <li><a href="#">Coconats</a></li>
+                      <li><a href="#">Grapes</a></li>
+                      <li><a href="#">Watermelons</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Banannas</a>
+                    <ul>
+                      <li><a href="#">Grapes</a></li>
+                      <li><a href="#">Coconats</a></li>
+                      <li><a href="#">Apples</a></li>
+                      <li><a href="#">Watermelons</a></li>
+                      <li><a href="#">Banannas</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Coconats</a></li>
+                  <li><a href="#">Grapes</a></li>
+                  <li><a href="#">Watermelons</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Leftside</a>
+                <ul class="on-left">
+                  <li>
+                    <a href="#">Parent</a>
+                    <ul>
+                      <li><a href="#">Apples</a></li>
+                      <li><a href="#">Banannas</a></li>
+                      <li><a href="#">Coconats</a></li>
+                      <li><a href="#">Grapes</a></li>
+                      <li><a href="#">Watermelons</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Banannas</a>
+                    <ul>
+                      <li><a href="#">Grapes</a></li>
+                      <li><a href="#">Coconats</a></li>
+                      <li><a href="#">Apples</a></li>
+                      <li><a href="#">Watermelons</a></li>
+                      <li><a href="#">Banannas</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Coconats</a></li>
+                  <li><a href="#">Grapes</a></li>
+                  <li><a href="#">Watermelons</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Contacts</a></li>
+          </nav><!-- /END Navigation -->
+        </div><!-- /END Header content -->
       </header>
       <!-- *********************************************** 
       END HEADER -->
 
       <!-- PAGE CONTENT
       *********************************************** -->
-      <section class="content typo">
+      <section class="content typo pt--hg">
         <h2>Content for demo page</h2>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
         <h3>Content for demo page</h3>
@@ -118,6 +191,16 @@
 
     <!-- Framework -->
     <script src="../js/motor.js"></script>
+
+    <!-- FONT AWESOME FOR DEMO
+    *********************************************** -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/FontAwesome.otf">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.eot">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.ttf">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.woff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/fonts/fontawesome-webfont.woff2">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 
   </body>
 </html>

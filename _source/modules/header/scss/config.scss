@@ -38,3 +38,25 @@ $header_section_use-paddings-as-gutter: false;
 //  Header button
 /////////////////////////////////////////////////
 $header_button_height: $header_height / 3;
+
+//  Header navigation
+/////////////////////////////////////////////////
+$header_nav_mobile-viewport: $viewport_md - 1;
+
+//  Header navigation link
+/////////////////////////////////////////////////
+$header_nav_link_padding: $indent_sm / 2;
+$header_nav_link_font-family: $base_font-family;
+$header_nav_link_font-size: 14px;
+$header_nav_link_line-height: 1.3;
+$header_nav_link_font-style: normal;
+$header_nav_link_font-weight: normal;
+$header_nav_link_letter-spacing: 0;
+
+//  Header navigation sub link
+/////////////////////////////////////////////////
+$header_nav_sublink_font-size: 12px;
+$header_nav_sublink_line-height: $header_nav_link_line-height;
+$header_nav_sublink_font-style: $header_nav_link_font-style;
+$header_nav_sublink_font-weight: $header_nav_link_font-weight;
+$header_nav_sublink_letter-spacing: $header_nav_link_letter-spacing;

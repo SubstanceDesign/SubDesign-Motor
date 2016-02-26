@@ -257,24 +257,90 @@
       return returnValue.length > 1 ? returnValue : returnValue[0];
     },
 
+    // check if element matches selector
+    matchesSelector: function( selector ) {
+      var indicator = false,
+          elem = this.elems[0],
+          allMatchedElements = document.querySelectorAll(selector);
+
+      for ( var i = 0; i < allMatchedElements.length; i++ ) {
+        if ( allMatchedElements[i] == elem )
+          indicator = true;
+      }
+      
+      return indicator;
+    },
+
     // get parent until
-    parentUntil: function( selector, motorElement ) {
+    parentUntil: function( selector, returnMotorElement ) {
       var returnValue = [];
 
       this.elems.forEach(function(elem) {
 
-        var current = elem.parentNode;
-        while( current && !current.querySelectorAll(selector) ) {
-          current = current.parentNode;
-        }
+        // break if the element is the parent we searching for
+        if ( !elem.parentNode.querySelectorAll(selector).length ) {  
+          var current = elem.parentNode;
+          while( current ) {
+            if ( current.parentNode.querySelectorAll(selector).length ) {
 
-        returnValue.push( current.querySelectorAll(selector) );
+              // check if selected parent is the parent of source element
+              for ( var i = 0; i < current.parentNode.querySelectorAll(selector).length; i++ ) {
+                if ( current.parentNode.querySelectorAll(selector)[i] == current )
+                  returnValue.push( current );
+              }
+
+              break;
+
+            } else {
+              current = current.parentNode;
+            }
+          }
+        }
+      });
+
+      if ( returnMotorElement === true )
+        returnValue = motor(returnValue);
+      
+      return returnValue;
+    },
+
+    // get siblings
+    siblings: function( selector, returnMotorElement ) {
+      var returnValue = [];
+
+      this.elems.forEach(function(elem) {
+
+        var targetSiblings = [],
+            allSiblings = elem.parentNode.children;
+
+        for ( var i = 0; i < allSiblings.length; i++ ) {
+          if ( motor(allSiblings[i]).matchesSelector(selector) )
+            returnValue.push(allSiblings[i]);
+        }
 
       });
 
-      returnValue = returnValue.length > 1 ? returnValue : returnValue[0];
+      if ( returnMotorElement === true )
+        returnValue = motor(returnValue);
+      
+      return returnValue;
+    },
 
-      if ( motorElement === true )
+    // get siblings
+    find: function( selector, returnMotorElement ) {
+      var returnValue = [],
+          findedElements;
+
+      this.elems.forEach(function(elem) {
+
+        findedElements = elem.querySelectorAll(selector);
+        for ( var i = 0; i < findedElements.length; i++ ) {
+          returnValue.push(findedElements[i]);
+        }
+
+      });
+
+      if ( returnMotorElement === true )
         returnValue = motor(returnValue);
       
       return returnValue;

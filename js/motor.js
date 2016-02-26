@@ -257,24 +257,90 @@
       return returnValue.length > 1 ? returnValue : returnValue[0];
     },
 
+    // check if element matches selector
+    matchesSelector: function( selector ) {
+      var indicator = false,
+          elem = this.elems[0],
+          allMatchedElements = document.querySelectorAll(selector);
+
+      for ( var i = 0; i < allMatchedElements.length; i++ ) {
+        if ( allMatchedElements[i] == elem )
+          indicator = true;
+      }
+      
+      return indicator;
+    },
+
     // get parent until
-    parentUntil: function( selector, motorElement ) {
+    parentUntil: function( selector, returnMotorElement ) {
       var returnValue = [];
 
       this.elems.forEach(function(elem) {
 
-        var current = elem.parentNode;
-        while( current && !current.querySelectorAll(selector) ) {
-          current = current.parentNode;
-        }
+        // break if the element is the parent we searching for
+        if ( !elem.parentNode.querySelectorAll(selector).length ) {  
+          var current = elem.parentNode;
+          while( current ) {
+            if ( current.parentNode.querySelectorAll(selector).length ) {
 
-        returnValue.push( current.querySelectorAll(selector) );
+              // check if selected parent is the parent of source element
+              for ( var i = 0; i < current.parentNode.querySelectorAll(selector).length; i++ ) {
+                if ( current.parentNode.querySelectorAll(selector)[i] == current )
+                  returnValue.push( current );
+              }
+
+              break;
+
+            } else {
+              current = current.parentNode;
+            }
+          }
+        }
+      });
+
+      if ( returnMotorElement === true )
+        returnValue = motor(returnValue);
+      
+      return returnValue;
+    },
+
+    // get siblings
+    siblings: function( selector, returnMotorElement ) {
+      var returnValue = [];
+
+      this.elems.forEach(function(elem) {
+
+        var targetSiblings = [],
+            allSiblings = elem.parentNode.children;
+
+        for ( var i = 0; i < allSiblings.length; i++ ) {
+          if ( motor(allSiblings[i]).matchesSelector(selector) )
+            returnValue.push(allSiblings[i]);
+        }
 
       });
 
-      returnValue = returnValue.length > 1 ? returnValue : returnValue[0];
+      if ( returnMotorElement === true )
+        returnValue = motor(returnValue);
+      
+      return returnValue;
+    },
 
-      if ( motorElement === true )
+    // get siblings
+    find: function( selector, returnMotorElement ) {
+      var returnValue = [],
+          findedElements;
+
+      this.elems.forEach(function(elem) {
+
+        findedElements = elem.querySelectorAll(selector);
+        for ( var i = 0; i < findedElements.length; i++ ) {
+          returnValue.push(findedElements[i]);
+        }
+
+      });
+
+      if ( returnMotorElement === true )
         returnValue = motor(returnValue);
       
       return returnValue;
@@ -739,25 +805,102 @@
 
 (function() {
 
-  var header = motor('.header');
+  var m_header = motor('.header');
 
-  if (header.elems.length) {
+  if (m_header.elems.length) {
     
-    // Set sticky state
+    /* Set sticky height
+    ***********************************************/
     var headerOffset = 0,
         scrollTop;
 
-    motor.window.addEventListener('scroll', function() {
+    motor(motor.window).addListener('scroll', function() {
       scrollTop = ( motor.window.pageYOffset !== undefined ) ? motor.window.pageYOffset :  motor.html.scrollTop;
 
       if (scrollTop > headerOffset) {
-        header.addClass('header--sticked');
+        m_header.addClass('header--sticked');
+        setMobileNavMaxHeight();
       } else {
-        header.removeClass('header--sticked');
+        m_header.removeClass('header--sticked');
+        setMobileNavMaxHeight();
       }
     })
 
-    
+    /* Set sticky height
+    ***********************************************/
+    var m_headerShowNav = motor(document.querySelectorAll('.header_show-nav')),
+        m_headerNav = motor(document.querySelectorAll('.header_nav')),
+        m_headerNavLi = motor(document.querySelectorAll('.header_nav li')),
+        m_headerNavSubs = motor(document.querySelectorAll('.header_nav > ul > li ul'));
+
+    function hideNav() {  
+      m_headerShowNav.removeClass('active');
+      m_headerNav.removeClass('active');
+      m_headerNavSubs.removeClass('active');
+      m_headerNavLi.removeClass('active')
+    }
+
+    // fix for ios vh bug
+    function setMobileNavMaxHeight() {
+      var wh = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+      m_headerNav.elems[0].style.maxHeight = motor.getWindowHeight() - m_header.elems[0].offsetTop - m_headerNav.elems[0].offsetTop + 'px';
+    }
+
+    m_headerShowNav.addListener('click', function(event) {
+      event.preventDefault();
+
+      if (m_headerShowNav.hasClass('active')) {
+        hideNav();
+      } else {
+        m_headerShowNav.addClass('active');
+        m_headerNav.addClass('active');
+      }
+    })
+
+    var headerWidth = m_header.elems[0].offsetWidth;
+    motor(motor.window).addListener('resize', function() {
+      setMobileNavMaxHeight();
+
+      if (headerWidth != m_header.elems[0].offsetWidth) {
+        hideNav();
+        headerWidth = m_header.elems[0].offsetWidth;
+      }
+    })
+
+    // Mobile menu mechanic
+    motor('.header_nav a').addListener('click', function(event) {
+      // check if has submenu
+      if ( this.parentNode.querySelectorAll('ul').length ) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
+        var m_parentLi = motor(this.parentNode);
+        
+        if ( m_parentLi.hasClass('active') ) {
+          m_parentLi.removeClass('active');
+          m_parentLi.find('li.active', true).removeClass('active');
+        } else {
+          m_parentLi.siblings('li.active', true).find('li.active', true).removeClass('active');
+          m_parentLi.siblings('li.active', true).removeClass('active');
+          m_parentLi.addClass('active');
+        }
+      }
+    })
+
+    // Hide menu on click outside
+    motor(document).addListener('click', function(event) {
+      if (!motor(event.target).parentUntil('.header').length) {
+        hideNav();
+      }
+    });
+
+    motor(document).addListener('touchstart', function(event) {
+      if (!motor(event.target).parentUntil('.header').length) {
+        hideNav();
+      }
+    });
+
   }
 
 })();
